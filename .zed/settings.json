@@ -36,6 +36,16 @@
       "language_servers": ["eslint"],
       "format_on_save": "on",
       "formatter": "prettier"
+    },
+    "CSS": {
+      "language_servers": ["stylelint-lsp"],
+      "format_on_save": "on",
+      "formatter": "prettier"
+    },
+    "SCSS": {
+      "language_servers": ["stylelint-lsp"],
+      "format_on_save": "on",
+      "formatter": "prettier"
     }
   }
 }

@@ -15,8 +15,12 @@
     "build:library": "npm --workspace packages/library run build",
     "dev": "concurrently \"npm run dev:site\" \"npm run dev:library\"",
     "build": "npm run build:site && npm run build:library",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint .",
+    "lint:fix": "npm run lint:js:fix && npm run lint:css:fix",
+    "lint:js:fix": "eslint . --fix",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:css:fix": "stylelint \"**/*.css\" --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write ."
   },
@@ -30,8 +34,11 @@
     "eslint-plugin-jsonc": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "jsonc-eslint-parser": "^2.4.0",
+    "postcss-html": "^1.8.0",
     "prettier": "^3.5.3",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "stylelint": "^16.20.0",
+    "stylelint-config-standard": "^38.0.0"
   },
   "engines": {
     "node": ">=18.0.0"

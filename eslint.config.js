@@ -104,6 +104,7 @@ export default [
       '**/.astro/**',
       '**/content.d.ts',
       '**/types.d.ts',
+
     ],
   },
 ];
