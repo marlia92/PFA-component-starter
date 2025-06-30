@@ -1,0 +1,7 @@
+---
+import Button from "./index.astro";
+import { buttonSchema } from "./schema";
+const props = buttonSchema.parse(Astro.props);
+---
+
+<Button {...props} />

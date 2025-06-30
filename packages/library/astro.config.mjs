@@ -1,3 +1,4 @@
+import bookshop from "@bookshop/astro-bookshop";
 import icon from "astro-icon";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -14,6 +15,9 @@ export default defineConfig({
     port: 4322,
   },
   integrations: [
+    bookshop({
+      bookshopConfigPath: path.resolve(__dirname, "../shared/bookshop/bookshop.config.cjs"),
+    }),
     icon({
       iconDir: path.resolve(__dirname, "../shared/icons"),
     }),
@@ -27,6 +31,7 @@ export default defineConfig({
         "@skele/components": path.resolve(__dirname, "../shared/components"),
         "@skele/styles": path.resolve(__dirname, "../shared/styles"),
         "@skele/plugins": path.resolve(__dirname, "../shared/plugins"),
+        "@skele/shared": path.resolve(__dirname, "../shared"),
       },
     },
     plugins: [cssWatcher()],

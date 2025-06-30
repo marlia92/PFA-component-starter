@@ -6,7 +6,8 @@
     "paths": {
       "@skele/components/*": ["../shared/components/*"],
       "@skele/styles/*": ["../shared/styles/*"],
-      "@skele/plugins/*": ["../shared/plugins/*"]
+      "@skele/plugins/*": ["../shared/plugins/*"],
+      "@skele/shared/*": ["../shared/*"]
     },
 
     "types": ["astro/astro-jsx"]

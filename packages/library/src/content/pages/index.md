@@ -1,5 +1,17 @@
 ---
-title: "Home"
+title: Skele Library
+content_blocks:
+  - _bookshop_name: elements/Button
+    label: Welcome to Skele
+    type: primary
+    size: lg
+    link: /components/elements/button
+
+  - _bookshop_name: elements/Button
+    label: View Components
+    type: secondary
+    size: md
+    link: /components
 ---
 
-test2
+Welcome to the Skele component library!

@@ -2,13 +2,20 @@
 import "@skele/styles/skele.pcss";
 import { z } from "zod/v4";
 import "../styles/library.pcss";
+
 const libraryLayoutSchema = z.object({
-  title: z.string().default("Skele Library"),
+  frontmatter: z
+    .object({
+      title: z.string().optional(),
+      content_blocks: z.array(z.any()).optional(),
+    })
+    .optional(),
 });
 
 import Section from "@skele/components/layouts/Section/index.astro";
 import NavLayout from "./NavLayout.astro";
 const props = libraryLayoutSchema.parse(Astro.props);
+const pageTitle = props.frontmatter?.title || "Skele Library";
 ---
 
 <!doctype html>
@@ -18,7 +25,7 @@ const props = libraryLayoutSchema.parse(Astro.props);
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{props.title}</title>
+    <title>{pageTitle}</title>
     <slot name="head" />
   </head>
   <body>

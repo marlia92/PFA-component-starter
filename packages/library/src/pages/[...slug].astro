@@ -1,20 +1,34 @@
 ---
 import { getCollection } from "astro:content";
-import LibraryLayout from "../layouts/LibraryLayout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
 
-  return pages.map((entry) => ({
-    params: { slug: entry.slug.replace(/index$/, "") || undefined },
-    props: { page: entry },
-  }));
+  const paths: Array<{ params: { slug: string }; props: { page: any } }> = [];
+
+  pages.forEach((page) => {
+    if (page.slug === "index") {
+      // For index page, use empty string as slug to match root path
+      paths.push({
+        params: { slug: "" },
+        props: { page },
+      });
+    } else {
+      paths.push({
+        params: { slug: page.slug },
+        props: { page },
+      });
+    }
+  });
+
+  return paths;
 }
 
 const { page } = Astro.props;
 const { Content } = await page.render();
 ---
 
-<LibraryLayout frontmatter={page.data}>
+<PageLayout frontmatter={page.data}>
   <Content />
-</LibraryLayout>
+</PageLayout>

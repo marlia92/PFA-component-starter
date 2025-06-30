@@ -1,3 +1,4 @@
+import bookshop from "@bookshop/astro-bookshop";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 import path from "node:path";
@@ -21,6 +22,12 @@ export default defineConfig({
     plugins: [cssWatcher()],
   },
   integrations: [
+    bookshop({
+      bookshopConfigPath: path.resolve(
+        __dirname,
+        "../../packages/shared/bookshop/bookshop.config.cjs"
+      ),
+    }),
     icon({
       iconDir: path.resolve(__dirname, "../icons"),
     }),
