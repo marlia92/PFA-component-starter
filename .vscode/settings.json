@@ -3,7 +3,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "explicit"
+    "source.organizeImports": "explicit",
+    "source.fixAll.stylelint": true
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -32,6 +33,9 @@
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -41,6 +45,9 @@
     "json",
     "jsonc"
   ],
-  "stylelint.validate": ["css", "scss"],
+  "stylelint.validate": ["css", "postcss", "pcss", "astro"],
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
   "cSpell.words": ["pcss", "skele"]
 }

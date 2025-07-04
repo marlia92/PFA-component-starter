@@ -1,12 +1,15 @@
 ---
 import clsx from "clsx";
 import Icon from "../Icon/index.astro";
-import type { ButtonProps } from "./schema";
+import { buttonSchema } from "./schema";
 
-const { label, link, iconName, iconPosition, hideText, variant, size, ...htmlAttributes } =
-  Astro.props as ButtonProps;
+const { label, link, iconName, iconPosition, hideText, variant, size, ...restProps } =
+  buttonSchema.parse(Astro.props);
 
-const Tag = link ? "a" : "button";
+// Filter out props that start with underscore
+const htmlAttributes = Object.fromEntries(
+  Object.entries(restProps).filter(([key]) => !key.startsWith("_"))
+);
 
 const classNames = clsx(
   "button",
@@ -14,17 +17,18 @@ const classNames = clsx(
   `variant-${variant}`,
   hideText && "icon-only",
   iconPosition === "after" && "icon-after",
-  htmlAttributes.class
+  htmlAttributes.class as string | undefined
 );
 
-const elementProps = link
-  ? { href: link, role: "button", ...htmlAttributes }
-  : { type: "button", ...htmlAttributes };
+const Tag = link ? "a" : "button";
+const elementProps = {
+  ...htmlAttributes,
+  ...(link ? { href: link, role: "button" } : { type: "button" }),
+};
 ---
 
-<Tag {...elementProps} class:list={classNames}>
+<Tag {...elementProps as any} class:list={classNames}>
   {iconName && <Icon name={iconName} buttonIcon size="none" class="button-icon" />}
-
   {label && <span class:list={hideText ? "sr-only" : "label"}>{label}</span>}
 </Tag>
 
@@ -32,97 +36,95 @@ const elementProps = link
   @import "./theme.pcss";
 
   .button {
-    padding-inline: var(--space-em-sm);
-    padding-block: var(--space-em-sm);
-    font-weight: var(--font-weight-medium);
-    min-width: 10px;
-    min-height: 10px;
-    border-radius: var(--button-borderRadius);
-    text-decoration: none;
-    text-align: center;
-    transition-property: background-color, color, border-color;
-    transition-duration: var(--flinch);
-    transition-timing-function: ease-in-out;
-    border: 1px solid var(--button-ghost-borderColor);
-    display: inline-flex;
-    justify-content: center;
     align-items: center;
-    color: var(--button-ghost-fontColor);
-    background-color: var(--button-ghost-backgroundColor);
-    gap: 0.15em;
-    border-width: 1px;
-    border-style: solid;
+    background-color: var(--button-ghost-bg);
+    border: 1px solid var(--button-ghost-border);
     border-radius: var(--radius-xs);
+    color: var(--button-ghost-color);
+    display: inline-flex;
+    font-weight: var(--font-weight-medium);
+    gap: 0.15em;
+    justify-content: center;
+    min-height: 10px;
+    min-width: 10px;
+    padding-block: var(--space-em-sm);
+    padding-inline: var(--space-em-sm);
+    text-align: center;
+    text-decoration: none;
+    transition-duration: var(--flinch);
+    transition-property: background-color, color, border-color;
+    transition-timing-function: ease-in-out;
+    vertical-align: middle;
 
     &:hover,
     &:focus {
-      outline-color: var(--color-focus-ring);
       background-color: var(--button-ghost-hover-backgroundColor);
       border-color: var(--button-ghost-hover-borderColor);
       color: var(--button-ghost-hover-fontColor);
-      outline-offset: 4px;
       cursor: pointer;
+      outline-color: var(--color-focus-ring);
+      outline-offset: 4px;
     }
 
     &.icon-only {
       padding: var(--space-em-xs);
     }
 
-    &.icon-after .label {
-      order: -1;
+    &.icon-after {
+      flex-direction: row-reverse;
     }
   }
 
   .variant {
     &-primary {
       background-color: var(--button-primary-bg);
-      color: var(--button-primary-text);
       border-color: var(--button-primary-border);
+      color: var(--button-primary-text);
 
       &:hover,
       &:focus {
         background-color: var(--button-primary-hover-bg);
-        color: var(--button-primary-hover-text);
         border-color: var(--button-primary-hover-border);
+        color: var(--button-primary-hover-text);
       }
     }
 
     &-secondary {
       background-color: var(--button-secondary-bg);
-      color: var(--button-secondary-text);
       border-color: var(--button-secondary-border);
+      color: var(--button-secondary-text);
 
       &:hover,
       &:focus {
         background-color: var(--button-secondary-hover-bg);
-        color: var(--button-secondary-hover-text);
         border-color: var(--button-secondary-hover-border);
+        color: var(--button-secondary-hover-text);
       }
     }
 
     &-tertiary {
       background-color: var(--button-tertiary-bg);
-      color: var(--button-tertiary-text);
       border-color: var(--button-tertiary-border);
+      color: var(--button-tertiary-text);
 
       &:hover,
       &:focus {
         background-color: var(--button-tertiary-hover-bg);
-        color: var(--button-tertiary-hover-text);
         border-color: var(--button-tertiary-hover-border);
+        color: var(--button-tertiary-hover-text);
       }
     }
 
     &-ghost {
       background-color: var(--button-ghost-bg);
-      color: var(--button-ghost-text);
       border-color: var(--button-ghost-border);
+      color: var(--button-ghost-text);
 
       &:hover,
       &:focus {
         background-color: var(--button-ghost-hover-bg);
-        color: var(--button-ghost-hover-text);
         border-color: var(--button-ghost-hover-border);
+        color: var(--button-ghost-hover-text);
       }
     }
   }

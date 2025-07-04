@@ -1,8 +1,9 @@
 ---
 import clsx from "clsx";
+import { resolveComponent } from "../../../utils/renderBlock";
 import type { ButtonGroupProps } from "./schema";
 
-const { direction, align, gap, margin, ...htmlAttributes } = Astro.props as ButtonGroupProps;
+const { direction, align, button_blocks, ...htmlAttributes } = Astro.props as ButtonGroupProps;
 
 const alignClass =
   {
@@ -20,9 +21,56 @@ const classNames = clsx(
 ---
 
 <div {...htmlAttributes} class:list={classNames}>
-  <slot />
+  {
+    button_blocks && button_blocks.length > 0 ? (
+      button_blocks.map((block: any) => {
+        const Component = resolveComponent(block._bookshop_name);
+
+        return Component ? <Component {...block} /> : null;
+      })
+    ) : (
+      <slot />
+    )
+  }
 </div>
 
 <style>
-  @import "./styles.pcss";
+  .button-group {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    &.column {
+      flex-direction: column;
+
+      &.align-start {
+        align-items: flex-start;
+      }
+
+      &.align-center {
+        align-items: center;
+      }
+
+      &.align-end {
+        align-items: flex-end;
+      }
+    }
+
+    &.row {
+      flex-direction: row;
+    }
+
+    &.align-center {
+      justify-content: center;
+    }
+
+    &.align-end {
+      justify-content: flex-end;
+    }
+
+    &.align-start {
+      justify-content: flex-start;
+    }
+  }
 </style>

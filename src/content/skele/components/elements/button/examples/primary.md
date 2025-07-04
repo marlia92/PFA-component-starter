@@ -8,4 +8,5 @@ blocks:
   label: "Try it now!"
   onclick: "alert('hi');"
   id: hi
+  class: bye
 ---

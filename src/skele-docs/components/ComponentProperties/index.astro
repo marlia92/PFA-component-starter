@@ -87,15 +87,17 @@ type PropertyMeta = {
   nestedProperties?: PropertyMeta[];
 };
 
-const properties: PropertyMeta[] = Object.entries(shape).map(([key, zodSchema]) => {
-  const baseType = getBaseType(zodSchema as z.ZodTypeAny);
+const properties: PropertyMeta[] = shape
+  ? Object.entries(shape).map(([key, zodSchema]) => {
+      const baseType = getBaseType(zodSchema as z.ZodTypeAny);
 
-  return {
-    name: key,
-    ...baseType,
-    description: getDescription(zodSchema as z.ZodTypeAny),
-  };
-});
+      return {
+        name: key,
+        ...baseType,
+        description: getDescription(zodSchema as z.ZodTypeAny),
+      };
+    })
+  : [];
 ---
 
 <div class="properties">
@@ -145,4 +147,3 @@ const properties: PropertyMeta[] = Object.entries(shape).map(([key, zodSchema]) 
     })
   }
 </div>
-

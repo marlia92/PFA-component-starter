@@ -6,8 +6,8 @@
   display: none;
 
   &:checked ~ div[role="region"] {
-    display: revert;
     animation: grow-out 300ms ease-out;
+    display: revert;
   }
 
   & ~ div[role="region"] {
@@ -16,8 +16,8 @@
 }
 
 .nav-item-icon {
-  display: inline-flex;
   align-items: center;
+  display: inline-flex;
   transition: transform var(--animation-normal) ease-in-out;
 }
 
@@ -28,16 +28,16 @@
 .nav-item.sidebar {
   > a,
   > .nav-item-trigger {
-    display: block;
-    width: 100%;
-    padding: var(--spacing-sm) var(--spacing-md);
-    color: var(--nav-sidebar-link-fontColor);
-    font-weight: 600;
-    cursor: pointer;
-    user-select: none;
     border-radius: var(--radius-sm);
+    color: var(--nav-sidebar-link-fontColor);
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    padding: var(--spacing-sm) var(--spacing-md);
     text-decoration: none;
     transition: background var(--animation-normal) ease-in-out;
+    user-select: none;
+    width: 100%;
 
     &[aria-current="page"] {
       text-decoration: underline dotted;
@@ -46,15 +46,15 @@
     }
 
     &:hover {
-      color: var(--nav-sidebar-linkHover-fontColor);
       background: var(--nav-sidebar-linkHover-backgroundColor);
+      color: var(--nav-sidebar-linkHover-fontColor);
     }
   }
 
   > .nav-item-trigger {
+    align-items: center;
     cursor: pointer;
     display: flex;
-    align-items: center;
     gap: var(--space-xs);
     justify-content: space-between;
   }
@@ -78,8 +78,8 @@
     }
 
     > a {
-      display: inline-flex;
       align-items: center;
+      display: inline-flex;
       gap: var(--space-xs);
     }
   }

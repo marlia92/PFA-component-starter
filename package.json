@@ -15,8 +15,8 @@
     "lint:js": "eslint .",
     "lint:fix": "pnpm lint:js:fix && pnpm lint:css:fix",
     "lint:js:fix": "eslint . --fix",
-    "lint:css": "stylelint \"**/*.css\"",
-    "lint:css:fix": "stylelint \"**/*.css\" --fix",
+    "lint:css": "stylelint \"**/*.{css,pcss,astro}\"",
+    "lint:css:fix": "stylelint \"**/*.{css,pcss,astro}\" --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write ."
   },
@@ -51,6 +51,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "stylelint": "^16.20.0",
     "stylelint-config-standard": "^38.0.0",
+    "stylelint-order": "^7.0.0",
     "zod": "^3.25.36"
   },
   "engines": {

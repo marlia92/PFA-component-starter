@@ -4,11 +4,15 @@ import ComponentViewer from "../components/ComponentViewer/index.astro";
 import LibraryLayout from "./LibraryLayout.astro";
 
 const { frontmatter, schema, examples = [], componentKey = "" } = Astro.props;
-const meta = schema?.meta?.();
+const meta = schema?.meta?.() || {
+  title: "Unknown Component",
+  description: "No description available",
+};
 
 const primaryExample = examples.find((example: any) => example.slug.includes("/primary"));
 
 const frontmatterExamples = frontmatter.examples || [];
+
 const processedExamples = frontmatterExamples.map((exampleConfig: any) => {
   const matchingExamples = examples.filter((example: any) =>
     example.slug.includes(`/${exampleConfig.slugs}`)
@@ -20,7 +24,6 @@ const processedExamples = frontmatterExamples.map((exampleConfig: any) => {
     size: exampleConfig.size,
   };
 });
-
 const primarySize = frontmatter.primary_size || "md";
 ---
 

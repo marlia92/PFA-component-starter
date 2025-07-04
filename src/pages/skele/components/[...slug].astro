@@ -21,8 +21,19 @@ export async function getStaticPaths() {
 
     let schema = null;
 
+    // Convert kebab-case to camelCase for path matching
+    const camelCaseKey = componentKey
+      .split("-")
+      .map((part, index) => {
+        if (index === 0) {
+          return part.charAt(0).toUpperCase() + part.slice(1);
+        }
+        return part.charAt(0).toUpperCase() + part.slice(1);
+      })
+      .join("");
+
     for (const [path, mod] of Object.entries(schemaFiles)) {
-      if (path.toLowerCase().includes(`/${componentKey.toLowerCase()}/`)) {
+      if (path.toLowerCase().includes(`/${camelCaseKey.toLowerCase()}/`)) {
         const module = mod as { [key: string]: { meta?: () => { description?: string } } };
         const schemaName = Object.keys(module).find((key) => key.endsWith("Schema"));
 

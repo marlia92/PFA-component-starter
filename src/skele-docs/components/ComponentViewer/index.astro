@@ -54,7 +54,18 @@ function inferComponentName(componentKey: string): string {
   const parts = componentKey.split("/");
   const componentName = parts[parts.length - 1];
 
-  return componentName.charAt(0).toUpperCase() + componentName.slice(1);
+  // Convert kebab-case to camelCase (e.g., "button-group" -> "ButtonGroup")
+  const inferredName = componentName
+    .split("-")
+    .map((part, index) => {
+      if (index === 0) {
+        return part.charAt(0).toUpperCase() + part.slice(1);
+      }
+      return part.charAt(0).toUpperCase() + part.slice(1);
+    })
+    .join("");
+
+  return inferredName;
 }
 
 async function loadComponent(componentName: string) {
@@ -92,6 +103,7 @@ async function loadComponent(componentName: string) {
 
         const componentName =
           example.data.component || (componentKey ? inferComponentName(componentKey) : null);
+
         const Component = componentName ? await loadComponent(componentName) : null;
         const blocks = example.data.blocks || {};
 
@@ -100,9 +112,7 @@ async function loadComponent(componentName: string) {
             <div id={exampleId} class:list={[`preview`, `${idx === 0 ? "active" : ""}`]}>
               <div class="container" style={bodyPadding}>
                 {Component && Array.isArray(blocks) ? (
-                  blocks.map((block: any, blockIdx: number) => (
-                    <Component key={blockIdx} {...block} />
-                  ))
+                  blocks.map((block: any) => <Component {...block} />)
                 ) : (
                   <Component {...blocks} />
                 )}

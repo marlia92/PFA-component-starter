@@ -1,7 +1,6 @@
 import type { HTMLAttributes } from "astro/types";
 import { z } from "zod/v4";
 
-// Create types for both button and anchor HTML attributes
 type ButtonHTMLAttributes = HTMLAttributes<"button">;
 type AnchorHTMLAttributes = HTMLAttributes<"a">;
 
@@ -32,8 +31,6 @@ export const buttonSchema = z
       .default("ghost"),
 
     size: z.enum(["sm", "md", "lg"]).meta({ description: "The size of the button." }).default("md"),
-
-    // Remove className from schema since it'll come from HTMLAttributes
   })
   .meta({
     title: "Button",

@@ -1,18 +1,6 @@
 import type { HTMLAttributes } from "astro/types";
 import { z } from "zod/v4";
 
-// Nested Schemas
-const marginSchema = z.object({
-  top: z
-    .enum(["none", "xs", "sm", "md", "lg", "xl", "2xl"])
-    .meta({ description: "Top margin of the button group." })
-    .optional(),
-  bottom: z
-    .enum(["none", "xs", "sm", "md", "lg", "xl", "2xl"])
-    .meta({ description: "Bottom margin of the button group." })
-    .optional(),
-});
-
 // Create a type that extends HTMLAttributes for the div element
 type ButtonGroupHTMLAttributes = HTMLAttributes<"div">;
 
@@ -28,12 +16,10 @@ export const buttonGroupSchema = z
       .meta({ description: "Alignment of buttons within the group." })
       .default("start"),
 
-    gap: z
-      .enum(["none", "xs", "sm", "md", "lg", "xl", "2xl"])
-      .meta({ description: "Gap between buttons." })
+    button_blocks: z
+      .array(z.any())
+      .meta({ description: "Array of button components to render within the group." })
       .optional(),
-
-    margin: marginSchema.optional(),
 
     // Remove id, className, and customStyle from schema since they'll come from HTMLAttributes
   })
