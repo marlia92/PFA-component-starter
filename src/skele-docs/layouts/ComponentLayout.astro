@@ -5,7 +5,6 @@ import LibraryLayout from "./LibraryLayout.astro";
 
 const { frontmatter, schema, examples = [], componentKey = "" } = Astro.props;
 const meta = schema?.meta?.() || {
-  title: "Unknown Component",
   description: "No description available",
 };
 
@@ -15,12 +14,26 @@ const frontmatterExamples = frontmatter.examples || [];
 
 const processedExamples = frontmatterExamples.map((exampleConfig: any) => {
   const matchingExamples = examples.filter((example: any) =>
-    example.slug.includes(`/${exampleConfig.slugs}`)
+    exampleConfig.slugs.some((slug: string) => example.slug.endsWith(`/${slug}`))
   );
+
+  const sortedExamples = matchingExamples.sort((a: any, b: any) => {
+    const aIndex = exampleConfig.slugs.findIndex((slug: string) => a.slug.endsWith(`/${slug}`));
+    const bIndex = exampleConfig.slugs.findIndex((slug: string) => b.slug.endsWith(`/${slug}`));
+
+    if (aIndex === bIndex) {
+      return 0;
+    }
+
+    if (aIndex === -1) return 1;
+    if (bIndex === -1) return -1;
+
+    return aIndex - bIndex;
+  });
 
   return {
     title: exampleConfig.title,
-    examples: matchingExamples,
+    examples: sortedExamples,
     size: exampleConfig.size,
   };
 });
@@ -28,7 +41,7 @@ const primarySize = frontmatter.primary_size || "md";
 ---
 
 <LibraryLayout frontmatter={frontmatter}>
-  <h1>{meta.title}</h1>
+  <h1>{frontmatter.title}</h1>
   <p>{meta.description}</p>
 
   {

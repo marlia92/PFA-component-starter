@@ -1,0 +1,16 @@
+---
+title: Icon
+component_path: "elements/Icon"
+primary_size: sm
+examples:
+  - title: Sizes
+    slugs:
+      - sizes
+    size: "sm"
+  - title: Backgrounds
+    slugs:
+      - backgrounds
+  - title: Fill Icons
+    slugs:
+      - fill
+---

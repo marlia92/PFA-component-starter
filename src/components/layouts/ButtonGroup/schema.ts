@@ -23,9 +23,7 @@ export const buttonGroupSchema = z
   })
   .catchall(z.any())
   .meta({
-    title: "ButtonGroup",
     description: "A container for grouping multiple buttons with consistent spacing and alignment.",
   });
 
-// Export a combined type that includes both our custom props and HTML attributes
 export type ButtonGroupProps = z.infer<typeof buttonGroupSchema> & ButtonGroupHTMLAttributes;

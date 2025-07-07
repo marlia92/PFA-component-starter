@@ -11,7 +11,7 @@ const allComponents = await getCollection("skele/components");
 
 const componentsByCategory: Record<string, Array<{ name: string; path: string }>> = {};
 
-allComponents.forEach((component) => {
+allComponents.forEach((component: any) => {
   const slug = component.slug.replace(/^components\//, "").replace(/\/index$/, "");
   const parts = slug.split("/").filter(Boolean);
 

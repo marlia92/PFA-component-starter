@@ -1,12 +1,16 @@
 ---
-title: "Button Group"
-component_path: "layouts/ButtonGroup"
+title: Button Group
 primary_size: sm
 examples:
   - title: Direction
-    slugs: direction
+    slugs:
+      - direction-row
+      - direction-column
     size: md
   - title: Alignment
-    slugs: alignment
+    slugs:
+      - alignment-start
+      - alignment-center
+      - alignment-end
     size: sm
 ---

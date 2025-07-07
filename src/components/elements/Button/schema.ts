@@ -34,7 +34,6 @@ export const buttonSchema = z
   })
   .catchall(z.any())
   .meta({
-    title: "Button",
     description:
       "A clickable element that navigates to another page or triggers an action within the current page.",
   });

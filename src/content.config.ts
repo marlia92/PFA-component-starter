@@ -19,14 +19,18 @@ export const collections = {
       blocks: z.union([z.record(z.any()), z.array(z.record(z.any()))]).optional(),
       primary_size: z.string().optional(),
       examples: z
-        .array(
-          z.object({
-            title: z.string(),
-            slugs: z.string(),
-            size: z.string().optional(),
-          })
-        )
-        .optional(),
+        .union([
+          z.array(
+            z.object({
+              title: z.string(),
+              slugs: z.array(z.string()),
+              size: z.string().optional(),
+            })
+          ),
+          z.null(),
+        ])
+        .optional()
+        .transform((val: any) => val || []),
     }),
   }),
 };

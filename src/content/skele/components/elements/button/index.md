@@ -1,15 +1,17 @@
 ---
-title: "Button"
-component_path: "elements/Button"
+title: Button
 primary_size: sm
 examples:
   - title: Sizes
-    slugs: sizes
+    slugs:
+      - sizes
     size: sm
   - title: Variants
-    slugs: variants
+    slugs:
+      - variants
     size: sm
   - title: Icons
-    slugs: icons
+    slugs:
+      - icons
     size: sm
 ---

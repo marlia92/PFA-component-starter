@@ -1,24 +1,67 @@
 ---
 import { Icon as AstroIcon } from "astro-icon/components";
+import clsx from "clsx";
 import { iconSchema } from "./schema";
 
-const props = iconSchema.parse(Astro.props);
-const { buttonIcon = false } = Astro.props;
+const { name, size, background, ...restProps } = iconSchema.parse(Astro.props);
+
+const { class: extraClass, ...htmlAttributes } = Object.fromEntries(
+  Object.entries(restProps).filter(([key]) => !key.startsWith("_"))
+);
+
+const classNames = clsx(
+  "icon",
+  `size-${size}`,
+  `background-${background}`,
+  name?.includes("fill/") && "fill",
+  extraClass
+);
 ---
 
-<style>
-  @import "./styles.pcss";
-</style>
+<AstroIcon name={name} class:list={classNames} {...htmlAttributes} />
 
-<AstroIcon
-  name={props.name}
-  class:list={[
-    "icon",
-    buttonIcon && "button-icon",
-    `size-${props.size}`,
-    props.flipRtl && "flip-rtl",
-    props.className,
-  ]}
-  style={props.customStyle}
-  aria-label={props.label}
-/>
+<style>
+  .icon {
+    all: unset;
+    border: 1px solid transparent;
+    border-radius: var(--radius-xs);
+    color: var(--color-text-on-muted);
+    display: inline-block;
+    height: 1.1em;
+    line-height: 0;
+    vertical-align: middle;
+    width: 1.1em;
+  }
+
+  .flip-rtl {
+    transform: scaleX(-1);
+  }
+
+  svg {
+    max-height: 100%;
+  }
+
+  .background-subtle {
+    padding: var(--spacing-em-xs);
+  }
+
+  .background-subtle {
+    background-color: var(--color-bg-surface);
+  }
+
+  .fill {
+    fill: currentcolor;
+  }
+
+  .size-sm {
+    font-size: var(--font-size-sm);
+  }
+
+  .size-md {
+    font-size: var(--font-size-xl);
+  }
+
+  .size-lg {
+    font-size: var(--font-size-3xl);
+  }
+</style>
