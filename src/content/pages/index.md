@@ -13,5 +13,3 @@ content_blocks:
     size: md
     link: /components
 ---
-
-Welcome to the Skele component library!
