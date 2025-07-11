@@ -8,8 +8,8 @@ spec:
 
 blueprint:
   text: 
-  level: h1
-  size:  4xl
+  level: h2
+  size:  3xl
   align: start
 
 
