@@ -2,14 +2,14 @@ spec:
   structures:
     - content_blocks
   label: Button Group
-  description: A clickable element that navigates to another page or triggers an action within the current page.
+  description: "A clickable element that navigates to another page or triggers an action within the current page."
   icon: rectangle
-  tags:
+  tags: []
 
 blueprint:
   button_blocks:
-  direction: 
-  align: 
+  direction: row
+  align: start
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
@@ -18,6 +18,7 @@ preview:
 _inputs:
   button_blocks:
     comment: Array of button components to render within the group.
+    type: array
   direction:
     comment: Direction of button layout.
     type: select
@@ -35,4 +36,3 @@ _inputs:
         - center
         - end
       default: start
-  

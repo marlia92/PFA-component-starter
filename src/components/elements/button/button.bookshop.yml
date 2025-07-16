@@ -2,9 +2,9 @@ spec:
   structures:
     - button_blocks
   label: Button
-  description: A clickable element that navigates to another page or triggers an action within the current page.
+  description: "A clickable element that navigates to another page or triggers an action within the current page."
   icon: rectangle
-  tags:
+  tags: []
 
 blueprint:
   label:
@@ -15,10 +15,8 @@ blueprint:
   variant: ghost
   size: md
 
-# Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
 
-# Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
   label:
     type: text
@@ -26,8 +24,8 @@ _inputs:
   link:
     type: url
     comment: The URL that the button should link to.
-  iconName: 
-    type: select 
+  iconName:
+    type: select
     options:
       values: _select_data.icons
     comment: The name of the icon to display. See the Icon component documentation for more information.

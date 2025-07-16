@@ -17,8 +17,8 @@ const htmlAttributes = Object.fromEntries(
 const classNames = clsx(
   "icon",
   `size-${size}`,
-  `background-${background}`,
-  name?.includes("fill/") && "fill",
+  background && `background-${background}`,
+  name?.includes("social/") && "fill",
   className
 );
 ---

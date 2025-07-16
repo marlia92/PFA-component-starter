@@ -2,8 +2,8 @@ collections_config:
   pages:
     path: src/content/pages
     glob:
-      - '**/*.md'
-    url: '/[full_slug]/'
+      - "**/*.md"
+    url: "/[full_slug]/"
     icon: laptop_mac
     _enabled_editors:
       - visual
@@ -14,10 +14,10 @@ collections_config:
     schemas:
       default:
         name: New Page
-        path: '.cloudcannon/schemas/page.md'
+        path: ".cloudcannon/schemas/page.md"
         remove_extra_inputs: false
     create:
-      path: '[relative_base_path]/{filename|slugify|lowercase}.md'
+      path: "[relative_base_path]/{filename|slugify|lowercase}.md"
     new_preview_url: /
     _inputs:
       title:
@@ -32,39 +32,41 @@ collection_groups:
     collections:
       - data
 
-
-
-
-
 _select_data:
   icons:
     - academic-cap
     - adjustments-horizontal
     - adjustments-vertical
+    - archive-box
     - archive-box-arrow-down
     - archive-box-x-mark
-    - archive-box
+    - arrow-down
     - arrow-down-circle
     - arrow-down-left
-    - arrow-down-on-square-stack
     - arrow-down-on-square
+    - arrow-down-on-square-stack
     - arrow-down-right
     - arrow-down-tray
-    - arrow-down
+    - arrow-left
     - arrow-left-circle
     - arrow-left-end-on-rectangle
+    - arrow-left-on-rectangle
     - arrow-left-start-on-rectangle
-    - arrow-left
     - arrow-long-down
     - arrow-long-left
     - arrow-long-right
     - arrow-long-up
-    - arrow-path-rounded-square
     - arrow-path
+    - arrow-path-rounded-square
+    - arrow-right
     - arrow-right-circle
     - arrow-right-end-on-rectangle
+    - arrow-right-on-rectangle
     - arrow-right-start-on-rectangle
-    - arrow-right
+    - arrow-small-down
+    - arrow-small-left
+    - arrow-small-right
+    - arrow-small-up
     - arrow-top-right-on-square
     - arrow-trending-down
     - arrow-trending-up
@@ -76,13 +78,13 @@ _select_data:
     - arrow-turn-right-up
     - arrow-turn-up-left
     - arrow-turn-up-right
+    - arrow-up
     - arrow-up-circle
     - arrow-up-left
-    - arrow-up-on-square-stack
     - arrow-up-on-square
+    - arrow-up-on-square-stack
     - arrow-up-right
     - arrow-up-tray
-    - arrow-up
     - arrow-uturn-down
     - arrow-uturn-left
     - arrow-uturn-right
@@ -96,10 +98,10 @@ _select_data:
     - backward
     - banknotes
     - bars-2
+    - bars-3
     - bars-3-bottom-left
     - bars-3-bottom-right
     - bars-3-center-left
-    - bars-3
     - bars-4
     - bars-arrow-down
     - bars-arrow-up
@@ -107,42 +109,43 @@ _select_data:
     - battery-100
     - battery-50
     - beaker
+    - bell
     - bell-alert
     - bell-slash
     - bell-snooze
-    - bell
+    - bluesky
     - bold
-    - bolt-slash
     - bolt
+    - bolt-slash
     - book-open
+    - bookmark
     - bookmark-slash
     - bookmark-square
-    - bookmark
     - briefcase
     - bug-ant
     - building-library
-    - building-office-2
     - building-office
+    - building-office-2
     - building-storefront
     - cake
     - calculator
+    - calendar
     - calendar-date-range
     - calendar-days
-    - calendar
     - camera
-    - chart-bar-square
     - chart-bar
+    - chart-bar-square
     - chart-pie
-    - chat-bubble-bottom-center-text
     - chat-bubble-bottom-center
+    - chat-bubble-bottom-center-text
+    - chat-bubble-left
     - chat-bubble-left-ellipsis
     - chat-bubble-left-right
-    - chat-bubble-left
-    - chat-bubble-oval-left-ellipsis
     - chat-bubble-oval-left
+    - chat-bubble-oval-left-ellipsis
+    - check
     - check-badge
     - check-circle
-    - check
     - chevron-double-down
     - chevron-double-left
     - chevron-double-right
@@ -150,28 +153,28 @@ _select_data:
     - chevron-down
     - chevron-left
     - chevron-right
-    - chevron-up-down
     - chevron-up
+    - chevron-up-down
     - circle-stack
+    - clipboard
+    - clipboard-document
     - clipboard-document-check
     - clipboard-document-list
-    - clipboard-document
-    - clipboard
     - clock
+    - cloud
     - cloud-arrow-down
     - cloud-arrow-up
-    - cloud
-    - code-bracket-square
     - code-bracket
+    - code-bracket-square
+    - cog
     - cog-6-tooth
     - cog-8-tooth
-    - cog
     - command-line
     - computer-desktop
     - cpu-chip
     - credit-card
-    - cube-transparent
     - cube
+    - cube-transparent
     - currency-bangladeshi
     - currency-dollar
     - currency-euro
@@ -182,7 +185,9 @@ _select_data:
     - cursor-arrow-ripple
     - device-phone-mobile
     - device-tablet
+    - discord
     - divide
+    - document
     - document-arrow-down
     - document-arrow-up
     - document-chart-bar
@@ -198,34 +203,33 @@ _select_data:
     - document-minus
     - document-plus
     - document-text
-    - document
-    - ellipsis-horizontal-circle
     - ellipsis-horizontal
+    - ellipsis-horizontal-circle
     - ellipsis-vertical
-    - envelope-open
     - envelope
+    - envelope-open
     - equals
     - exclamation-circle
     - exclamation-triangle
+    - eye
     - eye-dropper
     - eye-slash
-    - eye
     - face-frown
     - face-smile
     - film
     - finger-print
     - fire
     - flag
+    - folder
     - folder-arrow-down
     - folder-minus
     - folder-open
     - folder-plus
-    - folder
     - forward
     - funnel
     - gif
-    - gift-top
     - gift
+    - gift-top
     - globe-alt
     - globe-americas
     - globe-asia-australia
@@ -238,33 +242,35 @@ _select_data:
     - hand-thumb-up
     - hashtag
     - heart
-    - home-modern
     - home
+    - home-modern
     - identification
+    - inbox
     - inbox-arrow-down
     - inbox-stack
-    - inbox
     - information-circle
     - italic
     - key
     - language
     - lifebuoy
     - light-bulb
-    - link-slash
     - link
+    - link-slash
     - list-bullet
     - lock-closed
     - lock-open
+    - ltr
+    - magnifying-glass
     - magnifying-glass-circle
     - magnifying-glass-minus
     - magnifying-glass-plus
-    - magnifying-glass
-    - map-pin
     - map
+    - map-pin
     - megaphone
     - microphone
-    - minus-circle
     - minus
+    - minus-circle
+    - minus-small
     - moon
     - musical-note
     - newspaper
@@ -273,21 +279,22 @@ _select_data:
     - paint-brush
     - paper-airplane
     - paper-clip
-    - pause-circle
     - pause
-    - pencil-square
+    - pause-circle
     - pencil
+    - pencil-square
     - percent-badge
+    - phone
     - phone-arrow-down-left
     - phone-arrow-up-right
     - phone-x-mark
-    - phone
     - photo
+    - play
     - play-circle
     - play-pause
-    - play
-    - plus-circle
     - plus
+    - plus-circle
+    - plus-small
     - power
     - presentation-chart-bar
     - presentation-chart-line
@@ -303,18 +310,36 @@ _select_data:
     - rectangle-stack
     - rocket-launch
     - rss
+    - rtl
     - scale
     - scissors
-    - server-stack
     - server
+    - server-stack
     - share
     - shield-check
     - shield-exclamation
     - shopping-bag
     - shopping-cart
-    - signal-slash
     - signal
+    - signal-slash
     - slash
+    - social/bluesky
+    - social/discord
+    - social/facebook
+    - social/github
+    - social/gitlab
+    - social/gitter
+    - social/google
+    - social/instagram
+    - social/linkedin
+    - social/medium
+    - social/pinterest
+    - social/reddit
+    - social/tiktok
+    - social/twitch
+    - social/x
+    - social/yelp
+    - social/youtube
     - sparkles
     - speaker-wave
     - speaker-x-mark
@@ -323,8 +348,8 @@ _select_data:
     - squares-2x2
     - squares-plus
     - star
-    - stop-circle
     - stop
+    - stop-circle
     - strikethrough
     - sun
     - swatch
@@ -336,21 +361,21 @@ _select_data:
     - truck
     - tv
     - underline
+    - user
     - user-circle
     - user-group
     - user-minus
     - user-plus
-    - user
     - users
     - variable
-    - video-camera-slash
     - video-camera
+    - video-camera-slash
     - view-columns
     - viewfinder-circle
     - wallet
     - wifi
     - window
-    - wrench-screwdriver
     - wrench
+    - wrench-screwdriver
     - x-circle
     - x-mark

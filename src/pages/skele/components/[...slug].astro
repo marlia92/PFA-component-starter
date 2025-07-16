@@ -1,6 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import ComponentLayout from "../../../skele-docs/layouts/ComponentLayout.astro";
+// @ts-ignore
+import { existsSync, readFileSync } from "fs";
+import yaml from "js-yaml";
 
 export async function getStaticPaths() {
   const schemaFiles = import.meta.glob("../../../components/**/schema.ts", {
@@ -20,6 +23,7 @@ export async function getStaticPaths() {
     const componentKey = parts.slice(-2).join("/");
 
     let schema = null;
+    let bookshopData = null;
 
     // Convert kebab-case to camelCase for path matching
     const camelCaseKey = componentKey
@@ -44,14 +48,27 @@ export async function getStaticPaths() {
       }
     }
 
+    const lastPart = componentKey.split("/").pop();
+    const bookshopPath = `src/components/${componentKey}/${lastPart}.bookshop.yml`;
+
+    if (existsSync(bookshopPath)) {
+      try {
+        const content = readFileSync(bookshopPath, "utf8");
+
+        bookshopData = yaml.load(content);
+      } catch (error) {
+        console.error(`Error parsing bookshop file ${bookshopPath}:`, error);
+      }
+    }
+
     return {
       params: { slug: componentKey },
-      props: { page: entry, schema },
+      props: { page: entry, schema, bookshopData },
     };
   });
 }
 
-const { page, schema } = Astro.props;
+const { page, schema, bookshopData } = Astro.props;
 const { Content } = await page.render();
 const frontmatter = page.data;
 
@@ -73,6 +90,7 @@ const examples = await getCollection("docs/components", ({ slug }) => {
 <ComponentLayout
   frontmatter={frontmatter}
   schema={schema}
+  bookshopData={bookshopData}
   examples={examples}
   componentKey={componentKey}
 >

@@ -3,7 +3,7 @@ import ComponentProperties from "../components/ComponentProperties/index.astro";
 import ComponentViewer from "../components/ComponentViewer/index.astro";
 import LibraryLayout from "./LibraryLayout.astro";
 
-const { frontmatter, schema, examples = [], componentKey = "" } = Astro.props;
+const { frontmatter, schema, bookshopData, examples = [], componentKey = "" } = Astro.props;
 const meta = schema?.meta?.() || {
   description: "No description available",
 };
@@ -56,7 +56,7 @@ const primarySize = frontmatter.primary_size || "md";
   }
 
   <h2>Properties</h2>
-  <ComponentProperties shape={schema?.shape} />
+  <ComponentProperties bookshopData={bookshopData} />
 
   {processedExamples.length > 0 && <h2>Examples</h2>}
 

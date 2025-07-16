@@ -1,79 +1,55 @@
 ---
-import type { z } from "zod/v4";
+const { bookshopData } = Astro.props;
 
-const { shape } = Astro.props;
+function parseBookshopProperties(bookshopData: any): PropertyMeta[] {
+  const properties: PropertyMeta[] = [];
 
-function getBaseType(schema: z.ZodTypeAny): {
-  type: string;
-  optional: boolean;
-  default: string;
-  enumValues?: string[];
-  nestedProperties?: PropertyMeta[];
-} {
-  const constructorName = schema.constructor.name;
-  const def = (schema as any)._def;
+  if (bookshopData.blueprint) {
+    Object.entries(bookshopData.blueprint).forEach(([key, value]) => {
+      const inputConfig = bookshopData._inputs?.[key];
 
-  switch (constructorName) {
-    case "ZodString":
-      return { type: "string", optional: false, default: "" };
-    case "ZodBoolean":
-      return { type: "boolean", optional: false, default: "" };
-    case "ZodNumber":
-      return { type: "number", optional: false, default: "" };
-    case "ZodDate":
-      return { type: "date", optional: false, default: "" };
-    case "ZodEnum":
-      const enumValues = def.values;
-
-      return {
-        type: "enum",
+      properties.push({
+        name: key,
+        type: getPropertyType(inputConfig),
         optional: false,
-        default: "",
-        enumValues: Array.isArray(enumValues) ? enumValues : Object.keys(def.entries || {}),
-      };
-    case "ZodObject":
-      const shape = def.shape;
-      const nestedProperties: PropertyMeta[] = Object.entries(shape).map(([key, zodSchema]) => {
-        const baseType = getBaseType(zodSchema as z.ZodTypeAny);
-
-        return {
-          name: key,
-          ...baseType,
-          description: getDescription(zodSchema as z.ZodTypeAny),
-        };
+        default: value !== undefined && value !== null ? String(value) : "",
+        enumValues: getEnumValues(inputConfig),
+        description: inputConfig?.comment || "",
+        nestedProperties: undefined,
       });
+    });
+  }
 
-      return {
-        type: "object",
-        optional: false,
-        default: "",
-        nestedProperties,
-      };
-    case "ZodOptional":
-    case "ZodDefault":
-      const innerType = getBaseType(def.innerType);
-      const isDefault = constructorName === "ZodDefault";
+  return properties;
+}
 
-      return {
-        ...innerType,
-        optional: innerType.optional || constructorName === "ZodOptional",
-        default: isDefault ? String(def.defaultValue) : innerType.default,
-      };
+function getPropertyType(inputConfig: any): string {
+  if (!inputConfig) {
+    return "string";
+  }
+
+  switch (inputConfig.type) {
+    case "text":
+    case "url":
+      return "string";
+    case "switch":
+      return "boolean";
+    case "select":
+      return "enum";
+    case "number":
+      return "number";
+    case "array":
+      return "array";
     default:
-      const inner = def?.innerType;
-
-      return inner ? getBaseType(inner) : { type: constructorName, optional: false, default: "" };
+      return "string";
   }
 }
 
-function getDescription(schema: z.ZodTypeAny): string {
-  const desc = (schema as any).meta?.()?.description;
-
-  if (desc) return desc;
-
-  const inner = (schema as any)._def?.innerType;
-
-  return inner ? getDescription(inner) : "";
+function getEnumValues(inputConfig: any): string[] | undefined {
+  if (inputConfig?.type === "select" && inputConfig.options?.values) {
+    return Array.isArray(inputConfig.options.values) ? inputConfig.options.values : undefined;
+  }
+  return undefined;
 }
 
 type PropertyMeta = {
@@ -86,64 +62,57 @@ type PropertyMeta = {
   nestedProperties?: PropertyMeta[];
 };
 
-const properties: PropertyMeta[] = shape
-  ? Object.entries(shape).map(([key, zodSchema]) => {
-      const baseType = getBaseType(zodSchema as z.ZodTypeAny);
-
-      return {
-        name: key,
-        ...baseType,
-        description: getDescription(zodSchema as z.ZodTypeAny),
-      };
-    })
-  : [];
+const properties: PropertyMeta[] = bookshopData ? parseBookshopProperties(bookshopData) : [];
 ---
 
 <div class="properties">
   {
-    properties.map((prop: PropertyMeta) => {
-      function renderProperty(prop: PropertyMeta) {
-        return (
-          <div class="property">
-            <h3>
-              {prop.name}{" "}
-              <span class="property-type">
-                {prop.type}
-                {prop.optional && "| optional"}
-                {prop.default && ` | default: ${prop.default}`}
-              </span>
-            </h3>
-            {prop.description && <p>{prop.description}</p>}
+    properties.length > 0 ? (
+      properties.map((prop: PropertyMeta) => {
+        function renderProperty(prop: PropertyMeta) {
+          return (
+            <div class="property">
+              <h3>
+                {prop.name}{" "}
+                <span class="property-type">
+                  {prop.type}
+                  {prop.default && ` | default: ${prop.default}`}
+                </span>
+              </h3>
+              {prop.description && <p>{prop.description}</p>}
 
-            {prop.enumValues && prop.enumValues.length > 0 && (
-              <div class="enum-values">
-                <strong>Accepted values:</strong>
-                <ul>
-                  {prop.enumValues.map((value: string) => (
-                    <li>
-                      <code>{value}</code>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {prop.nestedProperties && prop.nestedProperties.length > 0 && (
-              <div class="nested-properties">
-                <strong>Properties:</strong>
-                <div class="nested-property-list">
-                  {prop.nestedProperties.map((nestedProp: PropertyMeta) =>
-                    renderProperty(nestedProp)
-                  )}
+              {prop.enumValues && prop.enumValues.length > 0 && (
+                <div class="enum-values">
+                  <strong>Accepted values:</strong>
+                  <ul>
+                    {prop.enumValues.map((value: string) => (
+                      <li>
+                        <code>{value}</code>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
-            )}
-          </div>
-        );
-      }
+              )}
 
-      return renderProperty(prop);
-    })
+              {prop.nestedProperties && prop.nestedProperties.length > 0 && (
+                <div class="nested-properties">
+                  <strong>Properties:</strong>
+                  <div class="nested-property-list">
+                    {prop.nestedProperties.map((nestedProp: PropertyMeta) =>
+                      renderProperty(nestedProp)
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }
+
+        return renderProperty(prop);
+      })
+    ) : (
+      <p>No properties available. Make sure the component has a valid bookshop.yml file.</p>
+    )
   }
 </div>
 
