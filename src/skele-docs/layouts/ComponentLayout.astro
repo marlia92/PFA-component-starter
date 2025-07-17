@@ -4,8 +4,9 @@ import ComponentViewer from "../components/ComponentViewer/index.astro";
 import LibraryLayout from "./LibraryLayout.astro";
 
 const { frontmatter, schema, bookshopData, examples = [], componentKey = "" } = Astro.props;
-const meta = schema?.meta?.() || {
-  description: "No description available",
+const meta = {
+  description: bookshopData?.spec?.description || "No description available",
+  title: bookshopData?.spec?.label || frontmatter.title,
 };
 
 const primaryExample = examples.find(

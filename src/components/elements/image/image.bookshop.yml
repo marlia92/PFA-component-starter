@@ -1,0 +1,21 @@
+spec:
+  structures:
+    - content_blocks
+  label: Image
+  description: Displays an image optimized for performance.
+  icon: image
+  tags: []
+
+blueprint:
+  src:
+  alt:
+
+preview:
+
+_inputs:
+  src:
+    type: text
+    comment: The URL or path to the image
+  alt:
+    type: text
+    comment: Alternative text for accessibility

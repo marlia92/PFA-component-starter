@@ -27,6 +27,7 @@
     "format:fix": "prettier --write ."
   },
   "dependencies": {
+    "@11ty/eleventy-img": "^6.0.4",
     "@bookshop/astro-bookshop": "3.16.3",
     "@bookshop/astro-engine": "3.16.3",
     "@bookshop/generate": "3.16.3",
@@ -34,7 +35,10 @@
     "astro-icon": "^1.1.5",
     "js-yaml": "^4.1.0",
     "markdown-it": "^14.1.0",
-    "shiki": "^3.7.0"
+    "probe-image-size": "^7.2.3",
+    "sharp": "^0.34.2",
+    "shiki": "^3.7.0",
+    "unpic": "^4.1.2"
   },
   "devDependencies": {
     "@csstools/postcss-global-data": "^3.0.0",

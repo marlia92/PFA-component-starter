@@ -1,0 +1,83 @@
+---
+import probe from "probe-image-size";
+import { transformUrl } from "unpic";
+import "./styles.pcss";
+
+const { src, alt, class: className, sizes, widths, width, height, ...htmlAttributes } = Astro.props;
+
+const classNames = className || "";
+
+let imageWidth = width;
+let imageHeight = height;
+
+if (!imageWidth || !imageHeight) {
+  try {
+    const dimensions = await probe(src);
+
+    if (dimensions && dimensions.width && dimensions.height) {
+      imageWidth = imageWidth || dimensions.width;
+      imageHeight = imageHeight || dimensions.height;
+      console.log(`Detected dimensions with probe-image-size: ${imageWidth}x${imageHeight}`);
+    }
+  } catch (error) {
+    console.warn(`Could not detect image dimensions for: ${src}`, error);
+  }
+}
+
+const fallbackWidth = imageWidth || Math.min(...widths);
+const fallbackHeight = imageHeight || Math.round(fallbackWidth * 0.75);
+const aspectRatio = imageWidth && imageHeight ? imageHeight / imageWidth : 0.75;
+---
+
+<picture class:list={classNames} {...htmlAttributes}>
+  <source
+    type="image/avif"
+    srcset={widths
+      .map(
+        (width: number) =>
+          `${transformUrl({
+            url: src,
+            width,
+            height: Math.round(width * aspectRatio),
+            format: "avif",
+          })} ${width}w`
+      )
+      .join(", ")}
+    sizes={sizes}
+  />
+  <source
+    type="image/webp"
+    srcset={widths
+      .map(
+        (width: number) =>
+          `${transformUrl({
+            url: src,
+            width,
+            height: Math.round(width * aspectRatio),
+            format: "webp",
+          })} ${width}w`
+      )
+      .join(", ")}
+    sizes={sizes}
+  />
+  <img
+    src={src}
+    alt={alt || ""}
+    loading="lazy"
+    decoding="async"
+    width={fallbackWidth}
+    height={fallbackHeight}
+    srcset={widths
+      .map(
+        (width: number) =>
+          `${transformUrl({
+            url: src,
+            width,
+            height: Math.round(width * aspectRatio),
+            format: "jpeg",
+          })} ${width}w`
+      )
+      .join(", ")}
+    sizes={sizes}
+  />
+</picture>

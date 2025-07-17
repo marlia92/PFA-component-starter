@@ -1,5 +1,5 @@
 ---
-const { component_examples = [], title = "", size = "", componentKey = "" } = Astro.props;
+const { component_examples = [], title = "", size = "md", componentKey = "" } = Astro.props;
 
 import { Code } from "astro:components";
 import Button from "../../../components/elements/button/button.astro";
@@ -298,11 +298,11 @@ async function loadComponent(componentName: string) {
     }
 
     &-md {
-      height: 15rem;
+      height: 20rem;
     }
 
     &-lg {
-      height: 20rem;
+      height: 30rem;
     }
   }
 

@@ -1,0 +1,59 @@
+---
+import { Picture } from "astro:assets";
+import "./styles.pcss";
+
+const {
+  src,
+  alt,
+  class: className,
+  sizes,
+  widths,
+  width,
+  height,
+  ...htmlAttributes
+} = Astro.props as Props;
+
+let imageSrc = src;
+let imageWidth = width;
+let imageHeight = height;
+
+const isRemoteUrl =
+  typeof src === "string" && (src.startsWith("http://") || src.startsWith("https://"));
+
+const imageFiles = import.meta.glob("/src/assets/images/**/*", {
+  import: "default",
+}) as Record<string, any>;
+
+if (typeof src === "string" && src.startsWith("/images/")) {
+  const assetPath = src.replace("/images/", "");
+
+  const imageKey = Object.keys(imageFiles).find((key) => key.endsWith(assetPath));
+
+  if (imageKey && imageFiles[imageKey]) {
+    imageSrc = await imageFiles[imageKey]();
+
+    if (!imageWidth) imageWidth = imageSrc.width;
+    if (!imageHeight) imageHeight = imageSrc.height;
+  } else {
+    console.warn(`Local image not found for path: ${src}`);
+
+    imageWidth = imageWidth || 800;
+    imageHeight = imageHeight || 450;
+  }
+}
+---
+
+<Picture
+  src={imageSrc}
+  alt={alt}
+  widths={widths}
+  sizes={sizes}
+  formats={["avif", "webp"]}
+  {...imageWidth ? { width: imageWidth } : {}}
+  {...imageHeight ? { height: imageHeight } : {}}
+  {...isRemoteUrl ? { inferSize: true } : {}}
+  pictureAttributes={{
+    class: className,
+    ...htmlAttributes,
+  }}
+/>
