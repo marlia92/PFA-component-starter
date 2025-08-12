@@ -4,12 +4,12 @@
   .nav-item-toggle {
     display: none;
 
-    &:checked ~ div[role="region"] {
+    &:checked ~ .nav-item-content {
       animation: grow-out 300ms ease-out;
       display: revert;
     }
 
-    & ~ div[role="region"] {
+    & ~ .nav-item-content {
       display: none;
     }
   }
@@ -20,7 +20,7 @@
 
   > a,
   > .nav-item-trigger {
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-xs);
     color: var(--color-text-strong);
     cursor: pointer;
     display: block;
@@ -82,15 +82,20 @@
     width: 0.8rem;
   }
 
+  .nav-item-toggle:checked ~ .nav-item-content {
+    animation: grow-out-centered 300ms ease-out;
+  }
+
   > .nav-item-content {
     background: var(--color-bg);
     border: 1px solid var(--color-border-subtle);
     border-radius: var(--radius-xs);
-    left: 0;
+    left: 50%;
     margin-top: var(--spacing-xs);
     overflow: hidden;
     position: absolute;
     top: 100%;
+    transform: translateX(-50%);
     z-index: var(--layer-3);
   }
 

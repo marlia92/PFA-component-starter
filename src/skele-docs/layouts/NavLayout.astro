@@ -5,8 +5,6 @@ import NavList from "../../components/navigation/nav-list/nav-list.astro";
 import NavRoot from "../../components/navigation/nav-root/nav-root.astro";
 import navData from "../data/nav.json";
 
-const variant = "sidebar";
-
 const allComponents = await getCollection("docs-components");
 
 const componentsByCategory: Record<string, Array<{ name: string; path: string }>> = {};
@@ -61,30 +59,25 @@ const populatedNavData = navData.map((section) => {
 });
 ---
 
-<NavRoot variant={variant}>
+<div class="library-sidebar">
   <img
     src="/assets/images/skele-light.svg"
     alt="Logo"
     height="32"
     width="110"
-    style=" margin-inline-start: var(--spacing-lg);margin-bottom: var(--spacing-md);"
+    class="sidebar-logo"
   />
-  <NavList>
-    {
-      populatedNavData
-        .map((section, index) => {
-          try {
+  <NavRoot variant="sidebar">
+    <NavList>
+      {
+        populatedNavData
+          .map((section, index) => {
             if (section.group && section.items && Array.isArray(section.items)) {
               return (
                 <NavItem label={section.group} defaultOpen={(section as any).defaultOpen || false}>
                   <NavList>
                     {section.items.map((item, itemIndex) => {
-                      try {
-                        return <NavItem href={item.path} label={item.name} />;
-                      } catch (itemError) {
-                        console.error(`Error rendering navigation item ${itemIndex}:`, itemError);
-                        return null;
-                      }
+                      return <NavItem href={item.path} label={item.name} />;
                     })}
                   </NavList>
                 </NavItem>
@@ -96,12 +89,9 @@ const populatedNavData = navData.map((section) => {
             }
 
             return null;
-          } catch (sectionError) {
-            console.error(`Error rendering navigation section ${index}:`, sectionError);
-            return null;
-          }
-        })
-        .filter(Boolean)
-    }
-  </NavList>
-</NavRoot>
+          })
+          .filter(Boolean)
+      }
+    </NavList>
+  </NavRoot>
+</div>

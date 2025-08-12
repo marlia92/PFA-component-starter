@@ -16,6 +16,18 @@
     }
   }
 
+  @keyframes grow-out-centered {
+    0% {
+      opacity: 0.3;
+      transform: translateX(-50%) translateY(-5%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0%);
+    }
+  }
+
   @keyframes fade-in {
     0% {
       opacity: 0;
@@ -29,8 +41,8 @@
   @media (prefers-reduced-motion: reduce) {
     * {
       animation: none !important;
-      transition: none !important;
       scroll-behavior: auto !important;
+      transition: none !important;
     }
   }
 }
