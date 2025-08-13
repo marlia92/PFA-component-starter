@@ -50,7 +50,7 @@ const navId = `nav-${crypto.randomUUID()}`;
   <script>
     // Handle mobile navigation toggle changes
     document.addEventListener('change', function(e) {
-      const toggle = e.target as HTMLInputElement;
+      const toggle = e.target;
       
       // Only handle nav-toggle checkboxes
       if (!toggle || !toggle.classList || !toggle.classList.contains('nav-toggle')) {
@@ -60,7 +60,7 @@ const navId = `nav-${crypto.randomUUID()}`;
       // Find the nav and hamburger elements
       const navId = toggle.id.replace('nav-toggle-', '');
       const nav = document.getElementById(navId);
-      const hamburger = document.querySelector(`label[for="${toggle.id}"]`) as HTMLLabelElement;
+      const hamburger = document.querySelector(`label[for="${toggle.id}"]`);
       
       // Update aria attributes
       if (nav && hamburger) {
@@ -85,7 +85,7 @@ const navId = `nav-${crypto.randomUUID()}`;
     // Close navs with Escape key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
-        const openNavs = document.querySelectorAll('.nav-toggle:checked') as NodeListOf<HTMLInputElement>;
+        const openNavs = document.querySelectorAll('.nav-toggle:checked');
         if (openNavs.length > 0) {
           openNavs.forEach(toggle => {
             toggle.checked = false;
