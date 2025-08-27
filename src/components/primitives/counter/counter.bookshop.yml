@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: Counter
   description: Animated number that counts up when visible.
   icon: speed

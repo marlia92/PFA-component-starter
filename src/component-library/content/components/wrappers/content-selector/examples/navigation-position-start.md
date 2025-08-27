@@ -8,7 +8,7 @@ blocks:
     - title: FAQ
       sub_text: Common questions
       icon_name: question-mark-circle
-      content_blocks:
+      contentBlocks:
         - _bookshop_name: primitives/heading
           text: "Frequently asked questions"
           level: h2
@@ -23,7 +23,7 @@ blocks:
     - title: Shipping
       sub_text: How we deliver
       icon_name: truck
-      content_blocks:
+      contentBlocks:
         - _bookshop_name: primitives/paragraph
           text: |
             We ship worldwide. Orders leave within 2 business days.
@@ -42,7 +42,7 @@ blocks:
     - title: Returns
       sub_text: Easy and fair
       icon_name: arrow-path
-      content_blocks:
+      contentBlocks:
         - _bookshop_name: primitives/paragraph
           text: "30‑day returns. Unused items only. Full refund once received."
           align: start

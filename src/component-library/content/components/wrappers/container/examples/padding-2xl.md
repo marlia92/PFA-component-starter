@@ -6,7 +6,7 @@ blocks:
   backgroundColor: "surface"
   paddingHorizontal: 2xl
   paddingVertical: 2xl
-  content_blocks:
+  contentBlocks:
     - _bookshop_name: "primitives/heading"
       text: 2xl padding
       level: h2

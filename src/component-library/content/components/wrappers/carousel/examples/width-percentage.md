@@ -7,37 +7,42 @@ blocks:
   slideWidthPercent: "33%"
   minSlideWidth: 200
   slides:
-    - content_blocks:
+    - contentBlocks:
         - _bookshop_name: "wrappers/card"
           paddingHorizontal: xs
+          paddingVertical: sm
           contentBlocks:
             - _bookshop_name: "primitives/smart-image"
               src: /images/component-library/quiet-street.jpg
               alt: "Quiet Street"
-    - content_blocks:
+    - contentBlocks:
         - _bookshop_name: "wrappers/card"
           paddingHorizontal: xs
+          paddingVertical: sm
           contentBlocks:
             - _bookshop_name: "primitives/smart-image"
               src: /images/component-library/sunset.jpg
               alt: "Sunset"
-    - content_blocks:
+    - contentBlocks:
         - _bookshop_name: "wrappers/card"
           paddingHorizontal: xs
+          paddingVertical: sm
           contentBlocks:
             - _bookshop_name: "primitives/smart-image"
               src: /images/component-library/sheep.jpg
               alt: "Sheep"
-    - content_blocks:
+    - contentBlocks:
         - _bookshop_name: "wrappers/card"
           paddingHorizontal: xs
+          paddingVertical: sm
           contentBlocks:
             - _bookshop_name: "primitives/smart-image"
               src: /images/component-library/castle.jpg
               alt: "Castle"
-    - content_blocks:
+    - contentBlocks:
         - _bookshop_name: "wrappers/card"
           paddingHorizontal: xs
+          paddingVertical: sm
           contentBlocks:
             - _bookshop_name: "primitives/smart-image"
               src: /images/component-library/dunedin-cliff.jpg

@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: List
   description: Displays items in a list with icons as markers
   icon: list

@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: Grid
   description: "Responsive, centered grid with configurable sizing."
   icon: squares-2x2

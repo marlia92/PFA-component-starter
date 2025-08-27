@@ -6,7 +6,7 @@ blocks:
   firstColumnContentBlocks:
     - _bookshop_name: "wrappers/container"
       backgroundColor: "accent"
-      content_blocks:
+      contentBlocks:
         - _bookshop_name: "primitives/rich-text"
           text: |-
             ## Side A
@@ -15,7 +15,7 @@ blocks:
   secondColumnContentBlocks:
     - _bookshop_name: "wrappers/container"
       backgroundColor: "highlight"
-      content_blocks:
+      contentBlocks:
         - _bookshop_name: "primitives/rich-text"
           text: |-
             ## Side B

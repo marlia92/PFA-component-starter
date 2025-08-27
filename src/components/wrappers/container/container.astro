@@ -4,10 +4,10 @@ import Component from "@components/utils/renderBlock.astro";
 
 const {
   label,
-  content_blocks,
+  contentBlocks,
   maxContentWidth,
-  paddingHorizontal = "md",
-  paddingVertical = "md",
+  paddingHorizontal,
+  paddingVertical,
   colorScheme,
   backgroundColor,
   backgroundImage,
@@ -58,7 +58,7 @@ const htmlAttributes = Object.fromEntries(
       ]}
     >
       <slot />
-      <Component contentBlocks={content_blocks} />
+      <Component contentBlocks={contentBlocks} />
     </div>
   </div>
 </section>

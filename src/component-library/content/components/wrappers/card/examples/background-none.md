@@ -4,6 +4,8 @@ spacing:
 blocks:
   _bookshop_name: "wrappers/card"
   backgroundColor:
+  paddingHorizontal: sm
+  paddingVertical: sm
   contentBlocks:
     - _bookshop_name: "primitives/heading"
       text: "No Background Card"

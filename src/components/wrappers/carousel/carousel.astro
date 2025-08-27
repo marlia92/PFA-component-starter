@@ -70,7 +70,7 @@ const carouselStyles = `
       {
         slides.map((slide: any, index: number) => (
           <div class="slide" role="group" aria-label={`Slide ${index + 1} of ${slides.length}`}>
-            <Component contentBlocks={slide.content_blocks} />
+            <Component contentBlocks={slide.contentBlocks} />
           </div>
         ))
       }

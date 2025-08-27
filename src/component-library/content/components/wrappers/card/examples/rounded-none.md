@@ -5,6 +5,8 @@ blocks:
   _bookshop_name: "wrappers/card"
   backgroundColor: surface
   rounded: false
+  paddingHorizontal: sm
+  paddingVertical: sm
   contentBlocks:
     - _bookshop_name: "primitives/heading"
       text: "Square Card"

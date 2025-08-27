@@ -5,8 +5,7 @@ blocks:
   _bookshop_name: "wrappers/container"
   backgroundColor: "surface"
   maxContentWidth: sm
-  paddingHorizontal: null
-  content_blocks:
+  contentBlocks:
     - _bookshop_name: "primitives/heading"
       text: sm max content width
       level: h2

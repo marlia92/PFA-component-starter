@@ -9,27 +9,33 @@ blocks:
   equalWidth: true
   items:
     - contentBlocks:
-        - _bookshop_name: "wrappers/container"
+        - _bookshop_name: "wrappers/card"
           backgroundColor: "surface"
-          content_blocks:
+          paddingHorizontal: md
+          paddingVertical: md
+          contentBlocks:
             - _bookshop_name: "primitives/heading"
               text: "Short Item"
               level: h3
             - _bookshop_name: "primitives/paragraph"
               text: "This is a short grid item that will stretch to match the height of the tallest item."
     - contentBlocks:
-        - _bookshop_name: "wrappers/container"
+        - _bookshop_name: "wrappers/card"
           backgroundColor: "accent"
-          content_blocks:
+          paddingHorizontal: md
+          paddingVertical: md
+          contentBlocks:
             - _bookshop_name: "primitives/heading"
               text: "Taller Item"
               level: h3
             - _bookshop_name: "primitives/paragraph"
               text: "This grid item has more content and will be taller than the others. All items will stretch to match this height."
     - contentBlocks:
-        - _bookshop_name: "wrappers/container"
+        - _bookshop_name: "wrappers/card"
           backgroundColor: "highlight"
-          content_blocks:
+          paddingHorizontal: md
+          paddingVertical: md
+          contentBlocks:
             - _bookshop_name: "primitives/heading"
               text: "Medium Item"
               level: h3

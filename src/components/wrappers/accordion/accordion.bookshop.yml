@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: Accordion
   description: Hides content behind an expandable menu.
   icon: expand_all
@@ -33,4 +33,4 @@ _structures:
         icon: place_item
         value:
           title:
-          content_blocks:
+          contentBlocks:

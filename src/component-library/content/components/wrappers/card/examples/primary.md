@@ -4,6 +4,8 @@ spacing: all
 blocks:
   _bookshop_name: "wrappers/card"
   border: true
+  paddingHorizontal: sm
+  paddingVertical: sm
   contentBlocks:
     - _bookshop_name: "primitives/heading"
       text: "This is a card"

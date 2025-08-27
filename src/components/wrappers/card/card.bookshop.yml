@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: Card
   description: "A container component that provides card layout with background options and padding controls."
   icon: rectangle-stack

@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: Button Group
   description: "Controls the alignment and direction of buttons."
   icon: rectangle

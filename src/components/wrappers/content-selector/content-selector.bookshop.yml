@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: Content Selector
   description: Switches between related content panels using tab buttons.
   icon: view_sidebar
@@ -29,4 +29,4 @@ _structures:
         icon: place_item
         value:
           title:
-          content_blocks:
+          contentBlocks:

@@ -4,7 +4,9 @@ spacing:
 blocks:
   _bookshop_name: "wrappers/container"
   backgroundColor: "highlight"
-  content_blocks:
+  paddingVertical: "lg"
+  paddingHorizontal: "lg"
+  contentBlocks:
     - _bookshop_name: "primitives/heading"
       text: Highlight background color
       level: h2

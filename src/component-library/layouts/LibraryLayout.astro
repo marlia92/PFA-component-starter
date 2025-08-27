@@ -7,7 +7,7 @@ const libraryLayoutSchema = z.object({
   frontmatter: z
     .object({
       title: z.string().optional(),
-      content_blocks: z.array(z.any()).optional(),
+      contentBlocks: z.array(z.any()).optional(),
     })
     .optional(),
 });

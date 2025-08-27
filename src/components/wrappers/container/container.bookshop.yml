@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: Container
   description: "A container component that provides layout structure with background options, padding, and content width controls."
   icon: rectangle-stack
@@ -8,7 +8,7 @@ spec:
 
 blueprint:
   label: ""
-  content_blocks: []
+  contentBlocks: []
   maxContentWidth: md
   paddingHorizontal: md
   paddingVertical: md
@@ -28,7 +28,7 @@ _inputs:
   label:
     comment: Optional label for the container to help identify it in the editor.
     type: text
-  content_blocks:
+  contentBlocks:
     comment: Array of content blocks to render within the container.
     type: array
   maxContentWidth:

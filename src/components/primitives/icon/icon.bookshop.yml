@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: Icon
   description: Displays an icon from your icon library.
   icon: star

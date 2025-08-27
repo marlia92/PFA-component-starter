@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: Definition List
   description: "Useful for displaying key-value pairs, ideal for glossaries, opening times, etc."
   icon: dns

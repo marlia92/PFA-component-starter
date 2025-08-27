@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: Carousel
   description: "A carousel component for displaying slides with navigation controls"
   icon: image
@@ -26,7 +26,7 @@ _inputs:
     comment: Array of slides to display in the carousel.
     type: array
     _inputs:
-      content_blocks:
+      contentBlocks:
         comment: The content blocks to display in this slide.
         type: array
   autoPlay:

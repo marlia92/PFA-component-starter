@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: Embed
   description: "Embed content from other sources."
   icon: data_object

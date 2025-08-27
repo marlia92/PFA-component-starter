@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: Divider
   description: A horizontal line to separate content
   icon: horizontal_rule

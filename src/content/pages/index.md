@@ -1,7 +1,7 @@
 ---
 _schema: default
 title: Your Site
-content_blocks:
+contentBlocks:
   - _bookshop_name: wrappers/button-group
     buttonBlocks:
       - _bookshop_name: primitives/button

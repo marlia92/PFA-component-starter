@@ -6,36 +6,44 @@ blocks:
   equalWidth: false
   items:
     - contentBlocks:
-        - _bookshop_name: "wrappers/container"
+        - _bookshop_name: "wrappers/card"
           backgroundColor: "surface"
-          content_blocks:
+          paddingHorizontal: md
+          paddingVertical: md
+          contentBlocks:
             - _bookshop_name: "primitives/heading"
               text: "Short"
               level: h3
             - _bookshop_name: "primitives/paragraph"
               text: "Short content."
     - contentBlocks:
-        - _bookshop_name: "wrappers/container"
+        - _bookshop_name: "wrappers/card"
           backgroundColor: "accent"
-          content_blocks:
+          paddingHorizontal: md
+          paddingVertical: md
+          contentBlocks:
             - _bookshop_name: "primitives/heading"
               text: "Medium Length Content"
               level: h3
             - _bookshop_name: "primitives/paragraph"
               text: "This item has medium length content that determines its natural width."
     - contentBlocks:
-        - _bookshop_name: "wrappers/container"
+        - _bookshop_name: "wrappers/card"
           backgroundColor: "highlight"
-          content_blocks:
+          paddingHorizontal: md
+          paddingVertical: md
+          contentBlocks:
             - _bookshop_name: "primitives/heading"
               text: "Longer Content Title"
               level: h3
             - _bookshop_name: "primitives/paragraph"
               text: "This item has significantly more content and will be wider."
     - contentBlocks:
-        - _bookshop_name: "wrappers/container"
+        - _bookshop_name: "wrappers/card"
           backgroundColor: "surface"
-          content_blocks:
+          paddingHorizontal: md
+          paddingVertical: md
+          contentBlocks:
             - _bookshop_name: "primitives/heading"
               text: "Tiny"
               level: h3

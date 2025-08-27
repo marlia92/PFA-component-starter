@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: Paragraph
   description: "Displays blocks of text for content sections with options for alignment, size and decoration."
   icon: view_headline

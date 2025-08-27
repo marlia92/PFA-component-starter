@@ -9,27 +9,33 @@ blocks:
   verticalAlignment: "stretch"
   items:
     - contentBlocks:
-        - _bookshop_name: "wrappers/container"
+        - _bookshop_name: "wrappers/card"
           backgroundColor: "surface"
-          content_blocks:
+          paddingHorizontal: md
+          paddingVertical: md
+          contentBlocks:
             - _bookshop_name: "primitives/heading"
               text: "Fixed Width"
               level: h3
             - _bookshop_name: "primitives/paragraph"
               text: "All items have exactly the same width regardless of content length. This creates a rigid, uniform grid."
     - contentBlocks:
-        - _bookshop_name: "wrappers/container"
+        - _bookshop_name: "wrappers/card"
           backgroundColor: "accent"
-          content_blocks:
+          paddingHorizontal: md
+          paddingVertical: md
+          contentBlocks:
             - _bookshop_name: "primitives/heading"
               text: "Rigid Layout"
               level: h3
             - _bookshop_name: "primitives/paragraph"
               text: "Perfect for displaying cards or features that need to be exactly the same size."
     - contentBlocks:
-        - _bookshop_name: "wrappers/container"
+        - _bookshop_name: "wrappers/card"
           backgroundColor: "highlight"
-          content_blocks:
+          paddingHorizontal: md
+          paddingVertical: md
+          contentBlocks:
             - _bookshop_name: "primitives/heading"
               text: "Predictable Sizing"
               level: h3

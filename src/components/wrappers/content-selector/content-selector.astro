@@ -64,7 +64,7 @@ const uniqueId = crypto.randomUUID();
           aria-labelledby={`tablabel-${uniqueId}-${index}`}
           aria-hidden={index !== 0}
         >
-          <RenderBlock contentBlocks={item.content_blocks} />
+          <RenderBlock contentBlocks={item.contentBlocks} />
         </div>
       ))
     }

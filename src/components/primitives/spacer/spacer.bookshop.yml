@@ -1,6 +1,6 @@
 spec:
   structures:
-    - content_blocks
+    - contentBlocks
   label: Spacer
   description: Gives space between content
   icon: space_bar

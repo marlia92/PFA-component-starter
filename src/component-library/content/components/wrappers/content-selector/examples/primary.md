@@ -6,7 +6,7 @@ blocks:
   navigationPosition: start
   items:
     - title: Overview
-      content_blocks:
+      contentBlocks:
         - _bookshop_name: primitives/heading
           text: "Overview"
           level: h2
@@ -17,7 +17,7 @@ blocks:
           align: start
           size: md
     - title: Details
-      content_blocks:
+      contentBlocks:
         - _bookshop_name: primitives/heading
           text: "Details"
           level: h2
@@ -28,7 +28,7 @@ blocks:
           align: start
           size: md
     - title: Next steps
-      content_blocks:
+      contentBlocks:
         - _bookshop_name: primitives/heading
           text: "Next steps"
           level: h2

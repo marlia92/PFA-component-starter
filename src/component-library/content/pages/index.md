@@ -1,6 +1,6 @@
 ---
 title: "Component Library"
-content_blocks:
+contentBlocks:
   - _bookshop_name: primitives/button
     text: Welcome to Skele
     type: primary

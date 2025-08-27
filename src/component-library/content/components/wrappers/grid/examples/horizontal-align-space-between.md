@@ -9,27 +9,33 @@ blocks:
   equalWidth: true
   items:
     - contentBlocks:
-        - _bookshop_name: "wrappers/container"
+        - _bookshop_name: "wrappers/card"
           backgroundColor: "surface"
-          content_blocks:
+          paddingHorizontal: md
+          paddingVertical: md
+          contentBlocks:
             - _bookshop_name: "primitives/heading"
               text: "Item 1"
               level: h3
             - _bookshop_name: "primitives/paragraph"
               text: "This is a grid item with sample content."
     - contentBlocks:
-        - _bookshop_name: "wrappers/container"
+        - _bookshop_name: "wrappers/card"
           backgroundColor: "accent"
-          content_blocks:
+          paddingHorizontal: md
+          paddingVertical: md
+          contentBlocks:
             - _bookshop_name: "primitives/heading"
               text: "Item 2"
               level: h3
             - _bookshop_name: "primitives/paragraph"
               text: "This is a grid item with sample content."
     - contentBlocks:
-        - _bookshop_name: "wrappers/container"
+        - _bookshop_name: "wrappers/card"
           backgroundColor: "highlight"
-          content_blocks:
+          paddingHorizontal: md
+          paddingVertical: md
+          contentBlocks:
             - _bookshop_name: "primitives/heading"
               text: "Item 3"
               level: h3

@@ -4,6 +4,7 @@ spacing:
 blocks:
   _bookshop_name: "wrappers/card"
   paddingVertical: 2xl
+  paddingHorizontal: sm
   backgroundImage:
     source: /images/component-library/dunedin-cliff.jpg
     alt: "Dunedin cliffside"
