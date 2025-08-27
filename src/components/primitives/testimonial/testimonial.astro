@@ -2,7 +2,7 @@
 import MarkdownIt from "markdown-it";
 
 const {
-  quote,
+  text,
   authorName,
   authorDescription,
   horizontalAlignment = "center",
@@ -15,7 +15,7 @@ const htmlAttributes = Object.fromEntries(
 );
 
 const md = MarkdownIt({ html: true });
-const MarkdownText = quote ? md.renderInline(quote) : "";
+const MarkdownText = text ? md.renderInline(text) : "";
 ---
 
 <blockquote

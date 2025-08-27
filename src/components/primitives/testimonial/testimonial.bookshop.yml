@@ -7,7 +7,7 @@ spec:
   tags:
 
 blueprint:
-  quote:
+  text:
   authorName:
   authorDescription:
   horizontalAlignment: start
@@ -17,7 +17,7 @@ preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
-  quote:
+  text:
     type: markdown
     comment: Quotation marks will be added around the text.
     options:
