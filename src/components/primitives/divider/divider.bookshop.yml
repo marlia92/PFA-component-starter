@@ -37,3 +37,4 @@ _inputs:
           value: 2xl
         - name: 3xl
           value: 3xl
+      value_key: value

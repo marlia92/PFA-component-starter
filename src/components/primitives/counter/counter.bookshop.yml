@@ -40,6 +40,3 @@ _inputs:
         - value: end
           name: End
       value_key: value
-      preview:
-        text:
-          - key: name
