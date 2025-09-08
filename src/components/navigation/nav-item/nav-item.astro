@@ -61,9 +61,11 @@ const isCurrentPage = href === Astro.url.pathname;
 </li>
 
 <script>
-  function closeAllDropdownsInParent(navItem: HTMLElement) {
+  function closeAllDropdownsInParent(navItem) {
     const navRoot = navItem.closest(".nav-root");
-    if (!navRoot) return;
+    if (!navRoot) {
+      return;
+    }
 
     navRoot.querySelectorAll(".nav-item-toggle").forEach((toggle) => {
       if (toggle instanceof HTMLInputElement) {
@@ -73,7 +75,7 @@ const isCurrentPage = href === Astro.url.pathname;
     });
   }
 
-  function updateAriaStates(toggle: HTMLInputElement, isExpanded: boolean) {
+  function updateAriaStates(toggle, isExpanded) {
     const content = document.getElementById(toggle.getAttribute("aria-controls") || "");
 
     if (content) {
@@ -84,8 +86,8 @@ const isCurrentPage = href === Astro.url.pathname;
   function setupDropdowns() {
     document.querySelectorAll(".nav-item-toggle").forEach((toggle) => {
       toggle.addEventListener("change", (e) => {
-        const target = e.target as HTMLInputElement;
-        const navItem = target.closest(".nav-item") as HTMLElement;
+        const target = e.target;
+        const navItem = target.closest(".nav-item");
 
         updateAriaStates(target, target.checked);
 
@@ -100,12 +102,10 @@ const isCurrentPage = href === Astro.url.pathname;
     // Add keyboard support for labels
     document.querySelectorAll(".nav-item-trigger").forEach((trigger) => {
       trigger.addEventListener("keydown", (e) => {
-        const keyEvent = e as KeyboardEvent;
+        const keyEvent = e;
         if (keyEvent.key === "Enter" || keyEvent.key === " ") {
           e.preventDefault();
-          const checkbox = document.getElementById(
-            trigger.getAttribute("for") || ""
-          ) as HTMLInputElement;
+          const checkbox = document.getElementById(trigger.getAttribute("for") || "");
           if (checkbox) {
             checkbox.checked = !checkbox.checked;
             checkbox.dispatchEvent(new Event("change"));

@@ -1,9 +1,5 @@
 ---
-export interface Props {
-  contentBlocks: any[];
-}
-
-const components: Record<string, Function> = {};
+const components = {};
 const componentImports = import.meta.glob("../**/*.{jsx,astro}", {
   eager: true,
 });
