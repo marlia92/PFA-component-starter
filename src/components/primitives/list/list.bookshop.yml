@@ -27,54 +27,42 @@ _inputs:
     type: select
     options:
       values:
-        - value: horizontal
+        - id: horizontal
           name: Horizontal
-        - value: vertical
+        - id: vertical
           name: Vertical
-      value_key: value
-      preview:
-        text:
-          - key: name
   horizontalAlignment:
     type: select
     options:
       values:
-        - value: start
+        - id: start
           name: Start
-        - value: center
+        - id: center
           name: Center
-        - value: end
+        - id: end
           name: End
-      value_key: value
-      preview:
-        text:
-          - key: name
   size:
     comment: Controls the size of the icon and text
     type: select
     options:
       values:
-        - value: xs
+        - id: xs
           name: Extra Small
-        - value: sm
+        - id: sm
           name: Small
-        - value: md
+        - id: md
           name: Medium
-        - value: lg
+        - id: lg
           name: Large
-        - value: xl
+        - id: xl
           name: Extra Large
-        - value: 2xl
+        - id: 2xl
           name: 2XL
-      value_key: value
-      preview:
-        text:
-          - key: name
 
 _structures:
   item:
     values:
-      - label: List item
+      - label: List Item
         icon: text_fields
         value:
           text: ""

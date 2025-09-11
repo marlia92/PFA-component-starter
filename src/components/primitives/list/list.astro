@@ -30,7 +30,7 @@ const md = new MarkdownIt({ html: true });
   {...htmlAttributes}
 >
   {
-    items.map((item: any) => {
+    items?.map((item: any) => {
       return (
         <li class="item">
           <Icon name={item.icon} size="none" class="list-icon" aria-hidden="true" />

@@ -18,22 +18,28 @@ preview:
 _inputs:
   name:
     type: select
+    comment: The name of the icon to display from the icon library
     options:
       values: _select_data.icons
-    comment: The name of the icon to display from the icon library
   size:
     type: select
     options:
       values:
-        - none
-        - sm
-        - md
-        - lg
+        - id: none
+          name: None
+        - id: sm
+          name: Small
+        - id: md
+          name: Medium
+        - id: lg
+          name: Large
     comment: The size of the icon
   background:
     type: select
+    comment: The background style for the icon
     options:
       values:
-        - none
-        - subtle
-    comment: The background style for the icon
+        - id: none
+          name: None
+        - id: subtle
+          name: Subtle

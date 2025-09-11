@@ -38,11 +38,9 @@ _inputs:
       undo: true
       blockquote: false
       bulletedlist: false
-      format: p
       image: false
       numberedlist: false
       snippet: false
-
   type:
     comment: The heading type/level.
     type: select
