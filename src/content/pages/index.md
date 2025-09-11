@@ -113,6 +113,10 @@ pageBlocks:
         videoSrc:
         videoPoster:
         title:
+      - _bookshop_name: wrappers/accordion
+        items:
+        openFirst: false
+        singleOpen: false
     maxContentWidth: 2xl
     paddingHorizontal: lg
     paddingVertical: lg
