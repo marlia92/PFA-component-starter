@@ -17,14 +17,21 @@ preview:
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
   size:
-    comment: The amount of space to add
+    comment: The amount of space to add.
     type: select
     options:
       values:
-        - xs
-        - sm
-        - md
-        - lg
-        - xl
-        - 2xl
-        - 3xl
+        - id: xs
+          name: Extra Small
+        - id: sm
+          name: Small
+        - id: md
+          name: Medium
+        - id: lg
+          name: Large
+        - id: xl
+          name: Extra Large
+        - id: 2xl
+          name: 2xl
+        - id: 3xl
+          name: 3xl

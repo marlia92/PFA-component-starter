@@ -5,8 +5,16 @@ spec:
     - secondContentBlocks
   label: Video
   description: "Play a video from YouTube, Vimeo, or your local files."
-  icon: data_object
+  icon: videocam
   tags: []
+  preview:
+    icon: videocam
+    text:
+      - template: Video - {videoType}
+      - Video
+    subtext:
+      - key: title
+      - key: videoSrc
 
 blueprint:
   videoType: youtube
@@ -22,23 +30,26 @@ _inputs:
     type: select
     options:
       values:
-        - youtube
-        - vimeo
-        - native
-    videoId:
-      comment: Enter a video ID from a public video on YouTube or Vimeo
-      hidden: 'videoType == "native"'
-    videoSrc:
-      type: file
-      comment: Must be mp4 as this is supported by all modern browsers
-      options:
-        accepts_mime_types:
-          - video/mp4
-        paths:
-          uploads: /src/assets/videos/
-      hidden: 'videoType != "native"'
-    videoPoster:
-      comment: The image displayed before the video plays or while it is loading.
-      hidden: 'videoType != "native"'
-    autoplay:
-      comment: Play the video automatically on load without the user pressing play
+        - id: youtube
+          name: Youtube
+        - id: vimeo
+          name: Vimeo
+        - id: native
+          name: Native
+  videoId:
+    comment: Enter a video ID from a public video on YouTube or Vimeo.
+    hidden: 'videoType == "native"'
+  videoSrc:
+    type: file
+    comment: Must be mp4 as this is supported by all modern browsers.
+    options:
+      accepts_mime_types:
+        - video/mp4
+      paths:
+        uploads: /src/assets/videos/
+    hidden: 'videoType != "native"'
+  videoPoster:
+    comment: The image displayed before the video plays or while it is loading.
+    hidden: 'videoType != "native"'
+  autoplay:
+    comment: Play the video automatically on load without the user pressing play.
