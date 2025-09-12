@@ -13,6 +13,7 @@ spec:
       - Testimonial
     subtext:
       - key: text
+      - Add testimonial text
 
 blueprint:
   text:
@@ -46,13 +47,9 @@ _inputs:
     type: select
     options:
       values:
-        - value: start
+        - id: start
           name: Start
-        - value: center
+        - id: center
           name: Center
-        - value: end
+        - id: end
           name: End
-      value_key: value
-      preview:
-        text:
-          - key: name

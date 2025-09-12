@@ -13,7 +13,7 @@ const accordionName = singleOpen ? `accordion-${crypto.randomUUID()}` : undefine
 
 <div class:list={["accordion"]} {...htmlAttributes}>
   {
-    items.map((item: any, index: number) => {
+    items?.map((item: any, index: number) => {
       const isFirst = index === 0 && openFirst;
 
       return (

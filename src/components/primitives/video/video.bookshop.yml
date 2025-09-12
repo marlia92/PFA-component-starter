@@ -15,6 +15,7 @@ spec:
     subtext:
       - key: title
       - key: videoSrc
+      - Add video source
 
 blueprint:
   videoType: youtube

@@ -13,6 +13,7 @@ spec:
     subtext:
       - key: title
       - key: source
+      - Add embed source
 
 blueprint:
   source:

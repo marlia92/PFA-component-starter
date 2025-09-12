@@ -7,6 +7,10 @@ spec:
   description: "Controls the alignment and direction of buttons."
   icon: rectangle
   tags: []
+  preview:
+    text: Button Group
+    subtext:
+      - template: 
 
 blueprint:
   buttonBlocks:
@@ -20,18 +24,25 @@ preview:
 _inputs:
   buttonBlocks:
     comment: Array of button components to render within the group.
+    options:
+      structures: _structures.buttonBlocks
   direction:
     comment: Direction of button layout.
     type: select
     options:
       values:
-        - row
-        - column
+        - id: row
+          name: Row
+        - id: column
+          name: Column
   align:
     comment: Alignment of buttons within the group.
     type: select
     options:
       values:
-        - start
-        - center
-        - end
+        - id: start
+          name: Start
+        - id: center
+          name: Center
+        - id: end
+          name: End

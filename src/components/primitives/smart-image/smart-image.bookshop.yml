@@ -12,7 +12,8 @@ spec:
     text: Smart Image
     subtext:
       - key: alt
-      - key: source  
+      - key: source
+      - Add image source
 
 blueprint:
   source:

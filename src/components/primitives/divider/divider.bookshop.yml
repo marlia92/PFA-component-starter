@@ -9,7 +9,9 @@ spec:
   tags:
   preview:
     text: Divider
-    subtext: '{padding}'
+    subtext:
+      - key: padding
+      - Add a padding value
     icon: horizontal_rule
 
 blueprint:
