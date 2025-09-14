@@ -1,8 +1,5 @@
 spec:
   structures:
-    - contentBlocks
-    - firstContentBlocks
-    - secondContentBlocks
   label: Icon
   description: Displays an icon from your icon library.
   icon: star
@@ -18,7 +15,7 @@ preview:
 _inputs:
   name:
     type: select
-    comment: The name of the icon to display from the icon library
+    comment: The name of the icon to display from the icon library.
     options:
       values: _select_data.icons
       value_key: id
@@ -37,10 +34,10 @@ _inputs:
           name: Medium
         - id: lg
           name: Large
-    comment: The size of the icon
+    comment: The size of the icon.
   background:
     type: select
-    comment: The background style for the icon
+    comment: The background style for the icon.
     options:
       values:
         - id: none

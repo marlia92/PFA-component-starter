@@ -49,12 +49,10 @@ _inputs:
       accepts_mime_types:
         - video/mp4
       paths:
-        uploads: src/assets/videos/
-        static: src/assets
+        uploads: public/assets/videos
+        static: public
     hidden: 'videoType != "native"'
   videoPoster:
     type: image
     comment: The image displayed before the video plays or while it is loading.
     hidden: 'videoType != "native"'
-  autoplay:
-    comment: Play the video automatically on load without the user pressing play.

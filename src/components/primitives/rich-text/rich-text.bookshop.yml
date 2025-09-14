@@ -30,6 +30,7 @@ _inputs:
       underline: true
       undo: true
       redo: true
+      format: p h1 h2 h3 h4 h5 h6
       removeformat: true
       copyformatting: true
       bulletedlist: true
