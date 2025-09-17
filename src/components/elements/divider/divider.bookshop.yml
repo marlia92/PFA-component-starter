@@ -7,6 +7,12 @@ spec:
   description: A horizontal line to separate content
   icon: horizontal_rule
   tags:
+  preview:
+    text: Divider
+    subtext:
+      - key: padding
+      - Add a padding value
+    icon: horizontal_rule
 
 blueprint:
   padding:
@@ -21,19 +27,19 @@ _inputs:
     type: select
     options:
       values:
-        - name: None
-          value: none
-        - name: Extra Small
-          value: xs
-        - name: Small
-          value: sm
-        - name: Medium
-          value: md
-        - name: Large
-          value: lg
-        - name: Extra Large
-          value: xl
-        - name: 2xl
-          value: 2xl
-        - name: 3xl
-          value: 3xl
+        - id: none
+          name: None
+        - id: xs
+          name: Extra Small
+        - id: sm
+          name: Small
+        - id: md
+          name: Medium
+        - id: lg
+          name: Large
+        - id: xl
+          name: Extra Large
+        - id: 2xl
+          name: 2xl
+        - id: 3xl
+          name: 3xl

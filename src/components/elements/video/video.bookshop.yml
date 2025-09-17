@@ -5,8 +5,17 @@ spec:
     - secondContentBlocks
   label: Video
   description: "Play a video from YouTube, Vimeo, or your local files."
-  icon: data_object
+  icon: videocam
   tags: []
+  preview:
+    icon: videocam
+    text:
+      - template: Video - {videoType}
+      - Video
+    subtext:
+      - key: title
+      - key: videoSrc
+      - Add video source
 
 blueprint:
   type: youtube
@@ -22,14 +31,18 @@ _inputs:
     type: select
     options:
       values:
-        - youtube
-        - vimeo
-        - native
+        - id: youtube
+          name: Youtube
+        - id: vimeo
+          name: Vimeo
+        - id: native
+          name: Native
     id:
       comment: Enter a video ID from a public video on YouTube or Vimeo
       hidden: 'type == "native"'
     src:
       type: file
+      label: Video Source
       comment: Must be mp4 as this is supported by all modern browsers
       options:
         accepts_mime_types:

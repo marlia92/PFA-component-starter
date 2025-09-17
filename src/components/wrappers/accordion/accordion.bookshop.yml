@@ -23,21 +23,28 @@ _inputs:
     comment: The items to display in the accordion.
     type: array
     icon: expand_all
-  title:
-    comment: The title of the accordion item.
-    type: text
+    options:
+      structures: _structures.accordion_item
   openFirst:
-    comment: "If true, the first item will be open by default."
-    type: checkbox
+    comment: If true, the first item will be open by default.
+    type: switch
   singleOpen:
-    comment: "If true, only one item can be open at a time within this accordion."
-    type: checkbox
+    comment: If true, only one item can be open at a time within this accordion.
+    type: switch
 
 _structures:
-  items:
+  accordion_item:
     values:
       - label: Item
         icon: place_item
         value:
           title:
           contentBlocks:
+        _inputs:
+          title:
+            comment: The title of the accordion item.
+            type: text
+          contentBlocks:
+            type: array
+            options:
+              structures: _structures.contentBlocks

@@ -27,7 +27,7 @@ const htmlAttributes = Object.fromEntries(
   {...htmlAttributes}
 >
   {
-    items.length > 0 ? (
+    items?.length > 0 ? (
       items.map((item: any) => {
         return <ListItem text={item.text} icon={item.icon} />;
       })

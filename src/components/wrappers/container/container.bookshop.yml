@@ -30,95 +30,128 @@ preview:
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
   label:
-    comment: Optional label for the container to help identify it in the editor.
     type: text
+    comment: Optional label for the container to help identify it in the editor.
   contentBlocks:
-    comment: Array of content blocks to render within the container.
     type: array
+    comment: Array of content blocks to render within the container.
+    options:
+      structures: _structures.contentBlocks
   maxContentWidth:
+    type: select
     comment: Maximum width constraint for the content.
-    type: select
     options:
       values:
-        - xs
-        - sm
-        - md
-        - lg
-        - xl
-        - 2xl
-        - 3xl
+        - id: xs
+          name: Extra Small
+        - id: sm
+          name: Small
+        - id: md
+          name: Medium
+        - id: lg
+          name: Large
+        - id: xl
+          name: Extra Large
+        - id: 2xl
+          name: 2XL
+        - id: 3xl
+          name: 3xl
   paddingHorizontal:
+    type: select
     comment: Horizontal padding applied to the container content.
-    type: select
     options:
-      values:
-        - xs
-        - sm
-        - md
-        - lg
-        - xl
-        - 2xl
-        - 3xl
-        - 4xl
-        - 5xl
-        - 6xl
+      values: &sizing_options
+        - id: none
+          name: None
+        - id: xs
+          name: Extra Small
+        - id: sm
+          name: Small
+        - id: md
+          name: Medium
+        - id: lg
+          name: Large
+        - id: xl
+          name: Extra Large
+        - id: 2xl
+          name: 2xl
+        - id: 3xl
+          name: 3xl
+        - id: 4xl
+          name: 4xl
+        - id: 5xl
+          name: 5xl
+        - id: 6xl
+          name: 6xl
   paddingVertical:
+    type: select
     comment: Vertical padding applied to the container content.
-    type: select
     options:
-      values:
-        - xs
-        - sm
-        - md
-        - lg
-        - xl
-        - 2xl
-        - 3xl
-        - 4xl
-        - 5xl
-        - 6xl
+      values: *sizing_options
   colorScheme:
-    comment: Color scheme theme for the container.
     type: select
+    comment: Color scheme theme for the container.
     options:
       values:
-        - default
-        - contrast
+        - id: default
+          name: Default
+        - id: contrast
+          name: Contrast
   backgroundColor:
     comment: Background color for the container.
     type: select
     options:
       values:
-        - base
-        - surface
-        - accent
-        - highlight
+        - id: base
+          name: Base
+        - id: surface
+          name: Surface
+        - id: accent
+          name: Accent
+        - id: highlight
+          name: Highlight
   backgroundImage:
     comment: Background image configuration for the container.
     type: object
-    _inputs:
-      source:
-        comment: URL or path to the background image.
-        type: text
-      alt:
-        comment: Alt text for the background image.
-        type: text
-      positionVertical:
-        comment: Vertical position of the background image.
-        type: select
-        options:
-          values:
-            - top
-            - center
-            - bottom
-      positionHorizontal:
-        comment: Horizontal position of the background image.
-        type: select
-        options:
-          values:
-            - left
-            - center
-            - right
+    options:
+      preview:
+        icon: image
+        text:
+          - key: alt
+          - Background Image
+        subtext:
+          - key: source
+          - Add an image source
+        image:
+          - key: source
+  backgroundImage.source:
+    comment: URL or path to the background image.
+    type: image
+  backgroundImage.alt:
+    comment: Alt text for the background image.
+    type: textarea
+  backgroundImage.positionVertical:
+    comment: Vertical position of the background image.
+    type: select
+    options:
+      values:
+        - id: top
+          name: Top
+        - id: center
+          name: Center
+        - id: bottom
+          name: Bottom
+  backgroundImage.positionHorizontal:
+    comment: Horizontal position of the background image.
+    type: select
+    options:
+      values:
+        - id: left
+          name: Left
+        - id: center
+          name: Center
+        - id: right
+          name: Right
   rounded:
     comment: Whether to apply rounded corners to the container.
     type: switch
