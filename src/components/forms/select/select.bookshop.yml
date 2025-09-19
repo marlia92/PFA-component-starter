@@ -3,12 +3,13 @@ spec:
     - formBlocks
   label: Select
   description: "A dropdown select field with an optional label."
-  icon: rectangle
+  icon: view_list
   tags: []
 
 blueprint:
   label:
   name:
+  required: false
   options:
     - value: "option1"
       label: "Option 1"
@@ -17,7 +18,6 @@ blueprint:
     - value: "option3"
       label: "Option 3"
   placeholder:
-  required: false
   value:
 
 preview:
@@ -28,16 +28,45 @@ _inputs:
     comment: The label text for the select field.
   name:
     type: text
-    comment: The name attribute for the select field.
-  options:
-    type: blocks
-    comment: Array of select options with value and label.
-  placeholder:
-    type: text
-    comment: Placeholder text for the select field.
+    comment: A unique name attribute for the select field.
+    options:
+      required: true
+      required_message: Only form elements with a name will have their values passed when submitting a form.
   required:
     type: switch
     comment: Whether the field is required.
+  options:
+    type: array
+    comment: Array of select options with value and label.
+    options:
+      structures: _structures.select_option
+      min_items: 2
+      min_items_message: At least two options are required.
+  placeholder:
+    type: text
+    comment: Placeholder text for the select field.
   value:
     type: text
     comment: The default selected value.
+
+_structures:
+  select_option:
+    values:
+      - value:
+          value:
+          label:
+        _inputs:
+          label:
+            type: text
+            comment: The label text for the select option.
+          value:
+            type: text
+            comment: The value to add to the form when the option is selected.
+        preview:
+          icon: check_circle
+          text:
+            - key: label
+            - Add a text label
+          subtext:
+            - key: value
+            - Add a value for the select item

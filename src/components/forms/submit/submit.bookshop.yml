@@ -27,19 +27,27 @@ _inputs:
     comment: The presentation of the submit button.
     options:
       values:
-        - primary
-        - secondary
-        - tertiary
-        - ghost
-        - text
+        - id: primary
+          name: Primary
+        - id: secondary
+          name: Secondary
+        - id: tertiary
+          name: Tertiary
+        - id: ghost
+          name: Ghost
+        - id: text
+          name: Text
   size:
     type: select
     comment: The size of the submit button.
     options:
       values:
-        - sm
-        - md
-        - lg
+        - id: sm
+          name: Small
+        - id: md
+          name: Medium
+        - id: lg
+          name: Large
   iconName:
     type: select
     comment: The name of the icon to display. See the Icon component documentation for more information.
@@ -51,8 +59,10 @@ _inputs:
     hidden: "!iconName"
     options:
       values:
-        - before
-        - after
+        - id: before
+          name: Before
+        - id: after
+          name: After
   hideText:
     type: switch
     comment: Whether to hide the button text and show only the icon.

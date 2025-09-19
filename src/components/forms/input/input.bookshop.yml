@@ -16,9 +16,9 @@ spec:
 blueprint:
   label:
   name:
+  required: false
   type: text
   placeholder:
-  required: false
   value:
 
 preview:
@@ -33,6 +33,9 @@ _inputs:
     options:
       required: true
       required_message: Only form elements with a name will have their values passed when submitting a form.
+  required:
+    type: switch
+    comment: Whether the field is required.
   type:
     type: select
     comment: The input type.
@@ -55,9 +58,6 @@ _inputs:
   placeholder:
     type: text
     comment: Placeholder text for the input field.
-  required:
-    type: switch
-    comment: Whether the field is required.
   value:
     type: text
     comment: The default value for the input field.

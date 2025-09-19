@@ -3,21 +3,14 @@ spec:
     - formBlocks
   label: Segments
   description: "A segmented control component using radio buttons or checkboxes with optional icons."
-  icon: rectangle
+  icon: radio_button_partial
   tags: []
-  # preview:
-  #   icon: input
-  #   text: Input
-  #   subtext:
-  #     - key: label
-  #     - key: name
-  #     - Enter a name for the form input.
 
 blueprint:
-  name: segments
-  options: []
   title:
+  name:
   required: false
+  options: []
   iconOnly: false
   multiple: false
   keepStateOnRefresh: true
@@ -25,12 +18,18 @@ blueprint:
 preview:
 
 _inputs:
+  title:
+    type: text
+    comment: Optional title text for the fieldset.
   name:
     type: text
     comment: A unique name attribute for the radio button group.
     options:
       required: true
       required_message: Only form elements with a name will have their values passed when submitting a form.
+  required:
+    type: switch
+    comment: Whether the field is required.
   options:
     type: array
     comment: Array of segment options with value, label, icon, and checked state.
@@ -38,12 +37,6 @@ _inputs:
       structures: _structures.segment_option
       min_items: 1
       min_items_message: At least one option is required.
-  title:
-    type: text
-    comment: Optional title text for the fieldset.
-  required:
-    type: switch
-    comment: Whether the field is required.
   iconOnly:
     type: switch
     comment: When true, labels are used as tooltips instead of being displayed as text.
@@ -78,11 +71,10 @@ _structures:
             options:
               values: _select_data.icons
         preview:
-          icon:
-            - key: icon
-            - check_box
-          text: Segment Option
-          subtext:
+          icon: radio_button_partial
+          text:
             - key: label
+            - Add a label for the option.
+          subtext:
             - key: value
-            - Enter a value for the input group.
+            - Add a value for the option.
