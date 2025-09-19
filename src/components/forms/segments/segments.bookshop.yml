@@ -5,6 +5,13 @@ spec:
   description: "A segmented control component using radio buttons or checkboxes with optional icons."
   icon: rectangle
   tags: []
+  # preview:
+  #   icon: input
+  #   text: Input
+  #   subtext:
+  #     - key: label
+  #     - key: name
+  #     - Enter a name for the form input.
 
 blueprint:
   name: segments
@@ -20,10 +27,17 @@ preview:
 _inputs:
   name:
     type: text
-    comment: The name attribute for the radio button group.
+    comment: A unique name attribute for the radio button group.
+    options:
+      required: true
+      required_message: Only form elements with a name will have their values passed when submitting a form.
   options:
-    type: blocks
+    type: array
     comment: Array of segment options with value, label, icon, and checked state.
+    options:
+      structures: _structures.segment_option
+      min_items: 1
+      min_items_message: At least one option is required.
   title:
     type: text
     comment: Optional title text for the fieldset.
@@ -39,3 +53,36 @@ _inputs:
   keepStateOnRefresh:
     type: switch
     comment: When true, sets autocomplete="on" to allow browser to remember state on page refresh. Defaults to false (autocomplete="off").
+
+_structures:
+  segment_option:
+    values:
+      - value:
+          value:
+          label:
+          checked:
+          icon:
+        _inputs:
+          value:
+            type: text
+            comment: The value entered by the user when the option is selected.
+          label:
+            type: text
+            comment: The label text for the option.
+          checked:
+            type: switch
+            comment: Whether the field is checked by default.
+          icon:
+            type: select
+            comment: The name of the icon to display from the icon library next to the segment option.
+            options:
+              values: _select_data.icons
+        preview:
+          icon:
+            - key: icon
+            - check_box
+          text: Segment Option
+          subtext:
+            - key: title
+            - key: name
+            - Enter a name for the input group.

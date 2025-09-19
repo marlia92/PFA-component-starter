@@ -3,7 +3,7 @@ spec:
     - formBlocks
   label: Choice Group
   description: "A group of checkboxes or radio buttons with labels."
-  icon: checkbox
+  icon: check_box
   tags: []
 
 blueprint:
@@ -33,7 +33,7 @@ _inputs:
     type: array
     comment: Array of choice options with value, label, and checked state.
     options:
-      structures: _structures.options
+      structures: _structures.choice_option
       min_items: 1
       min_items_message: At least one option is required.
   title:
@@ -56,7 +56,7 @@ _inputs:
     comment: When true, uses checkboxes for multiple selection. When false, uses radio buttons for single selection.
 
 _structures:
-  options:
+  choice_option:
     values:
       - value:
           value:
@@ -73,7 +73,7 @@ _structures:
             type: switch
             comment: Whether the field is checked by default.
         preview:
-          icon: checkbox
+          icon: check_box
           text: Choice Group
           subtext:
             - key: title
