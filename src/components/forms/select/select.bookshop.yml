@@ -5,6 +5,13 @@ spec:
   description: "A dropdown select field with an optional label."
   icon: view_list
   tags: []
+  preview:
+    icon: view_list
+    text: Select
+    subtext:
+      - key: label
+      - key: name
+      - Enter a name for the form input.
 
 blueprint:
   label:

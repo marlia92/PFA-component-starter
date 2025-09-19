@@ -5,6 +5,13 @@ spec:
   description: "A multi-line text input field with an optional label."
   icon: text_ad
   tags: []
+  preview:
+    icon: text_ad
+    text: Textarea
+    subtext:
+      - key: label
+      - key: name
+      - Enter a name for the textarea input.
 
 blueprint:
   label:

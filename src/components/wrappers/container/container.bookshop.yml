@@ -124,6 +124,9 @@ _inputs:
           - Add an image source
         image:
           - key: source
+      paths:
+        uploads: src/assets/component-library/images
+        static: ""
   backgroundImage.source:
     comment: URL or path to the background image.
     type: image
