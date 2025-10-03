@@ -238,10 +238,14 @@ function createNavItemData(item, level, parentGroupId) {
 
   // Initialize mobile navigation instances
   const allMobileNavs = document.querySelectorAll(".mobile");
+  const overlaysContainer = getOrCreateOverlaysContainer();
 
   allMobileNavs.forEach((nav) => {
     // Add a class to indicate JS is available
     nav.classList.add("js-enabled");
+
+    // Move entire nav to overlays container for proper z-index stacking
+    overlaysContainer.appendChild(nav);
 
     // Find the toggle for this specific nav instance
     const toggleId = nav.getAttribute("data-toggle-id");
@@ -252,10 +256,12 @@ function createNavItemData(item, level, parentGroupId) {
     function handleNavToggle(isOpen) {
       if (isOpen) {
         nav.setAttribute("aria-hidden", "false");
+        nav.style.transform = "translateX(0)";
         document.body.style.overflow = "hidden";
         nav.querySelector(".mobile-close")?.focus();
       } else {
         nav.setAttribute("aria-hidden", "true");
+        nav.style.transform = "translateX(-100%)";
         document.body.style.overflow = "";
         hamburger?.focus();
       }
