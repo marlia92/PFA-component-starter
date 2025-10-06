@@ -15,7 +15,8 @@ function parseBookshopProperties(bookshopData: any): PropertyMeta[] {
         default: formatDefaultValue(value, inputConfig),
         enumValues: getEnumValues(inputConfig),
         description: inputConfig?.comment || "",
-        nestedProperties: getNestedProperties(inputConfig),
+        nestedProperties: getNestedProperties(inputConfig, bookshopData),
+        arrayItemProperties: getArrayItemProperties(inputConfig, bookshopData),
       });
     });
   }
@@ -96,7 +97,7 @@ function getEnumValues(inputConfig: any): string[] | undefined {
   return undefined;
 }
 
-function getNestedProperties(inputConfig: any): PropertyMeta[] | undefined {
+function getNestedProperties(inputConfig: any, bookshopData?: any): PropertyMeta[] | undefined {
   if (inputConfig?.type === "object" && inputConfig._inputs) {
     const nestedProperties: PropertyMeta[] = [];
 
@@ -108,11 +109,55 @@ function getNestedProperties(inputConfig: any): PropertyMeta[] | undefined {
         default: formatDefaultValue(nestedInput.default, nestedInput),
         enumValues: getEnumValues(nestedInput),
         description: nestedInput?.comment || "",
-        nestedProperties: getNestedProperties(nestedInput),
+        nestedProperties: getNestedProperties(nestedInput, bookshopData),
+        arrayItemProperties: getArrayItemProperties(nestedInput, bookshopData),
       });
     });
 
     return nestedProperties;
+  }
+
+  return undefined;
+}
+
+function getArrayItemProperties(inputConfig: any, bookshopData: any): PropertyMeta[] | undefined {
+  // Check if this is an array with a structure reference
+  if (inputConfig?.type === "array" && inputConfig.options?.structures) {
+    const structurePath = inputConfig.options.structures;
+
+    // Handle _structures.item format
+    if (structurePath.startsWith("_structures.")) {
+      const structureName = structurePath.replace("_structures.", "");
+      const structure = bookshopData._structures?.[structureName];
+
+      if (structure?.values && structure.values.length > 0) {
+        // Get the first value as the template
+        const itemTemplate = structure.values[0];
+        const itemValue = itemTemplate.value;
+        const itemInputs = itemTemplate._inputs;
+
+        if (itemValue && itemInputs) {
+          const arrayItemProperties: PropertyMeta[] = [];
+
+          Object.entries(itemValue).forEach(([key, value]) => {
+            const itemInputConfig = itemInputs[key];
+
+            arrayItemProperties.push({
+              name: key,
+              type: getPropertyType(itemInputConfig),
+              optional: false,
+              default: formatDefaultValue(value, itemInputConfig),
+              enumValues: getEnumValues(itemInputConfig),
+              description: itemInputConfig?.comment || "",
+              nestedProperties: getNestedProperties(itemInputConfig, bookshopData),
+              arrayItemProperties: getArrayItemProperties(itemInputConfig, bookshopData),
+            });
+          });
+
+          return arrayItemProperties;
+        }
+      }
+    }
   }
 
   return undefined;
@@ -126,6 +171,7 @@ type PropertyMeta = {
   enumValues?: string[];
   description: string;
   nestedProperties?: PropertyMeta[];
+  arrayItemProperties?: PropertyMeta[];
 };
 
 const properties: PropertyMeta[] = bookshopData ? parseBookshopProperties(bookshopData) : [];
@@ -139,7 +185,7 @@ const properties: PropertyMeta[] = bookshopData ? parseBookshopProperties(booksh
           return (
             <div class="property">
               <h3>
-                {prop.name}{" "}
+                <span class="property-name">{prop.name}</span>
                 <span class="property-type">
                   {prop.type}
                   {prop.default && prop.type !== "object" && ` | default: ${prop.default}`}
@@ -170,6 +216,17 @@ const properties: PropertyMeta[] = bookshopData ? parseBookshopProperties(booksh
                   </div>
                 </div>
               )}
+
+              {prop.arrayItemProperties && prop.arrayItemProperties.length > 0 && (
+                <div class="nested-properties">
+                  <strong>Item Properties:</strong>
+                  <div class="nested-property-list">
+                    {prop.arrayItemProperties.map((itemProp: PropertyMeta) =>
+                      renderProperty(itemProp)
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
           );
         }
@@ -191,6 +248,10 @@ const properties: PropertyMeta[] = bookshopData ? parseBookshopProperties(booksh
       h3 {
         font-family: var(--font-mono);
         font-size: var(--font-size-md);
+
+        .property-name {
+          font-weight: var(--font-weight-bold);
+        }
 
         .property-type {
           font-family: var(--font-headings);

@@ -19,6 +19,22 @@ const docsComponentSchema = z.object({
   component: z.string().optional(),
   component_path: z.string().optional(),
   blocks: z.union([z.record(z.any()), z.array(z.record(z.any()))]).optional(),
+  slots: z
+    .array(
+      z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        fallback_for: z.string().optional().nullable(),
+        child_component: z
+          .object({
+            name: z.string(),
+            props: z.array(z.string()).optional(),
+          })
+          .optional()
+          .nullable(),
+      })
+    )
+    .optional(),
   examples: z
     .union([
       z.array(

@@ -29,18 +29,45 @@ Object.entries(componentImports).forEach(([path, obj]) => {
 });
 
 const viewerId = title.toLowerCase().replace(/\s+/g, "-");
+
+// Pre-generate formatted code for all examples
+const formattedCodeCache = await Promise.all(
+  component_examples.map(async (example: any) => {
+    try {
+      const astroCode = await formatBlocksAstro(example.data.blocks);
+      const yamlCode = formatBlocksYaml(
+        example.data.blocks,
+        example.data.title,
+        example.data.spacing
+      );
+
+      return {
+        astro: astroCode,
+        yaml: yamlCode,
+      };
+    } catch (error) {
+      console.error("Error formatting code for example:", example.data?.title, error);
+      return {
+        astro: "// Error generating code",
+        yaml: "# Error generating code",
+      };
+    }
+  })
+);
 ---
 
 <div class="component-viewer" data-viewer-id={viewerId}>
   <div class:list={["previews", size && `viewer-size-${size}`]}>
     {
-      component_examples.map(async (example: any, idx: number) => {
+      component_examples.map((example: any, idx: number) => {
         const bodyPadding = getBodyPadding(example.data.spacing);
         const exampleName = example.data.title;
         const exampleId = `component-${exampleName.toLowerCase().replace(/\s+/g, "-")}-${idx}`;
 
         const blocks = example.data.blocks || [];
         const blocksArray = Array.isArray(blocks) ? blocks : [blocks];
+
+        const formattedCode = formattedCodeCache[idx] || { astro: "", yaml: "" };
 
         return (
           <>
@@ -63,14 +90,14 @@ const viewerId = title.toLowerCase().replace(/\s+/g, "-");
                   iconName="document-duplicate"
                   data-action="copy-code"
                   hideText={true}
-                  data-code={formatBlocksAstro(example.data.blocks)}
+                  data-code={formattedCode.astro}
                   element="button"
                   class="copy-button"
                 />
               </div>
               <Code
                 lang="astro"
-                code={formatBlocksAstro(example.data.blocks)}
+                code={formattedCode.astro}
                 style="height: 100%; padding: var(--spacing-sm);"
               />
             </div>
@@ -83,22 +110,14 @@ const viewerId = title.toLowerCase().replace(/\s+/g, "-");
                   iconName="document-duplicate"
                   data-action="copy-code"
                   hideText={true}
-                  data-code={formatBlocksYaml(
-                    example.data.blocks,
-                    example.data.title,
-                    example.data.spacing
-                  )}
+                  data-code={formattedCode.yaml}
                   element="button"
                   class="copy-button"
                 />
               </div>
               <Code
                 lang="yaml"
-                code={formatBlocksYaml(
-                  example.data.blocks,
-                  example.data.title,
-                  example.data.spacing
-                )}
+                code={formattedCode.yaml}
                 style="height: 100%; padding: var(--spacing-sm);"
               />
             </div>

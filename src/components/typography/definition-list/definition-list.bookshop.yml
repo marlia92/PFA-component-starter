@@ -36,7 +36,6 @@ _structures:
       - label: Definition List Item
         icon: list
         value:
-          _component: definition-list-item
           title:
           text:
         _inputs:

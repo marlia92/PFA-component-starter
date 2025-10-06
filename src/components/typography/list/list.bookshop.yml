@@ -23,7 +23,7 @@ _inputs:
     type: array
     options:
       structures: _structures.item
-    comment: Array of list items. If empty, slot content will be used instead.
+    comment: Array of list items.
   direction:
     type: select
     options:
@@ -73,6 +73,7 @@ _structures:
         _inputs:
           text:
             type: markdown
+            comment: The text to display in the list item.
             options:
               bold: true
               italic: true

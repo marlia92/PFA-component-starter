@@ -1,6 +1,13 @@
 ---
 title: Carousel
-description: A carousel component for displaying slides with navigation controls, autoplay, and customizable options.
+slots:
+  - title: default
+    description: The contents for the the Carousel.
+    fallback_for: slides
+    child_component:
+      name: CarouselSlide
+      props:
+        - "contentBlocks/slot"
 examples:
   - slugs:
       - auto-play

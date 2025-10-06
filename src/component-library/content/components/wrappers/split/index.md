@@ -1,6 +1,15 @@
 ---
 title: Split
 order: 3
+slots:
+  - title: first
+    description: The contents for the first side of the Split.
+    fallback_for: firstContentBlocks
+    child_component:
+  - title: second
+    description: The contents for the second side of the Split.
+    fallback_for: secondContentBlocks
+    child_component:
 examples:
   - title: Mode
     size: lg

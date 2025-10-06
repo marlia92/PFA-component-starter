@@ -1,6 +1,15 @@
 ---
 title: List
 order: 4
+slots:
+  - title: default
+    description: The content inside the List.
+    fallback_for: items
+    child_component:
+      name: ListItem
+      props:
+        - "icon"
+        - "text/slot"
 examples:
   - slugs:
       - direction-vertical
