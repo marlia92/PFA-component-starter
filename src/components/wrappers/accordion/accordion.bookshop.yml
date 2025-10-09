@@ -30,10 +30,10 @@ _inputs:
     options:
       structures: _structures.accordion_item
   openFirst:
-    comment: If true, the first item will be open by default.
+    comment: Whether the first item will be open by default.
     type: switch
   singleOpen:
-    comment: If true, only one item can be open at a time within this accordion.
+    comment: Whether only one item can be open at a time within this accordion.
     type: switch
 
 _structures:

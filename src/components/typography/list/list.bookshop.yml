@@ -35,7 +35,7 @@ _inputs:
     comment: The direction in which list items are arranged.
   alignX:
     type: select
-    comment: The alignment of the list items.
+    comment: The horizontal alignment of the list items.
     options:
       values:
         - id: start

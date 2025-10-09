@@ -21,6 +21,7 @@ _inputs:
       structures: _structures.item
   alignX:
     type: select
+    comment: The horizontal alignment of the definition list items.
     options:
       values:
         - id: start

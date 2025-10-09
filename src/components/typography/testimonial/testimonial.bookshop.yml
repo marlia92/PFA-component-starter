@@ -48,7 +48,7 @@ _inputs:
     comment: The role or company of the person.
     type: textarea
   alignX:
-    comment: The alignment of the testimonial.
+    comment: The horizontal alignment of the testimonial.
     type: select
     options:
       values:

@@ -82,7 +82,7 @@ _inputs:
         - id: 6xl
           name: 6xl
   alignX:
-    comment: The alignment of the text.
+    comment: The horizontal alignment of the text.
     type: select
     options:
       values:
