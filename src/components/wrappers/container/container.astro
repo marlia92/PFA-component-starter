@@ -74,7 +74,9 @@ if (!htmlAttributes.id && label) {
       ]}
     >
       <slot />
-      <Component contentBlocks={contentBlocks} />
+      <editable-array data-prop="contentBlocks" data-id-key="_bookshop_name">
+        <Component contentBlocks={contentBlocks} />
+      </editable-array>
     </div>
   </div>
 </section>
