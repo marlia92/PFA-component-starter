@@ -33,6 +33,10 @@ const { contentBlocks } = Astro.props;
       );
     }
 
-    return Component ? <Component {...block} /> : null;
+    return Component ? (
+      <array-item data-id={block._bookshop_name}>
+        <Component {...block} />
+      </array-item>
+    ) : null;
   })
 }

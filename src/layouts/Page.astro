@@ -23,5 +23,10 @@ const props = Astro.props.frontmatter;
   image={props.image}
   canonical={props.canonical}
 >
-  <Components bookshop:live contentBlocks={props.pageBlocks} />
+  <Components
+    data-editable="array"
+    data-prop="pageBlocks"
+    data-id-key="_bookshop_name"
+    contentBlocks={props.pageBlocks}
+  />
 </Layout>
