@@ -1,9 +1,72 @@
 ---
-const { textContent } = Astro.props;
+import Icon from "@components/elements/icon/icon.astro";
+// @ts-ignore
+import MarkdownIt from "markdown-it";
+
+const {
+  text,
+  type = "h2",
+  size,
+  alignX = "start",
+  iconName,
+  iconPosition = "before",
+  class: className,
+  ...rest
+} = Astro.props;
+
+const htmlAttributes = Object.fromEntries(
+  Object.entries(rest).filter(([key]) => key !== "_bookshop_name")
+);
+
+const md = MarkdownIt({ html: true });
+const MarkdownText = text ? md.renderInline(text) : "";
+
+const getTag = (type: string) => {
+  if (type === "eyebrow" || type === "subtitle") {
+    return "div";
+  }
+  return type;
+};
+
+const Tag = getTag(type);
 ---
 
-<h1>
-  <span data-editable="text" data-prop="textContent">
-    {textContent}
-  </span>
-</h1>
+<Tag
+  class:list={["heading", `type-${type}`, size && `size-${size}`, `align-${alignX}`, className]}
+  {...htmlAttributes}
+>
+  {
+    iconName && iconPosition == "before" && (
+      <Icon
+        name={iconName}
+        size="none"
+        class="heading-icon"
+        aria-hidden="true"
+        role="presentation"
+      />
+    )
+  }
+  {
+    text ? (
+      <span
+        data-editable="text"
+        data-prop="textContent"
+        class="heading-text"
+        set:html={MarkdownText}
+      />
+    ) : (
+      <slot />
+    )
+  }
+  {
+    iconName && iconPosition === "after" && (
+      <Icon
+        name={iconName}
+        size="none"
+        class="heading-icon heading-icon-after"
+        aria-hidden="true"
+        role="presentation"
+      />
+    )
+  }
+</Tag>
