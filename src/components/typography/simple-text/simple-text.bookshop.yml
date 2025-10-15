@@ -4,21 +4,21 @@ spec:
     - firstContentBlocks
     - secondContentBlocks
   label: Simple Text
-  description: "Displays blocks of text for content sections with options for alignment, size and decoration."
+  description: "Displays plain text in layouts with configurable size and alignment."
   icon: view_headline
   tags: []
 
 blueprint:
   text:
-  align: start
+  alignX: start
   size: md
 
 preview:
 
 _inputs:
   text:
-    type: markdown
     comment: The text content of the simple text.
+    type: markdown
     options:
       bold: true
       italic: true
@@ -31,9 +31,9 @@ _inputs:
       redo: true
       removeformat: true
       copyformatting: true
-  align:
+  alignX:
+    comment: The horizontal alignment of the text.
     type: select
-    comment: The alignment of the text.
     options:
       values:
         - id: start

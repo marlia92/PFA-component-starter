@@ -10,7 +10,7 @@ spec:
 
 blueprint:
   items:
-  horizontalAlignment: start
+  alignX: start
 
 preview:
 
@@ -20,8 +20,9 @@ _inputs:
     label: List Items
     options:
       structures: _structures.item
-  horizontalAlignment:
+  alignX:
     type: select
+    comment: The horizontal alignment of the definition list items.
     options:
       values:
         - id: start
@@ -36,7 +37,6 @@ _structures:
     values:
       - label: Definition List Item
         value:
-          _component: definition-list-item
           title:
           text:
         preview:

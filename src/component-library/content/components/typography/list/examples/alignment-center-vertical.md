@@ -11,6 +11,6 @@ blocks:
       - text: Third list item
         icon: check-circle
     direction: vertical
-    horizontalAlignment: center
+    alignX: center
     size: md
 ---

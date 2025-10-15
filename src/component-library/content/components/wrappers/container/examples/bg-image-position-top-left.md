@@ -6,12 +6,12 @@ blocks:
   paddingVertical: 2xl
   paddingHorizontal: md
   backgroundImage:
-    source: /assets/images/component-library/dunedin-cliff.jpg
+    source: /src/assets/images/component-library/dunedin-cliff.jpg
     alt: "Dunedin cliffside"
     positionVertical: top
     positionHorizontal: left
   contentBlocks:
     - _bookshop_name: "typography/heading"
-      align: end
+      alignX: end
       text: Build bold. Launch fast.
 ---

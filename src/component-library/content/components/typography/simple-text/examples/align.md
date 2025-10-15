@@ -4,14 +4,14 @@ spacing: "sides"
 blocks:
   - _bookshop_name: "typography/simple-text"
     text: "**Start** aligned"
-    align: start
+    alignX: start
     size: md
   - _bookshop_name: "typography/simple-text"
     text: "**Center** aligned"
-    align: center
+    alignX: center
     size: md
   - _bookshop_name: "typography/simple-text"
     text: "**End** aligned"
-    align: end
+    alignX: end
     size: md
 ---

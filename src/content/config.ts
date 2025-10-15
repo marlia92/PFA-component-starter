@@ -15,10 +15,27 @@ const docsComponentSchema = z.object({
   title: z.string().optional(),
   name: z.string().optional(),
   order: z.number().optional(),
+  overview: z.string().optional(),
   spacing: z.string().optional().nullable(),
   component: z.string().optional(),
   component_path: z.string().optional(),
   blocks: z.union([z.record(z.any()), z.array(z.record(z.any()))]).optional(),
+  slots: z
+    .array(
+      z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        fallback_for: z.string().optional().nullable(),
+        child_component: z
+          .object({
+            name: z.string(),
+            props: z.array(z.string()).optional(),
+          })
+          .optional()
+          .nullable(),
+      })
+    )
+    .optional(),
   examples: z
     .union([
       z.array(

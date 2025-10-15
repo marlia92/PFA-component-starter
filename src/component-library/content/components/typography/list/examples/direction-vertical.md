@@ -11,6 +11,6 @@ blocks:
       - text: Third vertical list item
         icon: bolt
     direction: vertical
-    horizontalAlignment: start
+    alignX: start
     size: md
 ---

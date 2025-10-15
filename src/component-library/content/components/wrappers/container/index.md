@@ -1,6 +1,11 @@
 ---
 title: Container
 order: 1
+slots:
+  - title: default
+    description: The contents of the Container.
+    fallback_for: contentBlocks
+    child_component:
 examples:
   - title: Background color
     slugs:

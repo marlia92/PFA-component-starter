@@ -24,17 +24,17 @@ _inputs:
     comment: Optional label for the accordion to help identify it in the editor.
     type: text
   items:
-    type: array
     comment: The items to display in the accordion.
+    type: array
     icon: expand_all
     options:
       structures: _structures.accordion_item
   openFirst:
+    comment: Whether the first item will be open by default.
     type: switch
-    comment: If true, the first item will be open by default.
   singleOpen:
+    comment: Whether only one item can be open at a time within this accordion.
     type: switch
-    comment: If true, only one item can be open at a time within this accordion.
 
 _structures:
   accordion_item:

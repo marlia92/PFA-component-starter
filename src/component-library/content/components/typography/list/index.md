@@ -1,12 +1,20 @@
 ---
 title: List
 order: 4
+slots:
+  - title: default
+    description: The content inside the List.
+    fallback_for: items
+    child_component:
+      name: ListItem
+      props:
+        - "icon"
+        - "text/slot"
 examples:
   - slugs:
       - direction-vertical
       - direction-horizontal
     title: Directions
-    size: md
   - slugs:
       - alignment-start-vertical
       - alignment-center-vertical
@@ -14,8 +22,7 @@ examples:
       - alignment-start-horizontal
       - alignment-center-horizontal
       - alignment-end-horizontal
-    title: Horizontal Alignments
-    size: md
+    title: AlignX
   - slugs:
       - size-xs
       - size-sm
@@ -23,6 +30,5 @@ examples:
       - size-lg
       - size-xl
       - size-2xl
-    size: sm
     title: Sizes
 ---

@@ -11,6 +11,6 @@ blocks:
     - text: Lists can include formatting like **bold** or *italic text*.
       icon: briefcase
   direction: vertical
-  horizontalAlignment: start
+  alignX: start
   size: md
 ---

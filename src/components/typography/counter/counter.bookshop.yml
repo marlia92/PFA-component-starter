@@ -15,10 +15,10 @@ spec:
     icon: speed
 
 blueprint:
-  number: 100
+  number:
   prefix:
   suffix:
-  horizontalAlignment: start
+  alignX: start
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
@@ -35,8 +35,8 @@ _inputs:
     comment: Text immediately before the number.
   suffix:
     comment: Text immediately after the number.
-  horizontalAlignment:
-    comment: The alignment of the counter.
+  alignX:
+    comment: The horizontal alignment of the counter.
     type: select
     options:
       values:

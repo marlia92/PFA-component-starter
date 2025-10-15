@@ -4,7 +4,7 @@ import ListItem from "./list-item.astro";
 const {
   items = [],
   direction = "vertical",
-  horizontalAlignment = "start",
+  alignX = "start",
   size = "md",
   class: className,
   ...restProps
@@ -16,13 +16,7 @@ const htmlAttributes = Object.fromEntries(
 ---
 
 <ul
-  class:list={[
-    "list",
-    `size-${size}`,
-    `direction-${direction}`,
-    `alignment-${horizontalAlignment}`,
-    className,
-  ]}
+  class:list={["list", `size-${size}`, `direction-${direction}`, `alignment-${alignX}`, className]}
   role="list"
   {...htmlAttributes}
 >

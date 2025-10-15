@@ -1,7 +1,7 @@
 ---
-import { z } from "zod/v4";
-import "@styles/style.pcss";
 import "@component-library/styles/component-library.pcss";
+import "@styles/style.pcss";
+import { z } from "zod/v4";
 
 const libraryLayoutSchema = z.object({
   frontmatter: z
@@ -12,11 +12,13 @@ const libraryLayoutSchema = z.object({
     .optional(),
 });
 
-import Container from "@components/wrappers/container/container.astro";
-import SidebarNavLayout from "@component-library/layouts/SidebarNavLayout.astro";
 import MobileNavLayout from "@component-library/layouts/MobileNavLayout.astro";
+import SidebarNavLayout from "@component-library/layouts/SidebarNavLayout.astro";
+import Container from "@components/wrappers/container/container.astro";
+import RenderBlock from "@components/utils/renderBlock.astro";
 const props = libraryLayoutSchema.parse(Astro.props);
 const pageTitle = props.frontmatter?.title || "Component Library";
+const contentBlocks = props.frontmatter?.contentBlocks || [];
 ---
 
 <!doctype html>
@@ -29,7 +31,7 @@ const pageTitle = props.frontmatter?.title || "Component Library";
     <title>{pageTitle}</title>
     <slot name="head" />
   </head>
-  <body class="animations-disabled component-library">
+  <body class="component-library">
     <MobileNavLayout />
     <Container
       maxContentWidth="2xl"
@@ -39,13 +41,9 @@ const pageTitle = props.frontmatter?.title || "Component Library";
     >
       <SidebarNavLayout />
       <main class="main">
+        <RenderBlock contentBlocks={contentBlocks} />
         <slot />
       </main>
     </Container>
-    <script>
-      setTimeout(() => {
-        document.body.classList.remove("animations-disabled");
-      }, 1000);
-    </script>
   </body>
 </html>

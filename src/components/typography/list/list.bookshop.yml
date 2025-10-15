@@ -11,7 +11,7 @@ spec:
 blueprint:
   items:
   direction: vertical
-  horizontalAlignment: start
+  alignX: start
   size: md
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
@@ -23,7 +23,7 @@ _inputs:
     type: array
     options:
       structures: _structures.item
-    comment: Array of list items. If empty, slot content will be used instead.
+    comment: Array of list items.
   direction:
     type: select
     options:
@@ -33,9 +33,9 @@ _inputs:
         - id: vertical
           name: Vertical
     comment: The direction in which list items are arranged.
-  horizontalAlignment:
+  alignX:
     type: select
-    comment: The alignment of the list items.
+    comment: The horizontal alignment of the list items.
     options:
       values:
         - id: start
@@ -60,7 +60,7 @@ _inputs:
         - id: xl
           name: Extra Large
         - id: 2xl
-          name: 2XL
+          name: 2xl
 
 _structures:
   item:
@@ -76,6 +76,7 @@ _structures:
         _inputs:
           text:
             type: markdown
+            comment: The text to display in the list item.
             options:
               bold: true
               italic: true

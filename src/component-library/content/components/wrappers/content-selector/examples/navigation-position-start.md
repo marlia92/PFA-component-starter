@@ -12,13 +12,13 @@ blocks:
         - _bookshop_name: typography/heading
           text: "Frequently asked questions"
           level: h2
-          align: start
+          alignX: start
         - _bookshop_name: typography/rich-text
           text: |
             **Do you offer support?** Yes — email us anytime.
 
             **Can I cancel?** Yes, you can cancel anytime.
-          align: start
+          alignX: start
           size: md
     - title: Shipping
       sub_text: How we deliver
@@ -28,7 +28,7 @@ blocks:
           text: |
             We ship worldwide. Orders leave within 2 business days.
             Delivery times vary by region.
-          align: start
+          alignX: start
           size: md
         - _bookshop_name: typography/list
           items:
@@ -37,7 +37,7 @@ blocks:
             - text: "US & EU: 5–10 days"
               icon: globe-alt
           direction: vertical
-          horizontalAlignment: start
+          alignX: start
           size: md
     - title: Returns
       sub_text: Easy and fair
@@ -45,7 +45,7 @@ blocks:
       contentBlocks:
         - _bookshop_name: typography/simple-text
           text: "30‑day returns. Unused items only. Full refund once received."
-          align: start
+          alignX: start
           size: md
         - _bookshop_name: elements/button
           text: Start a return

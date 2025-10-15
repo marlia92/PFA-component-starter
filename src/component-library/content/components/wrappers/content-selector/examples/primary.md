@@ -10,32 +10,32 @@ blocks:
         - _bookshop_name: typography/heading
           text: "Overview"
           level: h2
-          align: start
+          alignX: start
         - _bookshop_name: typography/simple-text
           text: |
             A small, service‑focused business offering practical help for everyday needs. Clear communication, fair pricing, and dependable results.
-          align: start
+          alignX: start
           size: md
     - title: Details
       contentBlocks:
         - _bookshop_name: typography/heading
           text: "Details"
           level: h2
-          align: start
+          alignX: start
         - _bookshop_name: typography/simple-text
           text: |
             Typical work includes planning, setup, and ongoing support. Projects are delivered on time with straightforward steps and simple options.
-          align: start
+          alignX: start
           size: md
     - title: Next steps
       contentBlocks:
         - _bookshop_name: typography/heading
           text: "Next steps"
           level: h2
-          align: start
+          alignX: start
         - _bookshop_name: typography/simple-text
           text: |
-            Reach out for a quick estimate or to discuss what’s needed. Responses are friendly and prompt.
-          align: start
+            Reach out for a quick estimate or to discuss what's needed. Responses are friendly and prompt.
+          alignX: start
           size: md
 ---
