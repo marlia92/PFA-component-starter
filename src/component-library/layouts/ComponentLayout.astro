@@ -3,12 +3,17 @@ import ComponentProperties from "@component-library/components/ComponentProperti
 import ComponentSlots from "@component-library/components/ComponentSlots/index.astro";
 import ComponentViewer from "@component-library/components/ComponentViewer/index.astro";
 import LibraryLayout from "@component-library/layouts/LibraryLayout.astro";
+// @ts-ignore
+import MarkdownIt from "markdown-it";
 
 const { frontmatter, schema, bookshopData, examples = [], componentKey = "" } = Astro.props;
 const meta = {
   description: bookshopData?.spec?.description || "No description available",
   title: bookshopData?.spec?.label || frontmatter.title,
 };
+
+const md = new MarkdownIt({ html: true });
+const overviewHtml = frontmatter.overview ? md.render(frontmatter.overview) : null;
 
 const primaryExample = examples.find(
   (example: any) => example && example.id && example.id.includes("/primary")
@@ -38,7 +43,6 @@ const processedExamples = frontmatterExamples.map((exampleConfig: any) => {
     size: exampleConfig.size,
   };
 });
-const primarySize = frontmatter.primary_size || "md";
 ---
 
 <LibraryLayout frontmatter={frontmatter}>
@@ -50,9 +54,17 @@ const primarySize = frontmatter.primary_size || "md";
       <ComponentViewer
         component_examples={[primaryExample]}
         title={meta.title}
-        size={primarySize}
         componentKey={componentKey}
       />
+    )
+  }
+
+  {
+    overviewHtml && (
+      <>
+        <h2>Overview</h2>
+        <div set:html={overviewHtml} />
+      </>
     )
   }
 
@@ -65,7 +77,6 @@ const primarySize = frontmatter.primary_size || "md";
       <ComponentSlots slotData={frontmatter.slots} />
     )
   }
-
   {processedExamples.length > 0 && <h2>Examples</h2>}
 
   {

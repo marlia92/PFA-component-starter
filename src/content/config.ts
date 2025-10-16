@@ -15,6 +15,7 @@ const docsComponentSchema = z.object({
   title: z.string().optional(),
   name: z.string().optional(),
   order: z.number().optional(),
+  overview: z.string().optional(),
   spacing: z.string().optional().nullable(),
   component: z.string().optional(),
   component_path: z.string().optional(),

@@ -1,15 +1,18 @@
 ---
 title: "Component Library"
-contentBlocks:
-  - _bookshop_name: elements/button
-    text: Welcome to the CloudCannon Component Starter
-    type: primary
-    size: lg
-    link: /component-library/components/primitives/button
-
-  - _bookshop_name: elements/button
-    text: View Components
-    type: secondary
-    size: md
-    link: /component-library/components
+contentBlocks: []
 ---
+
+# Component Library
+
+Welcome to your component library.
+
+Here you’ll find **examples, documentation, and guidelines** for every component in your design system.
+
+This library helps you:
+
+- Keep designs consistent across pages and sites
+- Maintain a single source of truth for your components
+- Make it simple to explore, tweak, and extend your system
+
+👉 Use the sidebar to browse components and start exploring.

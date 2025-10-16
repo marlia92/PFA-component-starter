@@ -4,27 +4,31 @@
     "path": "/component-library/"
   },
   {
-    "group": "Blocks",
-    "items": []
+    "name": "Guidelines",
+    "path": "/component-library/guidelines/"
   },
   {
     "group": "Typography",
-    "items": []
+    "children": []
   },
   {
     "group": "Elements",
-    "items": []
+    "children": []
   },
   {
     "group": "Wrappers",
-    "items": []
+    "children": []
   },
   {
     "group": "Forms",
-    "items": []
+    "children": []
   },
   {
     "group": "Navigation",
-    "items": []
+    "children": []
+  },
+  {
+    "group": "Blocks",
+    "children": []
   }
 ]

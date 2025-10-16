@@ -70,7 +70,7 @@ export async function generateNavData(navData) {
           return {
             name: section.name || "",
             path: section.path,
-            children: [],
+            children: section.children || [],
           };
         }
 
