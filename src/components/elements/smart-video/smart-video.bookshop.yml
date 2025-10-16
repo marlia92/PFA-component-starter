@@ -14,69 +14,57 @@ spec:
   preview:
     icon: videocam
     text:
-      - template: Smart Video - {video._type}
+      - template: Smart Video - {type}
       - Smart Video
     subtext:
-      - key: video.title
-      - key: video.source
+      - key: title
+      - key: source
       - Add video
 
 blueprint:
-  video:
+  type:
+  id:
+  title:
+  source:
+  poster:
 
 preview:
 
 _inputs:
+  type:
+    type: select
+    options:
+      values:
+        - id: youtube
+          name: YouTube
+        - id: vimeo
+          name: Vimeo
+        - id: self-hosted
+          name: Self Hosted
   title:
     type: text
-    comment: The video title provides accessibility information for assistive technologies (like screen readers) and can display a tooltip when a user hovers over the video.
-  video:
-    type: object
+    comment: Used for externally hosted videos - The video title provides accessibility information for assistive technologies (like screen readers) and can display a tooltip when a user hovers over the video.
+  id:
+    type: text
+    comment: Used for externally hosted videos - Enter the YouTube or Vimeo id.
+  source:
+    type: file
+    label: Video Source
+    comment: Used for locally hosted videos - Must be mp4 as this is supported by all modern browsers.
     options:
-      structures:
-        values:
-          - label: YouTube
-            value:
-              _type: youtube
-              id:
-              title:
-            _inputs:
-              id:
-                type: text
-                comment: Enter a video ID from a public video on YouTube. The video ID will be located in the URL of the video page, right after the v= URL parameter.
-          - label: Vimeo
-            value:
-              _type: vimeo
-              id:
-              title:
-            _inputs:
-              id:
-                type: text
-                comment: Enter a video ID from a public video on Vimeo. The video ID will be located in the URL of the video page, in the form of numbers that come after the slash.
-          - label: Self Hosted
-            value:
-              _type: self-hosted
-              source:
-              poster:
-            _inputs:
-              source:
-                type: file
-                label: Video Source
-                comment: Must be mp4 as this is supported by all modern browsers.
-                options:
-                  accepts_mime_types:
-                    - video/mp4
-                  paths:
-                    uploads: public/videos
-                    static: public
-              poster:
-                type: image
-                comment: The image displayed before the video plays or while it is loading.
-                options:
-                  accepts_mime_types:
-                    - image/jpeg
-                    - image/png
-                    - image/webp
-                  paths:
-                    uploads: public/images
-                    static: public
+      accepts_mime_types:
+        - video/mp4
+      paths:
+        uploads: public/videos
+        static: public
+  poster:
+    type: image
+    comment: Used for locally hosted videos - The image displayed before the video plays or while it is loading.
+    options:
+      accepts_mime_types:
+        - image/jpeg
+        - image/png
+        - image/webp
+      paths:
+        uploads: public/images
+        static: public

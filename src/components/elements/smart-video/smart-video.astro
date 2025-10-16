@@ -1,5 +1,5 @@
 ---
-const { video, class: className, ...restProps } = Astro.props;
+const { type, id, title, source, poster, class: className, ...restProps } = Astro.props;
 
 const htmlAttributes = Object.fromEntries(
   Object.entries(restProps).filter(([key]) => key !== "_bookshop_name")
@@ -7,31 +7,31 @@ const htmlAttributes = Object.fromEntries(
 ---
 
 {
-  video._type === "vimeo" ? (
+  type === "vimeo" ? (
     <>
       <script>import '@choctawnationofoklahoma/lite-vimeo';</script>
       <lite-vimeo
         class:list={["smart-video", className]}
-        videotitle={`${video.title}`}
-        videoid={`${video.id}`}
+        videotitle={`${title}`}
+        videoid={`${id}`}
         {...htmlAttributes}
       >
-        <a class="lite-vimeo-fallback" href={`https://vimeo.com/${video.id}`}>
-          Watch on Vimeo: "{video.title}"
+        <a class="lite-vimeo-fallback" href={`https://vimeo.com/${id}`}>
+          Watch on Vimeo: "{title}"
         </a>
       </lite-vimeo>
     </>
-  ) : video._type === "youtube" ? (
+  ) : type === "youtube" ? (
     <>
       <script>import '@justinribeiro/lite-youtube';</script>
       <lite-youtube
         class:list={["smart-video", className]}
-        videotitle={`${video.title}`}
-        videoid={`${video.id}`}
+        videotitle={`${title}`}
+        videoid={`${id}`}
         {...htmlAttributes}
       >
-        <a class="lite-youtube-fallback" href={`https://www.youtube.com/watch?v=${video.id}`}>
-          Watch on YouTube: "{video.title}"
+        <a class="lite-youtube-fallback" href={`https://www.youtube.com/watch?v=${id}`}>
+          Watch on YouTube: "{title}"
         </a>
       </lite-youtube>
     </>
@@ -39,11 +39,11 @@ const htmlAttributes = Object.fromEntries(
     <video
       preload="none"
       controls
-      poster={video.poster}
+      poster={poster}
       class:list={["smart-video", className]}
       {...htmlAttributes}
     >
-      <source src={`${video.source}`} type="video/mp4" />
+      <source src={`${source}`} type="video/mp4" />
       Your browser does not support the HTML5 video element.
     </video>
   )
