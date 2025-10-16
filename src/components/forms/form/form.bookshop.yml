@@ -11,6 +11,10 @@ spec:
   description: "A form element that groups related form controls and handles form submission."
   icon: checklist_rtl
   tags: []
+  preview:
+    subtext:
+      - template: An form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
+      - Add items to the form
 
 blueprint:
   action:

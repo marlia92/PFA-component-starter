@@ -78,5 +78,5 @@ _inputs:
                     - image/png
                     - image/webp
                   paths:
-                    uploads: public/assets/images
+                    uploads: public/images
                     static: public

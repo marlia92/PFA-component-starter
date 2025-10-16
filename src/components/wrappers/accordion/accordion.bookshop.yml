@@ -16,6 +16,7 @@ spec:
       - Accordion
     subtext:
       - template: An accordion containing {items|array_length} {"item"|pluralize=items}
+      - Add items to the accordion
 
 blueprint:
   label:
