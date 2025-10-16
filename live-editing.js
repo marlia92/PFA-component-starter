@@ -1,6 +1,4 @@
-
-@ts-check
-
+import { registerAstroComponent } from "@cloudcannon/editable-regions/astro";
 import "@cloudcannon/editable-regions/astro-react-renderer";
 
 // Dynamically import all components from the components directory

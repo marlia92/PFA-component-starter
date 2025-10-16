@@ -11,7 +11,6 @@ import postcssEach from "postcss-each";
 import postcssImport from "postcss-import";
 import postcssNested from "postcss-nested";
 
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://astro.build/config
