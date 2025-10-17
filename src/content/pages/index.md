@@ -12,7 +12,7 @@ pageBlocks:
         iconPosition: before
       - _component: wrappers/button-group
         buttonBlocks:
-          - _bookshop_name: elements/button
+          - _component: elements/button
             text: View Components
             link: /component-library/
             iconPosition: before
