@@ -2,7 +2,7 @@
 title: "Native HTML5 Video"
 spacing: "all"
 blocks:
-  - _bookshop_name: "elements/smart-video"
+  - _component: "elements/smart-video"
     type: local-source
     title: "Glass Pour"
     source: /videos/component-library/glass.mp4

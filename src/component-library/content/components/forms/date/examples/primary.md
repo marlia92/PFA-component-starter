@@ -2,7 +2,7 @@
 title: "Basic Date Input"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/date"
+  _component: "forms/date"
   label: "Select Date"
   name: "date"
 ---

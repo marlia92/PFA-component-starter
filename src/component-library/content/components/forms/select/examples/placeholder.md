@@ -2,7 +2,7 @@
 title: "Select with Placeholder"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/select"
+  _component: "forms/select"
   label: "Department"
   name: "department"
   placeholder: "Choose a department..."

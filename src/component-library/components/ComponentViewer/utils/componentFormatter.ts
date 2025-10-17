@@ -6,12 +6,12 @@ import { getComponentDisplayName } from "./componentUtils";
 const { html } = pkg;
 
 export function formatComponentWithSlots(block: any, indentLevel: number = 0): string {
-  const componentPath = block._bookshop_name;
+  const componentPath = block._component;
   const componentName = getComponentDisplayName(componentPath);
   const props = { ...block };
   const indent = "  ".repeat(indentLevel);
 
-  delete props._bookshop_name;
+  delete props._component;
   delete props.contentBlocks;
   delete props.navBlocks;
   delete props.formBlocks;

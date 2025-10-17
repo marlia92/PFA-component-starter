@@ -2,7 +2,7 @@
 title: "Primary Blog Grid"
 spacing: "all"
 blocks:
-  _bookshop_name: "blocks/blog-grid"
+  _component: "blocks/blog-grid"
   blogPosts:
     - title: "Exploring Dunedin's historic architecture"
       excerpt: "Discover the rich architectural heritage of Dunedin, from the iconic Railway Station to the beautiful Edwardian buildings that line the city streets."

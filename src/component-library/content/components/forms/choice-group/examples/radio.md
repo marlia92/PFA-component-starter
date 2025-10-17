@@ -2,7 +2,7 @@
 title: "Radio Group"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/choice-group"
+  _component: "forms/choice-group"
   name: "size"
   title: "Select Size"
   multiple: false

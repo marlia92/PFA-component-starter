@@ -2,7 +2,7 @@
 title: "Large size"
 spacing: "all"
 blocks:
-  - _bookshop_name: "typography/list"
+  - _component: "typography/list"
     items:
       - text: First item
         icon: arrow-down-right

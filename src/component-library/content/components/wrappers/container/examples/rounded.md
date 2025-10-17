@@ -2,15 +2,15 @@
 title: Rounded Corners
 spacing:
 blocks:
-  _bookshop_name: "wrappers/container"
+  _component: "wrappers/container"
   backgroundColor: surface
   rounded: true
   paddingHorizontal: md
   paddingVertical: md
   contentBlocks:
-    - _bookshop_name: "typography/heading"
+    - _component: "typography/heading"
       text: "Rounded Container"
       level: h3
-    - _bookshop_name: "typography/simple-text"
+    - _component: "typography/simple-text"
       text: "This container has rounded corners applied."
 ---

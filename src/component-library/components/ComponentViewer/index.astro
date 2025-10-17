@@ -23,9 +23,9 @@ Object.entries(componentImports).forEach(([path, obj]) => {
     parts.pop();
   }
 
-  const bookshopName = parts.join("/");
+  const componentName = parts.join("/");
 
-  components[bookshopName] = (obj as any).default;
+  components[componentName] = (obj as any).default;
 });
 
 const viewerId = title.toLowerCase().replace(/\s+/g, "-");
@@ -73,7 +73,7 @@ const formattedCodeCache = await Promise.all(
             <div id={exampleId} class:list={[`preview`, `${idx === 0 ? "active" : ""}`]}>
               <div class="examples" style={bodyPadding}>
                 {blocksArray.map((block) => {
-                  const Component = components[block._bookshop_name];
+                  const Component = components[block._component];
 
                   return Component ? <Component {...block} /> : null;
                 })}

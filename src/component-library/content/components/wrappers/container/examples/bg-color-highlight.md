@@ -2,12 +2,12 @@
 title: Highlight background color
 spacing:
 blocks:
-  _bookshop_name: "wrappers/container"
+  _component: "wrappers/container"
   backgroundColor: "highlight"
   paddingVertical: "lg"
   paddingHorizontal: "lg"
   contentBlocks:
-    - _bookshop_name: "typography/heading"
+    - _component: "typography/heading"
       text: Highlight background color
       level: h2
 ---

@@ -2,12 +2,12 @@
 title: Top Alignment
 spacing:
 blocks:
-  _bookshop_name: "wrappers/split"
+  _component: "wrappers/split"
   firstColumnContentBlocks:
-    - _bookshop_name: "wrappers/container"
+    - _component: "wrappers/container"
       backgroundColor: "accent"
       contentBlocks:
-        - _bookshop_name: "typography/rich-text"
+        - _component: "typography/rich-text"
           text: |-
             ## Side A
 
@@ -17,10 +17,10 @@ blocks:
 
             And here's even more text to really drive the point home.
   secondColumnContentBlocks:
-    - _bookshop_name: "wrappers/container"
+    - _component: "wrappers/container"
       backgroundColor: "highlight"
       contentBlocks:
-        - _bookshop_name: "typography/rich-text"
+        - _component: "typography/rich-text"
           text: |-
             ## Side B
 

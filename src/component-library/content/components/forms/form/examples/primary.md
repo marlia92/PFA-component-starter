@@ -2,16 +2,16 @@
 title: "Primary Contact Form"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/form"
+  _component: "forms/form"
   action: "/contact"
   formBlocks:
-    - _bookshop_name: "forms/input"
+    - _component: "forms/input"
       label: "Full Name"
       name: "name"
       type: "text"
       placeholder: "Enter your full name"
       required: true
-    - _bookshop_name: "forms/select"
+    - _component: "forms/select"
       label: "City"
       name: "city"
       options:
@@ -27,15 +27,15 @@ blocks:
           label: "Dunedin"
         - value: "tauranga"
           label: "Tauranga"
-    - _bookshop_name: "forms/textarea"
+    - _component: "forms/textarea"
       label: "Message"
       name: "message"
       placeholder: "Tell us about your project..."
       required: true
-    - _bookshop_name: "forms/hidden"
+    - _component: "forms/hidden"
       name: "form-source"
       value: "contact-page"
-    - _bookshop_name: "forms/submit"
+    - _component: "forms/submit"
       text: "Send Message"
       variant: "primary"
 ---

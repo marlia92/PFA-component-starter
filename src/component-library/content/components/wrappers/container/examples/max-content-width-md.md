@@ -2,11 +2,11 @@
 title: md max content width
 spacing:
 blocks:
-  _bookshop_name: "wrappers/container"
+  _component: "wrappers/container"
   backgroundColor: "surface"
   maxContentWidth: md
   contentBlocks:
-    - _bookshop_name: "typography/heading"
+    - _component: "typography/heading"
       text: This container has md max content width.
       level: h2
       alignX: center

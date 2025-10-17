@@ -2,15 +2,15 @@
 title: Primary Split
 spacing:
 blocks:
-  _bookshop_name: "wrappers/split"
+  _component: "wrappers/split"
   firstColumnContentBlocks:
-    - _bookshop_name: "typography/rich-text"
+    - _component: "typography/rich-text"
       text: |-
         ## Side A
 
         This is content for side A.
   secondColumnContentBlocks:
-    - _bookshop_name: "typography/rich-text"
+    - _component: "typography/rich-text"
       text: |-
         ## Side B
 

@@ -2,7 +2,7 @@
 title: "Required Input"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/input"
+  _component: "forms/input"
   label: "Full Name"
   name: "name"
   type: "text"

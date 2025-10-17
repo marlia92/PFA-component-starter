@@ -2,7 +2,7 @@
 title: "Horizontal direction"
 spacing: "all"
 blocks:
-  - _bookshop_name: "typography/list"
+  - _component: "typography/list"
     items:
       - text: First horizontal list item
         icon: bolt

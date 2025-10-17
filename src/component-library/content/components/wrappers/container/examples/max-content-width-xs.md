@@ -2,11 +2,11 @@
 title: xs max content width
 spacing:
 blocks:
-  _bookshop_name: "wrappers/container"
+  _component: "wrappers/container"
   backgroundColor: "surface"
   maxContentWidth: xs
   contentBlocks:
-    - _bookshop_name: "typography/heading"
+    - _component: "typography/heading"
       text: This container has xs max content width.
       level: h2
       alignX: center

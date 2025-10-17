@@ -2,7 +2,7 @@
 title: "Checkbox Group"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/choice-group"
+  _component: "forms/choice-group"
   name: "preferences"
   title: "Communication Preferences"
   multiple: true

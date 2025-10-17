@@ -2,7 +2,7 @@
 title: "End alignment with vertical direction"
 spacing: "all"
 blocks:
-  - _bookshop_name: "typography/list"
+  - _component: "typography/list"
     items:
       - text: First list item
         icon: check-circle

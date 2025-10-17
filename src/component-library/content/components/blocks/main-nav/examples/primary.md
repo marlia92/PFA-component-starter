@@ -2,7 +2,7 @@
 title: "Primary Main Nav"
 spacing: "top"
 blocks:
-  _bookshop_name: "blocks/main-nav"
+  _component: "blocks/main-nav"
   logoSource: /src/assets/images/component-library/logo.svg
   logoAlt: Logo
   navData:
@@ -25,14 +25,14 @@ blocks:
       path: "#"
       children: []
   buttonBlocks:
-    - _bookshop_name: "elements/button"
+    - _component: "elements/button"
       link: "#"
       variant: "ghost"
       size: lg
       text: Search
       iconName: magnifying-glass
       hideText: true
-    - _bookshop_name: "elements/button"
+    - _component: "elements/button"
       link: "#"
       text: "Careers"
       variant: "ghost"

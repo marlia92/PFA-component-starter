@@ -2,15 +2,15 @@
 title: Clickable Card
 spacing:
 blocks:
-  _bookshop_name: "wrappers/card"
+  _component: "wrappers/card"
   paddingHorizontal: md
   paddingVertical: md
   backgroundColor: accent
   link: "#"
   contentBlocks:
-    - _bookshop_name: "typography/heading"
+    - _component: "typography/heading"
       text: "Clickable Card"
       level: h3
-    - _bookshop_name: "typography/simple-text"
+    - _component: "typography/simple-text"
       text: "This entire card is clickable! Perfect for navigation cards or feature highlights."
 ---

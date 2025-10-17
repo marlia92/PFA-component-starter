@@ -27,7 +27,7 @@ export async function getStaticPaths() {
       const componentKey = parts.join("/");
 
       let schema = null;
-      let bookshopData = null;
+      let configData = null;
 
       const camelCaseKey = componentKey
         .split("-")
@@ -52,21 +52,21 @@ export async function getStaticPaths() {
       }
 
       const lastPart = componentKey.split("/").pop();
-      const bookshopPath = `src/components/${componentKey}/${lastPart}.bookshop.yml`;
+      const configPath = `src/components/${componentKey}/${lastPart}.config.yml`;
 
-      if (existsSync(bookshopPath)) {
+      if (existsSync(configPath)) {
         try {
-          const content = readFileSync(bookshopPath, "utf8");
+          const content = readFileSync(configPath, "utf8");
 
-          bookshopData = yaml.load(content);
+          configData = yaml.load(content);
         } catch (error) {
-          console.error(`Error parsing bookshop file ${bookshopPath}:`, error);
+          console.error(`Error parsing config file ${configPath}:`, error);
         }
       }
 
       return {
         params: { slug: componentKey },
-        props: { page: entry, schema, bookshopData },
+        props: { page: entry, schema, configData },
       };
     });
   } catch (error) {
@@ -75,7 +75,7 @@ export async function getStaticPaths() {
   }
 }
 
-const { page, schema, bookshopData } = Astro.props;
+const { page, schema, configData } = Astro.props;
 const { Content } = await render(page);
 const frontmatter = page.data;
 
@@ -103,7 +103,7 @@ try {
 <ComponentLayout
   frontmatter={frontmatter}
   schema={schema}
-  bookshopData={bookshopData}
+  configData={configData}
   examples={examples}
   componentKey={componentKey}
 >

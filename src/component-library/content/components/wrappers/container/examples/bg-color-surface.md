@@ -2,12 +2,12 @@
 title: Surface background color
 spacing:
 blocks:
-  _bookshop_name: "wrappers/container"
+  _component: "wrappers/container"
   backgroundColor: "surface"
   paddingVertical: "lg"
   paddingHorizontal: "lg"
   contentBlocks:
-    - _bookshop_name: "typography/heading"
+    - _component: "typography/heading"
       text: Surface background color
       level: h2
 ---

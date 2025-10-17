@@ -2,7 +2,7 @@
 title: "Primary Segments"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/segments"
+  _component: "forms/segments"
   name: "primary-demo-theme"
   title: "Theme"
   options:

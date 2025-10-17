@@ -2,7 +2,7 @@
 title: "Primary Bar Navigation"
 spacing: ""
 blocks:
-  _bookshop_name: "navigation/bar"
+  _component: "navigation/bar"
   navData:
     - name: "Home"
       path: "#"

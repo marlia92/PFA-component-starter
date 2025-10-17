@@ -2,18 +2,18 @@
 title: Top Navigation
 spacing: all
 blocks:
-  _bookshop_name: "wrappers/content-selector"
+  _component: "wrappers/content-selector"
   navigationPosition: top
   items:
     - title: FAQ
       sub_text: Common questions
       icon_name: question-mark-circle
       contentBlocks:
-        - _bookshop_name: typography/heading
+        - _component: typography/heading
           text: "Frequently asked questions"
           level: h2
           alignX: start
-        - _bookshop_name: typography/rich-text
+        - _component: typography/rich-text
           text: |
             **Do you offer support?** Yes — email us anytime.
 
@@ -24,13 +24,13 @@ blocks:
       sub_text: How we deliver
       icon_name: truck
       contentBlocks:
-        - _bookshop_name: typography/simple-text
+        - _component: typography/simple-text
           text: |
             We ship worldwide. Orders leave within 2 business days.
             Delivery times vary by region.
           alignX: start
           size: md
-        - _bookshop_name: typography/list
+        - _component: typography/list
           items:
             - text: "NZ & AU: 2–5 days"
               icon: clock
@@ -43,11 +43,11 @@ blocks:
       sub_text: Easy and fair
       icon_name: arrow-path
       contentBlocks:
-        - _bookshop_name: typography/simple-text
+        - _component: typography/simple-text
           text: "30‑day returns. Unused items only. Full refund once received."
           alignX: start
           size: md
-        - _bookshop_name: elements/button
+        - _component: elements/button
           text: Start a return
           link: #
           variant: secondary

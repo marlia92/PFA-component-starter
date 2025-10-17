@@ -6,10 +6,10 @@ import LibraryLayout from "@component-library/layouts/LibraryLayout.astro";
 // @ts-ignore
 import MarkdownIt from "markdown-it";
 
-const { frontmatter, schema, bookshopData, examples = [], componentKey = "" } = Astro.props;
+const { frontmatter, schema, configData, examples = [], componentKey = "" } = Astro.props;
 const meta = {
-  description: bookshopData?.spec?.description || "No description available",
-  title: bookshopData?.spec?.label || frontmatter.title,
+  description: configData?.description || "No description available",
+  title: configData?.label || frontmatter.title,
 };
 
 const md = new MarkdownIt({ html: true });
@@ -69,7 +69,7 @@ const processedExamples = frontmatterExamples.map((exampleConfig: any) => {
   }
 
   <h2>Properties</h2>
-  <ComponentProperties bookshopData={bookshopData} />
+  <ComponentProperties configData={configData} />
 
   {
     frontmatter.slots && (

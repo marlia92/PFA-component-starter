@@ -2,7 +2,7 @@
 title: "Center alignment with horizontal direction"
 spacing: "all"
 blocks:
-  - _bookshop_name: "typography/list"
+  - _component: "typography/list"
     items:
       - text: First list item
         icon: check-circle

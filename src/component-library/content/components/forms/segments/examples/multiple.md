@@ -2,7 +2,7 @@
 title: "Multiple Selection Segments"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/segments"
+  _component: "forms/segments"
   name: "features"
   title: "Select Features"
   multiple: true

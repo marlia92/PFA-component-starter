@@ -2,7 +2,7 @@
 title: "Required Select"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/select"
+  _component: "forms/select"
   label: "Priority Level"
   name: "priority"
   placeholder: "Select priority..."

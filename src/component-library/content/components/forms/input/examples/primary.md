@@ -2,7 +2,7 @@
 title: "Primary Input"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/input"
+  _component: "forms/input"
   label: "Email Address"
   name: "email"
   type: "email"

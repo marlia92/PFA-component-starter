@@ -9,11 +9,7 @@ export async function generateNavData(navData) {
     const slug = component.id.replace(/^components\//, "").replace(/\/index$/, "");
     const parts = slug.split("/").filter(Boolean);
 
-    if (
-      slug.includes("/examples/") ||
-      slug.includes("bookshop") ||
-      (!component.data.title && !component.data.name)
-    ) {
+    if (slug.includes("/examples/") || (!component.data.title && !component.data.name)) {
       return;
     }
 

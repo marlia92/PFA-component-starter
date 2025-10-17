@@ -1,12 +1,16 @@
 ---
-const { bookshopData } = Astro.props;
+const { configData } = Astro.props;
 
-function parseBookshopProperties(bookshopData: any): PropertyMeta[] {
+function parseConfigProperties(configData: any): PropertyMeta[] {
   const properties: PropertyMeta[] = [];
 
-  if (bookshopData.blueprint) {
-    Object.entries(bookshopData.blueprint).forEach(([key, value]) => {
-      const inputConfig = bookshopData._inputs?.[key];
+  if (configData.value) {
+    Object.entries(configData.value).forEach(([key, value]) => {
+      // Skip the _component key as it's metadata
+      if (key === "_component") {
+        return;
+      }
+      const inputConfig = configData._inputs?.[key];
 
       properties.push({
         name: key,
@@ -15,8 +19,8 @@ function parseBookshopProperties(bookshopData: any): PropertyMeta[] {
         default: formatDefaultValue(value, inputConfig),
         enumValues: getEnumValues(inputConfig),
         description: inputConfig?.comment || "",
-        nestedProperties: getNestedProperties(inputConfig, bookshopData),
-        arrayItemProperties: getArrayItemProperties(inputConfig, bookshopData),
+        nestedProperties: getNestedProperties(inputConfig, configData),
+        arrayItemProperties: getArrayItemProperties(inputConfig, configData),
       });
     });
   }
@@ -97,7 +101,7 @@ function getEnumValues(inputConfig: any): string[] | undefined {
   return undefined;
 }
 
-function getNestedProperties(inputConfig: any, bookshopData?: any): PropertyMeta[] | undefined {
+function getNestedProperties(inputConfig: any, configData?: any): PropertyMeta[] | undefined {
   if (inputConfig?.type === "object" && inputConfig._inputs) {
     const nestedProperties: PropertyMeta[] = [];
 
@@ -109,8 +113,8 @@ function getNestedProperties(inputConfig: any, bookshopData?: any): PropertyMeta
         default: formatDefaultValue(nestedInput.default, nestedInput),
         enumValues: getEnumValues(nestedInput),
         description: nestedInput?.comment || "",
-        nestedProperties: getNestedProperties(nestedInput, bookshopData),
-        arrayItemProperties: getArrayItemProperties(nestedInput, bookshopData),
+        nestedProperties: getNestedProperties(nestedInput, configData),
+        arrayItemProperties: getArrayItemProperties(nestedInput, configData),
       });
     });
 
@@ -120,7 +124,7 @@ function getNestedProperties(inputConfig: any, bookshopData?: any): PropertyMeta
   return undefined;
 }
 
-function getArrayItemProperties(inputConfig: any, bookshopData: any): PropertyMeta[] | undefined {
+function getArrayItemProperties(inputConfig: any, configData: any): PropertyMeta[] | undefined {
   // Check if this is an array with a structure reference
   if (inputConfig?.type === "array" && inputConfig.options?.structures) {
     const structurePath = inputConfig.options.structures;
@@ -128,7 +132,7 @@ function getArrayItemProperties(inputConfig: any, bookshopData: any): PropertyMe
     // Handle _structures.item format
     if (structurePath.startsWith("_structures.")) {
       const structureName = structurePath.replace("_structures.", "");
-      const structure = bookshopData._structures?.[structureName];
+      const structure = configData._structures?.[structureName];
 
       if (structure?.values && structure.values.length > 0) {
         // Get the first value as the template
@@ -149,8 +153,8 @@ function getArrayItemProperties(inputConfig: any, bookshopData: any): PropertyMe
               default: formatDefaultValue(value, itemInputConfig),
               enumValues: getEnumValues(itemInputConfig),
               description: itemInputConfig?.comment || "",
-              nestedProperties: getNestedProperties(itemInputConfig, bookshopData),
-              arrayItemProperties: getArrayItemProperties(itemInputConfig, bookshopData),
+              nestedProperties: getNestedProperties(itemInputConfig, configData),
+              arrayItemProperties: getArrayItemProperties(itemInputConfig, configData),
             });
           });
 
@@ -174,7 +178,7 @@ type PropertyMeta = {
   arrayItemProperties?: PropertyMeta[];
 };
 
-const properties: PropertyMeta[] = bookshopData ? parseBookshopProperties(bookshopData) : [];
+const properties: PropertyMeta[] = configData ? parseConfigProperties(configData) : [];
 ---
 
 <div class="properties">
@@ -234,7 +238,7 @@ const properties: PropertyMeta[] = bookshopData ? parseBookshopProperties(booksh
         return renderProperty(prop);
       })
     ) : (
-      <p>No properties available. Make sure the component has a valid bookshop.yml file.</p>
+      <p>No properties available. Make sure the component has a valid .config.yml file.</p>
     )
   }
 </div>

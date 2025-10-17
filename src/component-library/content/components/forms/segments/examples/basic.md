@@ -2,7 +2,7 @@
 title: "Basic Segments"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/segments"
+  _component: "forms/segments"
   name: "size"
   title: "Select Size"
   options:

@@ -2,12 +2,12 @@
 title: sm padding
 spacing:
 blocks:
-  _bookshop_name: "wrappers/container"
+  _component: "wrappers/container"
   backgroundColor: "surface"
   paddingHorizontal: sm
   paddingVertical: sm
   contentBlocks:
-    - _bookshop_name: "typography/heading"
+    - _component: "typography/heading"
       text: This container has sm padding.
       level: h2
 ---

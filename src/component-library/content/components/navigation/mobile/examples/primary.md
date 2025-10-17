@@ -2,7 +2,7 @@
 title: "Primary Mobile Navigation"
 spacing: ""
 blocks:
-  _bookshop_name: "navigation/mobile"
+  _component: "navigation/mobile"
   logoSource:
   logoAlt:
   navData:

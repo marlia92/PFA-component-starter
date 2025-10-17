@@ -2,7 +2,7 @@
 title: "Required Segments"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/segments"
+  _component: "forms/segments"
   name: "status"
   title: "Account Status"
   required: true

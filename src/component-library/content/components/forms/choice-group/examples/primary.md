@@ -2,7 +2,7 @@
 title: "Primary Choice Group"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/choice-group"
+  _component: "forms/choice-group"
   name: "interests"
   title: "What are you interested in?"
   multiple: true

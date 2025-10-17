@@ -2,6 +2,6 @@
 title: "Primary Submit Button"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/submit"
+  _component: "forms/submit"
   text: "Submit Form"
 ---

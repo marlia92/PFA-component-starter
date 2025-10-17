@@ -2,7 +2,7 @@
 title: "Primary Select"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/select"
+  _component: "forms/select"
   label: "City"
   name: "city"
   options:

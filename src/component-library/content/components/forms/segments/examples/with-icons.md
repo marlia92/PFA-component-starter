@@ -2,7 +2,7 @@
 title: "Segments with Icons"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/segments"
+  _component: "forms/segments"
   name: "view-mode"
   title: "View Mode"
   options:

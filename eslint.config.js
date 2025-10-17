@@ -107,9 +107,9 @@ export default [
     },
   },
 
-  // Enforce the order of keys in Bookshop YAML files
+  // Enforce the order of keys in config YAML files
   {
-    files: ["**/*.bookshop.yml", "**/*.bookshop.yaml"],
+    files: ["**/*.config.yml", "**/*.config.yaml"],
     languageOptions: {
       parser: yamlParser,
     },

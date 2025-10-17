@@ -2,18 +2,18 @@
 title: "Icons"
 spacing: "all"
 blocks:
-  - _bookshop_name: "elements/button"
+  - _component: "elements/button"
     iconName: cake
     text: "Cake"
     hideText: true
     variant: tertiary
     style: "margin-inline-end: var(--spacing-sm);"
-  - _bookshop_name: "elements/button"
+  - _component: "elements/button"
     iconName: check
     text: "Find out more"
     variant: tertiary
     style: "margin-inline-end: var(--spacing-sm);"
-  - _bookshop_name: "elements/button"
+  - _component: "elements/button"
     iconName: arrow-down-right
     iconPosition: after
     text: "Everything you need"

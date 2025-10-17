@@ -2,7 +2,7 @@
 title: "Password Input"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/input"
+  _component: "forms/input"
   label: "Password"
   name: "password"
   type: "password"

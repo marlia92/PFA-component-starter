@@ -2,7 +2,7 @@
 title: "Definition List"
 spacing: "all"
 blocks:
-  - _bookshop_name: "typography/definition-list"
+  - _component: "typography/definition-list"
     items:
       - title: Monday
         text: 8am – 5pm

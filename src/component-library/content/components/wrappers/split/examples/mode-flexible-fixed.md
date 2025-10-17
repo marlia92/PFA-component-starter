@@ -2,21 +2,21 @@
 title: Flexible Fixed Mode
 spacing:
 blocks:
-  _bookshop_name: "wrappers/split"
+  _component: "wrappers/split"
   firstColumnContentBlocks:
-    - _bookshop_name: "wrappers/container"
+    - _component: "wrappers/container"
       backgroundColor: "accent"
       contentBlocks:
-        - _bookshop_name: "typography/rich-text"
+        - _component: "typography/rich-text"
           text: |-
             ## Flexible column
 
             This column takes up the remaining space.
   secondColumnContentBlocks:
-    - _bookshop_name: "wrappers/container"
+    - _component: "wrappers/container"
       backgroundColor: "highlight"
       contentBlocks:
-        - _bookshop_name: "typography/rich-text"
+        - _component: "typography/rich-text"
           text: |-
             ## Fixed column
 

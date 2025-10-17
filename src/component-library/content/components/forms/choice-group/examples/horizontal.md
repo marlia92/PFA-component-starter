@@ -2,7 +2,7 @@
 title: "Horizontal Choice Group"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/choice-group"
+  _component: "forms/choice-group"
   name: "features"
   title: "Select Features"
   orientation: "horizontal"

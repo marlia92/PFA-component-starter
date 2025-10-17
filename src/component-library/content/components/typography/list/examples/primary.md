@@ -2,7 +2,7 @@
 title: "Primary List"
 spacing: "all"
 blocks:
-  _bookshop_name: "typography/list"
+  _component: "typography/list"
   items:
     - text: Lists with icons are helpful for emphasis.
       icon: check

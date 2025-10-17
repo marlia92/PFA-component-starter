@@ -2,7 +2,7 @@
 title: "Primary Icon"
 spacing: "all"
 blocks:
-  _bookshop_name: "elements/icon"
+  _component: "elements/icon"
   name: cube
   size: lg
 ---

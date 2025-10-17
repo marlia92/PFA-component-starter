@@ -25,8 +25,8 @@ export async function formatBlocksAstro(blocks: any): Promise<string> {
     // Get unique components and generate imports
     const uniqueComponents = new Set<string>();
     const addComponentToSet = (block: any) => {
-      if (block._bookshop_name) {
-        uniqueComponents.add(block._bookshop_name);
+      if (block._component) {
+        uniqueComponents.add(block._component);
       }
 
       // Recursively check for nested components in properties that can contain blocks
@@ -39,8 +39,8 @@ export async function formatBlocksAstro(blocks: any): Promise<string> {
       }
 
       // Handle child components based on metadata
-      if (block._bookshop_name) {
-        const metadata = metadataMap.get(block._bookshop_name);
+      if (block._component) {
+        const metadata = metadataMap.get(block._component);
 
         if (metadata?.childComponent && metadata?.fallbackFor) {
           const fallbackProp = metadata.fallbackFor;
@@ -48,7 +48,7 @@ export async function formatBlocksAstro(blocks: any): Promise<string> {
           // Check if the fallback property exists and might need child components
           if (block[fallbackProp]) {
             const childComponentPath = getChildComponentPath(
-              block._bookshop_name,
+              block._component,
               metadata.childComponent.name
             );
 

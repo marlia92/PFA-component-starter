@@ -2,7 +2,7 @@
 title: "Number Input"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/input"
+  _component: "forms/input"
   label: "Age"
   name: "age"
   type: "number"

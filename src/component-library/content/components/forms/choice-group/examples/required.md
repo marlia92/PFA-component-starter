@@ -2,7 +2,7 @@
 title: "Required Choice Group"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/choice-group"
+  _component: "forms/choice-group"
   name: "contact-method"
   title: "Preferred Contact Method"
   required: true

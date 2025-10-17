@@ -2,7 +2,7 @@
 title: "Primary Rich Text"
 spacing: "sides"
 blocks:
-  _bookshop_name: "typography/rich-text"
+  _component: "typography/rich-text"
   text: |-
     ## This is all one markdown block 
 

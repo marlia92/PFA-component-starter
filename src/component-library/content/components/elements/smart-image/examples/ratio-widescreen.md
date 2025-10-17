@@ -2,7 +2,7 @@
 title: "Widescreen Aspect Ratio"
 spacing: "all"
 blocks:
-  _bookshop_name: "elements/smart-image"
+  _component: "elements/smart-image"
   source: /src/assets/images/component-library/quiet-street.jpg
   alt: "Quiet Street"
   aspectRatio: widescreen

@@ -2,11 +2,11 @@
 title: 3xl max content width
 spacing:
 blocks:
-  _bookshop_name: "wrappers/container"
+  _component: "wrappers/container"
   backgroundColor: "surface"
   maxContentWidth: 3xl
   contentBlocks:
-    - _bookshop_name: "typography/heading"
+    - _component: "typography/heading"
       text: This container has 3xl max content width.
       level: h2
       alignX: center

@@ -2,7 +2,7 @@
 title: "Primary Hidden Field"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/hidden"
+  _component: "forms/hidden"
   name: "user-id"
   value: "12345"
 ---

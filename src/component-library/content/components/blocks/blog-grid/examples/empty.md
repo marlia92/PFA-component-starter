@@ -2,7 +2,7 @@
 title: "Empty Blog Grid"
 spacing: "top"
 blocks:
-  _bookshop_name: "blocks/blog-grid"
+  _component: "blocks/blog-grid"
   title: "Coming Soon"
   blogPosts: []
   gridSettings:

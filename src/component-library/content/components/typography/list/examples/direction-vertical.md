@@ -2,7 +2,7 @@
 title: "Vertical direction"
 spacing: "all"
 blocks:
-  - _bookshop_name: "typography/list"
+  - _component: "typography/list"
     items:
       - text: First vertical list item
         icon: bolt

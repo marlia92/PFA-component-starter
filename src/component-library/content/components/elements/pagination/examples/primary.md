@@ -2,7 +2,7 @@
 title: "Primary Pagination"
 spacing: "all"
 blocks:
-  _bookshop_name: "elements/pagination"
+  _component: "elements/pagination"
   page:
     currentPage: 3
     lastPage: 10

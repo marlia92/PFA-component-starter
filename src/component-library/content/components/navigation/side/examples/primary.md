@@ -2,7 +2,7 @@
 title: "Primary Side Navigation"
 spacing: ""
 blocks:
-  _bookshop_name: "navigation/side"
+  _component: "navigation/side"
   navData:
     - name: "Getting Started"
       path: "#"

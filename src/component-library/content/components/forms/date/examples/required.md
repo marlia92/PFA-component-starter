@@ -2,7 +2,7 @@
 title: "Required Date Input"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/date"
+  _component: "forms/date"
   label: "Birth Date"
   name: "birthdate"
   required: true

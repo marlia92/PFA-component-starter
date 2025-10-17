@@ -2,7 +2,7 @@
 title: "Footer"
 spacing: "top"
 blocks:
-  _bookshop_name: "blocks/footer"
+  _component: "blocks/footer"
   logoSource: /images/logo.svg
   logoAlt: Logo
   links:

@@ -2,14 +2,14 @@
 title: Highlight Background
 spacing:
 blocks:
-  _bookshop_name: "wrappers/card"
+  _component: "wrappers/card"
   backgroundColor: highlight
   paddingHorizontal: sm
   paddingVertical: sm
   contentBlocks:
-    - _bookshop_name: "typography/heading"
+    - _component: "typography/heading"
       text: "Highlight Card"
       level: h3
-    - _bookshop_name: "typography/simple-text"
+    - _component: "typography/simple-text"
       text: "This card uses the highlight background color."
 ---

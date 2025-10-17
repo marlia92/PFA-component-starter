@@ -2,7 +2,7 @@
 title: Top left background image
 spacing:
 blocks:
-  _bookshop_name: "wrappers/container"
+  _component: "wrappers/container"
   paddingVertical: 2xl
   paddingHorizontal: md
   backgroundImage:
@@ -11,7 +11,7 @@ blocks:
     positionVertical: top
     positionHorizontal: left
   contentBlocks:
-    - _bookshop_name: "typography/heading"
+    - _component: "typography/heading"
       alignX: end
       text: Build bold. Launch fast.
 ---

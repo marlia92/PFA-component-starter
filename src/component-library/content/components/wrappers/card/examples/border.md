@@ -2,14 +2,14 @@
 title: Border
 spacing:
 blocks:
-  _bookshop_name: "wrappers/card"
+  _component: "wrappers/card"
   border: true
   paddingHorizontal: sm
   paddingVertical: sm
   contentBlocks:
-    - _bookshop_name: "typography/heading"
+    - _component: "typography/heading"
       text: "Border Card"
       level: h3
-    - _bookshop_name: "typography/simple-text"
+    - _component: "typography/simple-text"
       text: "This card has a border applied."
 ---

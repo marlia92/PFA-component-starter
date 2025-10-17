@@ -2,12 +2,12 @@
 title: Base background color
 spacing:
 blocks:
-  _bookshop_name: "wrappers/container"
+  _component: "wrappers/container"
   backgroundColor: "base"
   paddingVertical: "lg"
   paddingHorizontal: "lg"
   contentBlocks:
-    - _bookshop_name: "typography/heading"
+    - _component: "typography/heading"
       text: Base background color (page background color)
       level: h2
 ---

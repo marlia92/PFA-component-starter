@@ -2,7 +2,7 @@
 title: "Icon Only Segments"
 spacing: "all"
 blocks:
-  _bookshop_name: "forms/segments"
+  _component: "forms/segments"
   name: "view-options"
   title: "View Options"
   iconOnly: true

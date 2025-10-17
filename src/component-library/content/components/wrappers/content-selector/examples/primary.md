@@ -2,38 +2,38 @@
 title: Simple Tabs
 spacing: all
 blocks:
-  _bookshop_name: "wrappers/content-selector"
+  _component: "wrappers/content-selector"
   navigationPosition: start
   items:
     - title: Overview
       contentBlocks:
-        - _bookshop_name: typography/heading
+        - _component: typography/heading
           text: "Overview"
           level: h2
           alignX: start
-        - _bookshop_name: typography/simple-text
+        - _component: typography/simple-text
           text: |
             A small, service‑focused business offering practical help for everyday needs. Clear communication, fair pricing, and dependable results.
           alignX: start
           size: md
     - title: Details
       contentBlocks:
-        - _bookshop_name: typography/heading
+        - _component: typography/heading
           text: "Details"
           level: h2
           alignX: start
-        - _bookshop_name: typography/simple-text
+        - _component: typography/simple-text
           text: |
             Typical work includes planning, setup, and ongoing support. Projects are delivered on time with straightforward steps and simple options.
           alignX: start
           size: md
     - title: Next steps
       contentBlocks:
-        - _bookshop_name: typography/heading
+        - _component: typography/heading
           text: "Next steps"
           level: h2
           alignX: start
-        - _bookshop_name: typography/simple-text
+        - _component: typography/simple-text
           text: |
             Reach out for a quick estimate or to discuss what's needed. Responses are friendly and prompt.
           alignX: start

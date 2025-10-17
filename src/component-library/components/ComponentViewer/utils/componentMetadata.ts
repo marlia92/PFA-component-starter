@@ -59,7 +59,7 @@ export async function getComponentMetadataMap(): Promise<Map<string, ComponentMe
 }
 
 /**
- * Scans all bookshop files to find properties that can contain nested blocks
+ * Scans all config files to find properties that can contain nested blocks
  */
 export async function getNestedBlockProperties(): Promise<Set<string>> {
   if (nestedBlockPropertiesCache) {
@@ -71,8 +71,8 @@ export async function getNestedBlockProperties(): Promise<Set<string>> {
   try {
     const componentsDir = "src/components";
 
-    // Recursively find all bookshop.yml files
-    function findBookshopFiles(dir: string): string[] {
+    // Recursively find all config.yml files
+    function findConfigFiles(dir: string): string[] {
       const files: string[] = [];
 
       try {
@@ -82,8 +82,8 @@ export async function getNestedBlockProperties(): Promise<Set<string>> {
           const fullPath = join(dir, entry.name);
 
           if (entry.isDirectory()) {
-            files.push(...findBookshopFiles(fullPath));
-          } else if (entry.name.endsWith(".bookshop.yml")) {
+            files.push(...findConfigFiles(fullPath));
+          } else if (entry.name.endsWith(".config.yml")) {
             files.push(fullPath);
           }
         }
@@ -92,27 +92,27 @@ export async function getNestedBlockProperties(): Promise<Set<string>> {
       return files;
     }
 
-    const bookshopFiles = findBookshopFiles(componentsDir);
+    const configFiles = findConfigFiles(componentsDir);
 
-    for (const filePath of bookshopFiles) {
+    for (const filePath of configFiles) {
       try {
         const content = readFileSync(filePath, "utf8");
-        const bookshopData = yaml.load(content) as any;
+        const configData = yaml.load(content) as any;
 
-        // Scan spec.structures for nested block property names
-        if (bookshopData.spec?.structures && Array.isArray(bookshopData.spec.structures)) {
-          for (const structureName of bookshopData.spec.structures) {
+        // Scan _structures for nested block property names
+        if (configData._structures && typeof configData._structures === "object") {
+          for (const structureName of Object.keys(configData._structures)) {
             if (typeof structureName === "string") {
               nestedBlockPropertiesCache.add(structureName);
             }
           }
         }
       } catch (error) {
-        console.error(`Error parsing bookshop file ${filePath}:`, error);
+        console.error(`Error parsing config file ${filePath}:`, error);
       }
     }
   } catch (error) {
-    console.error("Error loading bookshop files for block properties:", error);
+    console.error("Error loading config files for block properties:", error);
   }
 
   return nestedBlockPropertiesCache;

@@ -2,7 +2,7 @@
 title: "Start Alignment"
 spacing: "all"
 blocks:
-  - _bookshop_name: "typography/definition-list"
+  - _component: "typography/definition-list"
     items:
       - title: Brand
         text: TechCorp

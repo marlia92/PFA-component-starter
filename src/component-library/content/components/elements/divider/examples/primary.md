@@ -2,10 +2,10 @@
 title: "Divider Primary"
 spacing: "all"
 blocks:
-  - _bookshop_name: "typography/rich-text"
+  - _component: "typography/rich-text"
     text: "There is a **divider** below this text."
-  - _bookshop_name: "elements/divider"
+  - _component: "elements/divider"
     paddingVertical: "md"
-  - _bookshop_name: "typography/rich-text"
+  - _component: "typography/rich-text"
     text: "There is a **divider** above this text."
 ---
