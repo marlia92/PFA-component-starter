@@ -4,7 +4,7 @@ import DefinitionListItem from "./definition-list-item.astro";
 const { items, alignX = "start", class: className, ...restProps } = Astro.props;
 
 const htmlAttributes = Object.fromEntries(
-  Object.entries(restProps).filter(([key]) => key !== "_bookshop_name")
+  Object.entries(restProps).filter(([key]) => key !== "_component")
 );
 ---
 

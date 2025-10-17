@@ -5,7 +5,7 @@ import RenderBlock from "@components/utils/renderBlock.astro";
 const { items, navigationPosition = "start", class: className, label, ...restProps } = Astro.props;
 
 const htmlAttributes = Object.fromEntries(
-  Object.entries(restProps).filter(([key]) => key !== "_bookshop_name")
+  Object.entries(restProps).filter(([key]) => key !== "_component")
 );
 
 const slugifyLabel = (label: string) => {
