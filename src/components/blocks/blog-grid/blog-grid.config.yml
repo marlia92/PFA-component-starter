@@ -1,6 +1,6 @@
 label: Blog Grid
 icon: article
-description: "Content display block for blog posts in a grid."
+description: "Displays blog posts in a responsive grid layout."
 structures: []
 value:
   _component: blocks/blog-grid

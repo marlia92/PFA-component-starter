@@ -1,6 +1,6 @@
 ---
 title: Divider
-overview: "A visual separator component for dividing content sections. Creates horizontal lines with configurable spacing above and below."
+overview: "A simple visual separator for dividing content sections. Renders a horizontal line with configurable spacing above and below to control layout flow."
 examples:
   - slugs:
       - padding

@@ -1,7 +1,8 @@
 ---
 title: Smart Video
 order: 3
-overview: "A versatile video component supporting YouTube, Vimeo, and native HTML5 sources. Maintains responsive aspect ratios with consistent styling across all video types."
+overview: "A video component for embedding YouTube, Vimeo, or HTML5 content. Optimizes performance by loading YouTube and Vimeo players only on interaction instead of pageload. Supports custom aspect ratios, preview images, and titles."
+
 examples:
   - slugs:
       - local-source

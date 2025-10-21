@@ -1,5 +1,5 @@
 ---
 title: Pagination
-overview: "A navigation component for multi-page content. Displays numbered page links with previous/next buttons and proper accessibility attributes."
+overview: "Navigation for paginated content. Works directly with Astro's pagination object to render page links, and highlight the active page."
 examples:
 ---

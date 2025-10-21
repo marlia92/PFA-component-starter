@@ -1,6 +1,6 @@
 label: Accordion
 icon: expand_all
-description: "Interactive component for expandable/collapsible content panels."
+description: "Interactive component for showing and hiding content panels."
 structures:
   - containerBlocks
   - cardBlocks

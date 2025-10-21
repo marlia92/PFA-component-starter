@@ -1,6 +1,6 @@
 label: Button
 icon: variables
-description: "Interactive button for calls-to-action and navigation."
+description: "Clickable button for calls-to-action and navigation."
 structures:
   - buttonBlocks
 value:

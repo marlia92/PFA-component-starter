@@ -1,6 +1,6 @@
 ---
 title: Form
-overview: "A container component for wrapping form field components. Handles submission endpoints, HTTP methods, and success/error handling."
+overview: "Groups input fields and buttons into a form that can submit data to a URL."
 slots:
   - title: default
     description: The contents of the Form.

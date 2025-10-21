@@ -1,6 +1,6 @@
 ---
 title: Select
-overview: "A dropdown form field for choosing one option from a list. Supports placeholders, default selections, and validation. For multiple selections, use [Choice Group](/component-library/components/forms/choice-group)."
+overview: "A form field that lets users select one option from a dropdown list. Supports custom labels, placeholders, default selections, and required validation. Each option includes a label and a value used in the form submission."
 slots:
   - title: default
     description: Select options.

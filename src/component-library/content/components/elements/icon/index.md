@@ -1,11 +1,10 @@
 ---
 title: Icon
-overview: "An SVG icon component for visual enhancement. Supports hundreds of icons with configurable sizes and fill styles. Can be combined with buttons, headings, and other components."
+overview: "Used to add icons to other components including buttons and headings. Loads icons from `/src/icons/`.  Icons are optimized with SVGO and deduplicated when reused across a page for improved performance. Supports configurable sizes."
 examples:
   - title: Sizes
     slugs:
       - sizes
-  - title: Fill Icons
-    slugs:
-      - fill
+  - slugs:
+      - types
 ---

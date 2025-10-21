@@ -1182,8 +1182,8 @@ _structures:
           _component: wrappers/card
           label: null
           contentBlocks: []
-          headerContentBlocks: []
-          footerContentBlocks: []
+          beforeContentBlocks: []
+          afterContentBlocks: []
           paddingHorizontal: sm
           paddingVertical: sm
           colorScheme: default
@@ -1213,14 +1213,14 @@ _structures:
             comment: Array of content blocks to render within the card.
             options:
               structures: _structures.cardBlocks
-          headerContentBlocks:
+          beforeContentBlocks:
             type: array
-            comment: Array of content blocks to render in the card header.
+            comment: Array of content blocks to render before the card content.
             options:
               structures: _structures.cardBlocks
-          footerContentBlocks:
+          afterContentBlocks:
             type: array
-            comment: Array of content blocks to render in the card footer.
+            comment: Array of content blocks to render after the card content.
             options:
               structures: _structures.cardBlocks
           paddingHorizontal:
@@ -2551,7 +2551,7 @@ _structures:
           hideText:
             type: switch
             comment: Whether to hide the button text and show only the icon.
-            hidden: "!iconName\""
+            hidden: '!iconName"'
           disabled:
             type: switch
             comment: Whether the submit button is disabled.

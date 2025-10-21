@@ -1,7 +1,7 @@
 ---
 title: Split
 order: 3
-overview: "A two-column layout component for side-by-side content. Supports configurable column ratios (50/50, 33/66, 25/75, etc.), vertical alignment, and reverse ordering."
+overview: "Displays two content areas side by side with adjustable widths. Supports different column ratios, vertical alignment, and the option to reverse column order."
 slots:
   - title: first
     description: The contents for the first side of the Split.

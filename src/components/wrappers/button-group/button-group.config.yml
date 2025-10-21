@@ -1,6 +1,6 @@
 label: Button Group
 icon: rectangle
-description: "Layout component for arranging multiple buttons."
+description: "Arranges buttons side by side with consistent spacing."
 structures:
   - containerBlocks
   - cardBlocks

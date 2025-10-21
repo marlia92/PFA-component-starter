@@ -1,6 +1,6 @@
 label: Date
 icon: calendar
-description: "Form field with native date picker interface."
+description: "Form field for selecting a date."
 structures:
   - formBlocks
 value:

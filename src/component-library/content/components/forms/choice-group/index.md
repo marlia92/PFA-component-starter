@@ -1,6 +1,6 @@
 ---
 title: Choice Group
-overview: "A form field with multiple checkboxes or radio buttons. Supports vertical or horizontal layouts. Use radio for single selection, checkboxes for multiple. Nest within a [Form](/component-library/components/forms/form)."
+overview: "Lets users choose one or more options from a list. Can display as checkboxes for multiple selections or radio buttons for a single choice. Supports labels and orientation settings."
 examples:
   - title: Types
     slugs:

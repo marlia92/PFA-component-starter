@@ -1,6 +1,6 @@
 ---
 title: Definition List
-overview: "A semantic list component for term/definition pairs. Perfect for glossaries, FAQs, and content requiring label/description pairings. Supports markdown formatting in definitions."
+overview: "A semantic `<dl>` component for displaying term/definition pairs. Ideal for glossaries, FAQs, and other label–description content. Supports markdown formatting in definitions."
 slots:
   - title: default
     description: The content inside the DefinitionList.
@@ -9,7 +9,6 @@ slots:
       name: DefinitionListItem
       props:
         - "text/slot"
-        - "title/slot(title)"
 examples:
   - slugs:
       - alignment-start

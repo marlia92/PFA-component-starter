@@ -1,6 +1,6 @@
 label: Container
 icon: width_full
-description: "Section wrapper for full-width layouts with centered content."
+description: "Used to group and style large sections of a page."
 structures:
   - containerBlocks
   - pageBlocks

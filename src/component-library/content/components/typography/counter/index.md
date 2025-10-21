@@ -1,6 +1,6 @@
 ---
 title: Counter
-overview: "A statistical display component for large numeric values. Commonly used for metrics, statistics, and key figures. Supports optional prefix/suffix text, alignment, and sizing."
+overview: "Displays animated numeric values for key stats or figures, with support for prefix and suffix text, sizing, and alignment. For a unanimated version use [Heading](/component-library/components/typography/heading/)."
 examples:
   - slugs:
       - alignment-start

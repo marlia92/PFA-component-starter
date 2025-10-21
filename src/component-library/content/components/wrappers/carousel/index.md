@@ -1,6 +1,7 @@
 ---
 title: Carousel
-overview: "An interactive slideshow component for scrollable content panels. Supports auto-play, auto-scroll, customizable slide widths, and touch/swipe gestures."
+overview: "A carousel for displaying multiple slides of content. Supports autoplay and auto-scroll options, with configurable slide widths and minimum sizes to maintain responsive layouts."
+
 slots:
   - title: default
     description: The contents for the the Carousel.

@@ -1,6 +1,6 @@
 label: Submit
 icon: check
-description: "Form submission button with loading states."
+description: "Button for submitting a form."
 structures:
   - formBlocks
 value:
@@ -76,7 +76,7 @@ _inputs:
   hideText:
     type: switch
     comment: Whether to hide the button text and show only the icon.
-    hidden: "!iconName\""
+    hidden: '!iconName"'
   disabled:
     type: switch
     comment: Whether the submit button is disabled.

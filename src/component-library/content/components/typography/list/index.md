@@ -1,7 +1,7 @@
 ---
 title: List
 order: 4
-overview: "A flexible list component for ordered or unordered items. Supports vertical and horizontal layouts, custom styling, alignment, optional icons, and markdown formatting in items."
+overview: "Displays an icon list with support for vertical or horizontal layouts, custom styling, alignment, and markdown formatting. For standard bullet or numbered lists, use [Rich Text](/component-library/components/typography/rich-text) instead."
 slots:
   - title: default
     description: The content inside the List.

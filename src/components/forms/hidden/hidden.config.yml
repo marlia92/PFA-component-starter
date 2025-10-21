@@ -1,6 +1,6 @@
 label: Hidden
 icon: eye-slash
-description: "Hidden form field for tracking data."
+description: "Hidden form field for storing data."
 structures:
   - formBlocks
 value:

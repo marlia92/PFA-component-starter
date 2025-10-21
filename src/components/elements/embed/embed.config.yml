@@ -1,6 +1,6 @@
 label: Embed
 icon: data_object
-description: "Responsive iframe wrapper for embedded content."
+description: "Responsive wrapper for third-party embeds."
 structures:
   - containerBlocks
   - cardBlocks
@@ -51,5 +51,3 @@ _inputs:
           name: Portrait (3:4)
         - id: widescreen
           name: Widescreen (16:9)
-        - id: golden
-          name: Golden (1.618:1)

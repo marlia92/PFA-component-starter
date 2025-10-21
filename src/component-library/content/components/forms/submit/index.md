@@ -1,7 +1,7 @@
 ---
 title: Submit
 order: 3
-overview: 'Submit is a form submission button component that renders as a `<button type="submit">` element. It''s specifically designed for form submissions with loading states and disabled handling. Choose from multiple variants, sizes, and optionally include icons. For general interactive buttons, use [Button](/component-library/components/elements/button) instead.'
+overview: "A submit button used to send form data. Supports multiple visual variants, sizes, and optional icons. Text can be hidden to display an icon-only button, and the button can be disabled when needed. For a button that links to a page see [Button](/component-library/components/elements/button/)."
 examples:
   - slugs:
       - variants

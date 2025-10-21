@@ -1,6 +1,6 @@
 label: List
 icon: list
-description: "List component for ordered or unordered items."
+description: "Lists items with icons as markers."
 structures:
   - containerBlocks
   - cardBlocks
@@ -105,4 +105,3 @@ _structures:
                   - key: name
                 image:
                   - template: "src/icons/{id}.svg"
-

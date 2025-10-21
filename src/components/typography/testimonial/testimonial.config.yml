@@ -1,6 +1,6 @@
 label: Testimonial
 icon: format_quote
-description: "Component for customer quotes and reviews."
+description: "Displays customer quotes and reviews."
 structures:
   - containerBlocks
   - cardBlocks

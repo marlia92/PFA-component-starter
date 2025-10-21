@@ -1,6 +1,6 @@
 label: Form
 icon: checklist_rtl
-description: "Container component for form field components."
+description: "Groups form fields into one submission area."
 structures:
   - containerBlocks
   - cardBlocks

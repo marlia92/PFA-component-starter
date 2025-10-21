@@ -1,6 +1,6 @@
 label: Choice Group
 icon: check_box
-description: "Form field with checkboxes or radio buttons."
+description: "Form field for selecting one or more options."
 structures:
   - formBlocks
 value:

@@ -1,6 +1,6 @@
 label: Counter
 icon: speed
-description: "Statistical display for large numeric values."
+description: "Animated counter for highlighting key stats or figures."
 structures:
   - containerBlocks
   - cardBlocks

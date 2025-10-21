@@ -1,7 +1,7 @@
 ---
 title: Content Selector
-description: Switches between related content panels using tab buttons.
-overview: "A tabbed interface for switching between related content panels. Organizes content into switchable views with configurable top or side navigation positioning."
+overview: "Displays multiple content panels within a tabbed interface. Each item includes a title and content area. Supports configurable tab navigation positions (top or start)."
+
 examples:
   - title: "Navigation Position"
     slugs:

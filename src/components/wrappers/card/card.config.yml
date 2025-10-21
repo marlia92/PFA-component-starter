@@ -1,6 +1,6 @@
 label: Card
 icon: crop_square
-description: "Flexible container for grouping related content."
+description: "Groups related content within a section."
 structures:
   - containerBlocks
   - splitBlocks
@@ -11,8 +11,8 @@ value:
   _component: wrappers/card/card
   label: null
   contentBlocks: []
-  headerContentBlocks: []
-  footerContentBlocks: []
+  beforeContentBlocks: []
+  afterContentBlocks: []
   paddingHorizontal: sm
   paddingVertical: sm
   colorScheme: default
@@ -39,17 +39,17 @@ _inputs:
     comment: Optional label for the card to help identify it in the editor.
   contentBlocks:
     type: array
-    comment: Array of content blocks to render within the card.
+    comment: Content inside the main area of the card, with padding.
     options:
       structures: _structures.cardBlocks
-  headerContentBlocks:
+  beforeContentBlocks:
     type: array
-    comment: Array of content blocks to render in the card header.
+    comment: Content that appears above the main card area, without padding (great for full-width images or banners).
     options:
       structures: _structures.cardBlocks
-  footerContentBlocks:
+  afterContentBlocks:
     type: array
-    comment: Array of content blocks to render in the card footer.
+    comment: Content that appears below the main card area, without padding (great for footers or full-width elements).
     options:
       structures: _structures.cardBlocks
   paddingHorizontal:

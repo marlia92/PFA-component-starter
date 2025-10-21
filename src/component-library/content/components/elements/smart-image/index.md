@@ -1,7 +1,8 @@
 ---
 title: Smart Image
 order: 2
-overview: "An optimized image component with automatic optimization. Supports local assets, CDN URLs, and remote images with configurable aspect ratios, object positioning, and rounded corners."
+overview: "An image component with built-in optimization for local, CDN, and remote sources. Automatically serves responsive sizes and modern formats like AVIF for smaller file sizes. Supports aspect ratios, object fit, positioning, and rounded corners."
+
 examples:
   - title: Source
     size: lg

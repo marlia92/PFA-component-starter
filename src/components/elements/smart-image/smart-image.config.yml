@@ -1,6 +1,6 @@
 label: Smart Image
 icon: image
-description: "Optimized image component with automatic optimization."
+description: "Optimized image component for local and remote sources."
 structures:
   - containerBlocks
   - cardBlocks

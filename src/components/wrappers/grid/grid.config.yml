@@ -1,6 +1,6 @@
 label: Grid
 icon: grid_on
-description: "Responsive grid layout with automatic column distribution."
+description: "Arranges content into a grid that adapts to screen size."
 structures:
   - containerBlocks
   - splitBlocks

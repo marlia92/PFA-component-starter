@@ -1,6 +1,7 @@
 ---
 title: Testimonial
-overview: "A component for displaying customer quotes and reviews. Includes optional author name, description, and avatar. Perfect for social proof sections and case studies."
+overview: "A component for showcasing customer quotes and reviews. Includes optional author name, role, and avatar. Ideal for social proof sections, testimonials, and case studies."
+
 slots:
   - title: default
     description: The quote.

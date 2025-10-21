@@ -26,7 +26,7 @@ const htmlAttributes = Object.fromEntries(
             link={post.url || post.slug || "#"}
             title={post.title || "Untitled Post"}
           >
-            <div slot="header">
+            <div slot="before">
               <SmartImage
                 source={post.imageSource || post.featuredImage || ""}
                 alt={post.imageAlt || post.title || "Blog post image"}

@@ -1,6 +1,6 @@
 label: Carousel
 icon: image
-description: "Interactive slideshow for scrollable content panels."
+description: "Displays multiple items in a sliding gallery."
 structures:
   - containerBlocks
   - splitBlocks

@@ -1,5 +1,5 @@
 ---
 title: Hidden
-overview: 'Hidden is a form field component that renders as an `<input type="hidden">` element. It''s used to include data in form submissions that shouldn''t be visible or editable by users, such as tracking IDs, tokens, or pre-filled values. Always nest within a [Form](/component-library/components/forms/form) component.'
+overview: "A hidden form field used to store additional data that isn’t shown to users. Commonly used to include metadata such as form source, page ID, or tracking information in submissions."
 examples:
 ---

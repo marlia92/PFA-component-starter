@@ -1,6 +1,6 @@
 label: File Upload
 icon: upload
-description: "Form field for file upload with validation."
+description: "Form field for uploading files."
 structures:
   - formBlocks
 value:

@@ -1,7 +1,7 @@
 ---
 title: Grid
 order: 4
-overview: "A responsive grid layout component with automatic column distribution. Adjusts columns based on minimum item width and available space."
+overview: "A responsive grid layout for displaying multiple items in rows and columns. Supports adjustable spacing, layouts, and width bounds."
 slots:
   - title: default
     description: The contents for the the Grid.

@@ -65,7 +65,7 @@ const getPageUrl = (pageNum: number) => {
 
   {
     Array.from({ length: endPage - startPage + 1 }, (_, i) => {
-      const pageNum = startPage + i + 1; // Convert back to 1-based
+      const pageNum = startPage + i + 1;
       return pageNum === currentPage ? (
         <span class="current" aria-current="page" aria-label={`Page ${pageNum}, current page`}>
           {pageNum}

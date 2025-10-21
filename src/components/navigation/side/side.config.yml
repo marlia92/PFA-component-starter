@@ -1,6 +1,6 @@
 label: Side Navigation
 icon: sidebar
-description: "Vertical sidebar navigation with collapsible sections."
+description: "Sidebar navigation with expandable sections."
 structures: []
 value:
   _component: navigation/side/side

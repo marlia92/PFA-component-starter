@@ -1,12 +1,11 @@
 label: Icon
 icon: star
-description: "SVG icon component for visual enhancement."
+description: "SVG icon component."
 structures: []
 value:
   _component: elements/icon
   name: ""
   size: lg
-  background: none
 preview:
   text: Icon
   icon: star
@@ -39,12 +38,3 @@ _inputs:
           name: Medium
         - id: lg
           name: Large
-  background:
-    type: select
-    comment: The background style for the icon.
-    options:
-      values:
-        - id: none
-          name: None
-        - id: subtle
-          name: Subtle

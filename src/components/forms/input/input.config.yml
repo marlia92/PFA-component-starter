@@ -1,6 +1,6 @@
 label: Input
 icon: rectangle
-description: "Form field for single-line text input."
+description: "Single text input form field."
 structures:
   - formBlocks
 value:

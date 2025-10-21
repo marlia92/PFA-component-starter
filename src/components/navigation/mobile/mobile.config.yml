@@ -1,6 +1,6 @@
 label: Mobile Navigation
 icon: device-phone-mobile
-description: "Responsive navigation with full-screen overlay."
+description: "Mobile navigation with full-screen overlay."
 structures: []
 value:
   _component: navigation/mobile/mobile

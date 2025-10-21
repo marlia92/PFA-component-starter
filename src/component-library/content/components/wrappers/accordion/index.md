@@ -1,6 +1,7 @@
 ---
 title: Accordion
-overview: "An interactive component for expandable/collapsible content panels. Perfect for FAQs and documentation. Configure single or multiple open items."
+overview: "Organizes content into expandable panels that users can open or close. Supports single or multiple open panels, and the ability to open the first panel when initalized. Renders using `<details>` and `<summary>` elements for accessibility.`."
+
 slots:
   - title: default
     description: The contents for the the Accordion.

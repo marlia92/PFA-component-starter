@@ -1,7 +1,7 @@
 ---
 title: Date
 order: 3
-overview: 'Date is a form field component that renders as an `<input type="date">` element with label and optional description. It provides a native date picker interface with validation, min/max constraints, and required field support. Always nest within a [Form](/component-library/components/forms/form) component.'
+overview: "A form field for selecting dates with the browser’s native date picker. Supports label, name, placeholder, default value, and required options."
 examples:
   - slugs:
       - with-constraints

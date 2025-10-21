@@ -1,6 +1,6 @@
 ---
 title: Spacer
-overview: "A utility component for creating vertical spacing between sections. Configurable height based on your design system's spacing scale."
+overview: "A layout utility for adding adjustable vertical spacing between content. Supports predefined sizes for consistent spacing across layouts."
 examples:
   - slugs:
       - size
