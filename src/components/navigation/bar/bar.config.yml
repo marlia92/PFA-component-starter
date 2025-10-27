@@ -3,7 +3,7 @@ icon: navigation
 description: "Horizontal navigation bar with dropdown menus."
 structures: []
 value:
-  _component: navigation/bar/bar
+  _component: navigation/bar
   navData: []
 preview:
   text: Bar Navigation

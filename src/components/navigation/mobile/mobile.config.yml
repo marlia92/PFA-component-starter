@@ -3,7 +3,7 @@ icon: device-phone-mobile
 description: "Mobile navigation with full-screen overlay."
 structures: []
 value:
-  _component: navigation/mobile/mobile
+  _component: navigation/mobile
   logoSource: null
   logoAlt: null
   navData: []

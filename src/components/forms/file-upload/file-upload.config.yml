@@ -4,7 +4,7 @@ description: "Form field for uploading files."
 structures:
   - formBlocks
 value:
-  _component: forms/file-upload/file-upload
+  _component: forms/file-upload
   label: null
   name: null
   required: false

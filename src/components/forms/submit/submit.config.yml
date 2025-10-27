@@ -4,7 +4,7 @@ description: "Button for submitting a form."
 structures:
   - formBlocks
 value:
-  _component: forms/submit/submit
+  _component: forms/submit
   text: Submit
   variant: primary
   size: md

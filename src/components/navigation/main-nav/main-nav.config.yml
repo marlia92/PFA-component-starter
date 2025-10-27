@@ -3,7 +3,7 @@ icon: navigation
 description: "Header navigation combining logo, links, and actions."
 structures: []
 value:
-  _component: blocks/main-nav
+  _component: navigation/main-nav
   logoSource: ""
   logoAlt: "Logo"
   navData: []

@@ -4,7 +4,7 @@ description: "Segmented control form field with connected buttons."
 structures:
   - formBlocks
 value:
-  _component: forms/segments/segments
+  _component: forms/segments
   title: null
   name: null
   required: false

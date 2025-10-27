@@ -8,7 +8,7 @@ structures:
   - carouselBlocks
   - contentSelectorBlocks
 value:
-  _component: wrappers/card/card
+  _component: wrappers/card
   label: null
   contentBlocks: []
   paddingHorizontal: sm
@@ -57,7 +57,7 @@ _inputs:
       structures: _structures.cardBlocks
   showBeforeAfter:
     type: switch
-    comment: Whether to show the before/after content blocks used to add content outside the card's padding.
+    comment: "Whether to show the before/after content blocks used to add content outside the card's padding."
   paddingHorizontal:
     type: select
     comment: Horizontal padding applied to the card content.

@@ -6,7 +6,7 @@ structures:
   - splitBlocks
   - contentSelectorBlocks
 value:
-  _component: wrappers/carousel/carousel
+  _component: wrappers/carousel
   label: ""
   slides: []
   autoPlay: false

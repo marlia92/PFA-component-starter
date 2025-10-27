@@ -4,7 +4,7 @@ description: "Form field for selecting one option from a list."
 structures:
   - formBlocks
 value:
-  _component: forms/select/select
+  _component: forms/select
   label: null
   name: null
   required: false

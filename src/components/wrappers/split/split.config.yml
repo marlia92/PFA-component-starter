@@ -6,7 +6,7 @@ structures:
   - carouselBlocks
   - contentSelectorBlocks
 value:
-  _component: wrappers/split/split
+  _component: wrappers/split
   label: ""
   firstColumnContentBlocks: []
   secondColumnContentBlocks: []

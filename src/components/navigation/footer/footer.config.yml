@@ -3,7 +3,7 @@ icon: footer
 description: "Footer block with logo, links, and legal information."
 structures: []
 value:
-  _component: blocks/footer
+  _component: navigation/footer
   logoSource: ""
   logoAlt: "Logo"
   links: []

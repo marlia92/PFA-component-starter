@@ -4,7 +4,7 @@ description: "Hidden form field for storing data."
 structures:
   - formBlocks
 value:
-  _component: forms/hidden/hidden
+  _component: forms/hidden
   name: ""
   value: ""
 preview:

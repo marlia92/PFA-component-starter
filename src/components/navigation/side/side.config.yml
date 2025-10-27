@@ -3,7 +3,7 @@ icon: sidebar
 description: "Sidebar navigation with expandable sections."
 structures: []
 value:
-  _component: navigation/side/side
+  _component: navigation/side
   navData: []
 preview:
   text: Side Navigation

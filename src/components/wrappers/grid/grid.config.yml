@@ -7,7 +7,7 @@ structures:
   - carouselBlocks
   - contentSelectorBlocks
 value:
-  _component: wrappers/grid/grid
+  _component: wrappers/grid
   label: ""
   layout: features
   minItemWidth: 280

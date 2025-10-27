@@ -10,7 +10,7 @@ structures:
   - carouselBlocks
   - contentSelectorBlocks
 value:
-  _component: wrappers/button-group/button-group
+  _component: wrappers/button-group
   label: null
   buttonBlocks: []
   direction: row

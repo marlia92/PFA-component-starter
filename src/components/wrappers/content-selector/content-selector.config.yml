@@ -6,7 +6,7 @@ structures:
   - splitBlocks
   - carouselBlocks
 value:
-  _component: wrappers/content-selector/content-selector
+  _component: wrappers/content-selector
   label: ""
   items: null
   navigationPosition: start

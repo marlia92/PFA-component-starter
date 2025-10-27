@@ -5,7 +5,7 @@ structures:
   - containerBlocks
   - pageBlocks
 value:
-  _component: wrappers/container/container
+  _component: wrappers/container
   label: ""
   contentBlocks: []
   maxContentWidth: 2xl

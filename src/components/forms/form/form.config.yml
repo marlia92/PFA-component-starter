@@ -10,7 +10,7 @@ structures:
   - carouselBlocks
   - contentSelectorBlocks
 value:
-  _component: forms/form/form
+  _component: forms/form
   action: null
   formBlocks: []
 preview:

@@ -9,7 +9,7 @@ structures:
   - carouselBlocks
   - contentSelectorBlocks
 value:
-  _component: wrappers/accordion/accordion
+  _component: wrappers/accordion
   label: null
   items: null
   openFirst: false

@@ -4,7 +4,7 @@ description: "Single text input form field."
 structures:
   - formBlocks
 value:
-  _component: forms/input/input
+  _component: forms/input
   label: null
   name: null
   type: text

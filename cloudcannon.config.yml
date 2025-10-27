@@ -1819,68 +1819,6 @@ _structures:
                 - id: 3xl
                   name: 3xl
       - &ref_15
-        label: Smart Video
-        icon: videocam
-        description: Video component for YouTube, Vimeo, and HTML5 sources.
-        value:
-          _component: elements/smart-video
-          type: ""
-          id: ""
-          title: ""
-          source: ""
-          poster: ""
-        preview:
-          icon: videocam
-          text:
-            - template: Smart Video - {type}
-            - Smart Video
-          subtext:
-            - key: title
-            - key: source
-            - Add video
-        picker_preview:
-          text: Smart Video
-          subtext: Play a video from YouTube, Vimeo, or your local files.
-          icon: videocam
-        _inputs:
-          type:
-            type: select
-            options:
-              values:
-                - id: youtube
-                  name: YouTube
-                - id: vimeo
-                  name: Vimeo
-                - id: local-source
-                  name: Local Source
-          title:
-            type: text
-            comment: Used for externally hosted videos - The video title provides accessibility information for assistive technologies (like screen readers) and can display a tooltip when a user hovers over the video.
-          id:
-            type: text
-            comment: Used for externally hosted videos - Enter the YouTube or Vimeo id.
-          source:
-            type: file
-            label: Video Source
-            comment: Used for locally hosted videos - Must be mp4 as this is supported by all modern browsers.
-            options:
-              accepts_mime_types:
-                - video/mp4
-              paths:
-                uploads: public/videos
-                static: public
-          poster:
-            type: image
-            comment: Used for locally hosted videos - The image displayed before the video plays or while it is loading.
-            options:
-              accepts_mime_types:
-                - image/jpeg
-                - image/png
-                - image/webp
-              paths:
-                uploads: public/images
-                static: public
-      - &ref_16
         label: Smart Image
         icon: image
         description: Optimized image component for local and remote sources.
@@ -1954,6 +1892,68 @@ _structures:
                   name: Center
                 - id: right
                   name: Right
+      - &ref_16
+        label: Smart Video
+        icon: videocam
+        description: Video component for YouTube, Vimeo, and HTML5 sources.
+        value:
+          _component: elements/smart-video
+          type: ""
+          id: ""
+          title: ""
+          source: ""
+          poster: ""
+        preview:
+          icon: videocam
+          text:
+            - template: Smart Video - {type}
+            - Smart Video
+          subtext:
+            - key: title
+            - key: source
+            - Add video
+        picker_preview:
+          text: Smart Video
+          subtext: Play a video from YouTube, Vimeo, or your local files.
+          icon: videocam
+        _inputs:
+          type:
+            type: select
+            options:
+              values:
+                - id: youtube
+                  name: YouTube
+                - id: vimeo
+                  name: Vimeo
+                - id: local-source
+                  name: Local Source
+          title:
+            type: text
+            comment: Used for externally hosted videos - The video title provides accessibility information for assistive technologies (like screen readers) and can display a tooltip when a user hovers over the video.
+          id:
+            type: text
+            comment: Used for externally hosted videos - Enter the YouTube or Vimeo id.
+          source:
+            type: file
+            label: Video Source
+            comment: Used for locally hosted videos - Must be mp4 as this is supported by all modern browsers.
+            options:
+              accepts_mime_types:
+                - video/mp4
+              paths:
+                uploads: public/videos
+                static: public
+          poster:
+            type: image
+            comment: Used for locally hosted videos - The image displayed before the video plays or while it is loading.
+            options:
+              accepts_mime_types:
+                - image/jpeg
+                - image/png
+                - image/webp
+              paths:
+                uploads: public/images
+                static: public
       - &ref_17
         label: Embed
         icon: data_object
@@ -2444,86 +2444,6 @@ _structures:
           value:
             type: text
             comment: The default value for the textarea field.
-      - label: Submit
-        icon: check
-        description: Button for submitting a form.
-        value:
-          _component: forms/submit
-          text: Submit
-          variant: primary
-          size: md
-          iconName: null
-          iconPosition: before
-          hideText: false
-          disabled: false
-        preview:
-          text:
-            - key: text
-            - key: iconName
-            - Submit Button
-          subtext: A submit button for forms.
-        picker_preview:
-          text: Submit
-          subtext: A submit button for forms.
-          icon: check
-        _inputs:
-          text:
-            type: text
-            comment: The text that goes inside the submit button.
-            hidden: hideText
-          variant:
-            type: select
-            comment: The presentation of the submit button.
-            options:
-              values:
-                - id: primary
-                  name: Primary
-                - id: secondary
-                  name: Secondary
-                - id: tertiary
-                  name: Tertiary
-                - id: ghost
-                  name: Ghost
-                - id: text
-                  name: Text
-          size:
-            type: select
-            comment: The size of the submit button.
-            options:
-              values:
-                - id: sm
-                  name: Small
-                - id: md
-                  name: Medium
-                - id: lg
-                  name: Large
-          iconName:
-            type: select
-            comment: The name of the icon to display. See the Icon component documentation for more information.
-            options:
-              values: _select_data.icons
-              preview:
-                text:
-                  - key: name
-                image:
-                  - template: src/icons/{id}.svg
-          iconPosition:
-            type: select
-            comment: The position of the icon relative to the text.
-            hidden: "!iconName"
-            options:
-              values:
-                - id: before
-                  name: Before
-                - id: after
-                  name: After
-          hideText:
-            type: switch
-            comment: Whether to hide the button text and show only the icon.
-            hidden: "!iconName\""
-          disabled:
-            type: switch
-            comment: Whether the submit button is disabled.
       - label: Select
         icon: view_list
         description: Form field for selecting one option from a list.
@@ -2624,6 +2544,86 @@ _structures:
           keepStateOnRefresh:
             type: switch
             comment: When true, sets autocomplete="on" to allow browser to remember state on page refresh. Defaults to false (autocomplete="off").
+      - label: Submit
+        icon: check
+        description: Button for submitting a form.
+        value:
+          _component: forms/submit
+          text: Submit
+          variant: primary
+          size: md
+          iconName: null
+          iconPosition: before
+          hideText: false
+          disabled: false
+        preview:
+          text:
+            - key: text
+            - key: iconName
+            - Submit Button
+          subtext: A submit button for forms.
+        picker_preview:
+          text: Submit
+          subtext: A submit button for forms.
+          icon: check
+        _inputs:
+          text:
+            type: text
+            comment: The text that goes inside the submit button.
+            hidden: hideText
+          variant:
+            type: select
+            comment: The presentation of the submit button.
+            options:
+              values:
+                - id: primary
+                  name: Primary
+                - id: secondary
+                  name: Secondary
+                - id: tertiary
+                  name: Tertiary
+                - id: ghost
+                  name: Ghost
+                - id: text
+                  name: Text
+          size:
+            type: select
+            comment: The size of the submit button.
+            options:
+              values:
+                - id: sm
+                  name: Small
+                - id: md
+                  name: Medium
+                - id: lg
+                  name: Large
+          iconName:
+            type: select
+            comment: The name of the icon to display. See the Icon component documentation for more information.
+            options:
+              values: _select_data.icons
+              preview:
+                text:
+                  - key: name
+                image:
+                  - template: src/icons/{id}.svg
+          iconPosition:
+            type: select
+            comment: The position of the icon relative to the text.
+            hidden: "!iconName"
+            options:
+              values:
+                - id: before
+                  name: Before
+                - id: after
+                  name: After
+          hideText:
+            type: switch
+            comment: Whether to hide the button text and show only the icon.
+            hidden: "!iconName\""
+          disabled:
+            type: switch
+            comment: Whether the submit button is disabled.
       - label: Input
         icon: rectangle
         description: Single text input form field.

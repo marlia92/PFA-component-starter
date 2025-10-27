@@ -4,7 +4,7 @@ description: "Form field for selecting one or more options."
 structures:
   - formBlocks
 value:
-  _component: forms/choice-group/choice-group
+  _component: forms/choice-group
   title: null
   name: null
   required: false
