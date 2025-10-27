@@ -58,11 +58,9 @@ _inputs:
           name: Portrait (3:4)
         - id: widescreen
           name: Widescreen (16:9)
-        - id: golden
-          name: Golden (1.618:1)
   positionVertical:
     type: select
-    comment: Vertical positioning of the image within the container.
+    comment: Vertical positioning of the image within the container (if aspect ratio is set).
     options:
       values:
         - id: top
@@ -73,7 +71,7 @@ _inputs:
           name: Bottom
   positionHorizontal:
     type: select
-    comment: Horizontal positioning of the image within the container.
+    comment: Horizontal positioning of the image within the container (if aspect ratio is set).
     options:
       values:
         - id: left
