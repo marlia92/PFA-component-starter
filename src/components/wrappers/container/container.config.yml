@@ -114,6 +114,8 @@ _inputs:
     comment: Background color for the container.
     options:
       values:
+        - id: none
+          name: None
         - id: base
           name: Base
         - id: surface

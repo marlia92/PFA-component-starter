@@ -106,6 +106,8 @@ _inputs:
     comment: Background color for the card.
     options:
       values:
+        - id: none
+          name: None
         - id: base
           name: Base
         - id: surface
