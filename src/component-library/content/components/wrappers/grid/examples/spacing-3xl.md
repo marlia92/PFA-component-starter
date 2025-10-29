@@ -3,7 +3,7 @@ title: 3XL Spacing
 spacing:
 blocks:
   _component: "wrappers/grid"
-  layout: center-aligned
+  layout: center
   gap: 3xl
   minItemWidth: 200
   maxItemWidth: 300

@@ -3,7 +3,7 @@ title: 2XL Spacing
 spacing:
 blocks:
   _component: "wrappers/grid"
-  layout: center-aligned
+  layout: center
   gap: 2xl
   minItemWidth: 200
   maxItemWidth: 300

@@ -3,7 +3,7 @@ title: Small Spacing
 spacing:
 blocks:
   _component: "wrappers/grid"
-  layout: center-aligned
+  layout: center
   gap: sm
   minItemWidth: 200
   maxItemWidth: 300

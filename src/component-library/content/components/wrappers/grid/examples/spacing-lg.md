@@ -3,7 +3,7 @@ title: Large Spacing
 spacing:
 blocks:
   _component: "wrappers/grid"
-  layout: center-aligned
+  layout: center
   gap: lg
   minItemWidth: 200
   maxItemWidth: 300

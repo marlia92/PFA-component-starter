@@ -1,4 +1,8 @@
-:where(:has(> .split)) {
+:where(:has(> .split):not(:is(editable-array-item, editable-array))) {
+  container-type: inline-size;
+}
+
+:where(:has(> editable-array > editable-array-item > .split)) {
   container-type: inline-size;
 }
 

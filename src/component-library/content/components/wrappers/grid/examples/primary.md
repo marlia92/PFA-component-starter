@@ -4,7 +4,7 @@ spacing:
 blocks:
   _component: "wrappers/grid"
   minItemWidth: 300
-  layout: start-aligned
+  layout: start
   items:
     - contentBlocks:
         - _component: "typography/heading"

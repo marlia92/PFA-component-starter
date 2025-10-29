@@ -13,8 +13,8 @@ slots:
 examples:
   - title: Layouts
     slugs:
-      - start-aligned
-      - center-aligned
+      - start
+      - center
       - uneven-columns
   - title: Spacing
     slugs:
