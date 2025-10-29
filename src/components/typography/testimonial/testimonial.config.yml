@@ -14,6 +14,7 @@ value:
   text: ""
   authorName: ""
   authorDescription: ""
+  authorImage: ""
   alignX: start
 preview:
   text:
@@ -49,6 +50,9 @@ _inputs:
   authorDescription:
     comment: The role or company of the person.
     type: textarea
+  authorImage:
+    comment: The image of the author.
+    type: image
   alignX:
     comment: The horizontal alignment of the testimonial.
     type: select
@@ -58,5 +62,3 @@ _inputs:
           name: Start
         - id: center
           name: Center
-        - id: end
-          name: End

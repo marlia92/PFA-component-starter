@@ -1,11 +1,12 @@
 ---
+import SmartImage from "@components/elements/smart-image/smart-image.astro";
 import MarkdownIt from "markdown-it";
-
 const {
   text,
   authorName,
   authorDescription,
   alignX = "center",
+  authorImage = "",
   class: className,
   ...restProps
 } = Astro.props;
@@ -15,17 +16,37 @@ const htmlAttributes = Object.fromEntries(
 );
 
 const md = MarkdownIt({ html: true });
-const MarkdownText = text ? md.renderInline(text) : "";
+const MarkdownText = text ? md.render(text) : "";
 ---
 
 <blockquote class:list={["testimonial", `alignment-${alignX}`, className]} {...htmlAttributes}>
-  <q class="quote">
+  <div class="quote">
     {text ? <Fragment set:html={MarkdownText} /> : <slot />}
-  </q>
-  <cite class="author">
-    <strong class="name">
-      {authorName}
-    </strong>
-    {authorDescription && <span class="description">- {authorDescription}</span>}
-  </cite>
+  </div>
+  <div class="author">
+    {
+      authorImage && (
+        <SmartImage
+          source={authorImage}
+          alt={authorName}
+          width={100}
+          height={100}
+          class="author-image"
+        />
+      )
+    }
+    <cite class="author-content">
+      <strong class="name">
+        {authorName}
+      </strong>
+      {
+        authorDescription && (
+          <>
+            <br />
+            <span class="description">{authorDescription}</span>
+          </>
+        )
+      }
+    </cite>
+  </div>
 </blockquote>
