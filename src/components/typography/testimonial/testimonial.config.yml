@@ -53,6 +53,10 @@ _inputs:
   authorImage:
     comment: The image of the author.
     type: image
+    options:
+      paths:
+        uploads: src/assets/images
+        static: ""
   alignX:
     comment: The horizontal alignment of the testimonial.
     type: select
