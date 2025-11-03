@@ -1,22 +1,24 @@
 ---
 title: Primary Split
-spacing:
+spacing: null
 blocks:
-  _component: "wrappers/split"
+  _component: wrappers/split
   firstColumnContentBlocks:
-    - _component: "typography/rich-text"
+    - _component: typography/rich-text
       text: |-
         ## Side A
 
         This is content for side A.
   secondColumnContentBlocks:
-    - _component: "typography/rich-text"
+    - _component: typography/rich-text
       text: |-
         ## Side B
 
         This is content for side B.
-  distributionMode: "half"
+  distributionMode: half
   fixedWidth: null
-  verticalAlignment: "top"
+  verticalAlignment: top
   reverse: false
+  label: ""
+  minSplitWidth: 0
 ---

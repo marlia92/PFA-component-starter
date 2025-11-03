@@ -2,13 +2,13 @@
 title: Simple Tabs
 spacing: all
 blocks:
-  _component: "wrappers/content-selector"
+  _component: wrappers/content-selector
   navigationPosition: start
   items:
     - title: Overview
       contentBlocks:
         - _component: typography/heading
-          text: "Overview"
+          text: Overview
           level: h2
           alignX: start
         - _component: typography/simple-text
@@ -19,7 +19,7 @@ blocks:
     - title: Details
       contentBlocks:
         - _component: typography/heading
-          text: "Details"
+          text: Details
           level: h2
           alignX: start
         - _component: typography/simple-text
@@ -30,7 +30,7 @@ blocks:
     - title: Next steps
       contentBlocks:
         - _component: typography/heading
-          text: "Next steps"
+          text: Next steps
           level: h2
           alignX: start
         - _component: typography/simple-text
@@ -38,4 +38,5 @@ blocks:
             Reach out for a quick estimate or to discuss what's needed. Responses are friendly and prompt.
           alignX: start
           size: md
+  label: ""
 ---

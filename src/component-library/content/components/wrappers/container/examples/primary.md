@@ -1,13 +1,22 @@
 ---
 title: Primary Container
-spacing:
+spacing: null
 blocks:
-  _component: "wrappers/container"
-  backgroundColor: "surface"
+  _component: wrappers/container
+  backgroundColor: surface
   paddingHorizontal: md
   paddingVertical: md
   contentBlocks:
-    - _component: "typography/heading"
+    - _component: typography/heading
       text: This is a heading inside a container.
       level: h2
+  label: ""
+  maxContentWidth: 2xl
+  colorScheme: null
+  backgroundImage:
+    source: ""
+    alt: ""
+    positionVertical: top
+    positionHorizontal: center
+  rounded: false
 ---
