@@ -28,9 +28,6 @@ _inputs:
   number:
     type: number
     comment: The number to count to.
-    options:
-      min: 0
-      step: 1
   prefix:
     comment: Text immediately before the number.
   suffix:
