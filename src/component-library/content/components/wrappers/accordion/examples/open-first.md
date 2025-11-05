@@ -5,17 +5,20 @@ blocks:
   _component: "wrappers/accordion"
   openFirst: true
   items:
-    - title: What do I get?
+    - _component: wrappers/accordion/accordion-item
+      title: What do I get?
       contentBlocks:
         - _component: "typography/rich-text"
           text: |-
             You get access to basic features to help you get started quickly.
-    - title: Is it easy to use?
+    - _component: wrappers/accordion/accordion-item
+      title: Is it easy to use?
       contentBlocks:
         - _component: "typography/rich-text"
           text: |-
             Yes, everything is designed to be simple and straightforward.
-    - title: Can I use it with others?
+    - _component: wrappers/accordion/accordion-item
+      title: Can I use it with others?
       contentBlocks:
         - _component: "typography/rich-text"
           text: |-

@@ -40,12 +40,15 @@ _inputs:
   singleOpen:
     comment: Whether only one item can be open at a time within this accordion.
     type: switch
+  _component:
+    hidden: true
 _structures:
   accordionItems:
     values:
       - label: Item
         icon: place_item
         value:
+          _component: wrappers/accordion/accordion-item
           title: null
           contentBlocks: null
         _inputs:

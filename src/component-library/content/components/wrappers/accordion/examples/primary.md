@@ -4,15 +4,18 @@ spacing: null
 blocks:
   _component: wrappers/accordion
   items:
-    - title: What is included in the free plan?
+    - _component: wrappers/accordion/accordion-item
+      title: What is included in the free plan?
       contentBlocks:
         - _component: typography/rich-text
           text: The free plan gives you access to basic features including project creation, limited storage, and community support. You can upgrade at any time for more functionality.
-    - title: Can I use this tool with my existing workflow?
+    - _component: wrappers/accordion/accordion-item
+      title: Can I use this tool with my existing workflow?
       contentBlocks:
         - _component: typography/rich-text
           text: Absolutely. The system is designed to integrate seamlessly with popular tools like Git, Markdown, and static site generators. No major setup or migration required.
-    - title: How does team collaboration work?
+    - _component: wrappers/accordion/accordion-item
+      title: How does team collaboration work?
       contentBlocks:
         - _component: typography/rich-text
           text: You can invite team members to your projects, assign roles, and collaborate in real time. Changes are tracked and synced automatically across environments.
