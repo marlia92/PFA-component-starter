@@ -918,6 +918,54 @@ _structures:
                   name: Start
                 - id: top
                   name: Top
+      - &ref_20
+        label: Carousel
+        icon: image
+        description: Displays multiple items in a sliding gallery.
+        value:
+          _component: wrappers/carousel
+          label: ''
+          slides: []
+          autoPlay: false
+          autoScroll: false
+          slideWidthPercent: 100
+          minSlideWidth: 0
+        preview:
+          text:
+            - key: label
+            - Carousel
+          subtext:
+            - template: A carousel containing {slides|array_length} {"slide"|pluralize=slides}
+            - Add slides to the carousel
+        picker_preview:
+          text: Carousel
+          subtext: A carousel component for displaying slides with navigation controls
+          icon: image
+        _inputs:
+          label:
+            comment: Optional label for the carousel to help identify it in the editor.
+            type: text
+          slides:
+            comment: Array of slides to display in the carousel.
+            type: array
+            options:
+              structures: _structures.slides
+          autoPlay:
+            comment: Enable auto-play functionality.
+            type: switch
+          autoScroll:
+            comment: Enable auto-scroll functionality.
+            type: switch
+          slideWidthPercent:
+            comment: Width of each slide as a percentage of the carousel (e.g., 33, 50, 100).
+            type: range
+            options:
+              min: 0
+              max: 100
+              step: 1
+          minSlideWidth:
+            comment: Minimum width of slides in pixels. Prevents slides from getting too small.
+            type: number
       - &ref_21
         label: Container
         icon: width_full
@@ -1259,54 +1307,6 @@ _structures:
           border:
             type: switch
             comment: Whether to apply a border to the card.
-      - &ref_20
-        label: Carousel
-        icon: image
-        description: Displays multiple items in a sliding gallery.
-        value:
-          _component: wrappers/carousel
-          label: ''
-          slides: []
-          autoPlay: false
-          autoScroll: false
-          slideWidthPercent: 100
-          minSlideWidth: 0
-        preview:
-          text:
-            - key: label
-            - Carousel
-          subtext:
-            - template: A carousel containing {slides|array_length} {"slide"|pluralize=slides}
-            - Add slides to the carousel
-        picker_preview:
-          text: Carousel
-          subtext: A carousel component for displaying slides with navigation controls
-          icon: image
-        _inputs:
-          label:
-            comment: Optional label for the carousel to help identify it in the editor.
-            type: text
-          slides:
-            comment: Array of slides to display in the carousel.
-            type: array
-            options:
-              structures: _structures.slides
-          autoPlay:
-            comment: Enable auto-play functionality.
-            type: switch
-          autoScroll:
-            comment: Enable auto-scroll functionality.
-            type: switch
-          slideWidthPercent:
-            comment: Width of each slide as a percentage of the carousel (e.g., 33, 50, 100).
-            type: range
-            options:
-              min: 0
-              max: 100
-              step: 1
-          minSlideWidth:
-            comment: Minimum width of slides in pixels. Prevents slides from getting too small.
-            type: number
       - &ref_4
         label: Button Group
         icon: rectangle
@@ -1364,7 +1364,7 @@ _structures:
         value:
           _component: wrappers/accordion
           label: null
-          items: null
+          items: []
           openFirst: false
           singleOpen: false
         preview:
@@ -1626,79 +1626,6 @@ _structures:
                 - id: 2xl
                   name: 2xl
       - &ref_10
-        label: Definition List
-        icon: dns
-        description: Lists term/definition pairs for structured content.
-        value:
-          _component: typography/definition-list
-          items: []
-          alignX: start
-        preview:
-          subtext:
-            - template: Contains {items|array_length} list {'item'|pluralize=items}
-            - Add definition list items
-        picker_preview:
-          text: Definition List
-          subtext: For displaying key-value pairs. Ideal for glossaries, opening times, etc.
-          icon: dns
-        _inputs:
-          items:
-            type: array
-            label: List Items
-            options:
-              structures: _structures.definitionListItems
-          alignX:
-            type: select
-            comment: The horizontal alignment of the definition list items.
-            options:
-              values:
-                - id: start
-                  name: Start
-                - id: center
-                  name: Center
-                - id: end
-                  name: End
-      - &ref_11
-        label: Counter
-        icon: speed
-        description: Animated counter for highlighting key stats or figures.
-        value:
-          _component: typography/counter
-          number: ''
-          prefix: ''
-          suffix: ''
-          alignX: start
-        preview:
-          subtext:
-            - template: '{prefix}{number}{suffix}'
-            - Add counter details
-        picker_preview:
-          text: Counter
-          subtext: Animated number that counts up when visible.
-          icon: speed
-        _inputs:
-          number:
-            type: number
-            comment: The number to count to.
-            options:
-              min: 0
-              step: 1
-          prefix:
-            comment: Text immediately before the number.
-          suffix:
-            comment: Text immediately after the number.
-          alignX:
-            comment: The horizontal alignment of the counter.
-            type: select
-            options:
-              values:
-                - id: start
-                  name: Start
-                - id: center
-                  name: Center
-                - id: end
-                  name: End
-      - &ref_12
         label: Heading
         icon: title
         description: Headings for content hierarchy.
@@ -1782,6 +1709,79 @@ _structures:
                   name: Before
                 - id: after
                   name: After
+      - &ref_11
+        label: Definition List
+        icon: dns
+        description: Lists term/definition pairs for structured content.
+        value:
+          _component: typography/definition-list
+          items: []
+          alignX: start
+        preview:
+          subtext:
+            - template: Contains {items|array_length} list {'item'|pluralize=items}
+            - Add definition list items
+        picker_preview:
+          text: Definition List
+          subtext: For displaying key-value pairs. Ideal for glossaries, opening times, etc.
+          icon: dns
+        _inputs:
+          items:
+            type: array
+            label: List Items
+            options:
+              structures: _structures.definitionListItems
+          alignX:
+            type: select
+            comment: The horizontal alignment of the definition list items.
+            options:
+              values:
+                - id: start
+                  name: Start
+                - id: center
+                  name: Center
+                - id: end
+                  name: End
+      - &ref_12
+        label: Counter
+        icon: speed
+        description: Animated counter for highlighting key stats or figures.
+        value:
+          _component: typography/counter
+          number: ''
+          prefix: ''
+          suffix: ''
+          alignX: start
+        preview:
+          subtext:
+            - template: '{prefix}{number}{suffix}'
+            - Add counter details
+        picker_preview:
+          text: Counter
+          subtext: Animated number that counts up when visible.
+          icon: speed
+        _inputs:
+          number:
+            type: number
+            comment: The number to count to.
+            options:
+              min: 0
+              step: 1
+          prefix:
+            comment: Text immediately before the number.
+          suffix:
+            comment: Text immediately after the number.
+          alignX:
+            comment: The horizontal alignment of the counter.
+            type: select
+            options:
+              values:
+                - id: start
+                  name: Start
+                - id: center
+                  name: Center
+                - id: end
+                  name: End
       - &ref_13
         label: Form
         icon: checklist_rtl
@@ -1904,84 +1904,6 @@ _structures:
                 - id: 3xl
                   name: 3xl
       - &ref_16
-        label: Image
-        icon: image
-        description: Optimized image component for local and remote sources.
-        value:
-          _component: elements/image
-          source: ''
-          alt: ''
-          rounded: false
-          aspectRatio: none
-          positionVertical: center
-          positionHorizontal: center
-        preview:
-          icon: image
-          text: Image
-          subtext:
-            - key: alt
-            - key: source
-            - Add image source
-        picker_preview:
-          text: Image
-          subtext: Optimized image with smart CDN detection.
-          icon: image
-        _inputs:
-          source:
-            type: image
-            comment: The URL or path to the image.
-            options:
-              paths:
-                uploads: src/assets/images
-                static: ''
-          alt:
-            type: textarea
-            comment: Alternative text for accessibility.
-          rounded:
-            type: switch
-            comment: Whether to apply rounded corners to the image.
-          aspectRatio:
-            type: select
-            comment: Set a fixed aspect ratio for the image.
-            options:
-              values:
-                - id: none
-                  name: None
-                - id: square
-                  name: Square (1:1)
-                - id: landscape
-                  name: Landscape (4:3)
-                - id: portrait
-                  name: Portrait (3:4)
-                - id: widescreen
-                  name: Widescreen (16:9)
-          positionVertical:
-            type: select
-            comment: Vertical positioning of the image within the container (if aspect ratio is set).
-            options:
-              values:
-                - id: top
-                  name: Top
-                - id: center
-                  name: Center
-                - id: bottom
-                  name: Bottom
-          positionHorizontal:
-            type: select
-            comment: Horizontal positioning of the image within the container (if aspect ratio is set).
-            options:
-              values:
-                - id: left
-                  name: Left
-                - id: center
-                  name: Center
-                - id: right
-                  name: Right
-          background:
-            type: switch
-            hidden: true
-            comment: Covers the entire parent container with the image.
-      - &ref_17
         label: Icon
         icon: star
         description: SVG icon component.
@@ -2069,6 +1991,84 @@ _structures:
                   name: Center
                 - id: end
                   name: End
+      - &ref_17
+        label: Image
+        icon: image
+        description: Optimized image component for local and remote sources.
+        value:
+          _component: elements/image
+          source: ''
+          alt: ''
+          rounded: false
+          aspectRatio: none
+          positionVertical: center
+          positionHorizontal: center
+        preview:
+          icon: image
+          text: Image
+          subtext:
+            - key: alt
+            - key: source
+            - Add image source
+        picker_preview:
+          text: Image
+          subtext: Optimized image with smart CDN detection.
+          icon: image
+        _inputs:
+          source:
+            type: image
+            comment: The URL or path to the image.
+            options:
+              paths:
+                uploads: src/assets/images
+                static: ''
+          alt:
+            type: textarea
+            comment: Alternative text for accessibility.
+          rounded:
+            type: switch
+            comment: Whether to apply rounded corners to the image.
+          aspectRatio:
+            type: select
+            comment: Set a fixed aspect ratio for the image.
+            options:
+              values:
+                - id: none
+                  name: None
+                - id: square
+                  name: Square (1:1)
+                - id: landscape
+                  name: Landscape (4:3)
+                - id: portrait
+                  name: Portrait (3:4)
+                - id: widescreen
+                  name: Widescreen (16:9)
+          positionVertical:
+            type: select
+            comment: Vertical positioning of the image within the container (if aspect ratio is set).
+            options:
+              values:
+                - id: top
+                  name: Top
+                - id: center
+                  name: Center
+                - id: bottom
+                  name: Bottom
+          positionHorizontal:
+            type: select
+            comment: Horizontal positioning of the image within the container (if aspect ratio is set).
+            options:
+              values:
+                - id: left
+                  name: Left
+                - id: center
+                  name: Center
+                - id: right
+                  name: Right
+          background:
+            type: switch
+            hidden: true
+            comment: Covers the entire parent container with the image.
       - &ref_18
         label: Embed
         icon: data_object
@@ -2183,8 +2183,8 @@ _structures:
     values:
       - *ref_0
       - *ref_1
-      - *ref_3
       - *ref_20
+      - *ref_3
       - *ref_4
       - *ref_5
       - *ref_6
@@ -2229,8 +2229,8 @@ _structures:
     values:
       - *ref_1
       - *ref_2
-      - *ref_3
       - *ref_20
+      - *ref_3
       - *ref_4
       - *ref_5
       - *ref_6
@@ -2271,6 +2271,27 @@ _structures:
             type: array
             options:
               structures: _structures.contentSelectorBlocks
+  slides:
+    id_key: _component
+    style: modal
+    values:
+      - label: Carousel Slide
+        value:
+          _component: wrappers/carousel/carousel-slide
+          contentBlocks: []
+        _inputs:
+          _component:
+            hidden: true
+          contentBlocks:
+            type: array
+            options:
+              structures: _structures.carouselBlocks
+        preview:
+          icon: transition_slide
+          text: Carousel Slide
+          subtext:
+            - template: Contains {contentBlocks|array_length} content {"block"|pluralize=contentBlocks}
+            - Add one or more content blocks to the grid item
   pageBlocks:
     id_key: _component
     style: modal
@@ -2297,27 +2318,6 @@ _structures:
       - *ref_17
       - *ref_18
       - *ref_19
-  slides:
-    id_key: _component
-    style: modal
-    values:
-      - label: Carousel Slide
-        value:
-          _component: wrappers/carousel/carousel-slide
-          contentBlocks: []
-        _inputs:
-          _component:
-            hidden: true
-          contentBlocks:
-            type: array
-            options:
-              structures: _structures.carouselBlocks
-        preview:
-          icon: transition_slide
-          text: Carousel Slide
-          subtext:
-            - template: Contains {contentBlocks|array_length} content {"block"|pluralize=contentBlocks}
-            - Add one or more content blocks to the grid item
   cardBlocks:
     id_key: _component
     style: modal
@@ -2364,6 +2364,7 @@ _structures:
       - label: Item
         icon: place_item
         value:
+          _component: wrappers/accordion/accordion-item
           title: null
           contentBlocks: null
         _inputs:
@@ -2374,6 +2375,8 @@ _structures:
             type: array
             options:
               structures: _structures.accordionBlocks
+          _component:
+            hidden: true
   listItems:
     id_key: _component
     style: modal
@@ -2775,6 +2778,28 @@ _structures:
           keepStateOnRefresh:
             type: switch
             comment: When true, sets autocomplete="on" to allow browser to remember state on page refresh. Defaults to false (autocomplete="off").
+      - label: Hidden
+        icon: eye-slash
+        description: Hidden form field for storing data.
+        value:
+          _component: forms/hidden
+          name: ''
+          value: ''
+        preview:
+          text:
+            - template: Hidden - {name}
+          subtext: A hidden form field for storing data that should not be visible to users.
+        picker_preview:
+          text: Hidden
+          subtext: A hidden form field for storing data that should not be visible to users.
+          icon: eye-slash
+        _inputs:
+          name:
+            type: text
+            comment: The name attribute for the hidden input field.
+          value:
+            type: text
+            comment: The value to be stored in the hidden field.
       - label: Input
         icon: rectangle
         description: Single text input form field.
@@ -2824,67 +2849,6 @@ _structures:
           value:
             type: text
             comment: The default value for the input field.
-      - label: Hidden
-        icon: eye-slash
-        description: Hidden form field for storing data.
-        value:
-          _component: forms/hidden
-          name: ''
-          value: ''
-        preview:
-          text:
-            - template: Hidden - {name}
-          subtext: A hidden form field for storing data that should not be visible to users.
-        picker_preview:
-          text: Hidden
-          subtext: A hidden form field for storing data that should not be visible to users.
-          icon: eye-slash
-        _inputs:
-          name:
-            type: text
-            comment: The name attribute for the hidden input field.
-          value:
-            type: text
-            comment: The value to be stored in the hidden field.
-      - label: Date
-        icon: calendar
-        description: Form field for selecting a date.
-        value:
-          _component: forms/date
-          label: null
-          name: null
-          required: false
-          value: null
-          min: null
-          max: null
-        preview:
-          text:
-            - key: label
-            - Date
-          subtext: A date input field with an optional label, date constraints, and ISO8601 format validation
-        picker_preview:
-          text: Date
-          subtext: A date input field with an optional label, date constraints, and ISO8601 format validation.
-          icon: calendar
-        _inputs:
-          label:
-            type: text
-            comment: The label text for the date field.
-          name:
-            type: text
-            comment: The name attribute for the date field.
-          required:
-            type: switch
-            comment: Whether the field is required.
-          value:
-            type: date
-            comment: The default value for the date field (ISO8601 format).
-          min:
-            type: date
-            comment: The minimum date allowed (ISO8601 format).
-          max:
-            type: date
-            comment: The maximum date allowed (ISO8601 format).
       - label: File Upload
         icon: upload
         description: Form field for uploading files.
@@ -2982,6 +2946,45 @@ _structures:
           multiple:
             type: switch
             comment: When true, uses checkboxes for multiple selection. When false, uses radio buttons for single selection.
+      - label: Date
+        icon: calendar
+        description: Form field for selecting a date.
+        value:
+          _component: forms/date
+          label: null
+          name: null
+          required: false
+          value: null
+          min: null
+          max: null
+        preview:
+          text:
+            - key: label
+            - Date
+          subtext: A date input field with an optional label, date constraints, and ISO8601 format validation
+        picker_preview:
+          text: Date
+          subtext: A date input field with an optional label, date constraints, and ISO8601 format validation.
+          icon: calendar
+        _inputs:
+          label:
+            type: text
+            comment: The label text for the date field.
+          name:
+            type: text
+            comment: The name attribute for the date field.
+          required:
+            type: switch
+            comment: Whether the field is required.
+          value:
+            type: date
+            comment: The default value for the date field (ISO8601 format).
+          min:
+            type: date
+            comment: The minimum date allowed (ISO8601 format).
+          max:
+            type: date
+            comment: The maximum date allowed (ISO8601 format).
   selectOptions:
     id_key: _component
     style: modal
