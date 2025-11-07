@@ -96,6 +96,7 @@ const positionClass = `position-${positionVertical}-${positionHorizontal}`;
   .image {
     display: block;
     overflow: hidden;
+    margin-top: var(--spacing-lg);
 
     &.ratio-square {
       aspect-ratio: var(--ratio-square);
@@ -128,6 +129,7 @@ const positionClass = `position-${positionVertical}-${positionHorizontal}`;
     &.background {
       inset: 0;
       position: absolute;
+      margin-top: 0;
 
       > :global(picture) {
         height: 100%;

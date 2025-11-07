@@ -51,6 +51,7 @@ const alignClass = alignMap[alignX as keyof typeof alignMap] ?? "align-start";
 <style lang="pcss">
   .button-group {
     position: relative;
+    margin-top: var(--spacing-lg);
 
     &, :global(> editable-array) {
       align-items: center;

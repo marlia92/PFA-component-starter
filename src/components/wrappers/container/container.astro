@@ -107,8 +107,9 @@ if (!htmlAttributes.id && label) {
       position: relative;
       z-index: var(--layer-1);
 
-      > *:first-child {
-        margin-top: 0;
+      > :global(*:not(editable-array-item):first-child), 
+      > :global(editable-array > editable-array-item:first-child) > :global(*:first-child) {
+        margin-top: 0 !important;
       }
 
       > *:last-child {
