@@ -1,6 +1,7 @@
 ---
 import Image from "@components/elements/image/image.astro";
 import Heading from "@components/typography/heading/heading.astro";
+import Text from "@components/typography/text/text.astro";
 import SimpleText from "@components/typography/simple-text/simple-text.astro";
 import Card from "@components/wrappers/card/card.astro";
 import GridItem from "@components/wrappers/grid/grid-item.astro";
@@ -38,11 +39,11 @@ const htmlAttributes = Object.fromEntries(
               {post.title || "Untitled Post"}
             </Heading>
 
-            <SimpleText class="blog-post-date" size="xs" color="muted" weight="medium">
+            <SimpleText class="blog-post-date" size="xs">
               {post.date ? new Date(post.date).toLocaleDateString() : ""}
             </SimpleText>
 
-            <SimpleText class="blog-post-excerpt" size="sm" color="secondary">
+            <SimpleText class="blog-post-excerpt" size="sm">
               {post.excerpt || post.description || ""}
             </SimpleText>
           </Card>
@@ -54,7 +55,7 @@ const htmlAttributes = Object.fromEntries(
   {
     blogPosts.length === 0 && (
       <div class="blog-empty">
-        <SimpleText>No blog posts to display.</SimpleText>
+        <Text>No blog posts to display.</Text>
       </div>
     )
   }

@@ -1,7 +1,7 @@
 ---
 import Image from "@components/elements/image/image.astro";
 import Heading from "@components/typography/heading/heading.astro";
-import SimpleText from "@components/typography/simple-text/simple-text.astro";
+import Text from "@components/typography/text/text.astro";
 import ButtonGroup from "@components/wrappers/button-group/button-group.astro";
 import Card from "@components/wrappers/card/card.astro";
 import Container from "@components/wrappers/container/container.astro";
@@ -35,7 +35,7 @@ const {
     <div slot="first">
       <Card>
         <Heading level="h1">{heading}</Heading>
-        <SimpleText>{subtitle}</SimpleText>
+        <Text>{subtitle}</Text>
         <ButtonGroup class="buttons-container" buttonBlocks={buttonBlocks} />
       </Card>
     </div>

@@ -3,7 +3,7 @@ import Button from "@components/elements/button/button.astro";
 import Divider from "@components/elements/divider/divider.astro";
 import Image from "@components/elements/image/image.astro";
 import Bar from "@components/navigation/bar/bar.astro";
-import SimpleText from "@components/typography/simple-text/simple-text.astro";
+import Text from "@components/typography/text/text.astro";
 import ButtonGroup from "@components/wrappers/button-group/button-group.astro";
 import Container from "@components/wrappers/container/container.astro";
 
@@ -25,7 +25,7 @@ const { links = [], socials = [], footerText = "", logoSource, logoAlt } = Astro
 
     <div class="footer-content">
       <div class="content-container">
-        <SimpleText class="footer-legal-text" text={footerText || ""} />
+        <Text class="footer-legal-text" text={footerText || ""} />
       </div>
       <div class="content-container">
         <ButtonGroup>
@@ -72,7 +72,7 @@ const { links = [], socials = [], footerText = "", logoSource, logoAlt } = Astro
     }
   }
 
-  :global(.footer .footer-legal-text.simple-text) {
+  :global(.footer .footer-legal-text.text) {
     color: var(--color-text-muted);
     text-align: center;
     @container (min-width: 500px) {

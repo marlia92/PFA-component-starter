@@ -14,6 +14,6 @@ blocks:
     - _component: "typography/heading"
       text: "Center Position"
       level: h3
-    - _component: "typography/simple-text"
+    - _component: "typography/text"
       text: "This card's background image is centered both horizontally and vertically."
 ---

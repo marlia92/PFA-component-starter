@@ -10,6 +10,6 @@ blocks:
     - _component: "typography/heading"
       text: "md Padding"
       level: h3
-    - _component: "typography/simple-text"
+    - _component: "typography/text"
       text: "This card uses md padding for balanced spacing and readability."
 ---

@@ -9,7 +9,7 @@ blocks:
       paddingHorizontal: sm
       paddingVertical: sm
       contentBlocks:
-        - _component: "typography/rich-text"
+        - _component: "typography/text"
           text: |-
             ## Flexible column
 
@@ -20,7 +20,7 @@ blocks:
       paddingVertical: sm
       backgroundColor: "highlight"
       contentBlocks:
-        - _component: "typography/rich-text"
+        - _component: "typography/text"
           text: |-
             ## Fixed column
 

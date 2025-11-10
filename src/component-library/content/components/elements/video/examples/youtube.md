@@ -7,6 +7,6 @@ blocks:
     id: 4mB5KwenCzI
     title: Live visual editing in Astro with CloudCannon
     source: ""
-    poster: ""
+    thumbnail: ""
     style: "max-width: 600px"
 ---

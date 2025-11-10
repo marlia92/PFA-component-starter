@@ -35,6 +35,7 @@ export function formatComponentWithSlots(
 
   const isTextComponent =
     componentPath.includes("heading") ||
+    componentPath.includes("text") ||
     componentPath.includes("simple-text") ||
     componentPath.includes("list-item") ||
     componentPath.includes("definition-list-item") ||
@@ -423,6 +424,7 @@ ${indent}</${componentName}>`;
     let htmlContent = textContent;
 
     if (
+      componentPath.includes("text") ||
       componentPath.includes("simple-text") ||
       componentPath.includes("heading") ||
       componentPath.includes("list-item") ||
@@ -431,12 +433,16 @@ ${indent}</${componentName}>`;
       componentPath.includes("button") ||
       componentPath.includes("submit")
     ) {
-      htmlContent = new MarkdownIt({ html: true }).renderInline(textContent).trim();
-    } else if (componentPath.includes("rich-text")) {
-      htmlContent = new MarkdownIt().render(textContent).trim();
+      // For text component, use full markdown render
+      if (componentPath.includes("text") && !componentPath.includes("heading") && !componentPath.includes("simple-text")) {
+        htmlContent = new MarkdownIt().render(textContent).trim();
+      } else {
+        // For simple-text and other text components, use inline markdown
+        htmlContent = new MarkdownIt({ html: true }).renderInline(textContent).trim();
+      }
     }
 
-    if (componentPath.includes("rich-text") && htmlContent.includes("<")) {
+    if (componentPath.includes("text") && !componentPath.includes("simple-text") && htmlContent.includes("<")) {
       const formattedHtml = html(htmlContent, {
         indent_size: 2,
         indent_char: " ",

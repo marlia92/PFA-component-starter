@@ -18,7 +18,7 @@ Object.entries(componentImports).forEach(([path, obj]) => {
   const relativePath = path.replace("../../../components/", "").replace(/\.astro$/, "");
   const parts = relativePath.split("/");
 
-  // Remove duplicate directory names (e.g., rich-text/rich-text -> rich-text)
+  // Remove duplicate directory names (e.g., text/text -> text)
   if (parts.length > 1 && parts[parts.length - 1] === parts[parts.length - 2]) {
     parts.pop();
   }

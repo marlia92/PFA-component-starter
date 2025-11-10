@@ -11,6 +11,6 @@ blocks:
     - _component: "typography/heading"
       text: "Clickable Card"
       level: h3
-    - _component: "typography/simple-text"
+    - _component: "typography/text"
       text: "This entire card is clickable! Perfect for navigation cards or feature highlights."
 ---

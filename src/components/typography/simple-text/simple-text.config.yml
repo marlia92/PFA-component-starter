@@ -1,6 +1,6 @@
 label: Simple Text
 icon: view_headline
-description: "Paragraph for plain text content."
+description: "Paragraph for plain text content with inline markdown formatting."
 structures:
   - containerBlocks
   - cardBlocks
@@ -21,12 +21,12 @@ preview:
   icon: view_headline
 picker_preview:
   text: Simple Text
-  subtext: "Displays blocks of text for content sections with options for alignment, size and decoration."
+  subtext: "Displays blocks of text for content sections with options for alignment and size."
   icon: view_headline
 
 _inputs:
   text:
-    comment: The text content of the simple text.
+    comment: The text content of the simple text (inline markdown only).
     type: textarea
   alignX:
     comment: The horizontal alignment of the text.

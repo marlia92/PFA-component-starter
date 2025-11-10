@@ -1,16 +1,15 @@
 ---
 title: Simple Text
-order: 2
-overview: "A semantic `<p>` component for plain text sections, with controls for size and alignment. For more complex content, use [Rich Text](/component-library/components/typography/rich-text) instead."
-
+order: 3
+overview: "A semantic `<p>` component for plain text sections with inline markdown formatting. Supports size and alignment controls. For more complex content with headings and lists, use [Text](/component-library/components/typography/text) instead."
 slots:
   - title: default
-    description: The content inside the Simple Text.
-    fallback_for: text
-    child_component:
+    description: The content inside the Simple Text component (used when text prop is empty).
 examples:
   - slugs:
+      - primary
       - align
-  - slugs:
       - sizes
+    title: Basics
 ---
+

@@ -10,6 +10,6 @@ blocks:
     - _component: "typography/heading"
       text: "Accent Card"
       level: h3
-    - _component: "typography/simple-text"
+    - _component: "typography/text"
       text: "This card uses the accent background color."
 ---

@@ -107,7 +107,7 @@ export async function formatBlocksAstro(blocks: any): Promise<string> {
         const parts = componentPath.split("/");
         const lastPart = parts[parts.length - 1];
         // Sub-components are components where the component name doesn't match the folder name
-        // For paths with only 2 parts (e.g., "typography/rich-text"), it's always a main component
+        // For paths with only 2 parts (e.g., "typography/text"), it's always a main component
         const isSubComponent = parts.length > 2 && lastPart !== parts[parts.length - 2];
 
         let importPath = componentPath;

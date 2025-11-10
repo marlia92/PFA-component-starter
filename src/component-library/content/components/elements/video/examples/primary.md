@@ -7,6 +7,6 @@ blocks:
     id: dsTXcSeAZq8
     title: Astro in 100 Seconds
     source: ""
-    poster: ""
+    thumbnail: ""
     style: "max-width: 600px"
 ---

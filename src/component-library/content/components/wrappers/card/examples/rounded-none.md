@@ -11,6 +11,6 @@ blocks:
     - _component: "typography/heading"
       text: "Square Card"
       level: h3
-    - _component: "typography/simple-text"
+    - _component: "typography/text"
       text: "This card has square corners (rounded disabled)."
 ---

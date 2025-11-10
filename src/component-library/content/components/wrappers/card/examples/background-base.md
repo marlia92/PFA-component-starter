@@ -10,6 +10,6 @@ blocks:
     - _component: "typography/heading"
       text: "Base Card"
       level: h3
-    - _component: "typography/simple-text"
+    - _component: "typography/text"
       text: "This card uses the base background color (page background color)"
 ---

@@ -10,6 +10,6 @@ blocks:
     - _component: "typography/heading"
       text: "sm padding"
       level: h3
-    - _component: "typography/simple-text"
+    - _component: "typography/text"
       text: "This card uses sm padding for a very compact appearance."
 ---

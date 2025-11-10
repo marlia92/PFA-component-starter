@@ -18,7 +18,7 @@ blocks:
             - _component: "typography/heading"
               text: "Item 1"
               level: h3
-            - _component: "typography/simple-text"
+            - _component: "typography/text"
               text: "Large spacing creates more visual separation."
     - contentBlocks:
         - _component: "wrappers/card"
@@ -30,7 +30,7 @@ blocks:
             - _component: "typography/heading"
               text: "Item 2"
               level: h3
-            - _component: "typography/simple-text"
+            - _component: "typography/text"
               text: "Good for emphasizing individual items."
     - contentBlocks:
         - _component: "wrappers/card"
@@ -42,6 +42,6 @@ blocks:
             - _component: "typography/heading"
               text: "Item 3"
               level: h3
-            - _component: "typography/simple-text"
+            - _component: "typography/text"
               text: "Helps create a more spacious, airy feel."
 ---

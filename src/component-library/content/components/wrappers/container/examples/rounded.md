@@ -11,6 +11,6 @@ blocks:
     - _component: "typography/heading"
       text: "Rounded Container"
       level: h3
-    - _component: "typography/simple-text"
+    - _component: "typography/text"
       text: "This container has rounded corners applied."
 ---

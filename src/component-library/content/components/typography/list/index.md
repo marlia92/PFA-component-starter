@@ -1,7 +1,7 @@
 ---
 title: List
 order: 4
-overview: "Displays an icon list with support for vertical or horizontal layouts, custom styling, alignment, and markdown formatting. For standard bullet or numbered lists, use [Rich Text](/component-library/components/typography/rich-text) instead."
+overview: "Displays an icon list with support for vertical or horizontal layouts, custom styling, alignment, and markdown formatting. For standard bullet or numbered lists, use [Rich Text](/component-library/components/typography/text) instead."
 slots:
   - title: default
     description: The content inside the List.

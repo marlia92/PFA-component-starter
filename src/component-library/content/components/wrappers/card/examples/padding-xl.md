@@ -10,6 +10,6 @@ blocks:
     - _component: "typography/heading"
       text: "XL Padding"
       level: h3
-    - _component: "typography/simple-text"
+    - _component: "typography/text"
       text: "This card uses xl padding for generous spacing and visual impact."
 ---

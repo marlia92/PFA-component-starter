@@ -1,8 +1,8 @@
 ---
-title: Primary Rich Text
+title: Primary Text
 spacing: sides
 blocks:
-  _component: typography/rich-text
+  _component: typography/text
   text: |-
     ## This is all one markdown block 
 
@@ -14,3 +14,4 @@ blocks:
     * Too!
   alignX: start
 ---
+

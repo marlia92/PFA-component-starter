@@ -15,7 +15,7 @@ value:
   id: ""
   title: ""
   source: ""
-  poster: ""
+  thumbnail: ""
 preview:
   icon: videocam
   text:
@@ -57,7 +57,7 @@ _inputs:
       paths:
         uploads: public/videos
         static: public
-  poster:
+  thumbnail:
     type: image
     comment: Used for locally hosted videos - The image displayed before the video plays or while it is loading.
     options:

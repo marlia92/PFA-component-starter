@@ -11,6 +11,6 @@ blocks:
     - _component: "typography/heading"
       text: "Square Container"
       level: h3
-    - _component: "typography/simple-text"
+    - _component: "typography/text"
       text: "This container has square corners (rounded disabled)."
 ---

@@ -9,7 +9,7 @@ blocks:
       paddingHorizontal: sm
       paddingVertical: sm
       contentBlocks:
-        - _component: "typography/rich-text"
+        - _component: "typography/text"
           text: |-
             ## Side A
 
@@ -24,7 +24,7 @@ blocks:
       paddingHorizontal: sm
       paddingVertical: sm
       contentBlocks:
-        - _component: "typography/rich-text"
+        - _component: "typography/text"
           text: |-
             ## Side B
 

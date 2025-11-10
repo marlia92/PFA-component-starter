@@ -13,7 +13,7 @@ blocks:
           text: "Frequently asked questions"
           level: h2
           alignX: start
-        - _component: typography/rich-text
+        - _component: typography/text
           text: |
             **Do you offer support?** Yes — email us anytime.
 
@@ -24,7 +24,7 @@ blocks:
       sub_text: How we deliver
       icon_name: truck
       contentBlocks:
-        - _component: typography/simple-text
+        - _component: typography/text
           text: |
             We ship worldwide. Orders leave within 2 business days.
             Delivery times vary by region.
@@ -43,7 +43,7 @@ blocks:
       sub_text: Easy and fair
       icon_name: arrow-path
       contentBlocks:
-        - _component: typography/simple-text
+        - _component: typography/text
           text: "30‑day returns. Unused items only. Full refund once received."
           alignX: start
           size: md

@@ -4,13 +4,13 @@ spacing: null
 blocks:
   _component: wrappers/split
   firstColumnContentBlocks:
-    - _component: typography/rich-text
+    - _component: typography/text
       text: |-
         ## Side A
 
         This is content for side A.
   secondColumnContentBlocks:
-    - _component: typography/rich-text
+    - _component: typography/text
       text: |-
         ## Side B
 

@@ -18,7 +18,7 @@ blocks:
             - _component: "typography/heading"
               text: "Item 1"
               level: h3
-            - _component: "typography/simple-text"
+            - _component: "typography/text"
               text: "Medium spacing is the default option."
     - contentBlocks:
         - _component: "wrappers/card"
@@ -30,7 +30,7 @@ blocks:
             - _component: "typography/heading"
               text: "Item 2"
               level: h3
-            - _component: "typography/simple-text"
+            - _component: "typography/text"
               text: "Provides balanced visual breathing room."
     - contentBlocks:
         - _component: "wrappers/card"
@@ -42,6 +42,6 @@ blocks:
             - _component: "typography/heading"
               text: "Item 3"
               level: h3
-            - _component: "typography/simple-text"
+            - _component: "typography/text"
               text: "Works well for most content layouts."
 ---

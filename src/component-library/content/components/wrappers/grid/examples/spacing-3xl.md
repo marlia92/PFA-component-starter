@@ -18,7 +18,7 @@ blocks:
             - _component: "typography/heading"
               text: "Item 1"
               level: h3
-            - _component: "typography/simple-text"
+            - _component: "typography/text"
               text: "3XL spacing creates extreme visual separation."
     - contentBlocks:
         - _component: "wrappers/card"
@@ -30,7 +30,7 @@ blocks:
             - _component: "typography/heading"
               text: "Item 2"
               level: h3
-            - _component: "typography/simple-text"
+            - _component: "typography/text"
               text: "Perfect for minimalist, luxury designs."
     - contentBlocks:
         - _component: "wrappers/card"
@@ -42,6 +42,6 @@ blocks:
             - _component: "typography/heading"
               text: "Item 3"
               level: h3
-            - _component: "typography/simple-text"
+            - _component: "typography/text"
               text: "Creates maximum focus on individual items."
 ---

@@ -10,6 +10,6 @@ blocks:
     - _component: "typography/heading"
       text: "lg Padding"
       level: h3
-    - _component: "typography/simple-text"
+    - _component: "typography/text"
       text: "This card uses lg padding for a more spacious, breathable layout."
 ---

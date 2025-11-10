@@ -18,7 +18,7 @@ blocks:
             - _component: "typography/heading"
               text: "Item 1"
               level: h3
-            - _component: "typography/simple-text"
+            - _component: "typography/text"
               text: "Extra small spacing creates tight, compact layouts."
     - contentBlocks:
         - _component: "wrappers/card"
@@ -30,7 +30,7 @@ blocks:
             - _component: "typography/heading"
               text: "Item 2"
               level: h3
-            - _component: "typography/simple-text"
+            - _component: "typography/text"
               text: "Perfect for dense information displays."
     - contentBlocks:
         - _component: "wrappers/card"
@@ -42,6 +42,6 @@ blocks:
             - _component: "typography/heading"
               text: "Item 3"
               level: h3
-            - _component: "typography/simple-text"
+            - _component: "typography/text"
               text: "Minimal gaps between grid items."
 ---

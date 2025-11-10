@@ -7,6 +7,6 @@ blocks:
     id: "129371220"
     title: Dunedin Tourism
     source: ""
-    poster: ""
+    thumbnail: ""
     style: "max-width: 600px"
 ---
