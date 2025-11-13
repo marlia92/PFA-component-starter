@@ -21,7 +21,8 @@ These principles guide how components are built and maintained:
 
 ## Components
 
-Components are focused, reusable UI pieces that combine to create larger structures like blocks and pages.  
+Components are focused, reusable UI pieces that combine to create larger sections.
+
 They should stay minimal, consistent, and easy to maintain.
 
 Components are grouped by purpose:

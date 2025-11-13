@@ -2,9 +2,9 @@
 import Button from "@components/building-blocks/core-elements/button/button.astro";
 import Divider from "@components/building-blocks/core-elements/divider/divider.astro";
 import Image from "@components/building-blocks/core-elements/image/image.astro";
-import Bar from "@components/navigation/bar/bar.astro";
 import Text from "@components/building-blocks/core-elements/text/text.astro";
 import ButtonGroup from "@components/building-blocks/wrappers/button-group/button-group.astro";
+import Bar from "@components/navigation/bar/bar.astro";
 import CustomSection from "@components/page-sections/custom-section/custom-section.astro";
 
 const { links = [], socials = [], footerText = "", logoSource, logoAlt } = Astro.props;
@@ -28,7 +28,7 @@ const { links = [], socials = [], footerText = "", logoSource, logoAlt } = Astro
         <Text class="footer-legal-text" text={footerText || ""} />
       </div>
       <div class="content-container">
-        <ButtonGroup>
+        <ButtonGroup alignX="end">
           {
             socials.map((social: any) => (
               <Button
@@ -49,57 +49,60 @@ const { links = [], socials = [], footerText = "", logoSource, logoAlt } = Astro
   </CustomSection>
 </footer>
 
-<style>
+<style lang="pcss">
   .footer {
     container-type: inline-size;
-    margin-top: var(--spacing-lg);
 
     .button-group {
-      &.align-start {
-        @container (max-width: 499px) {
+      &.align-end {
+        @container (max-width: 599px) {
           justify-content: center;
         }
       }
     }
-  }
 
-  .footer-content {
-    @container (min-width: 500px) {
-      align-items: center;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    .footer-content {
+      @container (min-width: 600px) {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .content-container {
+        flex: 1;
+      }
     }
-  }
 
-  :global(.footer .footer-legal-text.text) {
-    color: var(--color-text-muted);
-    text-align: center;
-    @container (min-width: 500px) {
-      text-align: start;
+    .footer-legal-text {
+      color: var(--color-text-muted);
+      text-align: center;
+      @container (min-width: 600px) {
+        text-align: start;
+      }
     }
-  }
 
-  :global(.footer-logo.image) {
-    flex-shrink: 0;
-  }
+    .footer-logo {
+      flex-shrink: 0;
 
-  :global(.footer-logo.image img) {
-    margin-inline: auto;
-    margin-bottom: var(--spacing-md);
-    max-height: 2em;
-    max-width: min(20em, 100%);
-    width: auto;
-    @container (min-width: 500px) {
-      margin: 0;
+      :global(img) {
+        margin-inline: auto;
+        margin-bottom: var(--spacing-md);
+        max-height: 2em;
+        max-width: min(20em, 100%);
+        width: auto;
+        @container (min-width: 600px) {
+          margin: 0;
+        }
+      }
     }
-  }
 
-  :global(.footer .bar .bar-list) {
-    flex-flow: column wrap;
-    @container (min-width: 500px) {
-      flex-direction: row;
-      justify-content: end;
+    :global(.bar .bar-list) {
+      flex-flow: column wrap;
+      @container (min-width: 600px) {
+        flex-direction: row;
+        justify-content: end;
+      }
     }
   }
 </style>
