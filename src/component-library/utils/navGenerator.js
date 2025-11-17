@@ -7,7 +7,6 @@ const DISPLAY_NAME_OVERRIDES = {
 
 const formatDisplayName = (value = "") => {
   const lower = value.toLowerCase();
-
   if (DISPLAY_NAME_OVERRIDES[lower]) {
     return DISPLAY_NAME_OVERRIDES[lower];
   }
