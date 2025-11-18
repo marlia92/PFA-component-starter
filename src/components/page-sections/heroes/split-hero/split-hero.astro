@@ -46,7 +46,15 @@ const {
       </Card>
     </div>
     <div slot="second">
-      <Image source={imageSource} alt={imageAlt} rounded="true" editable={false} />
+      <Image
+        source={imageSource}
+        alt={imageAlt}
+        rounded="true"
+        editable={true}
+        data-prop-src="imageSource"
+        data-prop-alt="imageAlt"
+        data-editable="image"
+      />
     </div>
   </Split>
 </CustomSection>

@@ -5,9 +5,9 @@ structures:
   - pageSections
 value:
   _component: page-sections/heroes/center-hero
-  eyebrow: ""
-  heading: ""
-  subtext: ""
+  eyebrow: "Eyebrow text"
+  heading: "Heading text"
+  subtext: "Subtext placeholder text that will be replaced with actual content."
   buttonSections: []
   colorScheme:
   backgroundColor: base
