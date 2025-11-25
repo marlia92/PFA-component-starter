@@ -23,25 +23,29 @@ pageSections:
     backgroundColor: surface
     paddingVertical: 4xl
     slides:
-      - eyebrow: Speed
+      - _component: page-sections/features/feature-slider/feature-slider-item
+        eyebrow: Speed
         title: High Performance
         description: Great performance starts with what you choose not to load. The component starter keeps everything lean with simple HTML, CSS, and vanilla JavaScript, plus built-in tools that squeeze every drop of performance out of your images.
         imageSource: /src/assets/images/component-library/quiet-street.jpg
         imageAlt: High Performance
         minSplitWidth: 0
-      - eyebrow: Simplicity
+      - _component: page-sections/features/feature-slider/feature-slider-item
+        eyebrow: Simplicity
         title: Easy Maintenance
         description: Maintaining a site is easier when the pieces stay small and predictable. With the component starter, you build on top of highly polished building blocks that stay clear, focused, and easy to work with as your site grows.
         imageSource: /src/assets/images/component-library/sheep.jpg
         imageAlt: Easy Maintenance
         minSplitWidth: 0
-      - eyebrow: Collaboration
+      - _component: page-sections/features/feature-slider/feature-slider-item
+        eyebrow: Collaboration
         title: Team Friendly
         description: Teams move faster when everything feels obvious. Clear names, simple patterns, and consistent structure mean anyone can open the project and immediately know where things live and how they work. No handoff drama. No onboarding tour.
         imageSource: /src/assets/images/component-library/castle.jpg
         imageAlt: Move Faster
         minSplitWidth: 300
-      - eyebrow: Future
+      - _component: page-sections/features/feature-slider/feature-slider-item
+        eyebrow: Future
         title: Long-Term Stability
         description: This stack isn't chasing trends, and it won't age out. It's built to last. You're using the same basics the web has relied on from the start. It's a set of solid tools that stay understandable and easy to improve, no matter how much time passes.
         imageSource: /src/assets/images/component-library/dunedin-cliff.jpg

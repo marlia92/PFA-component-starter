@@ -13,8 +13,10 @@ const {
   ...rest
 } = Astro.props;
 
+const dataProp = (Astro.props as any)["data-prop"] ?? "items";
+
 const htmlAttributes = Object.fromEntries(
-  Object.entries(rest).filter(([key]) => key !== "_component")
+  Object.entries(rest).filter(([key]) => key !== "_component" && key !== "data-prop")
 );
 
 const slugifyLabel = (label: string) => {
@@ -83,7 +85,7 @@ const carouselStyles = `
       data-editable="array"
       data-component-key="_component"
       data-id-key="_component"
-      data-prop="slides"
+      data-prop={dataProp}
     >
       {
         slides.length > 0 ? (
