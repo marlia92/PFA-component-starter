@@ -1,6 +1,6 @@
 ---
 _schema: default
-title: Component Library
+title: Astro Component Library
 pageSections:
   - _component: page-sections/heroes/hero-center
     eyebrow:
@@ -47,8 +47,9 @@ pageSections:
     heading: Easy visual editing
     subtext: >-
       Every component is built to work seamlessly in CloudCannon's Visual
-      Editor. Editors can click, change, and rearrange content right on the page
-      without touching the code or guessing where anything lives.
+      Editor. Developers can create and style custom Page Sections with Astro.
+      Editors can click, change, and rearrange content right on the page without
+      touching the code or guessing where anything lives.
     buttonSections: []
     imageSource: /src/assets/images/component-library/website-split.svg
     imageAlt: Website Split
