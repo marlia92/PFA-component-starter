@@ -57,7 +57,7 @@ export async function getStaticPaths() {
       }
 
       const lastPart = componentKey.split("/").pop();
-      const configPath = `src/components/${componentKey}/${lastPart}.config.yml`;
+      const configPath = `src/components/${componentKey}/${lastPart}.cloudcannon.structure-value.yml`;
 
       if (existsSync(configPath)) {
         try {
@@ -65,7 +65,7 @@ export async function getStaticPaths() {
 
           configData = yaml.load(content);
         } catch (error) {
-          console.error(`Error parsing config file ${configPath}:`, error);
+          console.error(`Error parsing structure-value file ${configPath}:`, error);
         }
       }
 

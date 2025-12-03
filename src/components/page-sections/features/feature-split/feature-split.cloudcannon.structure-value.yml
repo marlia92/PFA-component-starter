@@ -1,0 +1,95 @@
+label: Feature Split
+icon: view_week
+description: Split layout that pairs narrative content with a focused feature list.
+value:
+  _component: page-sections/features/feature-split
+  eyebrow: Eyebrow text
+  heading: Heading text
+  subtext: Subtext placeholder text that will be replaced with actual content.
+  buttonSections: []
+  imageSource: /src/assets/images/component-library/dunedin-cliff.jpg
+  imageAlt: Feature image
+  imageAspectRatio: portrait
+  imageRounded: true
+  reverse: false
+  colorScheme: null
+  backgroundColor: base
+preview:
+  text:
+    - Feature Split
+  subtext:
+    - key: heading
+picker_preview:
+  text: Feature Split
+  subtext: Split view with story content and supporting feature list.
+  icon: view_week
+_inputs:
+  eyebrow:
+    type: text
+    comment: Optional eyebrow text displayed above the heading.
+  heading:
+    type: text
+    comment: Main heading for the split section.
+  subtext:
+    type: textarea
+    comment: Supporting body copy beneath the heading.
+  buttonSections:
+    type: array
+    comment: Calls-to-action shown beneath the copy block.
+    options:
+      structures: _structures.buttonSections
+  imageSource:
+    type: image
+    comment: Optional image displayed above the feature list.
+    options:
+      paths:
+        uploads: src/assets/images
+        static: ""
+  imageAlt:
+    type: text
+    comment: Alt text describing the image content.
+  imageAspectRatio:
+    type: select
+    comment: Aspect ratio applied to the image.
+    options:
+      values:
+        - id: none
+          name: None
+        - id: portrait
+          name: Portrait
+        - id: square
+          name: Square
+        - id: landscape
+          name: Landscape
+        - id: widescreen
+          name: Widescreen
+  imageRounded:
+    type: switch
+    comment: Toggles rounded corners on the image.
+  reverse:
+    type: switch
+    comment: Flips the layout so the feature list appears before the copy.
+  colorScheme:
+    type: select
+    comment: Color scheme theme applied to the section wrapper.
+    options:
+      values:
+        - id: default
+          name: Default
+        - id: contrast
+          name: Contrast
+  backgroundColor:
+    type: select
+    comment: Background color for the section.
+    options:
+      values:
+        - id: none
+          name: None
+        - id: base
+          name: Base
+        - id: surface
+          name: Surface
+        - id: accent
+          name: Accent
+        - id: highlight
+          name: Highlight

@@ -266,7 +266,10 @@ const properties: PropertyMeta[] = configData ? parseConfigProperties(configData
         return renderProperty(prop);
       })
     ) : (
-      <p>No properties available. Make sure the component has a valid .config.yml file.</p>
+      <p>
+        No properties available. Make sure the component has a valid
+        .cloudcannon.structure-value.yml file.
+      </p>
     )
   }
 </div>

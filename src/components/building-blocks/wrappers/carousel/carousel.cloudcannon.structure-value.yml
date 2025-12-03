@@ -1,0 +1,62 @@
+label: Carousel
+icon: image
+description: Displays multiple items in a sliding gallery.
+value:
+  _component: building-blocks/wrappers/carousel
+  label: ""
+  slides: []
+  autoPlay: false
+  autoScroll: false
+  slideWidthPercent: 100
+  minSlideWidth: 0
+preview:
+  text:
+    - Carousel
+  subtext:
+    - key: label
+picker_preview:
+  text: Carousel
+  subtext: Displays multiple items in a sliding gallery.
+  icon: image
+_inputs:
+  label:
+    comment: Optional label for the carousel to help identify it in the editor.
+    type: text
+  slides:
+    comment: Array of slides to display in the carousel.
+    type: array
+    options:
+      structures: _structures.slides
+  autoPlay:
+    comment: Enable auto-play functionality.
+    type: switch
+  autoScroll:
+    comment: Enable auto-scroll functionality.
+    type: switch
+  slideWidthPercent:
+    comment: Width of each slide as a percentage of the carousel (e.g., 33, 50, 100).
+    type: range
+    options:
+      min: 0
+      max: 100
+      step: 1
+  minSlideWidth:
+    comment: Minimum width of slides in pixels. Prevents slides from getting too small.
+    type: number
+_structures:
+  slides:
+    values:
+      - label: Carousel Slide
+        value:
+          contentSections: []
+        _inputs:
+          contentSections:
+            type: array
+            options:
+              structures: _structures.carouselSections
+        preview:
+          icon: transition_slide
+          text: Carousel Slide
+          subtext:
+            - template: Contains {contentSections|array_length} content {"block"|pluralize=contentSections}
+            - Add one or more content blocks to the grid item
