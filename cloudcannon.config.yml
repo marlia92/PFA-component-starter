@@ -80,11 +80,6 @@ collection_groups:
 _inputs:
   pageSections:
     comment: The main sections of the page.
-  navData:
-    type: array
-    comment: Array of navigation items to render in the navigation bar.
-    options:
-      structures: navDataSections
 _select_data:
   icons:
     - id: academic-cap

@@ -1,5 +1,4 @@
-navDataSections:
-  id_key: name
+navData:
   style: modal
   values:
     - label: Navigation Item
@@ -78,4 +77,3 @@ navDataSections:
                             path:
                               type: text
                               comment: URL path for the grandchild navigation item.
-
