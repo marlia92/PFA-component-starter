@@ -5,8 +5,6 @@ const {
   suffix,
   alignX = "start",
   class: className,
-  editable = true,
-  "data-prop": customDataProp = "number",
   ...restProps
 } = Astro.props;
 
@@ -16,21 +14,12 @@ const duration = 500;
 const htmlAttributes = Object.fromEntries(
   Object.entries(restProps).filter(([key]) => key !== "_component")
 );
-
-const textDataAttributes =
-  editable && customDataProp
-    ? {
-        "data-editable": "text",
-        "data-prop": customDataProp,
-      }
-    : {};
 ---
 
 <div class:list={["counter", `alignment-${alignX}`, className]} {...htmlAttributes}>
   {prefix && <span class="prefix">{prefix}</span>}
   <span
     class="number"
-    {...textDataAttributes}
     data-target={`${number}`}
     data-start={`${startNumber}`}
     data-duration={`${duration}`}
