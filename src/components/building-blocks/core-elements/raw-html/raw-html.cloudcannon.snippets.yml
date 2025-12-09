@@ -1,18 +1,12 @@
-RawHtml:
-  snippet: "<RawHtml [[raw_html_args]] />"
-  params:
-    raw_html_args:
-      parser: key_values
-      options:
-        models:
-          - editor_key: html
-        format:
-          string_boundary:
-            - '"'
-          root_value_delimiter: "="
-          root_pair_delimiter:
-            - " "
-          allow_booleans: true
+rawHtml:
+  template: mdx_component
+  inline: false
+  preview:
+    text: Raw HTML
+  definitions:
+    component_name: RawHtml
+    named_args:
+      - editor_key: html
+        type: string
   _inputs_from_glob:
     - /src/components/building-blocks/core-elements/raw-html/raw-html.cloudcannon.inputs.yml
-

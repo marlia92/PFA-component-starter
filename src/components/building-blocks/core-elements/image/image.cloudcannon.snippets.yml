@@ -1,24 +1,35 @@
-Image:
-  snippet: "<Image [[image_args]] />"
-  params:
-    image_args:
-      parser: key_values
-      options:
-        models:
-          - editor_key: source
-          - editor_key: alt
-          - editor_key: rounded
-          - editor_key: aspectRatio
-          - editor_key: positionVertical
-          - editor_key: positionHorizontal
-          - editor_key: background
-        format:
-          string_boundary:
-            - '"'
-          root_value_delimiter: "="
-          root_pair_delimiter:
-            - " "
-          allow_booleans: true
+image:
+  template: mdx_component
+  inline: false
+  preview:
+    text: Image
+  definitions:
+    component_name: Image
+    named_args:
+      - editor_key: source
+        type: string
+      - editor_key: alt
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: rounded
+        type: boolean
+        optional: true
+      - editor_key: aspectRatio
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: positionVertical
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: positionHorizontal
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: background
+        type: boolean
+        optional: true
   _inputs_from_glob:
     - /src/components/building-blocks/core-elements/image/image.cloudcannon.inputs.yml
 

@@ -1,19 +1,16 @@
-Text:
-  snippet: "<Text [[text_args]] />"
-  params:
-    text_args:
-      parser: key_values
-      options:
-        models:
-          - editor_key: text
-          - editor_key: alignX
-        format:
-          string_boundary:
-            - '"'
-          root_value_delimiter: "="
-          root_pair_delimiter:
-            - " "
-          allow_booleans: true
+text:
+  template: mdx_component
+  inline: false
+  preview:
+    text: Text
+  definitions:
+    component_name: Text
+    named_args:
+      - editor_key: text
+        type: string
+      - editor_key: alignX
+        type: string
+        optional: true
+        remove_empty: true
   _inputs_from_glob:
     - /src/components/building-blocks/core-elements/text/text.cloudcannon.inputs.yml
-

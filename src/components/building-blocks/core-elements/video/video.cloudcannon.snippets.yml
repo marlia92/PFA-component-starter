@@ -1,22 +1,31 @@
-Video:
-  snippet: "<Video [[video_args]] />"
-  params:
-    video_args:
-      parser: key_values
-      options:
-        models:
-          - editor_key: type
-          - editor_key: title
-          - editor_key: id
-          - editor_key: source
-          - editor_key: thumbnail
-        format:
-          string_boundary:
-            - '"'
-          root_value_delimiter: "="
-          root_pair_delimiter:
-            - " "
-          allow_booleans: true
+video:
+  template: mdx_component
+  inline: false
+  preview:
+    text: Video
+  definitions:
+    component_name: Video
+    named_args:
+      - editor_key: type
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: title
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: id
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: source
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: thumbnail
+        type: string
+        optional: true
+        remove_empty: true
   _inputs_from_glob:
     - /src/components/building-blocks/core-elements/video/video.cloudcannon.inputs.yml
 

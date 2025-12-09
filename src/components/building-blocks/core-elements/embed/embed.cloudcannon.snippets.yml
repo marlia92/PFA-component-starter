@@ -1,19 +1,17 @@
-Embed:
-  snippet: "<Embed [[embed_args]] />"
-  params:
-    embed_args:
-      parser: key_values
-      options:
-        models:
-          - editor_key: source
-          - editor_key: aspectRatio
-        format:
-          string_boundary:
-            - '"'
-          root_value_delimiter: "="
-          root_pair_delimiter:
-            - " "
-          allow_booleans: true
+embed:
+  template: mdx_component
+  inline: false
+  preview:
+    text: Embed
+  definitions:
+    component_name: Embed
+    named_args:
+      - editor_key: source
+        type: string
+      - editor_key: aspectRatio
+        type: string
+        optional: true
+        remove_empty: true
   _inputs_from_glob:
     - /src/components/building-blocks/core-elements/embed/embed.cloudcannon.inputs.yml
 

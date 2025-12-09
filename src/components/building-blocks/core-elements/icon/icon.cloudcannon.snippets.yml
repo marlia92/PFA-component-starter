@@ -1,23 +1,31 @@
-Icon:
-  snippet: "<Icon [[icon_args]] />"
-  params:
-    icon_args:
-      parser: key_values
-      options:
-        models:
-          - editor_key: name
-          - editor_key: size
-          - editor_key: color
-          - editor_key: background
-          - editor_key: inline
-          - editor_key: alignX
-        format:
-          string_boundary:
-            - '"'
-          root_value_delimiter: "="
-          root_pair_delimiter:
-            - " "
-          allow_booleans: true
+icon:
+  template: mdx_component
+  inline: false
+  preview:
+    text: Icon
+  definitions:
+    component_name: Icon
+    named_args:
+      - editor_key: name
+        type: string
+      - editor_key: size
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: color
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: background
+        type: boolean
+        optional: true
+      - editor_key: inline
+        type: boolean
+        optional: true
+      - editor_key: alignX
+        type: string
+        optional: true
+        remove_empty: true
   _inputs_from_glob:
     - /src/components/building-blocks/core-elements/icon/icon.cloudcannon.inputs.yml
 

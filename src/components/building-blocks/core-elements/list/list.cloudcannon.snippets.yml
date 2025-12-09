@@ -1,21 +1,25 @@
-List:
-  snippet: "<List [[list_args]] />"
-  params:
-    list_args:
-      parser: key_values
-      options:
-        models:
-          - editor_key: items
-          - editor_key: direction
-          - editor_key: alignX
-          - editor_key: size
-        format:
-          string_boundary:
-            - '"'
-          root_value_delimiter: "="
-          root_pair_delimiter:
-            - " "
-          allow_booleans: true
+list:
+  template: mdx_component
+  inline: false
+  preview:
+    text: List
+  definitions:
+    component_name: List
+    named_args:
+      - editor_key: items
+        type: array
+      - editor_key: direction
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: alignX
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: size
+        type: string
+        optional: true
+        remove_empty: true
   _inputs_from_glob:
     - /src/components/building-blocks/core-elements/list/list.cloudcannon.inputs.yml
 

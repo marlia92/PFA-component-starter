@@ -1,23 +1,31 @@
-Heading:
-  snippet: "<Heading [[heading_args]] />"
-  params:
-    heading_args:
-      parser: key_values
-      options:
-        models:
-          - editor_key: text
-          - editor_key: level
-          - editor_key: size
-          - editor_key: alignX
-          - editor_key: iconName
-          - editor_key: iconPosition
-        format:
-          string_boundary:
-            - '"'
-          root_value_delimiter: "="
-          root_pair_delimiter:
-            - " "
-          allow_booleans: true
+heading:
+  template: mdx_component
+  inline: false
+  preview:
+    text: Heading
+  definitions:
+    component_name: Heading
+    named_args:
+      - editor_key: text
+        type: string
+      - editor_key: level
+        type: number
+        optional: true
+      - editor_key: size
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: alignX
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: iconName
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: iconPosition
+        type: string
+        optional: true
+        remove_empty: true
   _inputs_from_glob:
     - /src/components/building-blocks/core-elements/heading/heading.cloudcannon.inputs.yml
-

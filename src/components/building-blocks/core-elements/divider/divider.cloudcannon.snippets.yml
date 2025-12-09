@@ -1,18 +1,15 @@
-Divider:
-  snippet: "<Divider [[divider_args]] />"
-  params:
-    divider_args:
-      parser: key_values
-      options:
-        models:
-          - editor_key: paddingVertical
-        format:
-          string_boundary:
-            - '"'
-          root_value_delimiter: "="
-          root_pair_delimiter:
-            - " "
-          allow_booleans: true
+divider:
+  template: mdx_component
+  inline: false
+  preview:
+    text: Divider
+  definitions:
+    component_name: Divider
+    named_args:
+      - editor_key: paddingVertical
+        type: string
+        optional: true
+        remove_empty: true
   _inputs_from_glob:
     - /src/components/building-blocks/core-elements/divider/divider.cloudcannon.inputs.yml
 

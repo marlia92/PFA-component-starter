@@ -1,18 +1,15 @@
-Spacer:
-  snippet: "<Spacer [[spacer_args]] />"
-  params:
-    spacer_args:
-      parser: key_values
-      options:
-        models:
-          - editor_key: size
-        format:
-          string_boundary:
-            - '"'
-          root_value_delimiter: "="
-          root_pair_delimiter:
-            - " "
-          allow_booleans: true
+spacer:
+  template: mdx_component
+  inline: false
+  preview:
+    text: Spacer
+  definitions:
+    component_name: Spacer
+    named_args:
+      - editor_key: size
+        type: string
+        optional: true
+        remove_empty: true
   _inputs_from_glob:
     - /src/components/building-blocks/core-elements/spacer/spacer.cloudcannon.inputs.yml
 
