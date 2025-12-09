@@ -1,0 +1,19 @@
+Form:
+  snippet: "<Form [[form_args]] />"
+  params:
+    form_args:
+      parser: key_values
+      options:
+        models:
+          - editor_key: action
+          - editor_key: formBlocks
+        format:
+          string_boundary:
+            - '"'
+          root_value_delimiter: "="
+          root_pair_delimiter:
+            - " "
+          allow_booleans: true
+  _inputs_from_glob:
+    - /src/components/building-blocks/forms/form/form.cloudcannon.inputs.yml
+

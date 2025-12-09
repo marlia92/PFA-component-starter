@@ -1,0 +1,21 @@
+ButtonGroup:
+  snippet: "<ButtonGroup [[button_group_args]] />"
+  params:
+    button_group_args:
+      parser: key_values
+      options:
+        models:
+          - editor_key: label
+          - editor_key: buttonSections
+          - editor_key: direction
+          - editor_key: alignX
+        format:
+          string_boundary:
+            - '"'
+          root_value_delimiter: "="
+          root_pair_delimiter:
+            - " "
+          allow_booleans: true
+  _inputs_from_glob:
+    - /src/components/building-blocks/wrappers/button-group/button-group.cloudcannon.inputs.yml
+

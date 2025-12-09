@@ -1,0 +1,23 @@
+Carousel:
+  snippet: "<Carousel [[carousel_args]] />"
+  params:
+    carousel_args:
+      parser: key_values
+      options:
+        models:
+          - editor_key: label
+          - editor_key: slides
+          - editor_key: autoPlay
+          - editor_key: autoScroll
+          - editor_key: slideWidthPercent
+          - editor_key: minSlideWidth
+        format:
+          string_boundary:
+            - '"'
+          root_value_delimiter: "="
+          root_pair_delimiter:
+            - " "
+          allow_booleans: true
+  _inputs_from_glob:
+    - /src/components/building-blocks/wrappers/carousel/carousel.cloudcannon.inputs.yml
+
