@@ -113,14 +113,17 @@ pageSections:
         paddingVertical: lg
       - _component: building-blocks/core-elements/embed
         source: >-
-          <iframe height="300" style="width: 100%;" scrolling="no" title="2024
-          Rewind  - Top 80 most ❤️ pens (scroll to see more)"
-          src="https://codepen.io/cbolson/embed/ogvWOgN?default-tab=html%2Cresult"
-          frameborder="no" loading="lazy" allowtransparency="true">       See
-          the Pen <a href="https://codepen.io/cbolson/pen/ogvWOgN">   2024
-          Rewind  - Top 80 most ❤️ pens (scroll to see more)</a> by Chris Bolson
-          (<a href="https://codepen.io/cbolson">@cbolson</a>)   on <a
-          href="https://codepen.io">CodePen</a>.       </iframe>
+          <p class="codepen" data-height="300" data-default-tab="html,result"
+          data-slug-hash="ogvWOgN" data-pen-title="2024 Rewind  - Top 80 most ❤️
+          pens (scroll to see more)" data-user="cbolson" style="height: 300px;
+          box-sizing: border-box; display: flex; align-items: center;
+          justify-content: center; border: 2px solid; margin: 1em 0; padding:
+          1em;">       <span>See the Pen <a
+          href="https://codepen.io/cbolson/pen/ogvWOgN">   2024 Rewind  - Top 80
+          most ❤️ pens (scroll to see more)</a> by Chris Bolson (<a
+          href="https://codepen.io/cbolson">@cbolson</a>)   on <a
+          href="https://codepen.io">CodePen</a>.</span>       </p>       <script
+          async src="https://public.codepenassets.com/embed/index.js"></script>
         title: ''
         aspectRatio: widescreen
     maxContentWidth: 2xl
