@@ -1,4 +1,0 @@
-html:
-  comment: The raw HTML content to render (including scripts, styles, etc.).
-  type: textarea
-

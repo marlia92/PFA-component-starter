@@ -1,14 +1,6 @@
-source:
-  type: url
-  comment: The url source for the iframe.
-  options:
-    disable_upload_file: true
-    disable_direct_input: false
-    disable_upload_file_in_file_browser: true
-    hide_link_to_file: true
-    hide_link_to_page: false
-    hide_link_to_email_address: true
-    hide_link_to_telephone: true
+html:
+  type: textarea
+  comment: The raw HTML content to render (e.g., iframe, embed code, etc.).
 aspectRatio:
   type: select
   comment: The aspect ratio of the embed.
@@ -22,4 +14,3 @@ aspectRatio:
         name: Portrait (3:4)
       - id: widescreen
         name: Widescreen (16:9)
-

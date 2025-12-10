@@ -4,13 +4,11 @@ embed:
   preview:
     text:
       - Embed
-    subtext:
-      - key: title
     icon: data_object
   definitions:
     component_name: Embed
     named_args:
-      - editor_key: source
+      - editor_key: html
         type: string
       - editor_key: aspectRatio
         type: string

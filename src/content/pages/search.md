@@ -16,7 +16,7 @@ pageSections:
     colorScheme: default
     backgroundColor: base
     contentSections:
-      - _component: building-blocks/core-elements/raw-html
+      - _component: building-blocks/core-elements/embed
         html: |
           <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
           <script src="/pagefind/pagefind-ui.js"></script>
