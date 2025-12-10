@@ -22,43 +22,34 @@ const htmlAttributes = Object.fromEntries(
 const md = MarkdownIt({ html: true });
 const MarkdownText = text ? md.render(text) : "";
 
-const textDataAttributes = editable && customDataProp
-  ? {
-      "data-editable": "text",
-      "data-prop": customDataProp,
-    }
-  : {};
+const textDataAttributes =
+  editable && customDataProp
+    ? {
+        "data-editable": "text",
+        "data-prop": customDataProp,
+      }
+    : {};
 
-const authorNameDataAttributes = editable && customDataPropAuthorName
-  ? {
-      "data-editable": "text",
-      "data-prop": customDataPropAuthorName,
-    }
-  : {};
+const authorNameDataAttributes =
+  editable && customDataPropAuthorName
+    ? {
+        "data-editable": "text",
+        "data-prop": customDataPropAuthorName,
+      }
+    : {};
 
-const authorDescriptionDataAttributes = editable && customDataPropAuthorDescription
-  ? {
-      "data-editable": "text",
-      "data-prop": customDataPropAuthorDescription,
-    }
-  : {};
+const authorDescriptionDataAttributes =
+  editable && customDataPropAuthorDescription
+    ? {
+        "data-editable": "text",
+        "data-prop": customDataPropAuthorDescription,
+      }
+    : {};
 ---
 
 <blockquote class:list={["testimonial", `alignment-${alignX}`, className]} {...htmlAttributes}>
-  <div class="quote">
-    {
-      text ? (
-        customDataProp ? (
-          <span {...textDataAttributes} set:html={MarkdownText} />
-        ) : (
-          <Fragment set:html={MarkdownText} />
-        )
-      ) : (
-        <span {...textDataAttributes}>
-          <slot />
-        </span>
-      )
-    }
+  <div class="quote" {...textDataAttributes}>
+    {text ? <Fragment set:html={MarkdownText} /> : <slot />}
   </div>
   <div class="author">
     {
