@@ -20,13 +20,13 @@ for (const [path, module] of Object.entries(componentModules)) {
     const filename = parts[parts.length - 1];
     const parentFolder = parts.length > 1 ? parts[parts.length - 2] : null;
 
+    // Convert PascalCase filename to kebab-case for comparison
     const kebabFilename = pascalToKebab(filename);
-    const kebabParent = parentFolder;
 
-    // If filename (in kebab-case) matches parent folder, it's not a subcomponent - remove redundant filename
-    // e.g. 'wrappers/grid', 'wrappers/grid/grid-item'
+    // If kebab-case filename matches parent folder, it's not a subcomponent - remove redundant filename
+    // e.g. 'wrappers/grid' (from Grid.astro in grid folder), 'wrappers/grid/grid-item' (from GridItem.astro)
     const registrationPath =
-      kebabFilename === kebabParent
+      kebabFilename === parentFolder
         ? parts.slice(0, -1).join("/")
         : parts.slice(0, -1).concat(kebabFilename).join("/");
 
