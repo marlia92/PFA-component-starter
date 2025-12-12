@@ -68,6 +68,30 @@ pageSections:
     paddingVertical: 4xl
     colorScheme: default
     backgroundColor: none
+  - _component: page-sections/builders/custom-section
+    label: ''
+    contentSections:
+      - _component: building-blocks/core-elements/heading
+        text: My Heading
+        level: h2
+        size: default
+        alignX: start
+        iconName:
+        iconPosition: before
+      - _component: building-blocks/core-elements/text
+        text: My text goes here.
+        alignX: start
+    maxContentWidth: 2xl
+    paddingHorizontal: md
+    paddingVertical: md
+    colorScheme: contrast
+    backgroundColor: surface
+    backgroundImage:
+      source: ''
+      alt: ''
+      positionVertical: top
+      positionHorizontal: center
+    rounded: false
   - _component: page-sections/features/feature-slider
     slides:
       - _component: page-sections/features/feature-slider/feature-slider-item
