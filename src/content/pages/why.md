@@ -71,6 +71,8 @@ pageSections:
   - _component: page-sections/builders/custom-section
     label: ''
     contentSections:
+      - _component: building-blocks/core-elements/spacer
+        size: md
       - _component: building-blocks/core-elements/heading
         text: Mix and match your components
         level: h2
@@ -200,8 +202,8 @@ pageSections:
   - _component: page-sections/ctas/cta-form
     heading: Form and function!
     subtext: >-
-      Here's a form component. This is a sample, so it's not wired up yet, but
-      it's all ready to <a
+      This is a sample form component, so it's not wired up yet, but it's all
+      ready to <a
       href="https://cloudcannon.com/documentation/articles/getting-started-with-forms-on-cloudcannon/"
       target="_blank" rel="noopener">configure with CloudCannon</a>.
     formAction: ./
