@@ -6,12 +6,15 @@ pageSections:
     eyebrow:
     heading: Why build another Astro component library?
     subtext: >-
-      We're big fans of the static web. And we love what the Astro team is
-      making! As more <a href="https://cloudcannon.com/partner-program/"
-      target="_blank" rel="noopener">partner agencies</a> are building client
-      sites on CloudCannon, we wanted to provide a component library for Astro
-      that outputs static HTML and CSS, for the fastest delivery possible
-      —&nbsp;all unbranded and adaptable for any project.
+      At CloudCannon, we're big fans of the static web. And we love what the
+      Astro team is building!
+
+
+      As more <a href="https://cloudcannon.com/partner-program/" target="_blank"
+      rel="noopener">partner agencies</a> are building client sites with
+      CloudCannon, we wanted to provide a component library for Astro that
+      outputs static HTML and CSS, for the fastest delivery possible —&nbsp;all
+      unbranded and adaptable for any project.
     imageSource: /src/assets/images/component-library/sunset.jpg
     imageAlt: Sunset
     imageAspectRatio: portrait
@@ -20,6 +23,51 @@ pageSections:
     colorScheme: default
     backgroundColor: base
     paddingVertical: 4xl
+  - _component: page-sections/info-blocks/faq-section
+    heading: Frequently asked questions
+    headingLevel: h2
+    headingSize: lg
+    singleOpen: true
+    openFirst: false
+    items:
+      - _component: building-blocks/wrappers/accordion/accordion-item
+        title: How does the component library work?
+        contentSections:
+          - _component: building-blocks/core-elements/text
+            text: >-
+              We give you [straightforward building blocks](/component-library/)
+              without hiding anything behind layers of abstraction. You see
+              everything that's happening, and stay in control.
+      - _component: building-blocks/wrappers/accordion/accordion-item
+        title: What's included in the component library?
+        contentSections:
+          - _component: building-blocks/core-elements/text
+            text: >-
+              Lean HTML, CSS, and small touches of vanilla JavaScript. No dead
+              weight, no surprise dependencies, just the pieces you actually
+              need to build great pages.
+      - _component: building-blocks/wrappers/accordion/accordion-item
+        title: How is the component library so fast?
+        contentSections:
+          - _component: building-blocks/core-elements/text
+            text: >-
+              Performance comes from keeping things lightweight. The framework
+              handles image optimization and responsive patterns so your site
+              stays quick without extra work.
+      - _component: building-blocks/wrappers/accordion/accordion-item
+        title: Can I customize the component library?
+        contentSections:
+          - _component: building-blocks/core-elements/text
+            text: >-
+              Every part of the component library is meant to be opened, read,
+              and edited. You shape it to fit your project instead of working
+              around someone else's opinions. Start by [browsing the
+              components](/component-library/) to see how they're set up!
+    maxContentWidth: xl
+    paddingHorizontal: xl
+    paddingVertical: 4xl
+    colorScheme: default
+    backgroundColor: none
   - _component: page-sections/features/feature-slider
     slides:
       - _component: page-sections/features/feature-slider/feature-slider-item
@@ -123,54 +171,13 @@ pageSections:
     colorScheme: contrast
     backgroundColor: surface
     paddingVertical: 2xl
-  - _component: page-sections/info-blocks/faq-section
-    heading: Frequently asked questions
-    headingLevel: h2
-    headingSize: lg
-    singleOpen: true
-    openFirst: false
-    items:
-      - _component: building-blocks/wrappers/accordion/accordion-item
-        title: How does the component library work?
-        contentSections:
-          - _component: building-blocks/core-elements/text
-            text: >-
-              We give you [straightforward building blocks](/component-library/)
-              without hiding anything behind layers of abstraction. You see
-              everything that's happening, and stay in control.
-      - _component: building-blocks/wrappers/accordion/accordion-item
-        title: What's included in the component library?
-        contentSections:
-          - _component: building-blocks/core-elements/text
-            text: >-
-              Lean HTML, CSS, and small touches of vanilla JavaScript. No dead
-              weight, no surprise dependencies, just the pieces you actually
-              need to build great pages.
-      - _component: building-blocks/wrappers/accordion/accordion-item
-        title: How is the component library so fast?
-        contentSections:
-          - _component: building-blocks/core-elements/text
-            text: >-
-              Performance comes from keeping things lightweight. The framework
-              handles image optimization and responsive patterns so your site
-              stays quick without extra work.
-      - _component: building-blocks/wrappers/accordion/accordion-item
-        title: Can I customize the component library?
-        contentSections:
-          - _component: building-blocks/core-elements/text
-            text: >-
-              Every part of the component library is meant to be opened, read,
-              and edited. You shape it to fit your project instead of working
-              around someone else's opinions. Start by [browsing the
-              components](/component-library/) to see how they're set up!
-    maxContentWidth: xl
-    paddingHorizontal: xl
-    paddingVertical: 4xl
-    colorScheme: contrast
-    backgroundColor: surface
   - _component: page-sections/ctas/cta-form
-    heading: Get in touch
-    subtext: Have questions? We'd love to hear from you.
+    heading: Form and function!
+    subtext: >-
+      Here's a form component. This is a sample, so it's not wired up yet, but
+      it's all ready to <a
+      href="https://cloudcannon.com/documentation/articles/getting-started-with-forms-on-cloudcannon/"
+      target="_blank" rel="noopener">configure with CloudCannon</a>.
     formAction: ./
     formBlocks:
       - _component: building-blocks/forms/input

@@ -31,9 +31,9 @@ pageSections:
     eyebrow: Built for Astro
     heading: Fast, modern, and easy to work with
     subtext: >-
-      This library takes full advantage of Astro's zero-JS-by-default approach.
-      You get fast pages, simple routing, and a component system that stays easy
-      to use as your site grows.
+      Our component library takes full advantage of Astro's zero-JS-by-default
+      approach. You get fast pages, simple routing, and a component system that
+      stays easy to use as your site grows.
     buttonSections: []
     imageSource: /src/assets/images/component-library/website-feature.svg
     imageAlt: Website Feature
@@ -137,9 +137,9 @@ pageSections:
   - _component: page-sections/ctas/cta-center
     heading: Ready to start building?
     subtext: >-
-      Browse our complete component library and see live examples of every
-      component in action. All components are ready to use and fully
-      customizable.
+      Browse the complete Astro component library and see live examples of every
+      component in action. All components are ready to use in CloudCannon and
+      are fully customizable.
     buttonSections:
       - _component: building-blocks/core-elements/button
         text: Explore Components
