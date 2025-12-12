@@ -13,7 +13,13 @@
       "@features/*": ["src/components/page-sections/features/*"],
       "@builders/*": ["src/components/page-sections/builders/*"],
       "@sections/*": ["src/components/sections/*"],
-      "@component-utils/*": ["src/components/utils/*"]
+      "@component-utils/*": ["src/components/utils/*"],
+      "@component-library/*": ["src/component-library/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@styles/*": ["src/styles/*"],
+      "@data/*": ["src/data/*"],
+      "@content/*": ["src/content/*"],
+      "@assets/*": ["src/assets/*"]
     }
   },
   "include": ["src/**/*"],
