@@ -168,32 +168,39 @@ pageSections:
         name: 'Alex Smith '
         role: Lead Developer
         bio: >-
-          Alex brings over 15 years of leadership experience and a vision for
-          innovation that drives our company forward.
+          As a fictional representation of a real employee, I exist solely to
+          demonstrate how profile information appears in this layout. My
+          expertise includes being professionally photographed and having
+          exactly three sentences of biographical text.
         imageSource: /src/assets/images/component-library/profile1.jpg
         imageAlt: Alex Smith, CEO
       - _component: page-sections/people/team-grid/team-item
         name: Tom Rodriguez
         role: Chief Technology Officer
         bio: >-
-          Tom is a technology visionary with expertise in building scalable
-          solutions that transform businesses.
+          I'm here to show how multiple team members look when displayed
+          together. My headshot is perfectly lit, and my description maintains
+          the ideal length for this component.
         imageSource: /src/assets/images/component-library/profile2.jpg
         imageAlt: Tom Rodriguez, CTO
       - _component: page-sections/people/team-grid/team-item
         name: Helen Kim
         role: Head of Design
         bio: >-
-          Helen combines creativity with strategic thinking to create beautiful,
-          user-centered experiences.
+          I demonstrate how the component handles a third profile entry. My
+          carefully crafted placeholder text ensures the layout remains
+          consistent, regardless of whether you're viewing on a tablet or
+          desktop display.
         imageSource: /src/assets/images/component-library/profile3.jpg
         imageAlt: Helen Kim, Head of Design
       - _component: page-sections/people/team-grid/team-item
         name: Emily Watson
         role: Director of Operations
         bio: >-
-          Emily ensures everything runs smoothly, bringing efficiency and
-          excellence to every project we undertake.
+          I round out the team grid to demonstrate how the layout adapts to a
+          fourth member. My presence here confirms that the component scales
+          appropriately, maintaining visual balance across different screen
+          sizes.
         imageSource: /src/assets/images/component-library/profile4.jpg
         imageAlt: Emily Watson, Director of Operations
     colorScheme: contrast
