@@ -175,8 +175,8 @@ pageSections:
         bio: >-
           As a fictional representation of a real employee, I exist solely to
           demonstrate how profile information appears in this layout. My
-          expertise includes being professionally photographed and having
-          exactly three sentences of biographical text.
+          headshot is perfectly lit, and my description maintains the ideal
+          length for this component.
         imageSource: /src/assets/images/component-library/profile1.jpg
         imageAlt: Alex Smith, CEO
       - _component: page-sections/people/team-grid/team-item
@@ -184,8 +184,8 @@ pageSections:
         role: Chief Technology Officer
         bio: >-
           I'm here to show how multiple team members look when displayed
-          together. My headshot is perfectly lit, and my description maintains
-          the ideal length for this component.
+          together. My expertise includes being professionally photographed and
+          having exactly two sentences of biographical text.
         imageSource: /src/assets/images/component-library/profile2.jpg
         imageAlt: Tom Rodriguez, CTO
       - _component: page-sections/people/team-grid/team-item
