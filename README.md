@@ -1,10 +1,10 @@
-# Astro Component Library
+# Astro Component Starter
 
-A modern design system built with Astro. This library provides a modular foundation for building fast, accessible, and maintainable websites using web fundamentals.
+A modern design system built with Astro. This starter provides a modular foundation for building fast, accessible, and maintainable websites using web fundamentals.
 
 ## Features
 
-- 🎨 **Comprehensive Component Library** - Pre-built components organized by purpose (building blocks, page sections, navigation)
+- 🎨 **Comprehensive Component Starter** - Pre-built components organized by purpose (building blocks, page sections, navigation)
 - 🚀 **Built with Astro** - Fast, modern static site generation with minimal JavaScript
 - 🎯 **Design Tokens** - CSS variables for consistent theming across your entire site
 - 📱 **Fully Responsive** - Mobile-first components that work on all devices
@@ -25,7 +25,7 @@ A modern design system built with Astro. This library provides a modular foundat
 
 ```bash
 git clone <repository-url>
-cd astro-component-library
+cd astro-component-starter
 ```
 
 2. Install dependencies:
@@ -46,7 +46,7 @@ The site will be available at `http://localhost:4321`
 
 - `npm run dev` - Start the development server
 - `npm run build` - Build the site for production
-- `npm run build:no-library` - Build without the component library documentation
+- `npm run build:no-library` - Build without the component starter documentation
 - `npm run preview` - Preview the production build locally
 - `npm run lint` - Run all linters (JS, CSS, YML)
 - `npm run lint:fix` - Auto-fix linting issues
@@ -58,7 +58,7 @@ The site will be available at `http://localhost:4321`
 ```
 src/
 ├── assets/              # Static assets (images, etc.)
-├── component-library/   # Component library documentation
+├── component-library/   # Component starter documentation
 │   ├── components/      # Documentation components
 │   ├── content/         # MDX documentation files
 │   ├── data/            # Navigation data
@@ -158,7 +158,7 @@ Each component includes CloudCannon configuration:
 
 ## Documentation
 
-The component library includes comprehensive documentation:
+The component starter includes comprehensive documentation:
 
 - Component properties and usage
 - Code examples

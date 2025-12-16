@@ -1,15 +1,15 @@
 {
   "defaultSeo": {
-    "titleFormat": "{title} | Astro Component Library",
+    "titleFormat": "{title} | Astro Component Starter",
     "description": "",
     "image": "/images/logo.svg",
-    "siteName": "Astro Component Library",
+    "siteName": "Astro Component Starter",
     "twitterHandle": "@yourusername"
   },
   "organization": {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Astro Component Library",
+    "name": "Astro Component Starter",
     "url": "https://example.com",
     "logo": "https://example.com/images/logo.svg",
     "description": "",
