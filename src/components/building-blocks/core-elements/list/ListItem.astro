@@ -35,7 +35,8 @@ const textDataAttributes =
 </li>
 
 <style lang="pcss">
-  .item {
+  @layer components {
+    .item {
     display: block;
 
     > .list-icon {
@@ -52,5 +53,6 @@ const textDataAttributes =
         width: 100%;
       }
     }
+  }
   }
 </style>

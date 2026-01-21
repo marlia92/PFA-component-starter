@@ -76,7 +76,8 @@ if (!hasItems && !hasSlotContent) return;
 </div>
 
 <style lang="pcss">
-  .grid {
+  @layer components {
+    .grid {
     gap: var(--grid-spacing, --spacing-md);
     margin-top: var(--spacing-lg);
     width: 100%;
@@ -101,5 +102,6 @@ if (!hasItems && !hasSlotContent) return;
         min-width: min(var(--min-item-width, 200px), 100%);
       }
     }
+  }
   }
 </style>
