@@ -50,7 +50,7 @@ collections_config:
       description:
         type: text
         comment: A brief description of the blog post.
-      pubDate:
+      date:
         type: date
         comment: The publication date.
       author:

@@ -1,7 +1,7 @@
 ---
 title:
 description:
-pubDate:
+date:
 author: Anonymous
 image:
 tags: []
