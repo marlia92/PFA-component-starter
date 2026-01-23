@@ -101,7 +101,6 @@ export default [
       "astro/prefer-class-list-directive": "warn",
       "astro/prefer-split-class-list": "warn",
       "astro/sort-attributes": "off",
-      // Allow _component to be unused (extracted to prevent being passed as HTML attribute)
       "@typescript-eslint/no-unused-vars": [
         "warn",
         {

@@ -3,7 +3,14 @@ import Button from "@core-elements/button/Button.astro";
 import Icon from "@core-elements/icon/Icon.astro";
 import Image from "@core-elements/image/Image.astro";
 
-const { logoSource, logoAlt, navData = [], class: className, _component, ...htmlAttributes } = Astro.props as Props;
+const {
+  logoSource,
+  logoAlt,
+  navData = [],
+  class: className,
+  _component,
+  ...htmlAttributes
+} = Astro.props as Props;
 
 const toggleId = `mobile-toggle-${crypto.randomUUID()}`;
 const navInstanceId = crypto.randomUUID();
@@ -65,7 +72,6 @@ function createNavItemData(item, level, parentGroupId) {
           height={48}
           class="mobile-logo-image"
           editable={false}
-          style="margin-top: 0 !important;"
         />
       </slot>
     </div>
@@ -368,6 +374,10 @@ function createNavItemData(item, level, parentGroupId) {
       transform: translateX(-100%);
       transition: transform var(--animation-normal) ease-in-out;
       z-index: var(--layer-5);
+
+      .mobile-logo-image {
+        margin-top: 0 !important;
+      }
 
       .mobile-header {
         align-items: center;

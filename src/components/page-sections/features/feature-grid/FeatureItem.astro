@@ -33,21 +33,21 @@ const {
     background={iconBackground}
     alignX="start"
   />
-  <Heading
-    class="feature-title"
-    level="h3"
-    size="md"
-    alignX="start"
-    style="margin-bottom: var(--spacing-sm); margin-top: var(--spacing-sm);"
-    data-prop="title"
-  >
+  <Heading class="feature-title" level="h3" size="md" alignX="start" data-prop="title">
     {title}
   </Heading>
-  <Text
-    class="feature-description"
-    alignX="start"
-    style="margin-top: 0;"
-    data-prop="description"
-    text={description}
-  />
+  <Text class="feature-description" alignX="start" data-prop="description" text={description} />
 </Card>
+
+<style lang="pcss">
+  @layer page-sections {
+    .feature-title {
+      margin-bottom: var(--spacing-sm);
+      margin-top: var(--spacing-sm);
+    }
+
+    .feature-description {
+      margin-top: 0;
+    }
+  }
+</style>

@@ -119,13 +119,14 @@ This project uses CSS Cascade Layers to organize styles into a predictable hiera
 
 ### Layer Order
 
-Styles are organized into five layers (in order of precedence):
+Styles are organized into six layers (in order of precedence):
 
 1. **`reset`** - CSS reset styles (normalize browser defaults)
 2. **`base`** - Base typography, form elements, and HTML element styles
 3. **`components`** - Reusable component styles (buttons, cards, navigation, etc.)
-4. **`utils`** - Utility classes (e.g., `.visually-hidden`)
-5. **`overrides`** - Page section styles and custom overrides
+4. **`page-sections`** - Page section component styles (heroes, features, CTAs, etc.)
+5. **`utils`** - Utility classes (e.g., `.visually-hidden`)
+6. **`overrides`** - Custom overrides and page-specific styles
 
 Later layers always win over earlier layers, regardless of specificity. This means a simple selector in the `overrides` layer will override a highly specific selector in the `components` layer.
 
@@ -134,7 +135,7 @@ Later layers always win over earlier layers, regardless of specificity. This mea
 When creating or modifying components:
 
 - **Building block components** (buttons, headings, forms, etc.) should use `@layer components`
-- **Page section components** (heroes, features, CTAs, etc.) should use `@layer overrides` to have precedence over the base component styles.
+- **Page section components** (heroes, features, CTAs, etc.) should use `@layer page-sections` to have precedence over the base component styles.
 
 ## Customization
 

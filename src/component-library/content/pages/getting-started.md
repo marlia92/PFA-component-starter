@@ -196,13 +196,14 @@ This project uses CSS Cascade Layers to organize styles into a predictable hiera
 
 ### How Layers Work
 
-Styles are organized into five layers (in order of precedence):
+Styles are organized into six layers (in order of precedence):
 
 1. **`reset`** - CSS reset styles that normalize browser defaults
 2. **`base`** - Base typography, form elements, and HTML element styles
 3. **`components`** - Reusable component styles (buttons, cards, navigation, etc.)
-4. **`utils`** - Utility classes (e.g., `.visually-hidden`)
-5. **`overrides`** - Page section styles and custom overrides
+4. **`page-sections`** - Page section component styles (heroes, features, CTAs, etc.)
+5. **`utils`** - Utility classes (e.g., `.visually-hidden`)
+6. **`overrides`** - Custom overrides and page-specific styles
 
 Later layers always win over earlier layers, regardless of CSS specificity. This means a simple selector like `.my-class` in the `overrides` layer will override a highly specific selector like `.bar[data-astro-cid-xyz] .nav-item > a` in the `components` layer.
 
@@ -211,7 +212,7 @@ Later layers always win over earlier layers, regardless of CSS specificity. This
 When creating new components or modifying existing ones:
 
 - **Building block components** (buttons, headings, forms, wrappers) should use `@layer components`
-- **Page section components** (heroes, features, CTAs) should use `@layer overrides`
+- **Page section components** (heroes, features, CTAs) should use `@layer page-sections`
 
 ## Customizing your brand
 

@@ -41,8 +41,8 @@ const {
     gap="lg"
     minItemWidth="360"
     maxItemWidth="360"
-    style="margin-top: var(--spacing-2xl)"
     data-prop="features"
+    class="feature-grid-grid"
   >
     {
       features.map((feature: any, index: number) => (
@@ -55,3 +55,11 @@ const {
     }
   </Grid>
 </CustomSection>
+
+<style lang="pcss">
+  @layer page-sections {
+    .feature-grid-grid {
+      margin-top: var(--spacing-2xl);
+    }
+  }
+</style>
