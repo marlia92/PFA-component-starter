@@ -6,6 +6,7 @@ const {
   text = "",
   iconName,
   iconColor = "default",
+  showIcon = true,
   class: className,
   editable = true,
   "data-prop": customDataProp = "text",
@@ -22,10 +23,16 @@ const textDataAttributes =
         "data-prop": customDataProp,
       }
     : {};
+
+const hasIcon = showIcon && iconName;
 ---
 
-<li class:list={["item", className]} {...htmlAttributes}>
-  <Icon name={iconName} color={iconColor} size="none" class="list-icon" aria-hidden="true" />
+<li class:list={["item", hasIcon && "list-item-has-icon", className]} {...htmlAttributes}>
+  {
+    showIcon && iconName && (
+      <Icon name={iconName} color={iconColor} size="none" class="list-icon" aria-hidden="true" />
+    )
+  }
   <p {...textDataAttributes}>
     {text ? <Fragment set:html={md.renderInline(text)} /> : <slot />}
   </p>
@@ -34,7 +41,10 @@ const textDataAttributes =
 <style lang="pcss" is:global>
   @layer components {
     .item {
-      display: block;
+      &.list-item-has-icon {
+        display: block;
+      }
+      
       > p {
         display: inline;
         margin: 0;
