@@ -3,7 +3,7 @@ export interface Props {
   site: {
     name: string;
     url: string;
-    logo: string;
+    logoSource: string;
     description: string;
   };
 }
@@ -15,7 +15,7 @@ const structuredData: Record<string, any> = {
   "@type": "Organization",
   name: site.name,
   url: site.url,
-  logo: site.url + site.logo,
+  logo: site.url + site.logoSource,
   description: site.description,
 };
 ---

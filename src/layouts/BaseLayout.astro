@@ -16,7 +16,7 @@ export interface Props {
 const props = Astro.props;
 const formattedTitle = seoData.titleFormat.replace("{title}", props.title);
 const pageDescription = props.description || seoData.description;
-const pageImage = props.image || seoData.logo;
+const pageImage = props.image || seoData.logoSource;
 ---
 
 <!doctype html>
