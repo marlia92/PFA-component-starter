@@ -120,5 +120,6 @@ export const collections = {
   "docs-components": docsComponentsCollection,
   blog: blogCollection,
   festivals: festivalsCollection, 
-  team: teamCollection
+  team: teamCollection, 
+  resources:resourcesCollection
 };
