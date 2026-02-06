@@ -274,6 +274,9 @@ pageSections:
       weaving together culture, community, and celebration. Our mission is to
       hold the vā between festivals, sharing resources, knowledge, and advocacy
       to grow Pacific capability, visibility, and resilience.
+
+
+      &nbsp;
     buttonSections: []
     imageSource: /src/assets/images/component-library/website-feature.svg
     imageAlt: Why PFA
@@ -306,9 +309,11 @@ pageSections:
     eyebrow: Pasifika Festivals Aotearoa Inc Team
     heading: Meet the team
     subtext: >-
-      Our team connects and supports festivals across Aotearoa, strengthening
+      Pasifika Festivals Aotearoa is guided by festival organisers and community
+      leaders with experience delivering Pacific events across Aotearoa. Our
+      team connects and supports festivals across Aotearoa, strengthening
       cultural storytelling, collaboration, and advocacy for Pasifika arts and
-      communities.
+      communities. 
     teamMembers:
       - _component: page-sections/people/team-grid/team-item
         name: Name
@@ -331,9 +336,24 @@ pageSections:
     colorScheme: inherit
     backgroundColor: base
   - _component: page-sections/ctas/cta-center
-    heading: 'Want to join our network? '
-    subtext: Become a founding member of PFA during our 2026 National Fono Rounds
+    heading: Become Part of the Network
+    subtext: >-
+      PFA membership connects festivals, organisers, and partners who are
+      committed to strengthening Pacific cultural events in Aotearoa. Members
+      gain access to shared resources, connections with other organisers, and
+      opportunities to collaborate nationally.
+
+
+      &nbsp;
     buttonSections:
+      - _component: building-blocks/core-elements/button
+        text: Expression of Interest
+        hideText: false
+        link: /members/
+        iconName: ''
+        iconPosition: before
+        variant: tertiary
+        size: md
       - _component: building-blocks/core-elements/button
         text: Explore Resources
         hideText: false
@@ -341,14 +361,6 @@ pageSections:
         iconName: ''
         iconPosition: before
         variant: primary
-        size: md
-      - _component: building-blocks/core-elements/button
-        text: Become a Member
-        hideText: false
-        link: /members/
-        iconName: ''
-        iconPosition: before
-        variant: tertiary
         size: md
     colorScheme: contrast
     backgroundColor: surface
