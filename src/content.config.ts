@@ -114,6 +114,16 @@ const team = defineCollection({
   })
 });
 
+const resourcesCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    category: z.string().optional(),
+    file: z.string().optional(),
+    external_link: z.string().optional(),
+    summary: z.string().optional(),
+  }),
+});
+
 export const collections = {
   pages: pagesCollection,
   "docs-pages": docsPagesCollection,
