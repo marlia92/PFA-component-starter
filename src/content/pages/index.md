@@ -28,6 +28,104 @@ pageSections:
     colorScheme: default
     backgroundColor: base
   - _component: page-sections/builders/custom-section
+    label: What is PFA
+    contentSections:
+      - _component: building-blocks/core-elements/heading
+        text: |
+          What is Pasifika Festivals Aotearoa?
+        level: h2
+        size: default
+        alignX: start
+        iconName:
+        iconPosition: before
+      - _component: building-blocks/core-elements/simple-text
+        text: |
+          Short intro paragraph
+        alignX: start
+        size: md
+      - _component: building-blocks/wrappers/split
+        label: ''
+        firstColumnContentSections:
+          - _component: building-blocks/core-elements/simple-text
+            text: Connect festivals
+            alignX: start
+            size: md
+        secondColumnContentSections:
+          - _component: building-blocks/core-elements/image
+            source: ''
+            alt: ''
+            rounded: false
+            aspectRatio: none
+            positionVertical: center
+            positionHorizontal: center
+            priority: false
+        distributionMode: half
+        fixedWidth:
+        minSplitWidth: 760
+        verticalAlignment: center
+        reverse: false
+        reverseOrderOnMobile: false
+        gap: lg
+      - _component: building-blocks/wrappers/split
+        label: • Share resources
+        firstColumnContentSections:
+          - _component: building-blocks/core-elements/image
+            source: ''
+            alt: ''
+            rounded: false
+            aspectRatio: none
+            positionVertical: center
+            positionHorizontal: center
+            priority: false
+        secondColumnContentSections:
+          - _component: building-blocks/core-elements/simple-text
+            text: |
+              • Share resources
+            alignX: start
+            size: md
+        distributionMode: half
+        fixedWidth:
+        minSplitWidth: 760
+        verticalAlignment: center
+        reverse: false
+        reverseOrderOnMobile: false
+        gap: lg
+      - _component: building-blocks/wrappers/split
+        label: • Advocate nationally
+        firstColumnContentSections:
+          - _component: building-blocks/core-elements/simple-text
+            text: |
+              • Advocate nationally
+            alignX: start
+            size: md
+        secondColumnContentSections:
+          - _component: building-blocks/core-elements/image
+            source: ''
+            alt: ''
+            rounded: false
+            aspectRatio: none
+            positionVertical: center
+            positionHorizontal: center
+            priority: false
+        distributionMode: half
+        fixedWidth:
+        minSplitWidth: 760
+        verticalAlignment: center
+        reverse: false
+        reverseOrderOnMobile: false
+        gap: lg
+    maxContentWidth: 2xl
+    paddingHorizontal: md
+    paddingVertical: md
+    colorScheme: inherit
+    backgroundColor: base
+    backgroundImage:
+      source: ''
+      alt: ''
+      positionVertical: top
+      positionHorizontal: center
+    rounded: false
+  - _component: page-sections/builders/custom-section
     label: 'Upcoming Festivals '
     contentSections:
       - _component: building-blocks/core-elements/text
@@ -55,14 +153,24 @@ pageSections:
       - _component: page-sections/features/feature-slider/feature-slider-item
         eyebrow: 'Auckland '
         title: 'Pasifika Festival '
-        description: Short description for this slide.
+        description: >-
+          Auckland Pasifika Festival
+
+
+          The largest Pacific cultural festival in the world, celebrating
+          language, food, performance and community.
         imageSource: /src/assets/images/component-library/sunset.jpg
         imageAlt: Slide image alt text
         minSplitWidth: 0
       - _component: page-sections/features/feature-slider/feature-slider-item
         eyebrow: 'What''s On? '
         title: 'Upcoming Festivals '
-        description: March 2026
+        description: |-
+          March 2026
+
+          1. What makes the festival unique
+          2. Who attends
+          3. Cultural focus
         imageSource: /src/assets/images/component-library/sunset.jpg
         imageAlt: Slide image alt text
         minSplitWidth: 0
