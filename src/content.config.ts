@@ -93,7 +93,7 @@ const blogCollection = defineCollection({
   schema: blogPostSchema,
 });
 
-const festivals = defineCollection({
+const festivalsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     location: z.string(),
@@ -104,7 +104,7 @@ const festivals = defineCollection({
   })
 });
 
-const team = defineCollection({
+const teamCollection = defineCollection({
   schema: z.object({
     name: z.string(),
     role: z.string(),
