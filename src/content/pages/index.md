@@ -39,20 +39,30 @@ pageSections:
         iconName:
         iconPosition: before
       - _component: building-blocks/core-elements/simple-text
-        text: |
-          Short intro paragraph
+        text: >-
+          Pasifika Festivals Aotearoa (PFA) is a national network supporting
+          Pacific festivals, organisers, and communities across Aotearoa.
+
+
+          Our role is to strengthen festivals by sharing resources, building
+          connections between organisers, and advocating for the value of
+          Pacific cultural events within our communities.
         alignX: start
         size: md
       - _component: building-blocks/wrappers/split
-        label: ''
+        label: Connect Festivals
         firstColumnContentSections:
           - _component: building-blocks/core-elements/simple-text
-            text: Connect festivals
+            text: >-
+              Connect Festivals 
+
+              Bringing festival organisers together to share experience, ideas,
+              and support.
             alignX: start
             size: md
         secondColumnContentSections:
           - _component: building-blocks/core-elements/image
-            source: ''
+            source: /src/assets/images/fāwave.jpeg
             alt: ''
             rounded: false
             aspectRatio: none
@@ -67,10 +77,10 @@ pageSections:
         reverseOrderOnMobile: false
         gap: lg
       - _component: building-blocks/wrappers/split
-        label: • Share resources
+        label: Share resources
         firstColumnContentSections:
           - _component: building-blocks/core-elements/image
-            source: ''
+            source: /src/assets/images/component-library/website-split.svg
             alt: ''
             rounded: false
             aspectRatio: none
@@ -79,8 +89,11 @@ pageSections:
             priority: false
         secondColumnContentSections:
           - _component: building-blocks/core-elements/simple-text
-            text: |
-              • Share resources
+            text: >
+              Share resources
+
+              Providing practical resources, templates, and guidance for
+              sustainable festival delivery.
             alignX: start
             size: md
         distributionMode: half
@@ -91,16 +104,19 @@ pageSections:
         reverseOrderOnMobile: false
         gap: lg
       - _component: building-blocks/wrappers/split
-        label: • Advocate nationally
+        label: Advocate nationally
         firstColumnContentSections:
           - _component: building-blocks/core-elements/simple-text
-            text: |
-              • Advocate nationally
+            text: >-
+              Advocate nationally
+
+              Championing the importance of Pacific arts, culture, and community
+              events nationally.
             alignX: start
             size: md
         secondColumnContentSections:
           - _component: building-blocks/core-elements/image
-            source: ''
+            source: /src/assets/images/advocacy.webp
             alt: ''
             rounded: false
             aspectRatio: none
@@ -128,15 +144,110 @@ pageSections:
   - _component: page-sections/builders/custom-section
     label: 'Upcoming Festivals '
     contentSections:
+      - _component: building-blocks/core-elements/heading
+        text: Upcoming Festivals
+        level: h2
+        size: default
+        alignX: start
+        iconName:
+        iconPosition: before
       - _component: building-blocks/core-elements/text
         text: >-
-          # Upcoming Festivals
+          Pasifika Festivals Aotearoa Inc connects and supports festivals across
+          Aotearoa, strengthening cultural storytelling, collaboration, and
+          advocacy for Pasifika arts and communities.
 
 
-          > Pasifika Festivals Aotearoa Inc connects and supports festivals
-          across Aotearoa, strengthening cultural storytelling, collaboration,
-          and advocacy for Pasifika arts and communities.
+          1. What makes the festival unique
+
+          2. Who attends
+
+          3. Cultural focus
         alignX: start
+      - _component: building-blocks/core-elements/heading
+        text: March 2026
+        level: h2
+        size: default
+        alignX: start
+        iconName:
+        iconPosition: before
+      - _component: building-blocks/wrappers/carousel
+        label: Festivals
+        slides:
+          - _component: building-blocks/wrappers/carousel/carousel-slide
+            contentSections:
+              - _component: building-blocks/core-elements/heading
+                text: Kia Mau Festival
+                level: h2
+                size: default
+                alignX: start
+                iconName:
+                iconPosition: before
+              - _component: building-blocks/core-elements/simple-text
+                text: >-
+                  A contemporary Pacific arts festival showcasing theatre,
+                  dance, and storytelling from across Moana Oceania.
+                alignX: start
+                size: md
+              - _component: building-blocks/core-elements/image
+                source: /src/assets/images/kia-mau.jpeg
+                alt: ''
+                rounded: false
+                aspectRatio: none
+                positionVertical: center
+                positionHorizontal: center
+                priority: false
+          - _component: building-blocks/wrappers/carousel/carousel-slide
+            contentSections:
+              - _component: building-blocks/core-elements/heading
+                text: Auckland Pasifika Festival
+                level: h2
+                size: default
+                alignX: start
+                iconName:
+                iconPosition: before
+              - _component: building-blocks/core-elements/simple-text
+                text: >-
+                  The largest Pacific cultural festival in the world,
+                  celebrating language, performance, food, and community across
+                  two days in Tāmaki Makaurau.
+                alignX: start
+                size: md
+              - _component: building-blocks/core-elements/image
+                source: /src/assets/images/pasifika25-1133x628-auckland-live.jpg
+                alt: ''
+                rounded: false
+                aspectRatio: none
+                positionVertical: center
+                positionHorizontal: center
+                priority: false
+          - _component: building-blocks/wrappers/carousel/carousel-slide
+            contentSections:
+              - _component: building-blocks/core-elements/heading
+                text: Polyfest (example future entry)
+                level: h2
+                size: default
+                alignX: start
+                iconName:
+                iconPosition: before
+              - _component: building-blocks/core-elements/simple-text
+                text: >-
+                  A secondary schools cultural festival celebrating Pacific
+                  identity through performance and language.
+                alignX: start
+                size: md
+              - _component: building-blocks/core-elements/image
+                source: /src/assets/images/polyfest.jpg
+                alt: ''
+                rounded: false
+                aspectRatio: none
+                positionVertical: center
+                positionHorizontal: center
+                priority: false
+        autoPlay: false
+        autoScroll: false
+        slideWidthPercent: 100
+        minSlideWidth: 0
     maxContentWidth: 2xl
     paddingHorizontal: md
     paddingVertical: md
@@ -148,48 +259,6 @@ pageSections:
       positionVertical: top
       positionHorizontal: center
     rounded: false
-  - _component: page-sections/features/feature-slider
-    slides:
-      - _component: page-sections/features/feature-slider/feature-slider-item
-        eyebrow: 'Auckland '
-        title: 'Pasifika Festival '
-        description: >-
-          Auckland Pasifika Festival
-
-
-          The largest Pacific cultural festival in the world, celebrating
-          language, food, performance and community.
-        imageSource: /src/assets/images/component-library/sunset.jpg
-        imageAlt: Slide image alt text
-        minSplitWidth: 0
-      - _component: page-sections/features/feature-slider/feature-slider-item
-        eyebrow: 'What''s On? '
-        title: 'Upcoming Festivals '
-        description: |-
-          March 2026
-
-          1. What makes the festival unique
-          2. Who attends
-          3. Cultural focus
-        imageSource: /src/assets/images/component-library/sunset.jpg
-        imageAlt: Slide image alt text
-        minSplitWidth: 0
-      - _component: page-sections/features/feature-slider/feature-slider-item
-        eyebrow: Christchurch
-        title: 'Kia Mau Festival '
-        description: Short description for this slide.
-        imageSource: /src/assets/images/component-library/sunset.jpg
-        imageAlt: Slide image alt text
-        minSplitWidth: 0
-      - _component: page-sections/features/feature-slider/feature-slider-item
-        eyebrow: Otago
-        title: 'Otago Polyfest '
-        description: Short description for this slide.
-        imageSource: /src/assets/images/component-library/sunset.jpg
-        imageAlt: Slide image alt text
-        minSplitWidth: 0
-    colorScheme: inherit
-    backgroundColor: base
   - _component: page-sections/features/feature-split
     eyebrow: 'Why an Incorporated Society? '
     heading: 'Investment in Pasifika festivals '
