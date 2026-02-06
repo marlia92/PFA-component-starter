@@ -28,15 +28,23 @@ pageSections:
     colorScheme: default
     backgroundColor: base
   - _component: page-sections/features/feature-split
-    eyebrow: Built for Astro
-    heading: Fast, modern, and easy to work with
+    eyebrow: 'Why an Incorporated Society? '
+    heading: 'Investment in Pasifika festivals '
     subtext: >-
-      The Component Starter takes full advantage of Astro's zero-JS-by-default
-      approach. You get fast pages, simple routing, and a component system that
-      stays easy to use as your site grows.
+      Pasifika Festivals Aotearoa Incorporated Society (PFA Inc) was established
+      in April 2024 as an outcome of the Ministry for Culture and Heritage (MCH)
+      investment in Pasifika festivals through Creative New Zealand (CNZ). The
+      investment emphasised the collective voice, coordination, and leadership
+      required to strengthen the Pasifika festival ecosystem across Aotearoa.
+
+
+      PFA Inc is a national, intergenerational collective of Pacific festivals —
+      weaving together culture, community, and celebration. Our mission is to
+      hold the vā between festivals, sharing resources, knowledge, and advocacy
+      to grow Pacific capability, visibility, and resilience.
     buttonSections: []
     imageSource: /src/assets/images/component-library/website-feature.svg
-    imageAlt: Website Feature
+    imageAlt: Why PFA
     imageAspectRatio: none
     imageRounded: false
     reverse: false
@@ -88,22 +96,11 @@ pageSections:
     colorScheme: default
     backgroundColor: surface
     align: center
-  - _component: page-sections/features/feature-slider
-    slides:
-      - _component: page-sections/features/feature-slider/feature-slider-item
-        eyebrow: Resources
-        title: Slide title
-        description: Short description for this slide.
-        imageSource: /src/assets/images/component-library/sunset.jpg
-        imageAlt: Slide image alt text
-        minSplitWidth: 0
-      - _component: page-sections/features/feature-slider/feature-slider-item
-        eyebrow: Advocacy
-        title: Slide title
-        description: Short description for this slide.
-        imageSource: /src/assets/images/component-library/sunset.jpg
-        imageAlt: Slide image alt text
-        minSplitWidth: 0
+  - _component: page-sections/people/team-grid
+    eyebrow: Our team
+    heading: Meet the team
+    subtext: Get to know the people behind our work.
+    teamMembers: []
     colorScheme: inherit
     backgroundColor: base
   - _component: page-sections/ctas/cta-center

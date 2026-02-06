@@ -31,61 +31,6 @@ collections_config:
         remove_empty_inputs: false
         remove_extra_inputs: false
         name: New Page
-  blog:
-    path: src/content/blog
-    glob:
-      - '**/*.mdx'
-    icon: article
-    url: /blog/[full_slug]/
-    disable_url: false
-    _enabled_editors:
-      - content
-    _inputs:
-      title:
-        type: text
-        comment: The title of the blog post.
-        cascade: true
-      description:
-        type: text
-        comment: A brief description of the blog post.
-        cascade: true
-      date:
-        type: date
-        comment: The publication date.
-        cascade: true
-      author:
-        type: text
-        comment: The author of the blog post.
-        cascade: true
-      image:
-        type: image
-        options:
-          paths:
-            uploads: src/assets/images
-        comment: Optional image path for the blog post.
-        cascade: true
-      tags:
-        type: array
-        comment: Tags relevant to this post's content.
-        cascade: true
-    add_options:
-      - name: Add New Blog Post
-        icon: article
-        schema: default
-    create:
-      path: '[relative_base_path]/{filename|slugify|lowercase}.mdx'
-    disable_add: false
-    disable_add_folder: false
-    disable_file_actions: false
-    new_preview_url: /blog/
-    schemas:
-      default:
-        path: .cloudcannon/schemas/blog-post.mdx
-        reorder_inputs: true
-        hide_extra_inputs: false
-        remove_empty_inputs: false
-        remove_extra_inputs: false
-        name: New Blog Post
   data:
     path: src/data
     glob:
@@ -121,6 +66,8 @@ collection_groups:
   - heading: New Collections
     collections:
       - src
+  - heading: New Collections
+    collections: []
   - heading: New Collections
     collections: []
 _inputs:

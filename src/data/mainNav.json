@@ -8,23 +8,13 @@
       "children": []
     },
     {
-      "name": "Why",
-      "path": "/why/",
-      "children": []
-    },
-    {
       "name": "Festivals",
       "path": null,
       "children": [
         {
           "name": "Festivals Directory",
           "path": "/festivals/",
-          "children": [
-            {
-              "name": "",
-              "path": ""
-            }
-          ]
+          "children": []
         },
         {
           "name": "Calendar",
@@ -39,12 +29,7 @@
       "children": []
     },
     {
-      "name": "Blog",
-      "path": "/blog/",
-      "children": []
-    },
-    {
-      "name": "Members Resources",
+      "name": "Members",
       "path": "/members/",
       "children": []
     }
