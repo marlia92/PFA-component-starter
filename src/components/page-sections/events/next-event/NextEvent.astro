@@ -1,0 +1,296 @@
+---
+import CustomSection from "@builders/custom-section/CustomSection.astro";
+import Heading from "@core-elements/heading/Heading.astro";
+import SimpleText from "@core-elements/simple-text/SimpleText.astro";
+import Icon from "@core-elements/icon/Icon.astro";
+import eventsData from "@data/events.json";
+
+const {
+  eyebrow = "Next Up",
+  heading = "",
+  colorScheme,
+  backgroundColor,
+  paddingVertical = "4xl",
+  class: className,
+} = Astro.props;
+
+// Get current date for filtering
+const now = new Date();
+
+// Sort events by date and get the next upcoming one
+const nextEvent = eventsData.events
+  .map((event) => ({
+    ...event,
+    dateObj: new Date(`${event.date}T${event.time}`),
+  }))
+  .filter((event) => event.dateObj >= now)
+  .sort((a, b) => a.dateObj.getTime() - b.dateObj.getTime())[0];
+
+// Format date for display
+const formatDate = (dateStr: string) => {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString("en-NZ", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+};
+
+// Format time for display
+const formatTime = (timeStr: string) => {
+  const [hours, minutes] = timeStr.split(":");
+  const hour = parseInt(hours, 10);
+  const ampm = hour >= 12 ? "PM" : "AM";
+  const hour12 = hour % 12 || 12;
+  return `${hour12}:${minutes} ${ampm}`;
+};
+
+// Calculate days until event
+const getDaysUntil = (dateStr: string) => {
+  const eventDate = new Date(dateStr);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  eventDate.setHours(0, 0, 0, 0);
+  const diffTime = eventDate.getTime() - today.getTime();
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  return diffDays;
+};
+---
+
+<CustomSection
+  class:list={["next-event", className]}
+  maxContentWidth="xl"
+  paddingHorizontal="lg"
+  paddingVertical={paddingVertical}
+  colorScheme={colorScheme}
+  backgroundColor={backgroundColor}
+>
+  {nextEvent ? (
+    <div class="next-event-wrapper">
+      <div class="next-event-header">
+        {eyebrow && (
+          <SimpleText class="eyebrow" data-prop="eyebrow">
+            {eyebrow}
+          </SimpleText>
+        )}
+        {heading && (
+          <Heading level="h2" size="md" data-prop="heading">
+            {heading}
+          </Heading>
+        )}
+      </div>
+      
+      <article class="next-event-card">
+        <div class="countdown-badge">
+          {getDaysUntil(nextEvent.date) === 0 ? (
+            <span class="countdown-text">Today!</span>
+          ) : getDaysUntil(nextEvent.date) === 1 ? (
+            <>
+              <span class="countdown-number">1</span>
+              <span class="countdown-text">day to go</span>
+            </>
+          ) : (
+            <>
+              <span class="countdown-number">{getDaysUntil(nextEvent.date)}</span>
+              <span class="countdown-text">days to go</span>
+            </>
+          )}
+        </div>
+        
+        <div class="event-content">
+          <h3 class="event-name">{nextEvent.name}</h3>
+          
+          <div class="event-details">
+            <div class="event-detail">
+              <Icon name="map-pin" size="md" class="event-icon" />
+              <div class="detail-content">
+                <span class="detail-label">Location</span>
+                <span class="detail-value">{nextEvent.location}</span>
+              </div>
+            </div>
+            
+            <div class="event-detail">
+              <Icon name="calendar" size="md" class="event-icon" />
+              <div class="detail-content">
+                <span class="detail-label">Date</span>
+                <span class="detail-value">{formatDate(nextEvent.date)}</span>
+              </div>
+            </div>
+            
+            <div class="event-detail">
+              <Icon name="clock" size="md" class="event-icon" />
+              <div class="detail-content">
+                <span class="detail-label">Time</span>
+                <span class="detail-value">{formatTime(nextEvent.time)}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  ) : (
+    <div class="no-event">
+      <Icon name="calendar" size="lg" class="no-event-icon" />
+      <SimpleText alignX="center">
+        No upcoming events scheduled at this time.
+      </SimpleText>
+    </div>
+  )}
+</CustomSection>
+
+<style lang="pcss">
+  .next-event {
+    .next-event-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-lg);
+    }
+
+    .next-event-header {
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--color-accent);
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .next-event-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--spacing-xl);
+      padding: var(--spacing-xl);
+      background: linear-gradient(135deg, var(--color-bg-surface) 0%, var(--color-bg) 100%);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      animation: fadeInUp 0.5s ease forwards;
+
+      @media (--to-md) {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .countdown-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 120px;
+      padding: var(--spacing-lg);
+      background: var(--color-accent);
+      color: var(--color-bg);
+      border-radius: var(--radius-lg);
+      text-align: center;
+
+      @media (--to-md) {
+        flex-direction: row;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
+      }
+    }
+
+    .countdown-number {
+      font-size: var(--font-size-heading-2xl);
+      font-weight: 800;
+      line-height: 1;
+
+      @media (--to-md) {
+        font-size: var(--font-size-heading-lg);
+      }
+    }
+
+    .countdown-text {
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .event-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .event-name {
+      font-size: var(--font-size-heading-md);
+      font-weight: 700;
+      margin: 0 0 var(--spacing-lg) 0;
+      color: var(--color-text);
+    }
+
+    .event-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-lg);
+
+      @media (--to-sm) {
+        flex-direction: column;
+        gap: var(--spacing-md);
+      }
+    }
+
+    .event-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--spacing-sm);
+    }
+
+    .event-icon {
+      color: var(--color-gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .detail-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .detail-label {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .detail-value {
+      font-size: var(--font-size-md);
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    .no-event {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-md);
+      padding: var(--spacing-2xl);
+    }
+
+    .no-event-icon {
+      color: var(--color-text-muted);
+      opacity: 0.5;
+    }
+  }
+</style>
+
