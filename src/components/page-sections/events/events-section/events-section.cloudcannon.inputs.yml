@@ -1,0 +1,67 @@
+eyebrow:
+  type: text
+  comment: Optional eyebrow text shown above the heading.
+heading:
+  type: text
+  comment: Main heading for the events section.
+subtext:
+  type: textarea
+  comment: Supporting copy beneath the heading.
+defaultView:
+  type: select
+  comment: The default view to show when the page loads.
+  options:
+    values:
+      - id: list
+        name: List View
+      - id: calendar
+        name: Calendar View
+maxEventsToShow:
+  type: number
+  comment: Maximum number of events to display in list view. Set to 0 to show all events.
+colorScheme:
+  type: select
+  comment: Color scheme theme applied to the section wrapper.
+  options:
+    values:
+      - id: default
+        name: Default
+      - id: contrast
+        name: Contrast
+backgroundColor:
+  type: select
+  comment: Background color used behind the events section.
+  options:
+    values:
+      - id: none
+        name: None
+      - id: base
+        name: Base
+      - id: surface
+        name: Surface
+      - id: accent
+        name: Accent
+      - id: highlight
+        name: Highlight
+paddingVertical:
+  type: select
+  comment: Vertical padding for the section.
+  options:
+    values:
+      - id: none
+        name: None
+      - id: sm
+        name: Small
+      - id: md
+        name: Medium
+      - id: lg
+        name: Large
+      - id: xl
+        name: Extra Large
+      - id: 2xl
+        name: 2xl
+      - id: 3xl
+        name: 3xl
+      - id: 4xl
+        name: 4xl
+
