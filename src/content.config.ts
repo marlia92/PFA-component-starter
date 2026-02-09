@@ -101,31 +101,31 @@ const resourcesSchema = z.object({
 /** Collections */
 export const collections = {
   pages: defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
+    loader: glob({ pattern: "**/*.md", base: "./content/pages" }),
     schema: pageSchema,
   }),
   "docs-pages": defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/component-library/content/pages" }),
+    loader: glob({ pattern: "**/*.md", base: "./component-library/content/pages" }),
     schema: docsPageSchema,
   }),
   "docs-components": defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/component-library/content/components" }),
+    loader: glob({ pattern: "**/*.md", base: "./component-library/content/components" }),
     schema: docsComponentSchema,
   }),
   blog: defineCollection({
-    loader: glob({ pattern: "**/*.mdx", base: "./src/content/blog" }),
+    loader: glob({ pattern: "**/*.mdx", base: "./content/blog" }),
     schema: blogPostSchema,
   }),
   festivals: defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/content/festivals" }),
+    loader: glob({ pattern: "**/*.md", base: "./content/festivals" }),
     schema: festivalsSchema,
   }),
   team: defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/content/team" }),
+    loader: glob({ pattern: "**/*.md", base: "./content/team" }),
     schema: teamSchema,
   }),
   resources: defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/content/resources" }),
+    loader: glob({ pattern: "**/*.md", base: "./content/resources" }),
     schema: resourcesSchema,
   }),
 };
