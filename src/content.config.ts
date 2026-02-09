@@ -94,6 +94,7 @@ const blogCollection = defineCollection({
 });
 
 const festivalsCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/festivals" }),
   schema: z.object({
     title: z.string(),
     date: z.string(),
