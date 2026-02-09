@@ -7,17 +7,17 @@ type Section = {
 const { contentSections = [], propName = "" } = Astro.props;
 
 // Manually import your components (flattened paths, one level deep)
-import Hero from "../page-sections/hero-split.astro";
-import RichText from "../page-sections/text.astro";
+import HeroSplit from "../page-sections/hero-split.astro";
+import Text from "../page-sections/text.astro";
 import FestivalList from "../page-sections/festival-list.astro";
-import CTA from "../page-sections/cta.astro";
+import CTAForm from "../page-sections/cta-form.astro";
 
 // Map component name to imported component
 const componentsMap: Record<string, any> = {
   "page-sections/hero-split": HeroSplit,
   "page-sections/text": Text,
   "page-sections/festival-list": FestivalList,
-  "page-sections/cta": CTA,
+  "page-sections/cta-form": CTAForm,
 };
 ---
 
