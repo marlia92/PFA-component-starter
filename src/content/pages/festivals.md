@@ -23,6 +23,7 @@ pageSections:
         size: md
     reverse: false
     colorScheme: inherit
-    backgroundColor: base
+    backgroundColor: '#000000'
+  - _component: page-sections/festival-list
 description: ''
 ---
