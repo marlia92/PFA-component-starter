@@ -1,22 +1,30 @@
 ---
-const { contentSections = [] } = Astro.props;
-import { getCollection } from "astro:content";
+type Section = {
+  _component: string;
+  [key: string]: any;
+};
 
-// Load festivals collection once, only needed for festival-list
-const festivals = await getCollection('festivals');
+const { contentSections = [], propName = "" } = Astro.props;
+
+// Manually import your components (flattened paths, one level deep)
+import Hero from "../page-sections/hero.astro";
+import RichText from "../page-sections/rich-text.astro";
+import FestivalList from "../page-sections/festival-list.astro";
+import CTA from "../page-sections/cta.astro";
+
+// Map component name to imported component
+const componentsMap: Record<string, any> = {
+  "page-sections/hero": Hero,
+  "page-sections/rich-text": RichText,
+  "page-sections/festival-list": FestivalList,
+  "page-sections/cta": CTA,
+};
 ---
 
-{contentSections.map(async (section) => {
-  if (!section._component) return null;
-
-  // Dynamically import the component
-  const Component = (await import(`../${section._component}.astro`)).default;
-
-  // Provide festivals collection to festival-list component
-  if (section._component === 'page-sections/festival-list') {
-    return <Component festivals={festivals} {...section} />;
+{contentSections.map((section: Section) => {
+  const Component = componentsMap[section._component];
+  if (!Component) {
+    return <div>Component "{section._component}" not found.</div>;
   }
-
-  // All other components just get their section props
   return <Component {...section} />;
 })}
