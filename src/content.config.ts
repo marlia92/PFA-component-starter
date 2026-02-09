@@ -129,7 +129,12 @@ export const collections = {
   "docs-pages": docsPagesCollection,
   "docs-components": docsComponentsCollection,
   blog: blogCollection,
-  festivals: festivalsCollection, 
+  festivals: defineCollection({
+    schema: z.object({
+      title: z.string(),
+      date: z.string(),
+      location: z.string(), 
   team: teamCollection, 
   resources:resourcesCollection
 };
+
