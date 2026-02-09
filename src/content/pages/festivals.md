@@ -9,6 +9,7 @@ pageSections:
     content: >
       Pasifika festivals play an important role in bringing communities
       together...
+  - _component: page-sections/festival-list
   - _component: page-sections/cta
     heading: Add Your Festival
     text: Help us grow the directory by submitting your event.
