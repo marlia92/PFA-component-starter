@@ -34,4 +34,115 @@ const docsComponentSchema = z.object({
         fallback_for: z.string().optional().nullable(),
         child_component: z
           .object({
-            name: z.stri
+            name: z.string(),
+            props: z.array(z.string()).optional(),
+          })
+          .optional()
+          .nullable(),
+      })
+    )
+    .optional(),
+  examples: z
+    .union([
+      z.array(
+        z.object({
+          title: z.string().optional(),
+          slugs: z.array(z.string()),
+        })
+      ),
+      z.null(),
+    ])
+    .optional()
+    .transform((val: any) => {
+      if (!val) return [];
+      return val.map((example: any) => ({
+        title:
+          example.title ||
+          (example.slugs?.[0]
+            ? example.slugs[0].replace(/-/g, " ").charAt(0).toUpperCase() +
+              example.slugs[0].replace(/-/g, " ").slice(1)
+            : "Example"),
+        slugs: example.slugs,
+        size: example.size ?? "md",
+      }));
+    }),
+});
+
+// -----------------------------
+// Collections
+// -----------------------------
+const pagesCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
+  schema: pageSchema,
+});
+
+const docsPagesCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/component-library/content/pages" }),
+  schema: docsPageSchema,
+});
+
+const docsComponentsCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/component-library/content/components" }),
+  schema: docsComponentSchema,
+});
+
+const blogPostSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  date: z.coerce.date(),
+  author: z.string().default("Anonymous"),
+  image: z.string().optional(),
+  tags: z.array(z.string()).default([]),
+});
+
+const blogCollection = defineCollection({
+  loader: glob({ pattern: "**/*.mdx", base: "./src/content/blog" }),
+  schema: blogPostSchema,
+});
+
+const festivalsCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/festivals" }),
+  schema: z.object({
+    title: z.string(),
+    date: z.string(),
+    location: z.string(),
+    summary: z.string().optional(),
+    featured_image: z.string().optional(),
+    featured: z.boolean().optional(),
+  }),
+});
+
+const teamCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/team" }),
+  schema: z.object({
+    name: z.string(),
+    role: z.string(),
+    group: z.string(),
+    image: z.string().optional(),
+    order: z.number().optional(),
+  }),
+});
+
+const resourcesCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/resources" }),
+  schema: z.object({
+    title: z.string(),
+    category: z.string().optional(),
+    file: z.string().optional(),
+    external_link: z.string().optional(),
+    summary: z.string().optional(),
+  }),
+});
+
+// -----------------------------
+// Export all collections
+// -----------------------------
+export const collections = {
+  pages: pagesCollection,
+  "docs-pages": docsPagesCollection,
+  "docs-components": docsComponentsCollection,
+  blog: blogCollection,
+  festivals: festivalsCollection,
+  team: teamCollection,
+  resources: resourcesCollection,
+};
