@@ -96,12 +96,12 @@ const blogCollection = defineCollection({
 const festivalsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
+    date: z.string(),
     location: z.string(),
-    festival_dates: z.string(),
-    summary: z.string(),
+    summary: z.string().optional(),
     featured_image: z.string().optional(),
-    featured: z.boolean().optional()
-  })
+    featured: z.boolean().optional(),
+  }),
 });
 
 const teamCollection = defineCollection({
@@ -129,12 +129,7 @@ export const collections = {
   "docs-pages": docsPagesCollection,
   "docs-components": docsComponentsCollection,
   blog: blogCollection,
-  festivals: defineCollection({
-    schema: z.object({
-      title: z.string(),
-      date: z.string(),
-      location: z.string(), 
-  team: teamCollection, 
-  resources:resourcesCollection
+  festivals: festivalsCollection,
+  team: teamCollection,
+  resources: resourcesCollection,
 };
-
