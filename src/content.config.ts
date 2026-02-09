@@ -2,27 +2,17 @@ import { glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
 import { z } from "zod";
 
-/** Pages Collection */
+/** Schemas */
 const pageSchema = z.object({
   title: z.string(),
   pageSections: z.array(z.any()),
 });
-const pagesCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
-  schema: pageSchema,
-});
 
-/** Docs Pages Collection */
 const docsPageSchema = z.object({
   title: z.string(),
   contentSections: z.array(z.any()),
 });
-const docsPagesCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/component-library/content/pages" }),
-  schema: docsPageSchema,
-});
 
-/** Docs Components Collection */
 const docsComponentSchema = z.object({
   title: z.string().optional(),
   name: z.string().optional(),
@@ -73,12 +63,7 @@ const docsComponentSchema = z.object({
       }));
     }),
 });
-const docsComponentsCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/component-library/content/components" }),
-  schema: docsComponentSchema,
-});
 
-/** Blog Collection */
 const blogPostSchema = z.object({
   title: z.string(),
   description: z.string(),
@@ -87,5 +72,60 @@ const blogPostSchema = z.object({
   image: z.string().optional(),
   tags: z.array(z.string()).default([]),
 });
-const blogCollection = defineCollection({
-  loader
+
+const festivalsSchema = z.object({
+  title: z.string(),
+  date: z.string(),
+  location: z.string(),
+  summary: z.string(),
+  featured_image: z.string().optional(),
+  featured: z.boolean().optional(),
+});
+
+const teamSchema = z.object({
+  name: z.string(),
+  role: z.string(),
+  group: z.string(),
+  image: z.string().optional(),
+  order: z.number().optional(),
+});
+
+const resourcesSchema = z.object({
+  title: z.string(),
+  category: z.string().optional(),
+  file: z.string().optional(),
+  external_link: z.string().optional(),
+  summary: z.string().optional(),
+});
+
+/** Collections */
+export const collections = {
+  pages: defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
+    schema: pageSchema,
+  }),
+  "docs-pages": defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/component-library/content/pages" }),
+    schema: docsPageSchema,
+  }),
+  "docs-components": defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/component-library/content/components" }),
+    schema: docsComponentSchema,
+  }),
+  blog: defineCollection({
+    loader: glob({ pattern: "**/*.mdx", base: "./src/content/blog" }),
+    schema: blogPostSchema,
+  }),
+  festivals: defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/festivals" }),
+    schema: festivalsSchema,
+  }),
+  team: defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/team" }),
+    schema: teamSchema,
+  }),
+  resources: defineCollection({
+    loader: glob({ pattern: "**/*.md", base: "./src/content/resources" }),
+    schema: resourcesSchema,
+  }),
+};
