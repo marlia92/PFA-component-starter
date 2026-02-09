@@ -1,0 +1,10 @@
+---
+// Props passed from the page
+const { festival } = Astro.props;
+---
+<article class="festival-card">
+  <h3>{festival.title}</h3>
+  <p>{festival.summary}</p>
+  {festival.image && <img src={festival.image} alt={festival.title} />}
+  {festival.external_link && <a href={festival.external_link}>Learn More</a>}
+</article>
