@@ -1,11 +1,11 @@
 {
   "events": [
     {
-      "name": "",
-      "region": "",
-      "location": "", 
-      "date": "2026-02-15",
-      "time": "09:00"
+      "name": "Otago Polyfest",
+      "region": "Otago",
+      "location": "Ōtepoti",
+      "date": "2026-09-13T09:00:00.000Z",
+      "time": "9:00 am"
     }
   ]
 }
