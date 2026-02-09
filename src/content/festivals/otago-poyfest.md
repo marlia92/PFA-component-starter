@@ -6,6 +6,6 @@ festival_dates: September 2026
 website: https://www.facebook.com/OtagoPolyfest/
 featured_image:
 region: Otago
-summary:
-featured:
+summary: Summary
+featured: Y
 ---
