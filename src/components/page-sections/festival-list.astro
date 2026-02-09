@@ -8,7 +8,9 @@ const festivals = await getCollection("festivals");
 <section>
   <div class="container">
     {festivals.map((festival) => (
-      <FestivalCard festival={festival} />
+    <a href={`/festivals/${festival.slug}/`}>
+      <FestivalCard festival={festival.data} />
+    </a>
     ))}
   </div>
 </section>
