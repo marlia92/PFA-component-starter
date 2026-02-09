@@ -1,0 +1,11 @@
+---
+_schema: default
+title:
+location:
+festival_dates:
+website:
+featured_image:
+region:
+summary:
+featured:
+---
