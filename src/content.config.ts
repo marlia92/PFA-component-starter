@@ -2,19 +2,27 @@ import { glob } from "astro/loaders";
 import { defineCollection } from "astro:content";
 import { z } from "zod";
 
-// -----------------------------
-// Page schemas
-// -----------------------------
+/** Pages Collection */
 const pageSchema = z.object({
   title: z.string(),
   pageSections: z.array(z.any()),
 });
+const pagesCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
+  schema: pageSchema,
+});
 
+/** Docs Pages Collection */
 const docsPageSchema = z.object({
   title: z.string(),
   contentSections: z.array(z.any()),
 });
+const docsPagesCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/component-library/content/pages" }),
+  schema: docsPageSchema,
+});
 
+/** Docs Components Collection */
 const docsComponentSchema = z.object({
   title: z.string().optional(),
   name: z.string().optional(),
@@ -23,9 +31,7 @@ const docsComponentSchema = z.object({
   spacing: z.string().optional().nullable(),
   component: z.string().optional(),
   component_path: z.string().optional(),
-  blocks: z
-    .union([z.record(z.string(), z.any()), z.array(z.record(z.string(), z.any()))])
-    .optional(),
+  blocks: z.union([z.record(z.string(), z.any()), z.array(z.record(z.string(), z.any()))]).optional(),
   slots: z
     .array(
       z.object({
@@ -67,25 +73,12 @@ const docsComponentSchema = z.object({
       }));
     }),
 });
-
-// -----------------------------
-// Collections
-// -----------------------------
-const pagesCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
-  schema: pageSchema,
-});
-
-const docsPagesCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/component-library/content/pages" }),
-  schema: docsPageSchema,
-});
-
 const docsComponentsCollection = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/component-library/content/components" }),
   schema: docsComponentSchema,
 });
 
+/** Blog Collection */
 const blogPostSchema = z.object({
   title: z.string(),
   description: z.string(),
@@ -94,55 +87,5 @@ const blogPostSchema = z.object({
   image: z.string().optional(),
   tags: z.array(z.string()).default([]),
 });
-
 const blogCollection = defineCollection({
-  loader: glob({ pattern: "**/*.mdx", base: "./src/content/blog" }),
-  schema: blogPostSchema,
-});
-
-const festivalsCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/festivals" }),
-  schema: z.object({
-    title: z.string(),
-    date: z.string(),
-    location: z.string(),
-    summary: z.string().optional(),
-    featured_image: z.string().optional(),
-    featured: z.boolean().optional(),
-  }),
-});
-
-const teamCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/team" }),
-  schema: z.object({
-    name: z.string(),
-    role: z.string(),
-    group: z.string(),
-    image: z.string().optional(),
-    order: z.number().optional(),
-  }),
-});
-
-const resourcesCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/resources" }),
-  schema: z.object({
-    title: z.string(),
-    category: z.string().optional(),
-    file: z.string().optional(),
-    external_link: z.string().optional(),
-    summary: z.string().optional(),
-  }),
-});
-
-// -----------------------------
-// Export all collections
-// -----------------------------
-export const collections = {
-  pages: pagesCollection,
-  "docs-pages": docsPagesCollection,
-  "docs-components": docsComponentsCollection,
-  blog: blogCollection,
-  festivals: festivalsCollection,
-  team: teamCollection,
-  resources: resourcesCollection,
-};
+  loader
