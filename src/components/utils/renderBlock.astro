@@ -10,14 +10,14 @@ const { contentSections = [], propName = "" } = Astro.props;
 import HeroSplit from "../page-sections/heroes/hero-split/HeroSplit.astro";
 import Text from "../building-blocks/core-elements/text/Text.astro";
 import FestivalList from "../page-sections/festival-list.astro";
-import CTAForm from "../page-sections/ctas/cta-form.astro";
+import CTAForm from "../page-sections/ctas/cta-form/CtaForm.astro";
 
 // Map component name to imported component
 const componentsMap: Record<string, any> = {
   "page-sections/heroes/hero-split": HeroSplit,
   "core-elements/text": Text,
   "page-sections/festival-list": FestivalList,
-  "page-sections/ctas/cta-form": CTAForm,
+  "page-sections/ctas/cta-form": CtaForm,
 };
 ---
 
