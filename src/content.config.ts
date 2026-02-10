@@ -52,7 +52,7 @@ const docsComponentSchema = z.object({
     slugs: example.slugs ?? [],
     size: example.size ?? "md",
   }));
-}),
+})
 
 const blogPostSchema = z.object({
   title: z.string(),
