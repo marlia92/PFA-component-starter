@@ -5,12 +5,12 @@ import { z } from "zod";
 /** Schemas */
 const pageSchema = z.object({
   title: z.string(),
-  pageSections: z.array(z.any()),
+  pageSections: z.array(z.any()).default([]),
 });
 
 const docsPageSchema = z.object({
   title: z.string(),
-  contentSections: z.array(z.any()),
+  contentSections: z.array(z.any()).default([]),
 });
 
 const docsComponentSchema = z.object({
