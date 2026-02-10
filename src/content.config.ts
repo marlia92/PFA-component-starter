@@ -38,31 +38,21 @@ const docsComponentSchema = z.object({
       })
     )
     .optional(),
-  examples: z
-    .union([
-      z.array(
-        z.object({
-          title: z.string().optional(),
-          slugs: z.array(z.string()),
-        })
-      ),
-      z.null(),
-    ])
-    .optional()
-    .transform((val: any) => {
-      if (!val) return [];
-      return val.map((example: any) => ({
-        title:
-          example.title ||
-          (example.slugs?.[0]
-            ? example.slugs[0].replace(/-/g, " ").charAt(0).toUpperCase() +
-              example.slugs[0].replace(/-/g, " ").slice(1)
-            : "Example"),
-        slugs: example.slugs,
-        size: example.size ?? "md",
-      }));
-    }),
-});
+  examples: z.any().optional().transform((val: any) => {
+  if (!Array.isArray(val)) return [];
+
+  return val.map((example: any) => ({
+    title:
+      example.title ||
+      (example.slugs?.[0]
+        ? example.slugs[0]
+            .replace(/-/g, " ")
+            .replace(/^\w/, (c: string) => c.toUpperCase())
+        : "Example"),
+    slugs: example.slugs ?? [],
+    size: example.size ?? "md",
+  }));
+}),
 
 const blogPostSchema = z.object({
   title: z.string(),
