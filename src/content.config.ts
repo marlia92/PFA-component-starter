@@ -3,16 +3,20 @@ import { defineCollection } from "astro:content";
 import { z } from "zod";
 
 /** Schemas */
+
+// Pages
 const pageSchema = z.object({
   title: z.string(),
-  pageSections: z.array(z.any()).default([]),
+  pageSections: z.array(z.any()).default([]), // always defaults to empty array
 });
 
+// Docs pages
 const docsPageSchema = z.object({
   title: z.string(),
-  contentSections: z.array(z.any()).default([]),
+  contentSections: z.array(z.any()).default([]), // always defaults to empty array
 });
 
+// Docs components
 const docsComponentSchema = z.object({
   title: z.string().optional(),
   name: z.string().optional(),
@@ -38,22 +42,30 @@ const docsComponentSchema = z.object({
       })
     )
     .optional(),
-  examples: z.any().optional().transform((val: any) => {
-    if (!Array.isArray(val)) return [];
-    return val.map((example: any) => ({
-      title:
-        example.title ||
-        (example.slugs?.[0]
-          ? example.slugs[0]
-              .replace(/-/g, " ")
-              .replace(/^\w/, (c: string) => c.toUpperCase())
-          : "Example"),
-      slugs: example.slugs ?? [],
-      size: example.size ?? "md",
-    }));
-  })  
+  examples: z
+    .array(
+      z.object({
+        title: z.string().optional(),
+        slugs: z.array(z.string()),
+        size: z.string().optional(),
+      })
+    )
+    .optional()
+    .default([])
+    .transform((val) => {
+      return val.map((example) => ({
+        title:
+          example.title ||
+          (example.slugs?.[0]
+            ? example.slugs[0].replace(/-/g, " ").replace(/^\w/, (c) => c.toUpperCase())
+            : "Example"),
+        slugs: example.slugs ?? [],
+        size: example.size ?? "md",
+      }));
+    }),
 });
 
+// Blog posts
 const blogPostSchema = z.object({
   title: z.string(),
   description: z.string(),
@@ -63,6 +75,7 @@ const blogPostSchema = z.object({
   tags: z.array(z.string()).default([]),
 });
 
+// Festivals
 const festivalsSchema = z.object({
   title: z.string(),
   date: z.string(),
@@ -72,6 +85,7 @@ const festivalsSchema = z.object({
   featured: z.boolean().optional().default(false),
 });
 
+// Team members
 const teamSchema = z.object({
   name: z.string(),
   role: z.string(),
@@ -80,6 +94,7 @@ const teamSchema = z.object({
   order: z.number().optional(),
 });
 
+// Resources
 const resourcesSchema = z.object({
   title: z.string(),
   category: z.string().optional(),
