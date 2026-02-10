@@ -79,7 +79,7 @@ const festivalsSchema = z.object({
   location: z.string(),
   summary: z.string(),
   featured_image: z.string().optional(),
-  featured: z.boolean().optional(),
+  featured: z.boolean().optional().default(false),
 });
 
 const teamSchema = z.object({
