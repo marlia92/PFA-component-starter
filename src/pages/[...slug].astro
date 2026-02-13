@@ -1,19 +1,24 @@
 ---
-import { getCollection } from "astro:content";
 import PageLayout from "../layouts/Page.astro";
+import { getCollection } from "astro:content";
+import RenderBlock from "../components/utils/renderBlock.astro";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
 
-  return pages.map((page) => ({
-    params: {
-      slug: page.slug === "index" ? undefined : page.slug,
-    },
-    props: { page },
-  }));
+  return pages
+    .filter((page) => page.slug !== "index")
+    .map((page) => ({
+      params: { slug: page.slug },
+      props: { page },
+    }));
 }
 
 const { page } = Astro.props;
 ---
 
-<PageLayout {...page.data} />
+<PageLayout {...page.data}>
+  {page.data.pageSections?.map((section) => (
+    <RenderBlock block={section} />
+  ))}
+</PageLayout>
