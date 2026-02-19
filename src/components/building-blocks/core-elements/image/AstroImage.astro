@@ -64,7 +64,7 @@ const imageFiles = import.meta.glob("/src/assets/images/**/*", {
 }) as Record<string, any>;
 
 if (typeof source === "string" && source.startsWith("/src/")) {
-  const imageKey = Object.keys(imageFiles).find((key) => key.endsWith(source));
+  const imageKey = Object.keys(imageFiles).find((key) => key === source || key.endsWith(source));
 
   if (imageKey && imageFiles[imageKey]) {
     imageSrc = imageFiles[imageKey];
@@ -73,6 +73,7 @@ if (typeof source === "string" && source.startsWith("/src/")) {
     shouldRender = true;
   } else {
     console.warn(`Local image not found for path: ${source}`);
+    console.warn(`Available keys:`, Object.keys(imageFiles).slice(0, 5));
     imageWidth = imageWidth || DEFAULT_WIDTH;
     imageHeight = imageHeight || DEFAULT_HEIGHT;
   }

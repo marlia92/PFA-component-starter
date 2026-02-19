@@ -29,6 +29,7 @@ export default defineConfig({
   },
   image: {
     domains: ["picsum.photos"],
+    remotePatterns: [{ protocol: "https" }, { protocol: "http" }],
   },
   integrations: [
     editableRegions(),
