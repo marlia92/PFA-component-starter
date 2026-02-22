@@ -5,35 +5,47 @@ pageSections:
   - _component: page-sections/heroes/hero-split
     eyebrow: Festivals
     heading: Celebrating Pasifika culture across Aotearoa
-    subtext:
+    subtext: >-
+      Pasifika festivals play an important role in bringing communities
+      together.
     imageSource: /src/assets/images/component-library/dunedin-cliff.jpg
     imageAlt: Hero image
     imageAspectRatio: none
-    buttonSections:
-      - _component: building-blocks/core-elements/button
-        text: My Button
-        hideText: false
-        link: ''
-        iconName: ''
-        iconPosition: before
-        variant: primary
-        size: md
+    buttonSections: []
     reverse: false
     colorScheme: inherit
     backgroundColor: base
-  - _component: page-sections/hero
-    heading: Festivals
-    subheading: Celebrating Pasifika culture across Aotearoa
-  - _component: page-sections/rich-text
-    content: >
-      Pasifika festivals play an important role in bringing communities
-      together...
   - _component: page-sections/festival-list
-  - _component: page-sections/cta
-    heading: Add Your Festival
-    text: Help us grow the directory by submitting your event.
-    button:
-      text: Submit Festival
-      url: /contact/
+  - _component: page-sections/ctas/cta-form
+    heading: Register your festival with us
+    subtext: Help us grow the directory by submitting your event.
+    formAction: .
+    formBlocks:
+      - _component: building-blocks/forms/input
+        label: Name
+        name: name
+        type: text
+        required: true
+      - _component: building-blocks/forms/input
+        label: Email
+        name: email
+        type: email
+        required: true
+      - _component: building-blocks/forms/textarea
+        label: Message
+        name: message
+        required: true
+      - _component: building-blocks/forms/submit
+        text: Send message
+        variant: primary
+        size: md
+        iconPosition: before
+        hideText: false
+        disabled: false
+    imageSource: /src/assets/images/component-library/dunedin-cliff.jpg
+    imageAlt: CTA image
+    reverse: false
+    colorScheme: inherit
+    backgroundColor: base
 description: ''
 ---
