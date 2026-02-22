@@ -1,23 +1,27 @@
 ---
+// 1. Imports
 import { getCollection } from 'astro:content';
 import FestivalCard from "../components/building-blocks/FestivalCard.astro"; 
 
-pageSections:
-  - _component: page-sections/hero
-    title: Explore the Pasifika Festivals Network
-    subtitle: Connecting communities across Aotearoa.
+// 2. CloudCannon Component Data (Fixed Syntax)
+// This is now a valid JavaScript constant that CloudCannon detects as an editable array.
+const pageSections = [
+  {
+    _component: 'page-sections/hero',
+    title: 'Explore the Pasifika Festivals Network',
+    subtitle: 'Connecting communities across Aotearoa.'
+  }
+];
 
-// 1. Fetch and Sort the Data (Your existing JavaScript logic)
+// 3. Collection Data Fetching
 const allFestivals = await getCollection('festivals');
 const sortedFestivals = allFestivals.sort((a, b) => 
   a.data.title.localeCompare(b.data.title)
 );
-
-// Note: Ensure the "page-sections/hero" component exists at the path you registered in your cloudcannon.config.yaml.
 ---
 
 <main class="page-container">
-    {/* This loop is what renders your component blocks */}
+    {/* Loop through the component blocks */}
     {pageSections.map((block) => (
         <Fragment set:html={block.componentHtml} />
     ))}
