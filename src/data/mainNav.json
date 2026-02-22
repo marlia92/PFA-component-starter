@@ -30,11 +30,11 @@
     },
     {
       "name": "Members",
-      "path": "/members/members",
+      "path": "/Members/members",
       "children": [
         {
           "name": "Members Hub",
-          "path": "/members/membershub",
+          "path": "/Members/membershub",
           "children": []
         }
       ]
