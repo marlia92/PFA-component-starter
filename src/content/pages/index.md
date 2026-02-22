@@ -62,7 +62,7 @@ pageSections:
             size: md
         secondColumnContentSections:
           - _component: building-blocks/core-elements/image
-            source: /src/assets/images/fāwave.jpeg
+            source: /src/assets/images/img-1411.jpeg
             alt: ''
             rounded: false
             aspectRatio: none
@@ -80,7 +80,7 @@ pageSections:
         label: Share resources
         firstColumnContentSections:
           - _component: building-blocks/core-elements/image
-            source: /src/assets/images/component-library/website-split.svg
+            source: /src/assets/images/screenshot-2026-02-22-at-6-40-04-pm.png
             alt: ''
             rounded: false
             aspectRatio: none
@@ -116,7 +116,8 @@ pageSections:
             size: md
         secondColumnContentSections:
           - _component: building-blocks/core-elements/image
-            source: /src/assets/images/advocacy.webp
+            source: >-
+              /src/assets/images/g2cm-fi665-learn-article-images-public-advocacy-v1b.webp
             alt: ''
             rounded: false
             aspectRatio: none
@@ -278,7 +279,7 @@ pageSections:
 
       &nbsp;
     buttonSections: []
-    imageSource: /src/assets/images/component-library/website-feature.svg
+    imageSource: /src/assets/images/screenshot-2026-02-22-at-6-40-18-pm.png
     imageAlt: Why PFA
     imageAspectRatio: none
     imageRounded: false
@@ -316,17 +317,17 @@ pageSections:
       communities. 
     teamMembers:
       - _component: page-sections/people/team-grid/team-item
-        name: Name
-        role: Role
+        name: Tanya Muagututi’a
+        role: Communications & Engagement Lead
         bio: 'Brief bio or description of the team member coming soon '
-        imageSource: /src/assets/images/component-library/profile.jpg
+        imageSource: /src/assets/images/tanya-muagututi-a.jpeg
         imageAlt: Team member photo
       - _component: page-sections/people/team-grid/team-item
-        name: Team member name
-        role: Job title
+        name: 'Saito Lilo '
+        role: Digital Lead
         bio: Brief bio or description of the team member.
-        imageSource: /src/assets/images/component-library/profile.jpg
-        imageAlt: Team member photo
+        imageSource: /src/assets/images/saito-lilo.jpeg
+        imageAlt: Sito Lilo
       - _component: page-sections/people/team-grid/team-item
         name: Team member name
         role: Job title
