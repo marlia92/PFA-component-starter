@@ -1,15 +1,40 @@
 ---
 import { getCollection } from 'astro:content';
-import FestivalCard from "../components/building-blocks/FestivalCard.astro";
+// This import is correct:
+import FestivalCard from "../components/building-blocks/FestivalCard.astro"; 
 
+// 1. Fetch and Sort the Data
+// It's highly recommended to sort your festivals for better presentation.
+const allFestivals = await getCollection('festivals');
 
-const festivals = await getCollection('festivals');
+// Sort the festivals, for example, alphabetically by title or by a date field.
+const sortedFestivals = allFestivals.sort((a, b) => 
+  a.data.title.localeCompare(b.data.title)
+);
+
+// Define your layout or template structure (assuming a basic wrapper):
+// import MainLayout from '../layouts/MainLayout.astro';
+// ---
+// <MainLayout title="Pasifika Festivals">
+// ---
 ---
 
-<section class="festivals-page">
-  <h1>Festivals</h1>
-  {festivals.length === 0 && <p>No festivals yet!</p>}
-  {festivals.map(festival => (
-    <FestivalCard festival={festival.data} />
-  ))}
-</section>
+<main class="page-container">
+    <h1>All Pasifika Festivals</h1>
+    
+    {sortedFestivals.length === 0 && <p>No festivals have been added yet!</p>}
+
+    <section class="festivals-grid">
+        {sortedFestivals.map(festival => (
+            <FestivalCard
+                // Pass the data fields from the collection entry:
+                title={festival.data.title}
+                region={festival.data.region}
+                image={festival.data.featuredImage}
+                // Construct the link using the entry's slug:
+                link={`/festivals/${festival.slug}`} 
+            />
+        ))}
+    </section>
+
+</main>
