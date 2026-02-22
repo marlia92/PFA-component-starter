@@ -87,7 +87,7 @@ pageSections:
         iconPosition: before
         hideText: false
         disabled: false
-    imageSource: /src/assets/images/component-library/dunedin-cliff.jpg
+    imageSource: /src/assets/images/img-1411.jpeg
     imageAlt: CTA image
     reverse: false
     colorScheme: inherit
