@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import FestivalCard from "../components/building-blocks/FestivalCard.astro"; 
+import Hero from "../components/page-sections/Hero.astro"; // 
 
 const pageSections = [
   {
@@ -17,10 +18,17 @@ const sortedFestivals = allFestivals.sort((a, b) =>
 ---
 
 <main class="page-container">
+    
     <div data-cms-content-wrapper="true" data-prop="pageSections" data-editable="array" class="page-sections-wrapper">
-        {pageSections.map((block) => (
-            <Fragment set:html={block.componentHtml} />
-        ))}
+        {pageSections.map((block) => {
+            // When using Astro, the safest way is usually to render a manually imported component
+            // For this example, we only show the Hero, but you would use a switch statement for more
+            if (block._component === 'page-sections/hero') {
+                return (
+                    <Hero title={block.title} subtitle={block.subtitle} />
+                );
+            }
+        })}
     </div>
     
     <h1>All Pasifika Festivals</h1>
@@ -41,5 +49,4 @@ const sortedFestivals = allFestivals.sort((a, b) =>
             />
         ))}
     </section>
-
 </main>
