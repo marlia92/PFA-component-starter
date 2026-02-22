@@ -157,7 +157,7 @@ collections_config:
     disable_file_actions: false
 paths:
   schemas:
-    page-sections/hero: src/components/page-sections/Hero.astro
+    hero-split: src/components/page-sections/heroes/hero-split/HeroSplit.astro
 collection_groups:
   - heading: Content
     collections:
