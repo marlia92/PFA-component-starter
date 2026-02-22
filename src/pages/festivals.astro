@@ -1,10 +1,7 @@
 ---
-// 1. Imports
 import { getCollection } from 'astro:content';
 import FestivalCard from "../components/building-blocks/FestivalCard.astro"; 
 
-// 2. CloudCannon Component Data (Fixed Syntax)
-// This is now a valid JavaScript constant that CloudCannon detects as an editable array.
 const pageSections = [
   {
     _component: 'page-sections/hero',
@@ -13,7 +10,6 @@ const pageSections = [
   }
 ];
 
-// 3. Collection Data Fetching
 const allFestivals = await getCollection('festivals');
 const sortedFestivals = allFestivals.sort((a, b) => 
   a.data.title.localeCompare(b.data.title)
