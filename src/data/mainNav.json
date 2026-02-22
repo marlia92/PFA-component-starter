@@ -34,7 +34,7 @@
       "children": [
         {
           "name": "Members information",
-          "path": "/Members/members",
+          "path": "/Members/",
           "children": []
         },
         {
