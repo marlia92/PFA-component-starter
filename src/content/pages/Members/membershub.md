@@ -3,8 +3,8 @@ _schema: default
 title: Members Hub
 pageSections:
   - _component: page-sections/heroes/hero-split
-    eyebrow: Eyebrow text
-    heading: Heading text
+    eyebrow: Welcome to PFA Members
+    heading: Members Hub
     subtext: Subtitle placeholder text that will be replaced with actual content.
     imageSource: /src/assets/images/component-library/dunedin-cliff.jpg
     imageAlt: Hero image
