@@ -1,31 +1,27 @@
 ---
+import { getCollection } from 'astro:content';
+import FestivalCard from "../components/building-blocks/FestivalCard.astro"; 
+
 pageSections:
-  # This is a sample component to make sure the array is not empty
   - _component: page-sections/hero
     title: Explore the Pasifika Festivals Network
     subtitle: Connecting communities across Aotearoa.
 
-import { getCollection } from 'astro:content';
-// This import is correct:
-import FestivalCard from "../components/building-blocks/FestivalCard.astro"; 
-
-// 1. Fetch and Sort the Data
-// It's highly recommended to sort your festivals for better presentation.
+// 1. Fetch and Sort the Data (Your existing JavaScript logic)
 const allFestivals = await getCollection('festivals');
-
-// Sort the festivals, for example, alphabetically by title or by a date field.
 const sortedFestivals = allFestivals.sort((a, b) => 
   a.data.title.localeCompare(b.data.title)
 );
 
-// Define your layout or template structure (assuming a basic wrapper):
-// import MainLayout from '../layouts/MainLayout.astro';
-// ---
-// <MainLayout title="Pasifika Festivals">
-// ---
+// Note: Ensure the "page-sections/hero" component exists at the path you registered in your cloudcannon.config.yaml.
 ---
 
 <main class="page-container">
+    {/* This loop is what renders your component blocks */}
+    {pageSections.map((block) => (
+        <Fragment set:html={block.componentHtml} />
+    ))}
+    
     <h1>All Pasifika Festivals</h1>
     
     {sortedFestivals.length === 0 && <p>No festivals have been added yet!</p>}
@@ -33,11 +29,9 @@ const sortedFestivals = allFestivals.sort((a, b) =>
     <section class="festivals-grid">
         {sortedFestivals.map(festival => (
             <FestivalCard
-                // Pass the data fields from the collection entry:
                 title={festival.data.title}
                 region={festival.data.region}
                 image={festival.data.featuredImage}
-                // Construct the link using the entry's slug:
                 link={`/festivals/${festival.slug}`} 
             />
         ))}
