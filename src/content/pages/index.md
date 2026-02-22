@@ -157,6 +157,27 @@ pageSections:
       positionVertical: top
       positionHorizontal: center
     rounded: false
+  - _component: page-sections/builders/custom-section
+    label: Upcoming Festival
+    contentSections:
+      - _component: building-blocks/core-elements/heading
+        text: Upcoming Festival
+        level: h2
+        size: default
+        alignX: center
+        iconName: calendar
+        iconPosition: before
+    maxContentWidth: 2xl
+    paddingHorizontal: md
+    paddingVertical: md
+    colorScheme: inherit
+    backgroundColor: base
+    backgroundImage:
+      source: ''
+      alt: ''
+      positionVertical: top
+      positionHorizontal: center
+    rounded: false
   - _component: page-sections/events/next-event
     eyebrow: Next Up
     heading: Upcoming Festival
