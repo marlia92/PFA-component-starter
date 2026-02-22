@@ -30,8 +30,13 @@
     },
     {
       "name": "Members",
-      "path": "/Members/members",
+      "path": "/Members/",
       "children": [
+        {
+          "name": "Members information",
+          "path": "/Members/members",
+          "children": []
+        },
         {
           "name": "Members Hub",
           "path": "/Members/membershub",
