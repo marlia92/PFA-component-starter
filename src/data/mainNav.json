@@ -30,8 +30,14 @@
     },
     {
       "name": "Members",
-      "path": "/members/",
-      "children": []
+      "path": "/members/members",
+      "children": [
+        {
+          "name": "Members Hub",
+          "path": "/members/membershub",
+          "children": []
+        }
+      ]
     }
   ],
   "buttonSections": [
