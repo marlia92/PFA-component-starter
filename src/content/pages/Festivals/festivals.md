@@ -15,7 +15,6 @@ pageSections:
     reverse: false
     colorScheme: inherit
     backgroundColor: base
-  - _component: page-sections/festival-list
   - _component: page-sections/ctas/cta-form
     heading: Register your festival with us
     subtext: Help us grow the directory by submitting your event.
