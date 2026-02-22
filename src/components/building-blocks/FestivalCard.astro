@@ -28,10 +28,9 @@ const {
         {/* 3. Secondary Info */}
         <p class="card-dates">{festival_dates}</p>
         <p class="card-region-tag">{region}</p>
-        
         <p class="card-summary">{summary}</p>
 
-        {/* 4. External Link */}
+        {/* 4. External Link - Use optional chaining for the tag */}
         {website && (
             <p class="card-external-link">
                 <a href={website} target="_blank" rel="noopener noreferrer">View Festival Website</a>
