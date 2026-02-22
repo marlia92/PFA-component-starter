@@ -13,7 +13,6 @@ const {
 
 <a href={link} class="festival-card">
     
-    {/* 1. Image (if provided) */}
     {featured_image && (
         <div class="card-image-wrapper">
             <img src={featured_image} alt={`Image for ${title}`} class="card-image" />
@@ -21,16 +20,13 @@ const {
     )}
 
     <div class="festival-card-content">
-        {/* 2. Primary Text: Using H2 for the title */}
         <h2 class="card-title">{title}</h2>
         
-        {/* 3. Secondary Info: Each field is wrapped in a P tag for its own line/space */}
         <p class="card-location">{location}</p>
         <p class="card-dates">{festival_dates}</p>
         <p class="card-region-tag">{region}</p>
         <p class="card-summary">{summary}</p>
 
-        {/* 4. External Link */}
         {website && (
             <p class="card-external-link">
                 <a href={website} target="_blank" rel="noopener noreferrer">View Festival Website</a>
