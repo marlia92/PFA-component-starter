@@ -1,23 +1,41 @@
 ---
-// Destructure the individual props being passed from the page
 const { 
     title, 
-    summary, 
+    location,
+    festival_dates,
+    website, 
+    featured_image, 
     region, 
-    image, 
-    link,   // The calculated link for the card
-    external_link 
+    summary,
+    link
 } = Astro.props;
 ---
 
 <a href={link} class="festival-card">
+    
+    {/* 1. Image (if provided) */}
+    {featured_image && (
+        <div class="card-image-wrapper">
+            <img src={featured_image} alt={`Image for ${title}`} class="card-image" />
+        </div>
+    )}
+
     <div class="festival-card-content">
-        <h2>{title}</h2>
-        <p class="summary">{summary}</p>
-        <p class="region-tag">{region}</p> 
+        {/* 2. Primary Text */}
+        <h2 class="card-title">{title}</h2>
+        <p class="card-location">{location}</p>
 
-        {image && <img src={image} alt={`Image for ${title}`} class="card-image" />}
+        {/* 3. Secondary Info */}
+        <p class="card-dates">{festival_dates}</p>
+        <p class="card-region-tag">{region}</p>
+        
+        <p class="card-summary">{summary}</p>
 
-        {external_link && <p class="external-link"><a href={external_link} target="_blank">Learn More (External)</a></p>}
+        {/* 4. External Link */}
+        {website && (
+            <p class="card-external-link">
+                <a href={website} target="_blank" rel="noopener noreferrer">View Festival Website</a>
+            </p>
+        )}
     </div>
 </a>
