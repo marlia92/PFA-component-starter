@@ -17,10 +17,12 @@ const sortedFestivals = allFestivals.sort((a, b) =>
 ---
 
 <main class="page-container">
-    {/* Loop through the component blocks */}
-    {pageSections.map((block) => (
-        <Fragment set:html={block.componentHtml} />
-    ))}
+        <div data-cms-content-wrapper="true" data-prop="pageSections" data-editable="array" class="page-sections-wrapper">
+        {pageSections.map((block) => (
+            // This renders the actual component registered in your config
+            <Fragment set:html={block.componentHtml} />
+        ))}
+    </div>
     
     <h1>All Pasifika Festivals</h1>
     
