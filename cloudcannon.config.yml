@@ -169,10 +169,11 @@ collection_groups:
   - heading: Data
     collections:
       - data
-_inputs:
+_inputs: 
   pageSections:
-    comment: The main sections of the page.
+    comment: The main sections of the page. 
     cascade: true
+    default_value: []
   logoSource:
     type: image
     cascade: true
