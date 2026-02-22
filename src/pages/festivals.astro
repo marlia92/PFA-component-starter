@@ -27,12 +27,16 @@ const sortedFestivals = allFestivals.sort((a, b) =>
     {sortedFestivals.length === 0 && <p>No festivals have been added yet!</p>}
 
     <section class="festivals-grid">
-        {sortedFestivals.map(festival => (
-            <FestivalCard
-                title={festival.data.title}
-                region={festival.data.region}
-                image={festival.data.featuredImage}
-                link={`/festivals/${festival.slug}`} 
+    {sortedFestivals.map(festival => (
+        <FestivalCard
+            title={festival.data.title}
+            location={festival.data.location}       
+            festival_dates={festival.data.festival_dates} 
+            website={festival.data.website}          
+            featured_image={festival.data.featured_image} 
+            region={festival.data.region}
+            summary={festival.data.summary}         
+            link={`/festivals/${festival.slug}`} 
             />
         ))}
     </section>
