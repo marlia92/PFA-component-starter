@@ -28,34 +28,37 @@ pageSections:
     colorScheme: default
     backgroundColor: base
   - _component: page-sections/builders/custom-section
-    label: What is PFA
+    label: Who are PFA
     contentSections:
       - _component: building-blocks/core-elements/heading
-        text: |
-          What is Pasifika Festivals Aotearoa?
+        text: Who are Pasifika Festivals Aotearoa?
         level: h2
         size: default
-        alignX: start
+        alignX: center
         iconName:
         iconPosition: before
       - _component: building-blocks/core-elements/simple-text
         text: >-
-          Pasifika Festivals Aotearoa (PFA) is a national network supporting
-          Pacific festivals, organisers, and communities across Aotearoa.
-
-
-          Our role is to strengthen festivals by sharing resources, building
-          connections between organisers, and advocating for the value of
-          Pacific cultural events within our communities.
+          Pasifika Festivals Aotearoa (PFA) is a national network connecting and
+          supporting festivals across Aotearoa, strengthening cultural
+          storytelling, collaboration, and advocacy for Pasifika arts. Our goal
+          is to strengthen festivals by sharing resources, building connections
+          between organisers, and advocating for the value of Pacific cultural
+          events within our communities.
         alignX: start
         size: md
       - _component: building-blocks/wrappers/split
         label: Connect Festivals
         firstColumnContentSections:
+          - _component: building-blocks/core-elements/heading
+            text: Connect Festivals
+            level: h2
+            size: default
+            alignX: start
+            iconName: share
+            iconPosition: before
           - _component: building-blocks/core-elements/simple-text
             text: >-
-              Connect Festivals 
-
               Bringing festival organisers together to share experience, ideas,
               and support.
             alignX: start
@@ -88,10 +91,15 @@ pageSections:
             positionHorizontal: center
             priority: false
         secondColumnContentSections:
+          - _component: building-blocks/core-elements/heading
+            text: Share Resources
+            level: h2
+            size: default
+            alignX: start
+            iconName: clipboard-document-list
+            iconPosition: before
           - _component: building-blocks/core-elements/simple-text
             text: >
-              Share resources
-
               Providing practical resources, templates, and guidance for
               sustainable festival delivery.
             alignX: start
@@ -106,6 +114,13 @@ pageSections:
       - _component: building-blocks/wrappers/split
         label: Advocate nationally
         firstColumnContentSections:
+          - _component: building-blocks/core-elements/heading
+            text: Advocate Nationally
+            level: h2
+            size: default
+            alignX: start
+            iconName: speaker-wave
+            iconPosition: before
           - _component: building-blocks/core-elements/simple-text
             text: >-
               Advocate nationally
