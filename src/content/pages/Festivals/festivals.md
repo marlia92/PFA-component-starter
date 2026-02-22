@@ -8,7 +8,7 @@ pageSections:
     subtext: >-
       Pasifika festivals play an important role in bringing communities
       together.
-    imageSource: /src/assets/images/component-library/dunedin-cliff.jpg
+    imageSource: /src/assets/images/9780824838713-scaled.jpg
     imageAlt: Hero image
     imageAspectRatio: none
     buttonSections: []
@@ -41,8 +41,8 @@ pageSections:
         iconPosition: before
         hideText: false
         disabled: false
-    imageSource: /src/assets/images/component-library/dunedin-cliff.jpg
-    imageAlt: CTA image
+    imageSource: /src/assets/images/kia-mau.jpeg
+    imageAlt: Kia Mau
     reverse: false
     colorScheme: inherit
     backgroundColor: base

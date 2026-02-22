@@ -3,35 +3,23 @@ _schema: default
 title: Resources
 pageSections:
   - _component: page-sections/heroes/hero-split
-    eyebrow: Eyebrow text
+    eyebrow: Sustainability
     heading: Resources
     subtext: >-
       Resources developed and shared by festival organisers to support safe,
       sustainable, and successful Pacific events. These resources are intended
       to help both new and established festivals grow with confidence.
-    imageSource: /src/assets/images/component-library/dunedin-cliff.jpg
+    imageSource: /src/assets/images/screenshot-2026-02-22-at-6-40-18-pm.png
     imageAlt: Hero image
     imageAspectRatio: none
-    buttonSections:
-      - _component: building-blocks/core-elements/button
-        text: My Button
-        hideText: false
-        link: ''
-        iconName: ''
-        iconPosition: before
-        variant: primary
-        size: md
+    buttonSections: []
     reverse: false
     colorScheme: inherit
     backgroundColor: base
   - _component: page-sections/features/feature-grid
-    eyebrow: Eyebrow text
-    heading: Heading text
-    subtext: |-
-      1. Templates
-      2. Publications
-      3. Funding Links
-      4. Industry Resources
+    eyebrow:
+    heading: Industry Resources
+    subtext:
     gap: xl
     minItemWidth: 280
     maxItemWidth: 360

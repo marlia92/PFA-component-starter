@@ -3,24 +3,16 @@ _schema: default
 title: Members
 pageSections:
   - _component: page-sections/heroes/hero-split
-    eyebrow: Eyebrow text
+    eyebrow: Connect with us
     heading: Membership
     subtext: >-
       Pasifika Festivals Aotearoa brings together festivals, organisers, and
       partners who share a commitment to celebrating Pacific culture and
       strengthening our communities through events.
-    imageSource: /src/assets/images/component-library/dunedin-cliff.jpg
+    imageSource: /src/assets/images/screenshot-2026-02-22-at-5-34-05-pm-1.png
     imageAlt: Hero image
     imageAspectRatio: none
-    buttonSections:
-      - _component: building-blocks/core-elements/button
-        text: My Button
-        hideText: false
-        link: ''
-        iconName: ''
-        iconPosition: before
-        variant: primary
-        size: md
+    buttonSections: []
     reverse: false
     colorScheme: inherit
     backgroundColor: base
@@ -31,7 +23,7 @@ pageSections:
         text: Membership Benefits
         level: h2
         size: default
-        alignX: start
+        alignX: center
         iconName:
         iconPosition: before
       - _component: building-blocks/core-elements/list
@@ -39,22 +31,22 @@ pageSections:
           - _component: building-blocks/core-elements/list/list-item
             text: Access shared resources and templates
             iconName: document-check
-            iconColor: default
+            iconColor: red
           - _component: building-blocks/core-elements/list/list-item
             text: Connect with other festival organisers
             iconName: user-group
-            iconColor: default
+            iconColor: red
           - _component: building-blocks/core-elements/list/list-item
             text: Share knowledge and experience
             iconName: book-open
-            iconColor: default
+            iconColor: red
           - _component: building-blocks/core-elements/list/list-item
             text: Contribute to national advocacy for Pacific festivals
             iconName: globe-asia-australia
-            iconColor: default
+            iconColor: red
         direction: vertical
-        alignX: start
-        size: md
+        alignX: center
+        size: xl
         listType: icon
     maxContentWidth: 2xl
     paddingHorizontal: md
