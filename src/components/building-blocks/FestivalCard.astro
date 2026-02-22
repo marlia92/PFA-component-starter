@@ -1,10 +1,23 @@
 ---
-// Props passed from the page
-const { festival } = Astro.props;
+// Destructure the individual props being passed from the page
+const { 
+    title, 
+    summary, 
+    region, // Don't forget the 'region' we added!
+    image, 
+    link,   // The calculated link for the card
+    external_link // Assuming you want to use this field as well
+} = Astro.props;
 ---
-<article class="festival-card">
-  <h3>{festival.title}</h3>
-  <p>{festival.summary}</p>
-  {festival.image && <img src={festival.image} alt={festival.title} />}
-  {festival.external_link && <a href={festival.external_link}>Learn More</a>}
-</article>
+
+<a href={link} class="festival-card">
+    <div class="festival-card-content">
+        <h2>{title}</h2>
+        <p class="summary">{summary}</p>
+        <p class="region-tag">{region}</p> 
+
+        {image && <img src={image} alt={`Image for ${title}`} class="card-image" />}
+
+        {external_link && <p class="external-link"><a href={external_link} target="_blank">Learn More (External)</a></p>}
+    </div>
+</a>
