@@ -193,7 +193,7 @@ pageSections:
                 source: /src/assets/images/kia-mau.jpeg
                 alt: ''
                 rounded: false
-                aspectRatio: none
+                aspectRatio: landscape
                 positionVertical: center
                 positionHorizontal: center
                 priority: false
@@ -217,7 +217,7 @@ pageSections:
                 source: /src/assets/images/pasifika25-1133x628-auckland-live.jpg
                 alt: ''
                 rounded: false
-                aspectRatio: none
+                aspectRatio: landscape
                 positionVertical: center
                 positionHorizontal: center
                 priority: false
@@ -240,7 +240,7 @@ pageSections:
                 source: /src/assets/images/polyfest.jpg
                 alt: ''
                 rounded: false
-                aspectRatio: none
+                aspectRatio: landscape
                 positionVertical: center
                 positionHorizontal: center
                 priority: false
@@ -292,8 +292,8 @@ pageSections:
         type: youtube
         id: https://www.youtube.com/watch?v=KVEr2vdXK6w
         title: Festival Video Showcase
-        source: ''
-        thumbnail: ''
+        source: https://www.youtube.com/watch?v=KVEr2vdXK6w
+        thumbnail: /images/screenshot-2026-02-22-at-6-31-31-pm.png
     maxContentWidth: 2xl
     paddingHorizontal: md
     paddingVertical: md
