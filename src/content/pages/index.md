@@ -210,26 +210,6 @@ pageSections:
     reverse: false
     colorScheme: default
     backgroundColor: base
-  - _component: page-sections/builders/custom-section
-    label: Video
-    contentSections:
-      - _component: building-blocks/core-elements/video
-        type: youtube
-        id: https://www.youtube.com/watch?v=KVEr2vdXK6w
-        title: Festival Video Showcase
-        source: https://www.youtube.com/watch?v=KVEr2vdXK6w
-        thumbnail: /images/screenshot-2026-02-22-at-6-31-31-pm.png
-    maxContentWidth: 2xl
-    paddingHorizontal: md
-    paddingVertical: md
-    colorScheme: inherit
-    backgroundColor: base
-    backgroundImage:
-      source: ''
-      alt: ''
-      positionVertical: top
-      positionHorizontal: center
-    rounded: false
   - _component: page-sections/people/team-grid
     eyebrow: Pasifika Festivals Aotearoa Inc Team
     heading: Meet the team
