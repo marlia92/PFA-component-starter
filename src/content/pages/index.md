@@ -241,23 +241,23 @@ pageSections:
       communities. 
     teamMembers:
       - _component: page-sections/people/team-grid/team-item
+        name: (Philippa) Pip Laufiso
+        role: Chairperson
+        bio: Brief bio or description of the team member.
+        imageSource: /src/assets/images/screenshot-2026-02-22-at-9-07-01-pm.png
+        imageAlt: Pip Laufiso
+      - _component: page-sections/people/team-grid/team-item
         name: Tanya Muagututi’a
         role: Communications & Engagement Lead
         bio: 'Brief bio or description of the team member coming soon '
         imageSource: /src/assets/images/tanya-muagututi-a.jpeg
         imageAlt: Team member photo
       - _component: page-sections/people/team-grid/team-item
-        name: 'Saito Lilo '
+        name: Saito Lilo
         role: Digital Lead
         bio: Brief bio or description of the team member.
         imageSource: /src/assets/images/saito-lilo.jpeg
         imageAlt: Sito Lilo
-      - _component: page-sections/people/team-grid/team-item
-        name: Team member name
-        role: Job title
-        bio: Brief bio or description of the team member.
-        imageSource: /src/assets/images/component-library/profile.jpg
-        imageAlt: Team member photo
     colorScheme: inherit
     backgroundColor: base
   - _component: page-sections/ctas/cta-center
