@@ -2,30 +2,34 @@
 _schema: default
 title: 'Pasifika Festivals Aotearoa '
 pageSections:
-  - _component: page-sections/heroes/hero-center
-    eyebrow: Pasifika Festivals Aotearoa Inc.
+  - _component: page-sections/heroes/hero-split
+    eyebrow: PASIFIKA FESTIVAL AOTEAROA INC.
     heading: Connecting Pasifika Festivals across Aotearoa
     subtext: >-
-      *Holding the vā for an Indigenous-centric support network that increases
-      resource accessibility, cultural understanding and advocacy*
+      **Holding the vā for an Indigenous-centric support network that increases
+      resource accessibility, cultural understanding and advocacy.**
+    imageSource: /src/assets/images/colour-pasifika.svg
+    imageAlt: Hero image
+    imageAspectRatio: none
     buttonSections:
       - _component: building-blocks/core-elements/button
         text: Upcoming Festivals
         hideText: false
-        link: /festivals/
-        iconName: ''
+        link: ''
+        iconName: calendar-days
         iconPosition: before
         variant: primary
-        size: md
+        size: lg
       - _component: building-blocks/core-elements/button
         text: Festival Resources
         hideText: false
-        link: /resources/
+        link: ''
         iconName: ''
         iconPosition: before
         variant: secondary
-        size: md
-    colorScheme: default
+        size: lg
+    reverse: false
+    colorScheme: inherit
     backgroundColor: base
   - _component: page-sections/builders/custom-section
     label: Who are PFA
