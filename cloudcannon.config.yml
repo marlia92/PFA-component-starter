@@ -1,3 +1,6 @@
+paths:
+  schemas:
+    hero-split: src/components/page-sections/heroes/hero-split/HeroSplit.astro
 collections_config:
   pages:
     path: src/content/pages
@@ -36,7 +39,7 @@ collections_config:
     path: src/content/festivals
     glob:
       - '**/*.md'
-    icon: laptop_mac
+    icon: festival
     url: /[full_slug]/
     disable_url: false
     _enabled_editors:
@@ -155,9 +158,6 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-paths:
-  schemas:
-    hero-split: src/components/page-sections/heroes/hero-split/HeroSplit.astro
 collection_groups:
   - heading: Content
     collections:
@@ -165,13 +165,13 @@ collection_groups:
       - blog
       - festivals
       - resources
-      - team 
+      - team
   - heading: Data
     collections:
       - data
-_inputs: 
+_inputs:
   pageSections:
-    comment: The main sections of the page. 
+    comment: The main sections of the page.
     cascade: true
     default_value: []
   logoSource:
