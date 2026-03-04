@@ -114,10 +114,10 @@ pageSections:
 
       &nbsp;
     buttonSections: []
-    imageSource: /src/assets/images/screenshot-2026-02-22-at-6-40-18-pm.png
+    imageSource: /src/assets/images/yellow-pasifika.svg
     imageAlt: Why PFA
     imageAspectRatio: none
-    imageRounded: false
+    imageRounded: true
     reverse: false
     colorScheme: default
     backgroundColor: base
