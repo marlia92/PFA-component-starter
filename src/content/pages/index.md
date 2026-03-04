@@ -118,7 +118,7 @@ pageSections:
     imageAlt: Why PFA
     imageAspectRatio: none
     imageRounded: true
-    reverse: false
+    reverse: true
     colorScheme: default
     backgroundColor: base
   - _component: page-sections/people/team-grid
