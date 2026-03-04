@@ -31,136 +31,43 @@ pageSections:
     reverse: false
     colorScheme: inherit
     backgroundColor: base
-  - _component: page-sections/builders/custom-section
-    label: Who are PFA
-    contentSections:
-      - _component: building-blocks/core-elements/heading
-        text: Who are Pasifika Festivals Aotearoa?
-        level: h2
-        size: default
-        alignX: center
-        iconName:
-        iconPosition: before
-      - _component: building-blocks/core-elements/simple-text
-        text: >-
-          Pasifika Festivals Aotearoa (PFA) is a national network connecting and
-          supporting festivals across Aotearoa, strengthening cultural
-          storytelling, collaboration, and advocacy for Pasifika arts. Our goal
-          is to strengthen festivals by sharing resources, building connections
-          between organisers, and advocating for the value of Pacific cultural
-          events within our communities.
-        alignX: start
-        size: md
-      - _component: building-blocks/wrappers/split
-        label: Connect Festivals
-        firstColumnContentSections:
-          - _component: building-blocks/core-elements/heading
-            text: Connect Festivals
-            level: h2
-            size: default
-            alignX: start
-            iconName: share
-            iconPosition: before
-          - _component: building-blocks/core-elements/simple-text
-            text: >-
-              Bringing festival organisers together to share experience, ideas,
-              and support.
-            alignX: start
-            size: md
-        secondColumnContentSections:
-          - _component: building-blocks/core-elements/image
-            source: /src/assets/images/img-1411.jpeg
-            alt: ''
-            rounded: false
-            aspectRatio: none
-            positionVertical: center
-            positionHorizontal: center
-            priority: false
-        distributionMode: half
-        fixedWidth:
-        minSplitWidth: 760
-        verticalAlignment: center
-        reverse: false
-        reverseOrderOnMobile: false
-        gap: lg
-      - _component: building-blocks/wrappers/split
-        label: Share resources
-        firstColumnContentSections:
-          - _component: building-blocks/core-elements/image
-            source: /src/assets/images/screenshot-2026-02-22-at-6-40-04-pm.png
-            alt: ''
-            rounded: false
-            aspectRatio: none
-            positionVertical: center
-            positionHorizontal: center
-            priority: false
-        secondColumnContentSections:
-          - _component: building-blocks/core-elements/heading
-            text: Share Resources
-            level: h2
-            size: default
-            alignX: start
-            iconName: clipboard-document-list
-            iconPosition: before
-          - _component: building-blocks/core-elements/simple-text
-            text: >
-              Providing practical resources, templates, and guidance for
-              sustainable festival delivery.
-            alignX: start
-            size: md
-        distributionMode: half
-        fixedWidth:
-        minSplitWidth: 760
-        verticalAlignment: center
-        reverse: false
-        reverseOrderOnMobile: false
-        gap: lg
-      - _component: building-blocks/wrappers/split
-        label: Advocate nationally
-        firstColumnContentSections:
-          - _component: building-blocks/core-elements/heading
-            text: Advocate Nationally
-            level: h2
-            size: default
-            alignX: start
-            iconName: speaker-wave
-            iconPosition: before
-          - _component: building-blocks/core-elements/simple-text
-            text: >-
-              Advocate nationally
-
-              Championing the importance of Pacific arts, culture, and community
-              events nationally.
-            alignX: start
-            size: md
-        secondColumnContentSections:
-          - _component: building-blocks/core-elements/image
-            source: >-
-              /src/assets/images/g2cm-fi665-learn-article-images-public-advocacy-v1b.webp
-            alt: ''
-            rounded: false
-            aspectRatio: none
-            positionVertical: center
-            positionHorizontal: center
-            priority: false
-        distributionMode: half
-        fixedWidth:
-        minSplitWidth: 760
-        verticalAlignment: center
-        reverse: false
-        reverseOrderOnMobile: false
-        gap: lg
-    maxContentWidth: 2xl
-    paddingHorizontal: md
-    paddingVertical: md
-    colorScheme: inherit
+  - _component: page-sections/features/feature-grid
+    eyebrow: Who we are
+    heading: Get to know us
+    subtext: >-
+      Pasifika Festivals Aotearoa (PFA) is a national network connecting and
+      supporting festivals across Aotearoa, strengthening cultural storytelling,
+      collaboration, and advocacy for Pasifika arts. Our goal is to strengthen
+      festivals by sharing resources, building connections between organisers,
+      and advocating for the value of Pacific cultural events within our
+      communities.
+    gap: md
+    minItemWidth: 270
+    maxItemWidth: 360
+    features:
+      - _component: page-sections/features/feature-grid/feature-item
+        title: Connect Festivals
+        description: >-
+          Bringing festival organisers together to share experience, ideas, and
+          support.
+        iconName: share
+        iconColor: orange
+      - _component: page-sections/features/feature-grid/feature-item
+        title: Share Resources
+        description: >-
+          Providing practical resources, templates, and guidance for sustainable
+          festival delivery.
+        iconName: book-open
+        iconColor: orange
+      - _component: page-sections/features/feature-grid/feature-item
+        title: Advocate Nationally
+        description: >-
+          Advocate nationally Championing the importance of Pacific arts,
+          culture, and community events nationally.
+        iconName: globe-asia-australia
+        iconColor: orange
+    colorScheme: contrast
     backgroundColor: base
-    backgroundImage:
-      source: ''
-      alt: ''
-      positionVertical: top
-      positionHorizontal: center
-    rounded: false
   - _component: page-sections/builders/custom-section
     label: Upcoming Festival
     contentSections:
@@ -173,11 +80,11 @@ pageSections:
         iconPosition: before
     maxContentWidth: 2xl
     paddingHorizontal: md
-    paddingVertical: md
+    paddingVertical: 3xl
     colorScheme: inherit
     backgroundColor: base
     backgroundImage:
-      source: ''
+      source: /src/assets/images/pasifika-bg.svg
       alt: ''
       positionVertical: top
       positionHorizontal: center
