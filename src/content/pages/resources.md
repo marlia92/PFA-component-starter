@@ -14,8 +14,8 @@ pageSections:
     imageAspectRatio: none
     buttonSections: []
     reverse: false
-    colorScheme: contrast
-    backgroundColor: surface
+    colorScheme: inherit
+    backgroundColor: base
   - _component: page-sections/features/feature-grid
     eyebrow:
     heading: Industry Resources
