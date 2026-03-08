@@ -93,49 +93,6 @@ pageSections:
       positionVertical: top
       positionHorizontal: center
     rounded: false
-  - _component: page-sections/builders/custom-section
-    label: 'Membership Benefits '
-    contentSections:
-      - _component: building-blocks/core-elements/heading
-        text: Membership Benefits
-        level: h2
-        size: default
-        alignX: center
-        iconName:
-        iconPosition: before
-      - _component: building-blocks/core-elements/list
-        items:
-          - _component: building-blocks/core-elements/list/list-item
-            text: Access shared resources and templates
-            iconName: document-check
-            iconColor: red
-          - _component: building-blocks/core-elements/list/list-item
-            text: Connect with other festival organisers
-            iconName: user-group
-            iconColor: red
-          - _component: building-blocks/core-elements/list/list-item
-            text: Share knowledge and experience
-            iconName: book-open
-            iconColor: red
-          - _component: building-blocks/core-elements/list/list-item
-            text: Contribute to national advocacy for Pacific festivals
-            iconName: globe-asia-australia
-            iconColor: red
-        direction: vertical
-        alignX: center
-        size: xl
-        listType: icon
-    maxContentWidth: 2xl
-    paddingHorizontal: md
-    paddingVertical: md
-    colorScheme: inherit
-    backgroundColor: base
-    backgroundImage:
-      source: ''
-      alt: ''
-      positionVertical: top
-      positionHorizontal: center
-    rounded: false
   - _component: page-sections/ctas/cta-form
     heading: 'Interested in becoming a member? '
     subtext: >-
