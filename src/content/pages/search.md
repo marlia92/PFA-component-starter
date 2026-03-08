@@ -38,4 +38,27 @@ pageSections:
       positionVertical: top
       positionHorizontal: center
     rounded: false
+  - _component: page-sections/builders/custom-section
+    label: Divider
+    contentSections:
+      - _component: building-blocks/core-elements/image
+        source: /src/assets/images/pasifika-band.svg
+        alt: ''
+        rounded: false
+        aspectRatio: none
+        positionVertical: center
+        positionHorizontal: center
+        priority: false
+    maxContentWidth: 2xl
+    paddingHorizontal: md
+    paddingVertical: md
+    colorScheme: inherit
+    backgroundColor: base
+    backgroundImage:
+      source: ''
+      alt: ''
+      positionVertical: top
+      positionHorizontal: center
+    rounded: false
+description: ''
 ---
