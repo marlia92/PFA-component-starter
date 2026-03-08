@@ -2,19 +2,59 @@
 _schema: default
 title: Festivals
 pageSections:
-  - _component: page-sections/heroes/hero-split
-    eyebrow: Festivals
-    heading: Celebrating Pasifika culture across Aotearoa
-    subtext: >-
-      Pasifika festivals play an important role in bringing communities
-      together.
-    imageSource: /src/assets/images/pasifika25-1133x628-auckland-live.jpg
-    imageAlt: Hero image
-    imageAspectRatio: none
-    buttonSections: []
-    reverse: false
+  - _component: page-sections/builders/custom-section
+    label: ''
+    contentSections:
+      - _component: building-blocks/wrappers/split
+        label: HERO SPLIT
+        firstColumnContentSections:
+          - _component: building-blocks/core-elements/heading
+            text: FESTIVALS
+            level: h6
+            size: default
+            alignX: start
+            iconName:
+            iconPosition: before
+          - _component: building-blocks/core-elements/heading
+            text: Celebrating Pasifika culture
+            level: h1
+            size: xl
+            alignX: start
+            iconName:
+            iconPosition: before
+          - _component: building-blocks/core-elements/simple-text
+            text: >-
+              Pasifika festivals play an important role in bringing communities
+              together.
+            alignX: start
+            size: md
+        secondColumnContentSections:
+          - _component: building-blocks/core-elements/image
+            source: /src/assets/images/pasifika25-1133x628-auckland-live.jpg
+            alt: ''
+            rounded: true
+            aspectRatio: none
+            positionVertical: center
+            positionHorizontal: center
+            priority: false
+        distributionMode: quarter-three-quarters
+        fixedWidth:
+        minSplitWidth: 760
+        verticalAlignment: center
+        reverse: false
+        reverseOrderOnMobile: false
+        gap: lg
+    maxContentWidth: 2xl
+    paddingHorizontal: md
+    paddingVertical: md
     colorScheme: inherit
     backgroundColor: base
+    backgroundImage:
+      source: ''
+      alt: ''
+      positionVertical: top
+      positionHorizontal: center
+    rounded: false
   - _component: page-sections/ctas/cta-form
     heading: Register your festival with us
     subtext: Help us grow the directory by submitting your event.
@@ -43,7 +83,7 @@ pageSections:
         disabled: false
     imageSource: /src/assets/images/kia-mau.jpeg
     imageAlt: Kia Mau
-    reverse: false
+    reverse: true
     colorScheme: inherit
     backgroundColor: base
 description: ''
