@@ -53,7 +53,7 @@
       "link": "/search/",
       "iconName": "magnifying-glass",
       "iconPosition": "before",
-      "variant": "ghost",
+      "variant": "secondary",
       "size": "lg"
     }
   ]
