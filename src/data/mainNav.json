@@ -38,6 +38,11 @@
           "children": []
         }
       ]
+    },
+    {
+      "name": "Blog",
+      "path": "/blog/",
+      "children": []
     }
   ],
   "buttonSections": [
