@@ -9,13 +9,13 @@ pageSections:
       Resources developed and shared by festival organisers to support safe,
       sustainable, and successful Pacific events. These resources are intended
       to help both new and established festivals grow with confidence.
-    imageSource: /src/assets/images/screenshot-2026-02-22-at-6-40-18-pm.png
+    imageSource: /src/assets/images/resources.svg
     imageAlt: Hero image
     imageAspectRatio: none
     buttonSections: []
     reverse: false
-    colorScheme: inherit
-    backgroundColor: base
+    colorScheme: contrast
+    backgroundColor: surface
   - _component: page-sections/features/feature-grid
     eyebrow:
     heading: Industry Resources
