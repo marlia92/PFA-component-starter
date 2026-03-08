@@ -6,7 +6,7 @@ pageSections:
     eyebrow: Festivals 2026
     heading: Festival Schedule
     subtext: 2026 Pasifika festivals happening around the motu
-    imageSource: /src/assets/images/component-library/dunedin-cliff.jpg
+    imageSource: /src/assets/images/colour-pasifika.svg
     imageAlt: Hero image
     imageAspectRatio: none
     buttonSections: []
@@ -28,5 +28,27 @@ pageSections:
     colorScheme: default
     backgroundColor: base
     paddingVertical: 4xl
+  - _component: page-sections/builders/custom-section
+    label: ''
+    contentSections:
+      - _component: building-blocks/core-elements/image
+        source: /src/assets/images/pasifika-band.svg
+        alt: ''
+        rounded: false
+        aspectRatio: none
+        positionVertical: center
+        positionHorizontal: center
+        priority: false
+    maxContentWidth: 2xl
+    paddingHorizontal: md
+    paddingVertical: md
+    colorScheme: inherit
+    backgroundColor: base
+    backgroundImage:
+      source: ''
+      alt: ''
+      positionVertical: top
+      positionHorizontal: center
+    rounded: false
 description: ''
 ---
