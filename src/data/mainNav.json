@@ -24,6 +24,11 @@
       "children": []
     },
     {
+      "name": "Blog",
+      "path": "/blog/",
+      "children": []
+    },
+    {
       "name": "Members",
       "path": "/Members/",
       "children": [
@@ -38,11 +43,6 @@
           "children": []
         }
       ]
-    },
-    {
-      "name": "Blog",
-      "path": "/blog/",
-      "children": []
     }
   ],
   "buttonSections": [
