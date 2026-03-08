@@ -7,6 +7,14 @@
       "path": "/"
     },
     {
+      "name": "Festivals",
+      "path": "/festivals"
+    },
+    {
+      "name": "Resources",
+      "path": "/resources"
+    },
+    {
       "name": "Members",
       "path": "/members/"
     }
