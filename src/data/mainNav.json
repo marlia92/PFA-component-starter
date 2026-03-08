@@ -3,11 +3,6 @@
   "logoAlt": "Logo",
   "navData": [
     {
-      "name": "Home",
-      "path": "/",
-      "children": []
-    },
-    {
       "name": "Festivals",
       "path": null,
       "children": [
