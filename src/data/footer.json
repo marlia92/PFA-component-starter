@@ -3,10 +3,6 @@
   "logoAlt": "Logo",
   "links": [
     {
-      "name": "Home",
-      "path": "/"
-    },
-    {
       "name": "Festivals",
       "path": "/festivals"
     },
