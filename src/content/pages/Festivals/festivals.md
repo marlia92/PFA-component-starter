@@ -8,7 +8,7 @@ pageSections:
     subtext: >-
       Pasifika festivals play an important role in bringing communities
       together.
-    imageSource: /src/assets/images/9780824838713-scaled.jpg
+    imageSource: /src/assets/images/pasifika25-1133x628-auckland-live.jpg
     imageAlt: Hero image
     imageAspectRatio: none
     buttonSections: []
