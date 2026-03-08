@@ -123,7 +123,7 @@ pageSections:
         disabled: false
     imageSource: /src/assets/images/img-1411.jpeg
     imageAlt: CTA image
-    reverse: false
+    reverse: true
     colorScheme: inherit
     backgroundColor: base
   - _component: page-sections/builders/custom-section
