@@ -55,39 +55,80 @@ pageSections:
       positionVertical: top
       positionHorizontal: center
     rounded: false
-  - _component: page-sections/ctas/cta-form
-    heading: Register your festival with us
-    subtext: Help us grow the directory by submitting your event.
-    formAction: .
-    formBlocks:
-      - _component: building-blocks/forms/input
-        label: Name
-        name: name
-        type: text
-        required: true
-      - _component: building-blocks/forms/input
-        label: Email
-        name: email
-        type: email
-        required: true
-      - _component: building-blocks/forms/textarea
-        label: Message
-        name: message
-        required: true
-      - _component: building-blocks/forms/submit
-        text: Send message
-        variant: primary
-        size: md
-        iconPosition: before
-        hideText: false
-        disabled: false
-    imageSource: /src/assets/images/kia-mau.jpeg
-    imageAlt: Kia Mau
-    reverse: true
-    colorScheme: inherit
-    backgroundColor: base
   - _component: page-sections/builders/custom-section
     label: ''
+    contentSections:
+      - _component: building-blocks/core-elements/divider
+        paddingVertical: xl
+    maxContentWidth: 2xl
+    paddingHorizontal: md
+    paddingVertical: md
+    colorScheme: inherit
+    backgroundColor: base
+    backgroundImage:
+      source: ''
+      alt: ''
+      positionVertical: top
+      positionHorizontal: center
+    rounded: false
+  - _component: page-sections/builders/custom-section
+    label: Center form
+    contentSections:
+      - _component: building-blocks/core-elements/heading
+        text: Register your festival with us
+        level: h2
+        size: default
+        alignX: center
+        iconName:
+        iconPosition: before
+      - _component: building-blocks/core-elements/simple-text
+        text: Help us grow the directory by submitting your event.
+        alignX: center
+        size: md
+      - _component: building-blocks/forms/form
+        action: ./
+        formBlocks:
+          - _component: building-blocks/forms/input
+            label: Name
+            name: my_input
+            type: text
+            placeholder: Full name
+            required: true
+            value:
+          - _component: building-blocks/forms/input
+            label: Email
+            name: my_input
+            type: email
+            placeholder: Email address
+            required: true
+            value:
+          - _component: building-blocks/forms/textarea
+            label: Message
+            name: my_textarea
+            required: true
+            placeholder:
+            value:
+          - _component: building-blocks/forms/submit
+            text: Send message
+            variant: primary
+            size: md
+            iconName:
+            iconPosition: before
+            hideText: false
+            disabled: false
+    maxContentWidth: md
+    paddingHorizontal: md
+    paddingVertical: md
+    colorScheme: inherit
+    backgroundColor: base
+    backgroundImage:
+      source: ''
+      alt: ''
+      positionVertical: top
+      positionHorizontal: center
+    rounded: false
+  - _component: page-sections/builders/custom-section
+    label: Divider
     contentSections:
       - _component: building-blocks/core-elements/image
         source: /src/assets/images/pasifika-band.svg
