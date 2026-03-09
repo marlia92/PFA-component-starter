@@ -121,6 +121,22 @@ pageSections:
     reverse: true
     colorScheme: default
     backgroundColor: base
+  - _component: page-sections/builders/custom-section
+    label: ''
+    contentSections:
+      - _component: building-blocks/core-elements/divider
+        paddingVertical: lg
+    maxContentWidth: 2xl
+    paddingHorizontal: md
+    paddingVertical: md
+    colorScheme: inherit
+    backgroundColor: base
+    backgroundImage:
+      source: ''
+      alt: ''
+      positionVertical: top
+      positionHorizontal: center
+    rounded: false
   - _component: page-sections/people/team-grid
     eyebrow: Pasifika Festivals Aotearoa Inc Team
     heading: Meet the team
