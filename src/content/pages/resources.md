@@ -16,6 +16,22 @@ pageSections:
     reverse: false
     colorScheme: inherit
     backgroundColor: base
+  - _component: page-sections/builders/custom-section
+    label: ''
+    contentSections:
+      - _component: building-blocks/core-elements/divider
+        paddingVertical: lg
+    maxContentWidth: 2xl
+    paddingHorizontal: md
+    paddingVertical: md
+    colorScheme: inherit
+    backgroundColor: base
+    backgroundImage:
+      source: ''
+      alt: ''
+      positionVertical: top
+      positionHorizontal: center
+    rounded: false
   - _component: page-sections/features/feature-grid
     eyebrow:
     heading: Industry Resources
