@@ -4,10 +4,11 @@ title: 'Pasifika Festivals Aotearoa '
 pageSections:
   - _component: page-sections/heroes/hero-split
     eyebrow: PASIFIKA FESTIVAL AOTEAROA INC.
-    heading: Connecting Pasifika Festivals across Aotearoa
+    heading: Celebrating Pasifika communities of Aotearoa
     subtext: >-
-      **Holding the vā for an Indigenous-centric support network that increases
-      resource accessibility, cultural understanding and advocacy.**
+      **Welcome to the PFA Fale - a hub that shares knowledge, advocates with
+      mana,  honours our collective whakapapa through connecting the Pasifika
+      Festivals ecosystem.**
     imageSource: /src/assets/images/colour-pasifika.svg
     imageAlt: Hero image
     imageAspectRatio: none
@@ -35,12 +36,22 @@ pageSections:
     eyebrow: Who we are
     heading: Get to know us
     subtext: >-
-      Pasifika Festivals Aotearoa (PFA) is a national network connecting and
-      supporting festivals across Aotearoa, strengthening cultural storytelling,
-      collaboration, and advocacy for Pasifika arts. Our goal is to strengthen
-      festivals by sharing resources, building connections between organisers,
-      and advocating for the value of Pacific cultural events within our
-      communities.
+      Fakaalofa lahi atu, Kia orana, Talofa lava, Mālō e lelei, Tālofa, Ni Sa
+      Bula Vinaka, Malo Ni, Noa'ia, Mauri, Halo Olaketa, Tēnā koutou katoa!
+
+
+      We are Pasifika Festivals Aotearoa Inc (PFA), a collective and whānau of
+      the vibrant pan-Pacific festival community, bringing together generations
+      across Aotearoa and the wider Pacific.
+
+
+      We exist to serve, connect, and uplift Pasifika communities, supporting
+      the leaders, and teams behind Pacific festivals. Through accessibility,
+      advocacy, data sovereignty, and shared resources, we amplify our stories,
+      and champion the voices of our people.
+
+
+      The Pacific festival ecosystem is alive and thriving.
     gap: md
     minItemWidth: 270
     maxItemWidth: 360
