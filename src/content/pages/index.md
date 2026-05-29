@@ -108,13 +108,23 @@ pageSections:
     paddingVertical: 4xl
   - _component: page-sections/features/feature-split
     eyebrow: 'Why an Incorporated Society? '
-    heading: 'Investment in Pasifika festivals '
+    heading: Pasifika Festivals Aotearoa origins
     subtext: >-
-      Pasifika Festivals Aotearoa Incorporated Society (PFA Inc) was established
-      in April 2024 as an outcome of the Ministry for Culture and Heritage (MCH)
-      investment in Pasifika festivals through Creative New Zealand (CNZ). The
-      investment emphasised the collective voice, coordination, and leadership
-      required to strengthen the Pasifika festival ecosystem across Aotearoa.
+      In 2018 the Hon. Carmel Sepuloni was approached by Festival Director of
+      ASB Polyfest - Seiuli Terri Leo-Mau’u for wider support from the
+      Government to not only ASB Polyfest but for other festivals.  This was
+      because Seiuli was getting requests from other festivals for help.  The
+      result was a committee of Festival leaders from around the region starting
+      discussions on a unified approach to support the Pasifika Festival
+      ecosystem.  By 2021 Hon. Carmel Sepuloni committed 12m to supporting
+      Pacific Festivals around the motu after numerous cancellations due to a
+      fruit-fly epidemic, the Christchurch Shootings, and Covid19.  This
+      government relief funding was administered by Creative New Zealand via
+      contestable funding open to all Pacific Festivals and called the Pasifika
+      Festivals Initiative (PFI), that consisted of a working group of
+      representatives from festivals nationwide .  Today,  after this
+      investment, and a feasibility study a peak body was formed, made legal in
+      2025, Pasifika Festivals Aotearoa Inc.
 
 
       PFA Inc is a national, intergenerational collective of Pacific festivals —
@@ -125,7 +135,7 @@ pageSections:
 
       &nbsp;
     buttonSections: []
-    imageSource: /src/assets/images/yellow-pasifika.svg
+    imageSource: /src/assets/images/screenshot-2026-02-22-at-9-07-01-pm.png
     imageAlt: Why PFA
     imageAspectRatio: none
     imageRounded: true
