@@ -62,21 +62,21 @@ pageSections:
           Bringing festival organisers together to share experience, ideas, and
           support.
         iconName: share
-        iconColor: orange
+        iconColor: blue
       - _component: page-sections/features/feature-grid/feature-item
         title: Share Resources
         description: >-
           Providing practical resources, templates, and guidance for sustainable
           festival delivery.
         iconName: book-open
-        iconColor: orange
+        iconColor: red
       - _component: page-sections/features/feature-grid/feature-item
         title: Advocate Nationally
         description: >-
           Advocate nationally Championing the importance of Pacific arts,
           culture, and community events nationally.
         iconName: globe-asia-australia
-        iconColor: orange
+        iconColor: yellow
     colorScheme: contrast
     backgroundColor: base
   - _component: page-sections/builders/custom-section
