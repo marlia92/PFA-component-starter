@@ -7,9 +7,9 @@ pageSections:
     heading: Resources
     subtext: >-
       Resources developed and shared by festival organisers to support safe,
-      sustainable, and successful Pacific events. These resources are intended
-      to help both new and established festivals grow with confidence.
-    imageSource: /src/assets/images/resources.svg
+      sustainable, and successful Pacific events.  These resources are intended
+      to help both new and established festivals grow with confidence
+    imageSource: /src/assets/images/visual-language.svg
     imageAlt: Hero image
     imageAspectRatio: none
     buttonSections: []
