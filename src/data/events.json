@@ -1,10 +1,24 @@
 {
   "events": [
     {
-      "name": "Otago Polyfest",
-      "region": "Otago",
-      "location": "Ōtepoti",
-      "date": "2026-09-13T09:00:00.000Z",
+      "name": "Hapuku Festival",
+      "region": "Auckland",
+      "location": "Manukau Tennis Centre",
+      "date": "2026-05-16T09:00:00.000Z",
+      "time": "9:00 am"
+    },
+    {
+      "name": "Pacific Dance Festival",
+      "region": "Auckland",
+      "location": "Auckland and Keri Keri",
+      "date": "2026-06-05T09:00:00.000Z",
+      "time": "9:00 am"
+    },
+    {
+      "name": "Huttfest",
+      "region": "Wellington",
+      "location": "Wellington",
+      "date": "2026-06-22T09:00:00.000Z",
       "time": "9:00 am"
     }
   ]
