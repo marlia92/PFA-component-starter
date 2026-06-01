@@ -34,28 +34,28 @@ pageSections:
     rounded: false
   - _component: page-sections/features/feature-grid
     eyebrow:
-    heading: Industry Resources
+    heading: Always here to help
     subtext:
     gap: xl
     minItemWidth: 280
     maxItemWidth: 360
     features:
       - _component: page-sections/features/feature-grid/feature-item
-        title: Funding Guide for Community Festivals
+        title: Funding and Resources
         description: >-
           An overview of common funding sources and tips for preparing
           successful funding applications.
         iconName: document-currency-dollar
         iconColor: yellow
       - _component: page-sections/features/feature-grid/feature-item
-        title: Health & Safety Planning
+        title: Operations and Governance
         description: >-
           A practical starting point for building health and safety plans
           suitable for community events.
         iconName: heart
         iconColor: yellow
       - _component: page-sections/features/feature-grid/feature-item
-        title: Cultural Competency
+        title: Guides and Templates
         description: >-
           Guidance on engaging respectfully with Pacific communities,
           performers, and cultural practices.
