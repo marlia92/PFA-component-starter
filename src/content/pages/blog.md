@@ -47,7 +47,7 @@ pageSections:
     contentSections:
       - _component: building-blocks/wrappers/grid
         label: ''
-        layout: start
+        layout: center
         minItemWidth: 280
         maxItemWidth: 400
         items:
@@ -105,6 +105,8 @@ pageSections:
                 showBeforeAfter: false
                 beforeContentSections: []
                 afterContentSections: []
+          - _component: building-blocks/wrappers/grid/grid-item
+            contentSections:
               - _component: building-blocks/wrappers/card
                 label: >-
                   Polyfest 2026: Three generations helping to keep Niuean
@@ -157,6 +159,8 @@ pageSections:
                 showBeforeAfter: false
                 beforeContentSections: []
                 afterContentSections: []
+          - _component: building-blocks/wrappers/grid/grid-item
+            contentSections:
               - _component: building-blocks/wrappers/card
                 label: >-
                   Polyfest 2026: Three generations helping to keep Niuean
