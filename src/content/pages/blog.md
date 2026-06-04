@@ -33,7 +33,7 @@ pageSections:
       - _component: building-blocks/wrappers/grid
         label: ''
         layout: center
-        minItemWidth: 280
+        minItemWidth: 320
         maxItemWidth: 400
         items:
           - _component: building-blocks/wrappers/grid/grid-item
