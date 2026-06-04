@@ -28,7 +28,7 @@ pageSections:
       positionHorizontal: center
     rounded: false
   - _component: page-sections/builders/custom-section
-    label: ''
+    label: News grid
     contentSections:
       - _component: building-blocks/wrappers/grid
         label: ''
@@ -212,13 +212,13 @@ pageSections:
                 label: Festival season brings communities together across the motu
                 contentSections:
                   - _component: building-blocks/core-elements/simple-text
-                    text: MPP
+                    text: PMN
                     alignX: start
                     size: sm
                   - _component: building-blocks/core-elements/heading
                     text: >-
-                      Festival season brings communities together across the
-                      motu
+                      Inside Pasifika: The communities powering Tāmaki
+                      Makaurau's biggest cultural festival
                     level: h3
                     size: sm
                     alignX: start
@@ -226,9 +226,9 @@ pageSections:
                     iconPosition: before
                   - _component: building-blocks/core-elements/simple-text
                     text: >-
-                      Festival season is in full swing, with communities up and
-                      down the motu celebrating the cultural richness and
-                      diversity of Pacific peoples in Aotearoa New Zealand.
+                      Pasifika Festival returned to Western Springs over the
+                      weekend, drawing thousands as organisers highlighted
+                      strong community ties.
                     alignX: start
                     size: md
                   - _component: building-blocks/wrappers/button-group
@@ -238,7 +238,7 @@ pageSections:
                         text: Read the article
                         hideText: false
                         link: >-
-                          https://www.nzherald.co.nz/talanoa/polyfest-2026-three-generations-helping-to-keep-niuean-culture-and-language-alive/A4EPOHE3HBHAVEI2BBTO2D3LWQ/
+                          https://pmn.co.nz/read/local-democracy-reporting/inside-pasifika-the-communities-powering-tamaki-makaurau-s-biggest-cultural-festival
                         iconName: arrow-top-right-on-square
                         iconPosition: after
                         variant: tertiary
@@ -267,13 +267,13 @@ pageSections:
                 label: Festival season brings communities together across the motu
                 contentSections:
                   - _component: building-blocks/core-elements/simple-text
-                    text: MPP
+                    text: ROVA
                     alignX: start
                     size: sm
                   - _component: building-blocks/core-elements/heading
                     text: >-
-                      Festival season brings communities together across the
-                      motu
+                      WATCH: The incredible fire knife performances from NZ's
+                      Siva Afi festival
                     level: h3
                     size: sm
                     alignX: start
@@ -281,9 +281,9 @@ pageSections:
                     iconPosition: before
                   - _component: building-blocks/core-elements/simple-text
                     text: >-
-                      Festival season is in full swing, with communities up and
-                      down the motu celebrating the cultural richness and
-                      diversity of Pacific peoples in Aotearoa New Zealand.
+                      Over the weekend, Aotearoa’s annual international Siva Afi
+                      Festival lit up Tāmaki Makaurau, showing off some of the
+                      world’s best fire knife performances on stage.
                     alignX: start
                     size: md
                   - _component: building-blocks/wrappers/button-group
@@ -293,7 +293,7 @@ pageSections:
                         text: Read the article
                         hideText: false
                         link: >-
-                          https://www.nzherald.co.nz/talanoa/polyfest-2026-three-generations-helping-to-keep-niuean-culture-and-language-alive/A4EPOHE3HBHAVEI2BBTO2D3LWQ/
+                          https://www.rova.nz/articles/watch-the-incredible-fire-knife-performances-siva-afi-festival
                         iconName: arrow-top-right-on-square
                         iconPosition: after
                         variant: tertiary
@@ -322,13 +322,11 @@ pageSections:
                 label: Festival season brings communities together across the motu
                 contentSections:
                   - _component: building-blocks/core-elements/simple-text
-                    text: MPP
+                    text: RNZ
                     alignX: start
                     size: sm
                   - _component: building-blocks/core-elements/heading
-                    text: >-
-                      Festival season brings communities together across the
-                      motu
+                    text: Fire knife warriors light up Auckland at Siva Afi Festiva
                     level: h3
                     size: sm
                     alignX: start
@@ -336,9 +334,9 @@ pageSections:
                     iconPosition: before
                   - _component: building-blocks/core-elements/simple-text
                     text: >-
-                      Festival season is in full swing, with communities up and
-                      down the motu celebrating the cultural richness and
-                      diversity of Pacific peoples in Aotearoa New Zealand.
+                      Flames licked the stage and smoke wafted above the Mangere
+                      arts centre as siva afi warriors spun, swung and threw
+                      traditional nifo oti - Samoan fire knives.
                     alignX: start
                     size: md
                   - _component: building-blocks/wrappers/button-group
@@ -348,7 +346,7 @@ pageSections:
                         text: Read the article
                         hideText: false
                         link: >-
-                          https://www.nzherald.co.nz/talanoa/polyfest-2026-three-generations-helping-to-keep-niuean-culture-and-language-alive/A4EPOHE3HBHAVEI2BBTO2D3LWQ/
+                          https://www.rnz.co.nz/news/pacific/589128/fire-knife-warriors-light-up-auckland-at-siva-afi-festiva
                         iconName: arrow-top-right-on-square
                         iconPosition: after
                         variant: tertiary
