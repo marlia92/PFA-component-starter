@@ -15,7 +15,8 @@ const now = new Date();
 const sortedEvents = eventsData.events
   .map((event) => ({
     ...event,
-    dateObj: new Date(`${event.date}T${event.time}`),
+    // `date` is already a full ISO datetime; `time` is a pre-formatted display string
+    dateObj: new Date(event.date),
   }))
   .filter((event) => event.dateObj >= now)
   .sort((a, b) => a.dateObj.getTime() - b.dateObj.getTime());
@@ -39,51 +40,148 @@ const formatDate = (dateStr: string) => {
   });
 };
 
-// Format time for display
-const formatTime = (timeStr: string) => {
-  const [hours, minutes] = timeStr.split(":");
-  const hour = parseInt(hours, 10);
-  const ampm = hour >= 12 ? "PM" : "AM";
-  const hour12 = hour % 12 || 12;
-  return `${hour12}:${minutes} ${ampm}`;
-};
+// Serialize all events so the client can re-derive the list at view time. The
+// server-rendered cards below are a build-time guess used as a no-flash / no-JS
+// fallback; the inline <script> rebuilds the list on page load so it stays
+// consistent with the (live) NextEvent component.
+const eventsJson = JSON.stringify(eventsData.events);
 ---
 
-<div class:list={["event-list-view", className]}>
-  {limitedEvents.length > 0 ? (
-    <div class="events-container">
-      {limitedEvents.map((event, index) => (
-        <article class="event-card" style={`--animation-delay: ${index * 0.1}s`}>
-          <div class="event-date-badge">
-            <span class="event-day">{new Date(event.date).getDate()}</span>
-            <span class="event-month">{new Date(event.date).toLocaleDateString("en-NZ", { month: "short" })}</span>
-          </div>
-          <div class="event-details">
-            <h3 class="event-name">{event.name}</h3>
-            <div class="event-meta">
-              <div class="event-meta-item">
-                <Icon name="map-pin" size="sm" class="event-icon" />
-                <span>{event.location}</span>
-              </div>
-              <div class="event-meta-item">
-                <Icon name="calendar" size="sm" class="event-icon" />
-                <span>{formatDate(event.date)}</span>
-              </div>
-              <div class="event-meta-item">
-                <Icon name="clock" size="sm" class="event-icon" />
-                <span>{formatTime(event.time)}</span>
-              </div>
+<div class:list={["event-list-view", className]} data-events={eventsJson} data-max={maxEventsToShow}>
+  <div class="events-container" hidden={limitedEvents.length === 0}>
+    {limitedEvents.map((event, index) => (
+      <article class="event-card" style={`--animation-delay: ${index * 0.1}s`}>
+        <div class="event-date-badge">
+          <span class="event-day" data-field="day">{new Date(event.date).getDate()}</span>
+          <span class="event-month" data-field="month">{new Date(event.date).toLocaleDateString("en-NZ", { month: "short" })}</span>
+        </div>
+        <div class="event-details">
+          <h3 class="event-name" data-field="name">{event.name}</h3>
+          <div class="event-meta">
+            <div class="event-meta-item">
+              <Icon name="map-pin" size="sm" class="event-icon" />
+              <span data-field="location">{event.location}</span>
+            </div>
+            <div class="event-meta-item">
+              <Icon name="calendar" size="sm" class="event-icon" />
+              <span data-field="date">{formatDate(event.date)}</span>
+            </div>
+            <div class="event-meta-item">
+              <Icon name="clock" size="sm" class="event-icon" />
+              <span data-field="time">{event.time}</span>
             </div>
           </div>
-        </article>
-      ))}
-    </div>
-  ) : (
-    <SimpleText alignX="center" class="no-events">
-      No upcoming events scheduled at this time.
-    </SimpleText>
-  )}
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <SimpleText alignX="center" class="no-events" hidden={limitedEvents.length > 0}>
+    No upcoming events scheduled at this time.
+  </SimpleText>
+
+  {/* Markup template cloned by the client script. Keeps the Icon SVGs (rendered
+      at build) so we don't hand-write them in JS. */}
+  <template class="event-card-template">
+    <article class="event-card">
+      <div class="event-date-badge">
+        <span class="event-day" data-field="day"></span>
+        <span class="event-month" data-field="month"></span>
+      </div>
+      <div class="event-details">
+        <h3 class="event-name" data-field="name"></h3>
+        <div class="event-meta">
+          <div class="event-meta-item">
+            <Icon name="map-pin" size="sm" class="event-icon" />
+            <span data-field="location"></span>
+          </div>
+          <div class="event-meta-item">
+            <Icon name="calendar" size="sm" class="event-icon" />
+            <span data-field="date"></span>
+          </div>
+          <div class="event-meta-item">
+            <Icon name="clock" size="sm" class="event-icon" />
+            <span data-field="time"></span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </template>
 </div>
+
+<script>
+  function initEventLists() {
+    const roots = document.querySelectorAll<HTMLElement>(".event-list-view");
+
+    roots.forEach((root) => {
+      const events = JSON.parse(root.dataset.events || "[]") as Array<{
+        name: string;
+        location: string;
+        date: string;
+        time: string;
+      }>;
+      const max = parseInt(root.dataset.max || "0", 10);
+
+      const now = new Date();
+      const future = events
+        .map((event) => ({ ...event, dateObj: new Date(event.date) }))
+        .filter((event) => event.dateObj >= now)
+        .sort((a, b) => a.dateObj.getTime() - b.dateObj.getTime());
+
+      // Skip the closest event (featured by NextEvent), then apply the limit.
+      const display = future.slice(1);
+      const limited = max > 0 ? display.slice(0, max) : display;
+
+      const container = root.querySelector<HTMLElement>(".events-container");
+      const noEvents = root.querySelector<HTMLElement>(".no-events");
+      const template = root.querySelector<HTMLTemplateElement>(".event-card-template");
+      if (!container || !template) return;
+
+      if (limited.length === 0) {
+        container.hidden = true;
+        container.replaceChildren();
+        if (noEvents) noEvents.hidden = false;
+        return;
+      }
+      container.hidden = false;
+      if (noEvents) noEvents.hidden = true;
+
+      const formatDate = (dateStr: string) =>
+        new Date(dateStr).toLocaleDateString("en-NZ", {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        });
+
+      const setField = (card: HTMLElement, field: string, value: string) => {
+        const el = card.querySelector<HTMLElement>(`[data-field="${field}"]`);
+        if (el) el.textContent = value;
+      };
+
+      const cards = limited.map((event, index) => {
+        const card = template.content.firstElementChild!.cloneNode(true) as HTMLElement;
+        card.style.setProperty("--animation-delay", `${index * 0.1}s`);
+        const date = new Date(event.date);
+        setField(card, "day", String(date.getDate()));
+        setField(card, "month", date.toLocaleDateString("en-NZ", { month: "short" }));
+        setField(card, "name", event.name);
+        setField(card, "location", event.location);
+        setField(card, "date", formatDate(event.date));
+        setField(card, "time", event.time);
+        return card;
+      });
+
+      container.replaceChildren(...cards);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initEventLists);
+  } else {
+    initEventLists();
+  }
+</script>
 
 <style lang="pcss">
   .event-list-view {

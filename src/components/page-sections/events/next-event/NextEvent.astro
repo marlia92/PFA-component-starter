@@ -21,7 +21,8 @@ const now = new Date();
 const nextEvent = eventsData.events
   .map((event) => ({
     ...event,
-    dateObj: new Date(`${event.date}T${event.time}`),
+    // `date` is already a full ISO datetime; `time` is a pre-formatted display string
+    dateObj: new Date(event.date),
   }))
   .filter((event) => event.dateObj >= now)
   .sort((a, b) => a.dateObj.getTime() - b.dateObj.getTime())[0];
@@ -37,15 +38,6 @@ const formatDate = (dateStr: string) => {
   });
 };
 
-// Format time for display
-const formatTime = (timeStr: string) => {
-  const [hours, minutes] = timeStr.split(":");
-  const hour = parseInt(hours, 10);
-  const ampm = hour >= 12 ? "PM" : "AM";
-  const hour12 = hour % 12 || 12;
-  return `${hour12}:${minutes} ${ampm}`;
-};
-
 // Calculate days until event
 const getDaysUntil = (dateStr: string) => {
   const eventDate = new Date(dateStr);
@@ -56,6 +48,11 @@ const getDaysUntil = (dateStr: string) => {
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   return diffDays;
 };
+
+// Serialize all events so the client can re-derive the next event at view time.
+// The server-rendered card below is a build-time guess used as a no-flash /
+// no-JS fallback; the inline <script> corrects it on page load.
+const eventsJson = JSON.stringify(eventsData.events);
 ---
 
 <CustomSection
@@ -66,8 +63,8 @@ const getDaysUntil = (dateStr: string) => {
   colorScheme={colorScheme}
   backgroundColor={backgroundColor}
 >
-  {nextEvent ? (
-    <div class="next-event-wrapper">
+  <div class="next-event-root" data-events={eventsJson}>
+    <div class="next-event-wrapper" style={nextEvent ? undefined : "display: none;"}>
       <div class="next-event-header">
         {eyebrow && (
           <SimpleText class="eyebrow" data-prop="eyebrow">
@@ -80,64 +77,143 @@ const getDaysUntil = (dateStr: string) => {
           </Heading>
         )}
       </div>
-      
+
       <article class="next-event-card">
         <div class="countdown-badge">
-          {getDaysUntil(nextEvent.date) === 0 ? (
+          {nextEvent && getDaysUntil(nextEvent.date) === 0 ? (
             <span class="countdown-text">Today!</span>
-          ) : getDaysUntil(nextEvent.date) === 1 ? (
+          ) : nextEvent && getDaysUntil(nextEvent.date) === 1 ? (
             <>
               <span class="countdown-number">1</span>
               <span class="countdown-text">day to go</span>
             </>
           ) : (
             <>
-              <span class="countdown-number">{getDaysUntil(nextEvent.date)}</span>
+              <span class="countdown-number">{nextEvent ? getDaysUntil(nextEvent.date) : ""}</span>
               <span class="countdown-text">days to go</span>
             </>
           )}
         </div>
-        
+
         <div class="event-content">
-          <h3 class="event-name">{nextEvent.name}</h3>
-          
+          <h3 class="event-name" data-field="name">{nextEvent?.name}</h3>
+
           <div class="event-details">
             <div class="event-detail">
               <Icon name="map-pin" size="md" class="event-icon" />
               <div class="detail-content">
                 <span class="detail-label">Location</span>
-                <span class="detail-value">{nextEvent.location}</span>
+                <span class="detail-value" data-field="location">{nextEvent?.location}</span>
               </div>
             </div>
-            
+
             <div class="event-detail">
               <Icon name="calendar" size="md" class="event-icon" />
               <div class="detail-content">
                 <span class="detail-label">Date</span>
-                <span class="detail-value">{formatDate(nextEvent.date)}</span>
+                <span class="detail-value" data-field="date">{nextEvent ? formatDate(nextEvent.date) : ""}</span>
               </div>
             </div>
-            
+
             <div class="event-detail">
               <Icon name="clock" size="md" class="event-icon" />
               <div class="detail-content">
                 <span class="detail-label">Time</span>
-                <span class="detail-value">{formatTime(nextEvent.time)}</span>
+                <span class="detail-value" data-field="time">{nextEvent?.time}</span>
               </div>
             </div>
           </div>
         </div>
       </article>
     </div>
-  ) : (
-    <div class="no-event">
+
+    <div class="no-event" style={nextEvent ? "display: none;" : undefined}>
       <Icon name="calendar" size="lg" class="no-event-icon" />
       <SimpleText alignX="center">
         No upcoming events scheduled at this time.
       </SimpleText>
     </div>
-  )}
+  </div>
 </CustomSection>
+
+<script>
+  function initNextEvents() {
+    const roots = document.querySelectorAll<HTMLElement>(".next-event-root");
+
+    roots.forEach((root) => {
+      const events = JSON.parse(root.dataset.events || "[]") as Array<{
+        name: string;
+        location: string;
+        date: string;
+        time: string;
+      }>;
+
+      const now = new Date();
+      const nextEvent = events
+        .map((event) => ({ ...event, dateObj: new Date(event.date) }))
+        .filter((event) => event.dateObj >= now)
+        .sort((a, b) => a.dateObj.getTime() - b.dateObj.getTime())[0];
+
+      const wrapper = root.querySelector<HTMLElement>(".next-event-wrapper");
+      const noEvent = root.querySelector<HTMLElement>(".no-event");
+
+      // Time only moves forward, so the set of future events at view time is a
+      // subset of those at build time — if there's no next event now, show the
+      // empty state regardless of what was rendered.
+      if (!nextEvent) {
+        if (wrapper) wrapper.hidden = true;
+        if (noEvent) noEvent.style.display = "";
+        return;
+      }
+      if (wrapper) wrapper.hidden = false;
+      if (noEvent) noEvent.style.display = "none";
+
+      const formatDate = (dateStr: string) =>
+        new Date(dateStr).toLocaleDateString("en-NZ", {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        });
+
+      const getDaysUntil = (dateStr: string) => {
+        const eventDate = new Date(dateStr);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        eventDate.setHours(0, 0, 0, 0);
+        return Math.ceil((eventDate.getTime() - today.getTime()) / 86_400_000);
+      };
+
+      const setField = (field: string, value: string) => {
+        const el = root.querySelector<HTMLElement>(`[data-field="${field}"]`);
+        if (el) el.textContent = value;
+      };
+
+      setField("name", nextEvent.name);
+      setField("location", nextEvent.location);
+      setField("date", formatDate(nextEvent.date));
+      setField("time", nextEvent.time);
+
+      const badge = root.querySelector<HTMLElement>(".countdown-badge");
+      if (badge) {
+        const days = getDaysUntil(nextEvent.date);
+        if (days === 0) {
+          badge.innerHTML = '<span class="countdown-text">Today!</span>';
+        } else {
+          badge.innerHTML =
+            `<span class="countdown-number">${days}</span>` +
+            `<span class="countdown-text">${days === 1 ? "day" : "days"} to go</span>`;
+        }
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initNextEvents);
+  } else {
+    initNextEvents();
+  }
+</script>
 
 <style lang="pcss">
   .next-event {

@@ -105,14 +105,28 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
       container.dataset.initialized = 'true';
 
       const eventsData = JSON.parse(container.dataset.events || '[]');
-      let currentMonth = parseInt(container.dataset.currentMonth || '0', 10);
-      let currentYear = parseInt(container.dataset.currentYear || '2026', 10);
-      
-      // Get min/max boundaries
-      const minMonth = parseInt(container.dataset.minMonth || '0', 10);
-      const minYear = parseInt(container.dataset.minYear || '2026', 10);
+
+      // Max boundary (the last event's month) is fixed — events don't move.
       const maxMonth = parseInt(container.dataset.maxMonth || '11', 10);
       const maxYear = parseInt(container.dataset.maxYear || '2026', 10);
+
+      // Derive the current month and the min boundary from the real "now" at
+      // view time rather than the build-time values, so a stale build still
+      // opens on the correct month.
+      const nowDate = new Date();
+      let currentMonth = nowDate.getMonth();
+      let currentYear = nowDate.getFullYear();
+      let minMonth = currentMonth;
+      let minYear = currentYear;
+
+      // If every event is already in the past, anchor the view to the last
+      // event's month so min never exceeds max.
+      if (minYear > maxYear || (minYear === maxYear && minMonth > maxMonth)) {
+        minMonth = maxMonth;
+        minYear = maxYear;
+        currentMonth = maxMonth;
+        currentYear = maxYear;
+      }
       
       const monthSelect = container.querySelector('.month-select') as HTMLSelectElement;
       const yearSelect = container.querySelector('.year-select') as HTMLSelectElement;
@@ -124,20 +138,14 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
       // Create events map by date
       const eventsByDate = new Map<string, any[]>();
       eventsData.forEach((event: any) => {
-        const dateKey = event.date;
+        // `event.date` is a full ISO datetime; the calendar grid keys days as
+        // `YYYY-MM-DD`, so normalise to match.
+        const dateKey = event.date.split('T')[0];
         if (!eventsByDate.has(dateKey)) {
           eventsByDate.set(dateKey, []);
         }
         eventsByDate.get(dateKey)!.push(event);
       });
-      
-      const formatTime = (timeStr: string) => {
-        const [hours, minutes] = timeStr.split(':');
-        const hour = parseInt(hours, 10);
-        const ampm = hour >= 12 ? 'PM' : 'AM';
-        const hour12 = hour % 12 || 12;
-        return `${hour12}:${minutes} ${ampm}`;
-      };
       
       const isAtMinBoundary = () => {
         return currentYear === minYear && currentMonth === minMonth;
@@ -214,7 +222,7 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
             dayEvents.forEach((event: any) => {
               html += `
                 <div class="day-event">
-                  <span class="event-time">${formatTime(event.time)}</span>
+                  <span class="event-time">${event.time}</span>
                   <span class="event-name">${event.name}</span>
                 </div>
               `;
