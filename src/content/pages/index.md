@@ -79,33 +79,12 @@ pageSections:
         iconColor: yellow
     colorScheme: contrast
     backgroundColor: base
-  - _component: page-sections/builders/custom-section
-    label: Upcoming Festival
-    contentSections:
-      - _component: building-blocks/core-elements/heading
-        text: Upcoming Festival
-        level: h2
-        size: default
-        alignX: center
-        iconName: calendar
-        iconPosition: before
-    maxContentWidth: 2xl
-    paddingHorizontal: md
-    paddingVertical: 3xl
-    colorScheme: inherit
-    backgroundColor: base
-    backgroundImage:
-      source: /src/assets/images/pasifika-bg.svg
-      alt: ''
-      positionVertical: top
-      positionHorizontal: center
-    rounded: false
   - _component: page-sections/events/next-event
     eyebrow: Next Up
     heading: Upcoming Festival
     colorScheme: default
     backgroundColor: base
-    paddingVertical: 4xl
+    paddingVertical: 2xl
   - _component: page-sections/features/feature-split
     eyebrow: 'Why an Incorporated Society? '
     heading: Pasifika Festivals Aotearoa origins
