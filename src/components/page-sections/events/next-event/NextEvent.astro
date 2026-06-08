@@ -51,7 +51,7 @@ const getDaysUntil = (dateStr: string) => {
 
 // Serialize all events so the client can re-derive the next event at view time.
 // The server-rendered card below is a build-time guess used as a no-flash /
-// no-JS fallback; the inline <script> corrects it on page load.
+// no-JS fallback; the inline script corrects it on page load.
 const eventsJson = JSON.stringify(eventsData.events);
 ---
 

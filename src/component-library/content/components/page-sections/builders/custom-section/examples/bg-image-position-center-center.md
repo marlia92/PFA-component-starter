@@ -6,7 +6,7 @@ blocks:
   paddingVertical: 2xl
   paddingHorizontal: md
   backgroundImage:
-    source: /src/assets/images/component-library/dunedin-cliff.jpg
+    source: /src/assets/images/pasifika25-1133x628-auckland-live.jpg
     alt: "Dunedin cliffside"
     positionVertical: center
     positionHorizontal: center

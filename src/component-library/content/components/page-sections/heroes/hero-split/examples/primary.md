@@ -7,7 +7,7 @@ blocks:
   heading: "Discover Dunedin"
   subtext: "A city of students, heritage, and natural wonder at the edge of the Pacific."
   reverse: true
-  imageSource: /src/assets/images/component-library/dunedin-cliff.jpg
+  imageSource: /src/assets/images/pasifika25-1133x628-auckland-live.jpg
   imageAlt: "Cliffs and rugged coastline near Dunedin, New Zealand, with yellow flowering shrubs in the foreground and waves crashing against the rocks below."
   buttonSections:
     - _component: "building-blocks/core-elements/button"

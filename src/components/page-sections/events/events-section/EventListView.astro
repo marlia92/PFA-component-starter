@@ -42,7 +42,7 @@ const formatDate = (dateStr: string) => {
 
 // Serialize all events so the client can re-derive the list at view time. The
 // server-rendered cards below are a build-time guess used as a no-flash / no-JS
-// fallback; the inline <script> rebuilds the list on page load so it stays
+// fallback; the inline script rebuilds the list on page load so it stays
 // consistent with the (live) NextEvent component.
 const eventsJson = JSON.stringify(eventsData.events);
 ---

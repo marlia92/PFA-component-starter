@@ -10,31 +10,31 @@ blocks:
     - name: "Michael Chen"
       role: "CEO & Founder"
       bio: "Michael brings over 15 years of experience in product development and team leadership."
-      imageSource: /src/assets/images/component-library/profile.jpg
+      imageSource: /src/assets/images/tanya-muagututi-a.jpeg
       imageAlt: "Michael Chen"
     - name: "Sarah Johnson"
       role: "Lead Developer"
       bio: "Sarah specializes in building scalable applications and mentoring engineering teams."
-      imageSource: /src/assets/images/component-library/profile1.jpg
+      imageSource: /src/assets/images/saito-lilo.jpeg
       imageAlt: "Sarah Johnson"
     - name: "David Kim"
       role: "Design Director"
       bio: "David creates beautiful, user-centered designs that solve real problems."
-      imageSource: /src/assets/images/component-library/profile2.jpg
+      imageSource: /src/assets/images/kia-mau.jpeg
       imageAlt: "David Kim"
     - name: "Emily Rodriguez"
       role: "Product Manager"
       bio: "Emily ensures our products meet user needs while staying aligned with business goals."
-      imageSource: /src/assets/images/component-library/profile3.jpg
+      imageSource: /src/assets/images/tanya-muagututi-a.jpeg
       imageAlt: "Emily Rodriguez"
     - name: "Alex Thompson"
       role: "Marketing Director"
       bio: "Alex drives brand strategy and connects our products with the right audiences."
-      imageSource: /src/assets/images/component-library/profile4.jpg
+      imageSource: /src/assets/images/saito-lilo.jpeg
       imageAlt: "Alex Thompson"
     - name: "Jordan Martinez"
       role: "UX Researcher"
       bio: "Jordan uncovers user insights that shape our product decisions and improve experiences."
-      imageSource: /src/assets/images/component-library/profile5.jpg
+      imageSource: /src/assets/images/kia-mau.jpeg
       imageAlt: "Jordan Martinez"
 ---

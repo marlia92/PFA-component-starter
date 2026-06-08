@@ -6,6 +6,6 @@ blocks:
     text: If it doesn’t make you a little nervous, it’s probably not growth.
     authorName: Jules Mercer
     authorDescription: Travel photographer
-    authorImage: /src/assets/images/component-library/profile.jpg
+    authorImage: /src/assets/images/tanya-muagututi-a.jpeg
     alignX: start
 ---
