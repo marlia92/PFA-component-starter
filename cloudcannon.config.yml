@@ -40,7 +40,7 @@ collections_config:
     glob:
       - '**/*.md'
     icon: festival
-    url: /[full_slug]/
+    url: /festivals/[full_slug]/
     disable_url: false
     _enabled_editors:
       - visual
@@ -73,8 +73,8 @@ collections_config:
     glob:
       - '**/*.md'
     icon: laptop_mac
-    url: /[full_slug]/
-    disable_url: false
+    url:
+    disable_url: true
     _enabled_editors:
       - visual
       - content
@@ -139,7 +139,7 @@ collections_config:
     glob:
       - '**/*.json'
     icon: database
-    disable_url: false
+    disable_url: true
     _enabled_editors:
       - data
     _inputs:
