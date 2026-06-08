@@ -4,7 +4,7 @@ import Image from "@core-elements/image/Image.astro";
 import SimpleText from "@core-elements/simple-text/SimpleText.astro";
 import Page from "@layouts/Page.astro";
 import CustomSection from "@page-sections/builders/custom-section/CustomSection.astro";
-import { getCollection, render, type CollectionEntry } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 
 // Automatically import all components from building-blocks and page-sections for MDX
 const buildingBlocksImports = import.meta.glob("../../components/building-blocks/**/*.astro", {
@@ -44,16 +44,18 @@ Object.entries(componentImports).forEach(([path, module]) => {
 });
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  // const posts = await getCollection("blog");
 
-  return posts.map((post: CollectionEntry<"blog">) => {
-    const slug = post.id?.replace(/\.mdx?$/, "") || post.slug;
+  // return posts.map((post: CollectionEntry<"blog">) => {
+  //   const slug = post.id?.replace(/\.mdx?$/, "") || post.slug;
 
-    return {
-      params: { slug },
-      props: { post },
-    };
-  });
+  //   return {
+  //     params: { slug },
+  //     props: { post },
+  //   };
+  // });
+  // Blog collection is disabled (no blog planned); no post pages to generate.
+  return [];
 }
 
 interface Props {

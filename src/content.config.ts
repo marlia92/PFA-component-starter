@@ -6,9 +6,11 @@ export const collections = {
     loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
   }),
 
-  blog: defineCollection({
-    loader: glob({ pattern: "**/*.mdx", base: "./src/content/blog" }),
-  }),
+  // No blog planned. Collection disabled to avoid the glob-loader warning for a
+  // missing base directory. The /blog routes resolve to an empty post list.
+  // blog: defineCollection({
+  //   loader: glob({ pattern: "**/*.mdx", base: "./src/content/blog" }),
+  // }),
 
   festivals: defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/content/festivals" }),
