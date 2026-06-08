@@ -5,14 +5,19 @@ import PageLayout from "../layouts/Page.astro";
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
 
-  return pages.map((page) => {
-    // Use id which contains the file path without extension
-    const slug = page.id === "index" ? undefined : page.id;
-    return {
-      params: { slug },
-      props: { page },
-    };
-  });
+  return pages
+    // The blog index route is owned by blog/[...page].astro, which pulls this
+    // page's content in for its hero sections. Skip it here to avoid the
+    // conflicting `/blog` route.
+    .filter((page) => page.id !== "blog")
+    .map((page) => {
+      // Use id which contains the file path without extension
+      const slug = page.id === "index" ? undefined : page.id;
+      return {
+        params: { slug },
+        props: { page },
+      };
+    });
 }
 
 const { page } = Astro.props;
