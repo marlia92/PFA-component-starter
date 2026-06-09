@@ -10,9 +10,10 @@ const currentYear = now.getFullYear();
 
 // Find the last event date
 const eventDates = eventsData.events.map((event) => new Date(event.date));
-const lastEventDate = eventDates.length > 0 
-  ? eventDates.reduce((latest, date) => date > latest ? date : latest)
-  : now;
+const lastEventDate =
+  eventDates.length > 0
+    ? eventDates.reduce((latest, date) => (date > latest ? date : latest))
+    : now;
 const lastEventMonth = lastEventDate.getMonth();
 const lastEventYear = lastEventDate.getFullYear();
 
@@ -20,23 +21,30 @@ const lastEventYear = lastEventDate.getFullYear();
 const eventsJson = JSON.stringify(eventsData.events);
 
 const months = [
-  "January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
 // Generate year options (current year to last event year)
-const years = Array.from(
-  { length: lastEventYear - currentYear + 1 }, 
-  (_, i) => currentYear + i
-);
+const years = Array.from({ length: lastEventYear - currentYear + 1 }, (_, i) => currentYear + i);
 
 const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 ---
 
-<div 
+<div
   class:list={["event-calendar-view", className]}
-  data-events={eventsJson} 
-  data-current-month={currentMonth} 
+  data-events={eventsJson}
+  data-current-month={currentMonth}
   data-current-year={currentYear}
   data-min-month={currentMonth}
   data-min-year={currentYear}
@@ -45,26 +53,52 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 >
   <div class="calendar-nav">
     <button type="button" class="nav-btn prev-btn" aria-label="Previous month">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="nav-icon"
+      >
         <polyline points="15 18 9 12 15 6"></polyline>
       </svg>
     </button>
-    
+
     <div class="month-year-selectors">
       <select class="month-select" aria-label="Select month">
-        {months.map((month, index) => (
-          <option value={index} selected={index === currentMonth}>{month}</option>
-        ))}
+        {
+          months.map((month, index) => (
+            <option value={index} selected={index === currentMonth}>
+              {month}
+            </option>
+          ))
+        }
       </select>
       <select class="year-select" aria-label="Select year">
-        {years.map((year) => (
-          <option value={year} selected={year === currentYear}>{year}</option>
-        ))}
+        {
+          years.map((year) => (
+            <option value={year} selected={year === currentYear}>
+              {year}
+            </option>
+          ))
+        }
       </select>
     </div>
-    
+
     <button type="button" class="nav-btn next-btn" aria-label="Next month">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="nav-icon"
+      >
         <polyline points="9 18 15 12 9 6"></polyline>
       </svg>
     </button>
@@ -72,9 +106,7 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   <div class="calendar-wrapper">
     <div class="calendar-grid">
-      {weekDays.map((day) => (
-        <div class="weekday-header">{day}</div>
-      ))}
+      {weekDays.map((day) => <div class="weekday-header">{day}</div>)}
       <div class="days-container">
         <!-- Days will be rendered by JavaScript -->
       </div>
@@ -97,18 +129,18 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 <script>
   function initCalendarViews() {
-    const containers = document.querySelectorAll('.event-calendar-view');
-    
+    const containers = document.querySelectorAll(".event-calendar-view");
+
     containers.forEach((container) => {
       // Skip if already initialized
-      if (container.dataset.initialized === 'true') return;
-      container.dataset.initialized = 'true';
+      if (container.dataset.initialized === "true") return;
+      container.dataset.initialized = "true";
 
-      const eventsData = JSON.parse(container.dataset.events || '[]');
+      const eventsData = JSON.parse(container.dataset.events || "[]");
 
       // Max boundary (the last event's month) is fixed — events don't move.
-      const maxMonth = parseInt(container.dataset.maxMonth || '11', 10);
-      const maxYear = parseInt(container.dataset.maxYear || '2026', 10);
+      const maxMonth = parseInt(container.dataset.maxMonth || "11", 10);
+      const maxYear = parseInt(container.dataset.maxYear || "2026", 10);
 
       // Derive the current month and the min boundary from the real "now" at
       // view time rather than the build-time values, so a stale build still
@@ -127,34 +159,34 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
         currentMonth = maxMonth;
         currentYear = maxYear;
       }
-      
-      const monthSelect = container.querySelector('.month-select') as HTMLSelectElement;
-      const yearSelect = container.querySelector('.year-select') as HTMLSelectElement;
-      const prevBtn = container.querySelector('.prev-btn') as HTMLButtonElement;
-      const nextBtn = container.querySelector('.next-btn') as HTMLButtonElement;
-      const todayBtn = container.querySelector('.today-btn');
-      const daysContainer = container.querySelector('.days-container');
-      
+
+      const monthSelect = container.querySelector(".month-select") as HTMLSelectElement;
+      const yearSelect = container.querySelector(".year-select") as HTMLSelectElement;
+      const prevBtn = container.querySelector(".prev-btn") as HTMLButtonElement;
+      const nextBtn = container.querySelector(".next-btn") as HTMLButtonElement;
+      const todayBtn = container.querySelector(".today-btn");
+      const daysContainer = container.querySelector(".days-container");
+
       // Create events map by date
       const eventsByDate = new Map<string, any[]>();
       eventsData.forEach((event: any) => {
         // `event.date` is a full ISO datetime; the calendar grid keys days as
         // `YYYY-MM-DD`, so normalise to match.
-        const dateKey = event.date.split('T')[0];
+        const dateKey = event.date.split("T")[0];
         if (!eventsByDate.has(dateKey)) {
           eventsByDate.set(dateKey, []);
         }
         eventsByDate.get(dateKey)!.push(event);
       });
-      
+
       const isAtMinBoundary = () => {
         return currentYear === minYear && currentMonth === minMonth;
       };
-      
+
       const isAtMaxBoundary = () => {
         return currentYear === maxYear && currentMonth === maxMonth;
       };
-      
+
       const updateNavButtons = () => {
         if (prevBtn) {
           prevBtn.disabled = isAtMinBoundary();
@@ -163,60 +195,62 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
           nextBtn.disabled = isAtMaxBoundary();
         }
       };
-      
+
       const updateMonthOptions = () => {
         if (!monthSelect) return;
-        
-        const options = monthSelect.querySelectorAll('option');
+
+        const options = monthSelect.querySelectorAll("option");
         options.forEach((option, index) => {
           let disabled = false;
-          
+
           if (currentYear === minYear && index < minMonth) {
             disabled = true;
           }
           if (currentYear === maxYear && index > maxMonth) {
             disabled = true;
           }
-          
+
           option.disabled = disabled;
         });
       };
-      
+
       const renderCalendar = () => {
         if (!daysContainer) return;
-        
+
         const firstDay = new Date(currentYear, currentMonth, 1);
         const lastDay = new Date(currentYear, currentMonth + 1, 0);
         const daysInMonth = lastDay.getDate();
         const startingDay = firstDay.getDay();
-        
+
         const today = new Date();
         today.setHours(0, 0, 0, 0);
-        
-        let html = '';
-        
+
+        let html = "";
+
         for (let i = 0; i < startingDay; i++) {
           html += '<div class="calendar-day empty"></div>';
         }
-        
+
         for (let day = 1; day <= daysInMonth; day++) {
-          const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+          const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
           const dayDate = new Date(currentYear, currentMonth, day);
           const isToday = dayDate.toDateString() === today.toDateString();
           const isPast = dayDate < today;
           const dayEvents = eventsByDate.get(dateStr) || [];
           const hasEvents = dayEvents.length > 0;
-          
+
           const classes = [
-            'calendar-day',
-            hasEvents ? 'has-events' : '',
-            isToday ? 'is-today' : '',
-            isPast ? 'is-past' : '',
-          ].filter(Boolean).join(' ');
-          
+            "calendar-day",
+            hasEvents ? "has-events" : "",
+            isToday ? "is-today" : "",
+            isPast ? "is-past" : "",
+          ]
+            .filter(Boolean)
+            .join(" ");
+
           html += `<div class="${classes}">`;
           html += `<span class="day-number">${day}</span>`;
-          
+
           if (hasEvents) {
             html += '<div class="day-events">';
             dayEvents.forEach((event: any) => {
@@ -227,60 +261,60 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
                 </div>
               `;
             });
-            html += '</div>';
+            html += "</div>";
           }
-          
-          html += '</div>';
+
+          html += "</div>";
         }
-        
+
         daysContainer.innerHTML = html;
-        
+
         if (monthSelect) monthSelect.value = String(currentMonth);
         if (yearSelect) yearSelect.value = String(currentYear);
-        
+
         updateNavButtons();
         updateMonthOptions();
       };
-      
+
       const goToPrevMonth = () => {
         if (isAtMinBoundary()) return;
-        
+
         currentMonth--;
         if (currentMonth < 0) {
           currentMonth = 11;
           currentYear--;
         }
-        
+
         if (currentYear < minYear || (currentYear === minYear && currentMonth < minMonth)) {
           currentYear = minYear;
           currentMonth = minMonth;
         }
-        
+
         renderCalendar();
       };
-      
+
       const goToNextMonth = () => {
         if (isAtMaxBoundary()) return;
-        
+
         currentMonth++;
         if (currentMonth > 11) {
           currentMonth = 0;
           currentYear++;
         }
-        
+
         if (currentYear > maxYear || (currentYear === maxYear && currentMonth > maxMonth)) {
           currentYear = maxYear;
           currentMonth = maxMonth;
         }
-        
+
         renderCalendar();
       };
-      
+
       const goToToday = () => {
         const today = new Date();
         let targetMonth = today.getMonth();
         let targetYear = today.getFullYear();
-        
+
         if (targetYear < minYear || (targetYear === minYear && targetMonth < minMonth)) {
           targetYear = minYear;
           targetMonth = minMonth;
@@ -289,46 +323,46 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
           targetYear = maxYear;
           targetMonth = maxMonth;
         }
-        
+
         currentMonth = targetMonth;
         currentYear = targetYear;
         renderCalendar();
       };
-      
-      prevBtn?.addEventListener('click', goToPrevMonth);
-      nextBtn?.addEventListener('click', goToNextMonth);
-      todayBtn?.addEventListener('click', goToToday);
-      
-      monthSelect?.addEventListener('change', () => {
+
+      prevBtn?.addEventListener("click", goToPrevMonth);
+      nextBtn?.addEventListener("click", goToNextMonth);
+      todayBtn?.addEventListener("click", goToToday);
+
+      monthSelect?.addEventListener("change", () => {
         const newMonth = parseInt(monthSelect.value, 10);
-        
+
         if (currentYear === minYear && newMonth < minMonth) return;
         if (currentYear === maxYear && newMonth > maxMonth) return;
-        
+
         currentMonth = newMonth;
         renderCalendar();
       });
-      
-      yearSelect?.addEventListener('change', () => {
+
+      yearSelect?.addEventListener("change", () => {
         currentYear = parseInt(yearSelect.value, 10);
-        
+
         if (currentYear === minYear && currentMonth < minMonth) {
           currentMonth = minMonth;
         }
         if (currentYear === maxYear && currentMonth > maxMonth) {
           currentMonth = maxMonth;
         }
-        
+
         renderCalendar();
       });
-      
+
       renderCalendar();
     });
   }
 
   // Initialize on DOMContentLoaded
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCalendarViews);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCalendarViews);
   } else {
     initCalendarViews();
   }
@@ -336,21 +370,21 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   // Re-initialize when view becomes visible (for tab switching)
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+      if (mutation.type === "attributes" && mutation.attributeName === "style") {
         const target = mutation.target as HTMLElement;
-        if (target.classList.contains('calendar-view') && target.style.display !== 'none') {
+        if (target.classList.contains("calendar-view") && target.style.display !== "none") {
           initCalendarViews();
         }
       }
     });
   });
 
-  document.querySelectorAll('.calendar-view').forEach((view) => {
+  document.querySelectorAll(".calendar-view").forEach((view) => {
     observer.observe(view, { attributes: true });
   });
 </script>
 
-<style lang="pcss">
+<style lang="pcss" is:global>
   .event-calendar-view {
     background: var(--color-bg-surface);
     border-radius: var(--radius-xl);
@@ -613,4 +647,3 @@ const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     }
   }
 </style>
-

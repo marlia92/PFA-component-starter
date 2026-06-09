@@ -66,33 +66,41 @@ const eventsJson = JSON.stringify(eventsData.events);
   <div class="next-event-root" data-events={eventsJson}>
     <div class="next-event-wrapper" style={nextEvent ? undefined : "display: none;"}>
       <div class="next-event-header">
-        {eyebrow && (
-          <SimpleText class="eyebrow" data-prop="eyebrow">
-            {eyebrow}
-          </SimpleText>
-        )}
-        {heading && (
-          <Heading level="h2" size="lg" data-prop="heading">
-            {heading}
-          </Heading>
-        )}
+        {
+          eyebrow && (
+            <SimpleText class="eyebrow" data-prop="eyebrow">
+              {eyebrow}
+            </SimpleText>
+          )
+        }
+        {
+          heading && (
+            <Heading level="h2" size="lg" data-prop="heading">
+              {heading}
+            </Heading>
+          )
+        }
       </div>
 
       <article class="next-event-card">
         <div class="countdown-badge">
-          {nextEvent && getDaysUntil(nextEvent.date) === 0 ? (
-            <span class="countdown-text">Today!</span>
-          ) : nextEvent && getDaysUntil(nextEvent.date) === 1 ? (
-            <>
-              <span class="countdown-number">1</span>
-              <span class="countdown-text">day to go</span>
-            </>
-          ) : (
-            <>
-              <span class="countdown-number">{nextEvent ? getDaysUntil(nextEvent.date) : ""}</span>
-              <span class="countdown-text">days to go</span>
-            </>
-          )}
+          {
+            nextEvent && getDaysUntil(nextEvent.date) === 0 ? (
+              <span class="countdown-text">Today!</span>
+            ) : nextEvent && getDaysUntil(nextEvent.date) === 1 ? (
+              <>
+                <span class="countdown-number">1</span>
+                <span class="countdown-text">day to go</span>
+              </>
+            ) : (
+              <>
+                <span class="countdown-number">
+                  {nextEvent ? getDaysUntil(nextEvent.date) : ""}
+                </span>
+                <span class="countdown-text">days to go</span>
+              </>
+            )
+          }
         </div>
 
         <div class="event-content">
@@ -111,7 +119,9 @@ const eventsJson = JSON.stringify(eventsData.events);
               <Icon name="calendar" size="md" class="event-icon" />
               <div class="detail-content">
                 <span class="detail-label">Date</span>
-                <span class="detail-value" data-field="date">{nextEvent ? formatDate(nextEvent.date) : ""}</span>
+                <span class="detail-value" data-field="date"
+                  >{nextEvent ? formatDate(nextEvent.date) : ""}</span
+                >
               </div>
             </div>
 
@@ -129,9 +139,7 @@ const eventsJson = JSON.stringify(eventsData.events);
 
     <div class="no-event" style={nextEvent ? "display: none;" : undefined}>
       <Icon name="calendar" size="lg" class="no-event-icon" />
-      <SimpleText alignX="center">
-        No upcoming events scheduled at this time.
-      </SimpleText>
+      <SimpleText alignX="center"> No upcoming events scheduled at this time. </SimpleText>
     </div>
   </div>
 </CustomSection>
@@ -215,7 +223,7 @@ const eventsJson = JSON.stringify(eventsData.events);
   }
 </script>
 
-<style lang="pcss">
+<style lang="pcss" is:global>
   .next-event {
     .next-event-wrapper {
       display: flex;
@@ -369,4 +377,3 @@ const eventsJson = JSON.stringify(eventsData.events);
     }
   }
 </style>
-

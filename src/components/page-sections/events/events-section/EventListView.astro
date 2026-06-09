@@ -3,10 +3,7 @@ import Icon from "@core-elements/icon/Icon.astro";
 import SimpleText from "@core-elements/simple-text/SimpleText.astro";
 import eventsData from "@data/events.json";
 
-const {
-  maxEventsToShow = 0,
-  class: className,
-} = Astro.props;
+const { maxEventsToShow = 0, class: className } = Astro.props;
 
 // Get current date for filtering
 const now = new Date();
@@ -25,9 +22,8 @@ const sortedEvents = eventsData.events
 const eventsToDisplay = sortedEvents.slice(1);
 
 // Limit events if maxEventsToShow is set
-const limitedEvents = maxEventsToShow > 0 
-  ? eventsToDisplay.slice(0, maxEventsToShow) 
-  : eventsToDisplay;
+const limitedEvents =
+  maxEventsToShow > 0 ? eventsToDisplay.slice(0, maxEventsToShow) : eventsToDisplay;
 
 // Format date for display
 const formatDate = (dateStr: string) => {
@@ -47,41 +43,55 @@ const formatDate = (dateStr: string) => {
 const eventsJson = JSON.stringify(eventsData.events);
 ---
 
-<div class:list={["event-list-view", className]} data-events={eventsJson} data-max={maxEventsToShow}>
+<div
+  class:list={["event-list-view", className]}
+  data-events={eventsJson}
+  data-max={maxEventsToShow}
+>
   <div class="events-container" hidden={limitedEvents.length === 0}>
-    {limitedEvents.map((event, index) => (
-      <article class="event-card" style={`--animation-delay: ${index * 0.1}s`}>
-        <div class="event-date-badge">
-          <span class="event-day" data-field="day">{new Date(event.date).getDate()}</span>
-          <span class="event-month" data-field="month">{new Date(event.date).toLocaleDateString("en-NZ", { month: "short" })}</span>
-        </div>
-        <div class="event-details">
-          <h3 class="event-name" data-field="name">{event.name}</h3>
-          <div class="event-meta">
-            <div class="event-meta-item">
-              <Icon name="map-pin" size="sm" class="event-icon" />
-              <span data-field="location">{event.location}</span>
-            </div>
-            <div class="event-meta-item">
-              <Icon name="calendar" size="sm" class="event-icon" />
-              <span data-field="date">{formatDate(event.date)}</span>
-            </div>
-            <div class="event-meta-item">
-              <Icon name="clock" size="sm" class="event-icon" />
-              <span data-field="time">{event.time}</span>
+    {
+      limitedEvents.map((event, index) => (
+        <article class="event-card" style={`--animation-delay: ${index * 0.1}s`}>
+          <div class="event-date-badge">
+            <span class="event-day" data-field="day">
+              {new Date(event.date).getDate()}
+            </span>
+            <span class="event-month" data-field="month">
+              {new Date(event.date).toLocaleDateString("en-NZ", { month: "short" })}
+            </span>
+          </div>
+          <div class="event-details">
+            <h3 class="event-name" data-field="name">
+              {event.name}
+            </h3>
+            <div class="event-meta">
+              <div class="event-meta-item">
+                <Icon name="map-pin" size="sm" class="event-icon" />
+                <span data-field="location">{event.location}</span>
+              </div>
+              <div class="event-meta-item">
+                <Icon name="calendar" size="sm" class="event-icon" />
+                <span data-field="date">{formatDate(event.date)}</span>
+              </div>
+              <div class="event-meta-item">
+                <Icon name="clock" size="sm" class="event-icon" />
+                <span data-field="time">{event.time}</span>
+              </div>
             </div>
           </div>
-        </div>
-      </article>
-    ))}
+        </article>
+      ))
+    }
   </div>
 
   <SimpleText alignX="center" class="no-events" hidden={limitedEvents.length > 0}>
     No upcoming events scheduled at this time.
   </SimpleText>
 
-  {/* Markup template cloned by the client script. Keeps the Icon SVGs (rendered
-      at build) so we don't hand-write them in JS. */}
+  {
+    /* Markup template cloned by the client script. Keeps the Icon SVGs (rendered
+      at build) so we don't hand-write them in JS. */
+  }
   <template class="event-card-template">
     <article class="event-card">
       <div class="event-date-badge">
@@ -183,7 +193,7 @@ const eventsJson = JSON.stringify(eventsData.events);
   }
 </script>
 
-<style lang="pcss">
+<style lang="pcss" is:global>
   .event-list-view {
     max-width: var(--content-width-xl);
     margin-inline: auto;
@@ -300,4 +310,3 @@ const eventsJson = JSON.stringify(eventsData.events);
     }
   }
 </style>
-
