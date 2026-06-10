@@ -80,7 +80,7 @@ pageSections:
     colorScheme: contrast
     backgroundColor: base
   - _component: page-sections/events/next-event
-    eyebrow: Next Up
+    eyebrow: Next up
     heading: Upcoming Festival
     colorScheme: default
     backgroundColor: base
